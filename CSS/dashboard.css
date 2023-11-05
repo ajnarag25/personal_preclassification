@@ -1,0 +1,243 @@
+/* * NOTE:  */
+/* * This file is for the dashboard  */
+@font-face{
+  font-family: Inter;
+  src: url(./fonts/Inter-VariableFont_slnt,wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+  text-decoration: none;
+}
+
+
+.Center-Main_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sec_div {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Adjust the flex width of .sec_div */
+}
+
+#Title {
+  border: solid blue;
+  flex: 1; /* Adjust the flex width of #Title */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#input_creds {  
+  margin-top: 50px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid darkcyan;
+}
+
+#login_logo_cont img {
+  height: 100px;
+  width: 100px;
+}
+
+.login_creds {
+  border: solid black;
+}
+
+
+/* |||||||||||||||||||||||||||| */
+/*  DASHBOARD CSS ||||||| */
+/* |||||||||||||||||||||||||||| */
+
+header{
+  /* PLANNING PHASE */
+  background: darkred;
+}
+
+#whole-dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+#side-nav {
+  background-color: #edae43;
+  height: 100%; 
+  width: 0px; /* Initial width */
+  z-index: 1;
+  transition: 0.5s;
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+#dashboard-content{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+#content-container{
+  display: flexbox;
+  justify-content: center;
+  width: 100%;
+} 
+
+#system-title{
+  font-size: 2.1em;
+  height: 8vh;
+  display: flex;
+  background-color: #7d0201;
+
+}
+
+#system-title h2{
+  color: white;
+  margin-left: 50px;
+}
+
+#system-title span{
+  margin-left: 45px;
+  font-size: 2.6rem;
+}
+
+#menu_icon{
+  font-size: 36px;
+  margin-left: 135px;
+}
+ .menu li a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+  list-style-type: none;
+  border-bottom: solid  black;
+  color: black;
+}
+
+img{
+  margin-left: 2px;
+  margin-top: 5px;
+  height: 25px;
+  width: 25px;
+}
+
+form button{
+  margin-top: 20px;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  background-color: #8b0000;
+}
+
+.widgets{
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5%;
+  display: flex;
+  gap: 5%;
+  justify-items: center;
+}
+
+.widgets .widget{
+  padding: 35px 60px 35px 60px;
+}
+
+.widgets2{
+  margin-top: 5%;
+  display: flex;
+  gap: 20%;
+  justify-content: center;
+}
+
+.widgets2 .widget{
+  height: 80px;
+  width: 170px
+}
+
+.widget{
+  margin: 5px;
+  padding: 35px 60px 35px 60px;;
+  border-radius: 25px;
+  color: white;
+  background-color: #7d0201;
+  align-self: center;
+}
+
+
+.widget p{
+  padding-top: 10px;
+}
+
+
+.widgets h2, .widgets2 h2{
+  border-bottom: solid white 2px;
+  justify-self: center;
+  align-self: center;
+}
+
+.img__cont img{
+  float: left;
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+}
+
+
+/* CSS CODE BELOW IS FOR THE OVERLAY */
+
+.border{
+  border: solid black 1px;
+  width: 190px;
+  margin-left: 50px;
+}
+
+#overlay1, #overlay2,#overlay3,#overlay4{
+  width: 300px;
+  height: auto;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+  background-color: #dbd7d7;
+  text-align: center;
+  z-index: 11;
+}
+
+.overlay_clse_btn {
+  padding: 3px;
+  font-size: 20px;
+  border-radius: 10px;
+  margin: 15px;
+  color: white;
+  border: none;
+  background-color: #7d0201;
+}
+
+#overlay1 a,#overlay2 a,#overlay3 a,#overlay4 a{
+  border-radius: 0px;
+  color: white;
+  background-color: #7d0201;
+  margin: 30px;
+  padding: 10px 30px 10px 30px
+}
+
+#hidden{
+  display: none;
+}
+
+.hidden{
+  display: none;
+}

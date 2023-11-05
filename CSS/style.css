@@ -1,0 +1,265 @@
+/* |||||||||||||||||||||||||||| */
+/* ||GLOBAL or ALL TARGET CSS|| */
+/* |||||||||||||||||||||||||||| */
+@font-face{
+    font-family: Anton;
+    src: url(/fonts/Anton-Regular.ttf);
+}
+@font-face{
+    font-family: League-Spartan;
+    src: url(/fonts/LeagueSpartan-VariableFont_wght.ttf);
+}
+@font-face{
+    font-family: Inter;
+    src: url(/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+@font-face{
+    font-family: Trebuchet;
+    src: url(/fonts/Trebuchet-MS-Italic.ttf);
+}
+:root {
+    --darker-red: #900303;
+    --yellow: #f5cb45;          /* TBH DREK SURE INI NA MGA COLOR PATTERNS BUT CREDITS TO: EVSU MAIN CAMPUS */
+    --base-red: #d30707;    /* LINK(S): https://apps.evsu.edu.ph/students/confirmation, https://www.evsu.edu.ph/ */
+    --yellow2: #b2c890;
+    --brown: #643e3a;
+    --yellow2: #edae43;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* |||||||||||||||||||||||||||| */
+/* ||||||| HEADER     CSS ||||| */
+/* |||||||||||||||||||||||||||| */
+
+#header_div{
+    display: flex;  
+    background-color: var(--yellow2);
+    width: 100%;
+    height: 10%;
+}
+
+#header_div h2{
+    font-family: Inter;
+    margin-top: 19px;
+    margin-left: 25px;
+    color: #5d3e3e;
+    font-size: 29px;
+    width: 100%;
+}
+
+
+#evsu_logo img{
+    height: 70px;
+    width: 70px;
+    margin-left: 10px;
+}
+.content_header{
+    display: inline-grid;
+    float: right;
+    margin-left: 450px;
+    justify-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.content_header_text{
+    margin-top: 10px;
+    font-size: 20px;
+    color: black;
+    font-family: Trebuchet MS;
+}
+
+/* |||||||||||||||||||||||||||| */
+/*  INDEX PAGE CSS ||||| */
+/* |||||||||||||||||||||||||||| */
+
+#index-main{
+   float: left; 
+   background-color: rgb(255, 255, 255,.62);
+   height: 100%;
+   display: grid;
+   transform-origin: right;
+   transform: skewX(-5deg);
+   height: 1000000000px;
+}
+
+.index-title{
+
+}
+
+.index-title h2 span{
+    font-size: 75px;
+    margin: 5px 5px 5px 5px;
+    font-family: Anton;
+}
+
+#index-btns{
+    display: grid;
+    margin: 50px;
+    font-size: 55px;
+    align-items: center;
+    justify-items: center;
+}
+
+#index-btns a{
+    text-align: center;
+    width: 215px;
+    
+    text-decoration: none;
+    color: white;
+}
+.span-last{
+    font-family: League-Spartan !important;
+    color: #f59a00;
+} 
+
+.index-btns-signup{
+    background-color: #545454;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 35px;
+}
+.index-btns-login{
+    background-color: #7d0201;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 35px;
+}
+
+
+/* |||||||||||||||||||||||||||| */
+/*  LOGIN PAGE CSS ||||| */
+/* |||||||||||||||||||||||||||| */
+
+/* *PLS use relative measurements here */
+/* TODO: adjust sizes */
+
+
+
+.Center-Main_div{
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: 150px 200px 200px 200px;
+}
+
+.div-container{
+    background-color: rgb(255, 255, 255,.62);
+}
+
+#div-title{
+    font-family: Anton;
+    text-align: center;
+
+    font-size: 40px;
+}
+
+#div-2title{
+    margin-left: 50px;
+   
+    font-size: 20px;
+    font-family: Inter;
+}
+
+#login-input {
+    text-align: center;
+}
+
+#login-input input{
+    display: inline;
+    background-color: #e1920f;
+    border-radius: 25px;
+    border: none;
+    font-size: 35px;
+    margin: 10px;
+    padding: 15px 35px 15px 35px;
+    width: 65%;
+}
+
+#login-input button{
+padding: 10px 30px 10px 30px;
+ border: none;
+ background-color: #e1920f; 
+ border-radius: 25px;
+ font-size: 20px;
+ font-family: Inter;
+}
+
+.pg-footer{
+ font-family: Inter;
+ margin: 30px
+}
+
+.pg-footer p{
+text-align: center;
+
+}
+.pg-footer p a{
+    text-decoration: none;
+    color: #ec9406;
+}
+
+
+
+
+
+/* |||||||||||||||||||||||||||| */
+/*  REGISTRATION CSS |||||| */
+/* |||||||||||||||||||||||||||| */
+
+#reg_bg{
+    background-image: url(/assets/reg_bg.jpg);
+    background-size: cover;
+    background-repeat: no repeat;
+}
+
+.Reg-Main_div{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+    margin-left: 80vh;
+    margin-right: 80vh;
+}
+
+#Reg-Scnd_div{
+    color: #fcfdfc;
+}
+
+.regist-creds input{
+    font-size: 1.5em;
+    background-color: lightcyan;
+    border-radius: 10px;
+    margin: 5px;
+    color:grey ;
+}
+
+
+.reg-btns button{
+    background-color: lightblue;
+    border-radius: .5em;
+    font-size: 1.1em;
+    margin: 5px;
+    padding: 5px;
+}
+
+
+
+/* |||||||||||||||||||||||||||| */
+/*  DASHBOARD CSS ||||||| */
+/* |||||||||||||||||||||||||||| */
+
+
+
+
+
+
