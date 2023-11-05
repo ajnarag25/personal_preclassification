@@ -1,11 +1,56 @@
 <?php
-include './functions.php';
+include 'functions.php';
 if(isset($_POST['Submit_btn'])){
-  // insert_data__KRA1A();
-  // echo "<script> alert('Data submitted')</script>";
-}elseif(isset($_POST['Cancel_btn'])){
-  header('location: dashboard.php');  
-}else{}
+
+    $sole_author = $_POST['sole_author'];
+    $co_author = $_POST['co_author'];
+    $acad_prog = $_POST['acad_prog'];
+    $adviser = $_POST['adviser'];
+    $panel = $_POST['panel'];
+    $mentor = $_POST['mentor'];
+    
+    if($sole_author == ""  OR $co_author == ""  OR $acad_prog == ""  OR $adviser == ""  OR $panel == ""  OR $mentor == ""){
+      ?>
+       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                Swal.fire({
+                icon: 'error',
+                title: 'Please provide the required faculty score',
+                text: 'Something went wrong!',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Okay'
+                })
+                
+            })
+    
+        </script>
+      <?php
+    }else{
+      $conn->query("UPDATE kra_1 SET Crit_B_sole_autho = '$sole_author', Crit_B_co_autho = '$co_author', Crit_B_academe = '$acad_prog', Crit_C_Adviser = '$adviser', Crit_C_Panel = '$panel', Crit_C_Mentor = '$mentor' WHERE id = 1") or die($conn->error);
+      ?>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script>
+          $(document).ready(function(){
+                Swal.fire({
+                icon: 'success',
+                title: 'Successfully saved!',
+                text: 'Inserted into database',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Okay'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "dashboard.php";
+                    }
+                })
+                
+            })
+      </script>
+        <?php
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +79,16 @@ if(isset($_POST['Submit_btn'])){
 body{
   background: url('./Assets/KRA_files_bg.jpg');
   background-size: cover;
+}
+
+.cancel_btn{
+  border: none;
+  background-color: #7d0201;
+  font-size: 20px;
+  text-decoration:none;
+  color:white;
+  padding:5px;
+  border-radius:10px;
 }
 
 table{
@@ -65,7 +120,7 @@ button{
   font-size: 20px;
 }
 
-td, input, select, option{
+td, input required, select, option{
   background-color:  #dbd7d7;
 }
 
@@ -90,7 +145,7 @@ tr{
 
 </style>
 <body>
-
+<form action="FORM1_B&C.php" method="post">
   <h1 class="title">CRITERION B - CURRICULUM AND INSTRUCTIONAL MATERIALS DEVELOPMENT (MAX = 30 POINTS) </h1>
 
   <br> <br>
@@ -112,7 +167,7 @@ tr{
  
   <tr>
     <td>1</td>
-    <td><input type="text"></td>
+    <td><input required type="text"></td>
     <td>
      <select name="" id="type__IM__SA__1">
        <option value="None">Select Option</option>
@@ -123,16 +178,16 @@ tr{
        <option value="Testing Material">Testing Material</option>
      </select>
    </td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
-    <td><input type="date"></td>
-    <td><input type="date"></td>
-    <td><input id="SA-FS__1" disabled type="text"></td>
+    <td><input required type="text"></td>
+    <td><input required type="text"></td>
+    <td><input required type="date"></td>
+    <td><input required type="date"></td>
+    <td><input required id="SA-FS__1" disabled type="text"></td>
    </tr>
 
   <tr>
     <td>2</td>
-    <td><input type="text"></td>
+    <td><input required type="text"></td>
     <td>
      <select name="" id="type__IM__SA__2">
         <option value="None">Select Option</option>
@@ -143,17 +198,17 @@ tr{
        <option value="Testing Material">Testing Material</option>
      </select>
    </td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
-    <td><input type="date"></td>
-    <td><input type="date"></td>
-    <td><input id="SA-FS__2" disabled type="text"></td>
+    <td><input required type="text"></td>
+    <td><input required type="text"></td>
+    <td><input required type="date"></td>
+    <td><input required type="date"></td>
+    <td><input required id="SA-FS__2" disabled type="text"></td>
    </tr>
   </tr>
 
   <tr>
     <td>3</td>
-    <td><input type="text"></td>
+    <td><input required type="text"></td>
     <td>
      <select name="" id="type__IM__SA__3">
        <option value="None">Select Option</option>
@@ -164,11 +219,11 @@ tr{
        <option value="Testing Material">Testing Material</option>
      </select>
    </td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
-    <td><input type="date"></td>
-    <td><input type="date"></td>
-    <td><input id="SA-FS__3" disabled type="text"></td>
+    <td><input required type="text"></td>
+    <td><input required type="text"></td>
+    <td><input required type="date"></td>
+    <td><input required type="date"></td>
+    <td><input required id="SA-FS__3" disabled type="text"></td>
    </tr>
 
    <tr>
@@ -177,9 +232,9 @@ tr{
     <td></td>
     <td></td>
     <td></td>
-    <td><button onclick="total_SA()">Calculate</button></td>
+    <td><button type="button" onclick="total_SA()">Calculate</button></td>
     <td><b> TOTAL: </b></td>
-    <td><input type="number" id="finale_SA" disabled></td>
+    <td><input required type="number" name="sole_author" id="finale_SA" readonly></td>
    </tr>
 </table>
 
@@ -203,7 +258,7 @@ tr{
  
   <tr>
    <td>1</td>
-   <td><input type="text"></td>
+   <td><input required type="text"></td>
    <td>
     <select name="" id="type__IM__CA__1">
       <option value="None">Select Option</option>
@@ -214,17 +269,17 @@ tr{
       <option value="Testing Material">Testing Material</option>
     </select>
    </td>
-   <td><input type="text"></td>
-   <td><input type="text"></td>
-   <td><input type="date"></td>
-   <td><input type="date"></td>
-   <td><input id="CA__cont__1" type="text"></td>
-   <td><input id="CA-FS__1" disabled type="text"></td>
+   <td><input required type="text"></td>
+   <td><input required type="text"></td>
+   <td><input required type="date"></td>
+   <td><input required type="date"></td>
+   <td><input required id="CA__cont__1" type="text"></td>
+   <td><input required id="CA-FS__1" disabled type="text"></td>
   </tr>
 
   <tr>
     <td>2</td>
-    <td><input type="text"></td>
+    <td><input required type="text"></td>
     <td>
      <select name="" id="type__IM__CA__2">
       <option value="None">Select Option</option>
@@ -235,17 +290,17 @@ tr{
        <option value="Testing Material">Testing Material</option>
      </select>
    </td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
-    <td><input type="date"></td>
-    <td><input type="date"></td>
-    <td><input id="CA__cont" type="text"></td>
-    <td><input id="CA-FS__2" disabled type="text"></td>
+    <td><input required type="text"></td>
+    <td><input required type="text"></td>
+    <td><input required type="date"></td>
+    <td><input required type="date"></td>
+    <td><input required id="CA__cont__2" type="text"></td>
+    <td><input required id="CA-FS__2" disabled type="text"></td>
   </tr>
 
   <tr>
     <td>3</td>
-    <td><input type="text"></td>
+    <td><input required type="text"></td>
     <td>
      <select name="" id="type__IM__CA__3">
       <option value="None">Select Option</option>
@@ -256,12 +311,12 @@ tr{
        <option value="Testing Material">Testing Material</option>
      </select>
    </td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
-    <td><input type="date"></td>
-    <td><input type="date"></td>
-    <td><input id="CA__cont" type="text"></td>
-    <td><input id="CA-FS__3" disabled type="text"></td>
+    <td><input required type="text"></td>
+    <td><input required type="text"></td>
+    <td><input required type="date"></td>
+    <td><input required type="date"></td>
+    <td><input required id="CA__cont__3" type="text"></td>
+    <td><input required id="CA-FS__3" disabled type="text"></td>
   </tr>
   <tr>
     <tr>
@@ -271,9 +326,9 @@ tr{
       <td></td>
       <td></td>
       <td></td>
-      <td><button onclick="">Calculate</button></td>
+      <td><button type="button" onclick="CoAuthor()">Calculate</button></td>
       <td><b> TOTAL: </b></td>
-      <td><input type="number" disabled></td>
+      <td><input required type="number" name="co_author" id="resultCoAuthor" readonly></td>
      </tr>
   </tr>
 </table>
@@ -296,14 +351,14 @@ tr{
 
     <tr>
       <td>1</td>
-      <td><input type="text"></td>
+      <td><input required type="text"></td>
       <td>
         <select name="" id="">
           <option value="">New Program</option>
           <option value="">Revised Program</option>
         </select>
       </td>
-      <td><input type="text"></td>
+      <td><input required type="text"></td>
       <td>
         <select name="" id="">
           <option value="">2019-2020</option>
@@ -319,19 +374,19 @@ tr{
           <option value="Contributor">Contributor</option>
         </select>
       </td>
-      <td><input type="text" id="Acad__res__1" disabled></td>
+      <td><input required type="text" id="Acad__res__1" disabled></td>
     </tr>
 
     <tr>
       <td>2</td>
-      <td><input type="text"></td>
+      <td><input required type="text"></td>
       <td>
         <select name="" id="">
           <option value="">New Program</option>
           <option value="">Revised Program</option>
         </select>
       </td>
-      <td><input type="text"></td>
+      <td><input required type="text"></td>
       <td>
         <select name="" id="">
           <option value="">2019-2020</option>
@@ -347,19 +402,19 @@ tr{
           <option value="Contributor">Contributor</option>
         </select>
       </td>
-      <td><input type="text" id="Acad__res__2" disabled></td>
+      <td><input required type="text" id="Acad__res__2" disabled></td>
     </tr>
 
     <tr>
       <td>3</td>
-      <td><input type="text"></td>
+      <td><input required type="text"></td>
       <td>
         <select name="" id="">
           <option value="">New Program</option>
           <option value="">Revised Program</option>
         </select>
       </td>
-      <td><input type="text"></td>
+      <td><input required type="text"></td>
       <td>
         <select name="" id="">
           <option value="">2019-2020</option>
@@ -375,14 +430,14 @@ tr{
           <option value="Contributor">Contributor</option>
         </select>
       </td>
-      <td><input type="text" id="Acad__res__3" disabled></td>
+      <td><input required type="text" id="Acad__res__3" disabled></td>
     </tr>
 
     <tr>
       <td colspan="4"></td>
-      <td><button onclick="calc__acads()">Calculate</button></td>
+      <td><button type="button" onclick="calc__acads()">Calculate</button></td>
       <td><b> TOTAL: </b></td>
-      <td><input id="finale_acads" type="number" disabled></td>
+      <td><input required id="finale_acads" name="acad_prog" type="number" readonly></td>
      </tr>
   </table>
   <br>  
@@ -413,48 +468,48 @@ tr{
 <tr>
   <td>1</td>
   <td>SPECIAL/CAPSTONE PROJECT</td>
-  <td><input type="number"  id="SCP__AY1__1"></td>
-  <td><input type="number" id="SCP__AY2__2"></td>
-  <td><input type="number"  id="SCP__AY3__3"></td>
-  <td><input type="number"  id="SCP__AY4__4"></td>
-  <td ><input type="number" disabled id="SCP_res"></td>
+  <td><input required type="number"  id="SCP__AY1__1"></td>
+  <td><input required type="number" id="SCP__AY2__2"></td>
+  <td><input required type="number"  id="SCP__AY3__3"></td>
+  <td><input required type="number"  id="SCP__AY4__4"></td>
+  <td ><input required type="number" disabled id="SCP_res"></td>
 </tr>
 
 <tr>
   <td>2</td>
   <td>UNDERGRADUATE THESIS</td>
-  <td><input type="number"  id="UG1"></td>
-  <td><input type="number"  id="UG2"></td>
-  <td><input type="number"  id="UG3"></td>
-  <td><input type="number"  id="UG4"></td>
-  <td ><input type="number" disabled id="UG_res"></td>
+  <td><input required type="number"  id="UG1"></td>
+  <td><input required type="number"  id="UG2"></td>
+  <td><input required type="number"  id="UG3"></td>
+  <td><input required type="number"  id="UG4"></td>
+  <td ><input required type="number" disabled id="UG_res"></td>
 </tr>
 
 <tr>
   <td>3</td>
   <td>MASTER'S THESIS</td>
-  <td><input type="number" name="" id="MT1"></td>
-  <td><input type="number" name="" id="MT2"></td>
-  <td><input type="number" name="" id="MT3"></td>
-  <td><input type="number" name="" id="MT4"></td>
-  <td ><input type="number" id="MT_res" disabled></td>
+  <td><input required type="number" name="" id="MT1"></td>
+  <td><input required type="number" name="" id="MT2"></td>
+  <td><input required type="number" name="" id="MT3"></td>
+  <td><input required type="number" name="" id="MT4"></td>
+  <td ><input required type="number" id="MT_res" disabled></td>
 </tr>
 
 <tr>
   <td>4</td>
   <td>DISSERTATION</td>
-  <td><input type="number" name="" id="DT1"></td>
-  <td><input type="number" name="" id="DT2"></td>
-  <td><input type="number" name="" id="DT3"></td>
-  <td><input type="number" name="" id="DT4"></td>
-  <td ><input type="number" id="DT_res" disabled></td>
+  <td><input required type="number" name="" id="DT1"></td>
+  <td><input required type="number" name="" id="DT2"></td>
+  <td><input required type="number" name="" id="DT3"></td>
+  <td><input required type="number" name="" id="DT4"></td>
+  <td ><input required type="number" id="DT_res" disabled></td>
 </tr>
 
 <tr>
   <td colspan="4"></td>
-  <td><button onclick="calcu__adv()">Calculate</button></td>
+  <td><button type="button" onclick="calcu__adv()">Calculate</button></td>
   <td><b>TOTAL: </b></td>
-  <td><input id="crit__C__adviser" type="number" disabled></td>
+  <td><input required id="crit__C__adviser" name="adviser" type="number" readonly></td>
 </tr>
 </table>
 
@@ -480,41 +535,41 @@ tr{
 <tr>
   <td>1</td>
   <td>SPECIAL/CAPSTONE PROJECT</td>
-  <td><input type="number" id="SCP_21" ></td>
-  <td><input type="number" id="SCP_22"></td>
-  <td><input type="number" id="SCP_23"></td>
-  <td><input type="number" id="SCP_24"></td>
-  <td><input disabled type="number" id="SCP2__res"></td>
+  <td><input required type="number" id="SCP_21" ></td>
+  <td><input required type="number" id="SCP_22"></td>
+  <td><input required type="number" id="SCP_23"></td>
+  <td><input required type="number" id="SCP_24"></td>
+  <td><input required disabled type="number" id="SCP2__res"></td>
 </tr>
 
 <tr>
   <td>2</td>
   <td>UNDERGRADUATE THESIS</td>
-  <td><input type="number" id="UT2_1"></td>
-  <td><input type="number" id="UT2_2"></td>
-  <td><input type="number" id="UT2_3"></td>
-  <td><input type="number" id="UT2_4"></td>
-  <td><input disabled type="number" id="UT2__res"></td>
+  <td><input required type="number" id="UT2_1"></td>
+  <td><input required type="number" id="UT2_2"></td>
+  <td><input required type="number" id="UT2_3"></td>
+  <td><input required type="number" id="UT2_4"></td>
+  <td><input required disabled type="number" id="UT2__res"></td>
 </tr>
 
 <tr>
   <td>3</td>
   <td>MASTER'S THESIS</td>
-  <td><input type="number" id="MT2_1"></td>
-  <td><input type="number" id="MT2_2"></td>
-  <td><input type="number" id="MT2_3"></td>
-  <td><input type="number" id="MT2_4"></td>
-  <td><input disabled type="number" id="MT2__res"></td>
+  <td><input required reuired type="number" id="MT2_1"></td>
+  <td><input required type="number" id="MT2_2"></td>
+  <td><input required type="number" id="MT2_3"></td>
+  <td><input required type="number" id="MT2_4"></td>
+  <td><input required disabled type="number" id="MT2__res"></td>
 </tr>
 
 <tr>
   <td>4</td>
   <td>DISSERTATION</td>
-  <td><input type="number" id="DIS_1"></td>
-  <td><input type="number" id="DIS_2"></td>
-  <td><input type="number" id="DIS_3"></td>
-  <td><input type="number" id="DIS_4"></td>
-  <td><input disabled type="number" id="DIS__res"></td>
+  <td><input required type="number" id="DIS_1"></td>
+  <td><input required type="number" id="DIS_2"></td>
+  <td><input required type="number" id="DIS_3"></td>
+  <td><input required type="number" id="DIS_4"></td>
+  <td><input required disabled type="number" id="DIS__res"></td>
 </tr>
 
 <tr>
@@ -522,9 +577,9 @@ tr{
   <td></td>
   <td></td>
   <td></td>
-  <td><button onclick="calcu__panel()">Calculate</button></td>
+  <td><button type="button" onclick="calcu__panel()">Calculate</button></td>
   <td><b> TOTAL: </b></td>
-  <td><input type="number" id="panel__res" disabled></td>
+  <td><input required type="number" name="panel" id="panel__res" readonly></td>
  </tr>
 </table>
 <br>
@@ -546,51 +601,51 @@ tr{
 
   <tr>
     <td>1</td>
-    <td><input type="text" id="ment_inp" ></td>
-    <td><input type="text" id="ment_inp1" ></td>
-    <td><input type="text" id="ment_inp2" ></td>
-    <td><input type="date" id="ment_inp3" ></td>
-    <td><input type="number" id="Mentor_scr1" disabled></td>
+    <td><input required type="text" id="ment_inp" ></td>
+    <td><input required type="text" id="ment_inp1" ></td>
+    <td><input required type="text" id="ment_inp2" ></td>
+    <td><input required type="date" id="ment_inp3" ></td>
+    <td><input required type="number" id="Mentor_scr1" disabled></td>
 </tr>
 
   <tr>
     <td>2</td>
-    <td><input type="text" id="ment_inp4"></td>
-    <td><input type="text" id="ment_inp5"></td>
-    <td><input type="text" id="ment_inp6"></td>
-    <td><input type="date" id="ment_inp7"></td>
-    <td><input type="number" id="Mentor_scr2" disabled></td>
+    <td><input required type="text" id="ment_inp4"></td>
+    <td><input required type="text" id="ment_inp5"></td>
+    <td><input required type="text" id="ment_inp6"></td>
+    <td><input required type="date" id="ment_inp7"></td>
+    <td><input required type="number" id="Mentor_scr2" disabled></td>
   </tr>
 
   <tr>
     <td>3</td>
-    <td><input type="text" id="ment_inp8"></td>
-    <td><input type="text" id="ment_inp9"></td>
-    <td><input type="text" id="ment_inp10"></td>
-    <td><input type="date" id="ment_inp11"></td>
-    <td><input type="number" id="Mentor_scr3" disabled></td>
+    <td><input required type="text" id="ment_inp8"></td>
+    <td><input required type="text" id="ment_inp9"></td>
+    <td><input required type="text" id="ment_inp10"></td>
+    <td><input required type="date" id="ment_inp11"></td>
+    <td><input required type="number" id="Mentor_scr3" disabled></td>
   </tr>
   <tr>
     <td>4</td>
-    <td><input type="text" id="ment_inp12"></td>
-    <td><input type="text" id="ment_inp13"></td>
-    <td><input type="text" id="ment_inp14"></td>
-    <td><input type="date" id="ment_inp15"></td>
-    <td><input type="number" id="Mentor_scr4" disabled></td>
+    <td><input required type="text" id="ment_inp12"></td>
+    <td><input required type="text" id="ment_inp13"></td>
+    <td><input required type="text" id="ment_inp14"></td>
+    <td><input required type="date" id="ment_inp15"></td>
+    <td><input required type="number" id="Mentor_scr4" disabled></td>
   </tr>
   <tr>
     <td colspan="3"></td>
-    <td><button id="calculateButton" onclick="click_me()">Calculate</button></td>
+    <td><button type="button" id="calculateButton" onclick="click_me()">Calculate</button></td>
     <td><b> TOTAL: </b></td>
-    <td><input id="result" type="number" disabled></td>
+    <td><input required id="result" name="mentor" type="number" readonly></td>
    </tr>
 </table>
 <br><br>
 
-
-<form method="post" class="form__btns">
-  <button name="Submit_btn">Submit</button>
-  <button name="Cancel_btn">Cancel</button>
+  <div class="form__btns">
+    <button name="Submit_btn">Submit</button>
+    <a class="cancel_btn" href="dashboard.php">Cancel</a>
+  </div>
 </form>
 
 </body>
@@ -671,47 +726,142 @@ function total_SA(){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 // * Co-authorship down here
-// ! THIS SHT AINT DONE
-// TODO: FIX this shit
 
-  
- const default_value = document.getElementById('CA-FS__1');
-  const setvalue = 10;
-  const get_contribution = document.getElementById('CA__cont__1');
-  console.log(default_value);
-  console.log(get_contribution);
-  const getvalue1 = default_value.value;
-  console.log(getvalue1);
-  const getvalue2 = get_contribution.value;
-  console.log(getvalue2);
 
-  const compute= (getvalue1*getvalue2) /100 ;
-  console.log(compute);
-function this_function() {
+const select__IM__CA__1 = document.getElementById("type__IM__CA__1");
+const contribution = document.getElementById("CA__cont__1");
+const co_autho_FS__1 = document.querySelector("#CA-FS__1");
 
-  
+select__IM__CA__1.addEventListener("change", () => {
+  updateCoAuthoFS();
+});
+
+contribution.addEventListener("input", () => {
+  updateCoAuthoFS();
+});
+
+function updateCoAuthoFS() {
+  const contributionValue = parseFloat(contribution.value);
+
+  if (isNaN(contributionValue) || select__IM__CA__1.value.toLowerCase() === "none") {
+    co_autho_FS__1.value = "";
+    return;
+  }
+
+  if (select__IM__CA__1.value.toLowerCase() === "textbook") {
+    const set_val1 = (30 * contributionValue) /100;
+    co_autho_FS__1.value = set_val1;
+  } else if (select__IM__CA__1.value.toLowerCase() === "textbook chapter") {
+    const set_val1 = (10 * contributionValue) /100;
+    co_autho_FS__1.value = set_val1;
+  } else if (select__IM__CA__1.value.toLowerCase() === "manual/module/workbook") {
+    const set_val1 = (16 * contributionValue) /100;
+    co_autho_FS__1.value = set_val1;
+  } else if (select__IM__CA__1.value.toLowerCase() === "multimedia teaching material") {
+    const set_val1 = (16 * contributionValue) /100;
+    co_autho_FS__1.value = set_val1;
+  } else if (select__IM__CA__1.value.toLowerCase() === "testing material") {
+    const set_val1 = (10 * contributionValue) /100;
+    co_autho_FS__1.value = set_val1;
+  }
 }
 
+const select__IM__CA__2 = document.getElementById("type__IM__CA__2");
+const contribution2 = document.getElementById("CA__cont__2");
+const co_autho_FS__2 = document.querySelector("#CA-FS__2");
 
+select__IM__CA__2.addEventListener("change", () => {
+  updateCoAuthoFS2();
+});
 
+contribution2.addEventListener("input", () => {
+  updateCoAuthoFS2();
+});
 
+function updateCoAuthoFS2() {
+  const contributionValue2 = parseFloat(contribution2.value);
 
+  if (isNaN(contributionValue2) || select__IM__CA__2.value.toLowerCase() === "none") {
+    co_autho_FS__1.value = "";
+    return;
+  }
 
+  if (select__IM__CA__2.value.toLowerCase() === "textbook") {
+    const set_val2 = (30 * contributionValue2) /100;
+    co_autho_FS__2.value = set_val2;
+  } else if (select__IM__CA__2.value.toLowerCase() === "textbook chapter") {
+    const set_val2 = (10 * contributionValue2) /100;
+    co_autho_FS__2.value = set_val2;
+  } else if (select__IM__CA__2.value.toLowerCase() === "manual/module/workbook") {
+    const set_val2 = (16 * contributionValue2) /100;
+    co_autho_FS__2.value = set_val2;
+  } else if (select__IM__CA__2.value.toLowerCase() === "multimedia teaching material") {
+    const set_val2 = (16 * contributionValue2) /100;
+    co_autho_FS__2.value = set_val2;
+  } else if (select__IM__CA__2.value.toLowerCase() === "testing material") {
+    const set_val2 = (10 * contributionValue2) /100;
+    co_autho_FS__2.value = set_val2;
+  }
+}
 
-// function calc_co__autho()
-// {
-//   const type__IM__CA__1 = document.getElementById('type__IM__CA__1');
-//   const cont = document.getElementById('CA__cont__1'); //@param myparam ????
-//   const CO_FS__1 = document.getElementById('CA-FS__1');
-//   CO_FS__1.value = 10;
-//   console.log(CO_FS__1);
+const select__IM__CA__3 = document.getElementById("type__IM__CA__3");
+const contribution3 = document.getElementById("CA__cont__3");
+const co_autho_FS__3 = document.querySelector("#CA-FS__3");
+
+select__IM__CA__3.addEventListener("change", () => {
+  updateCoAuthoFS3();
+});
+
+contribution3.addEventListener("input", () => {
+  updateCoAuthoFS3();
+});
+
+function updateCoAuthoFS3() {
+  const contributionValue3 = parseFloat(contribution3.value);
+
+  if (isNaN(contributionValue3) || select__IM__CA__3.value.toLowerCase() === "none") {
+    co_autho_FS__3.value = "";
+    return;
+  }
+
+  if (select__IM__CA__3.value.toLowerCase() === "textbook") {
+    const set_val3 = (30 * contributionValue3) /100;
+    co_autho_FS__3.value = set_val3;
+  } else if (select__IM__CA__3.value.toLowerCase() === "textbook chapter") {
+    const set_val3 = (10 * contributionValue3) /100;
+    co_autho_FS__3.value = set_val3;
+  } else if (select__IM__CA__3.value.toLowerCase() === "manual/module/workbook") {
+    const set_val3 = (16 * contributionValue3) /100;
+    co_autho_FS__3.value = set_val3;
+  } else if (select__IM__CA__3.value.toLowerCase() === "multimedia teaching material") {
+    const set_val3 = (16 * contributionValue3) /100;
+    co_autho_FS__3.value = set_val3;
+  } else if (select__IM__CA__3.value.toLowerCase() === "testing material") {
+    const set_val3 = (10 * contributionValue3) /100;
+    co_autho_FS__3.value = set_val3;
+  }
+}
+
+function CoAuthor(){
+  const finale = document.getElementById("resultCoAuthor")
+  const line_1 = parseInt(document.getElementById("CA-FS__1").value)
+  const line_2 = parseInt(document.getElementById("CA-FS__2").value)
+  const line_3 = parseInt(document.getElementById("CA-FS__3").value)
+
+  // formula
+  result = line_1 + line_2 + line_3
+
+  // output after the computation
+  finale.value = parseInt(result);
+}
+// const type__IM__CA__2 = document.getElementById('type__IM__CA__2');
+//   // const cont = document.getElementById('CA__cont__1') //@param myparam ????
+//   const CO_FS__2 = document.getElementById('CA-FS__2')
 //   type__IM__CA__1.addEventListener("change", () => {
 //   if (type__IM__CA__1.value.toLowerCase() === "none") {
-//     CO_FS__1.value = 0;
+//     CO_FS__1.value = 30;
 //   }else if (type__IM__CA__1.value.toLowerCase() === "textbook") {
-//     let IM = 30;
-//   }});}
-    // CO_FS__1.value = IM * ;
+//     CO_FS__1.value = 30;
 //   } else if (type__IM__CA__1.value.toLowerCase() === "textbook chapter") {
 //     CO_FS__1.value = 10;
 //   } else if (type__IM__CA__1.value.toLowerCase() === "manual/module/workbook") {
@@ -723,45 +873,24 @@ function this_function() {
 //   }
 // });
 
-
-
-const type__IM__CA__2 = document.getElementById('type__IM__CA__2');
-  // const cont = document.getElementById('CA__cont__1') //@param myparam ????
-  const CO_FS__2 = document.getElementById('CA-FS__2')
-  type__IM__CA__1.addEventListener("change", () => {
-  if (type__IM__CA__1.value.toLowerCase() === "none") {
-    CO_FS__1.value = 30;
-  }else if (type__IM__CA__1.value.toLowerCase() === "textbook") {
-    CO_FS__1.value = 30;
-  } else if (type__IM__CA__1.value.toLowerCase() === "textbook chapter") {
-    CO_FS__1.value = 10;
-  } else if (type__IM__CA__1.value.toLowerCase() === "manual/module/workbook") {
-    CO_FS__1.value = 16;
-  } else if (type__IM__CA__1.value.toLowerCase() === "multimedia teaching material") {
-    CO_FS__1.value = 16;
-  } else if (type__IM__CA__1.value.toLowerCase() === "testing material") {
-    CO_FS__1.value = 10; 
-  }
-});
-
-const type__IM__CA__1 = document.getElementById('type__IM__CA__1');
-  // const cont = document.getElementById('CA__cont__1') //@param myparam ????
-  const CO_FS__1 = document.getElementById('CA-FS__1')
-  type__IM__CA__1.addEventListener("change", () => {
-  if (type__IM__CA__1.value.toLowerCase() === "none") {
-    CO_FS__1.value = 30;
-  }else if (type__IM__CA__1.value.toLowerCase() === "textbook") {
-    CO_FS__1.value = 30;
-  } else if (type__IM__CA__1.value.toLowerCase() === "textbook chapter") {
-    CO_FS__1.value = 10;
-  } else if (type__IM__CA__1.value.toLowerCase() === "manual/module/workbook") {
-    CO_FS__1.value = 16;
-  } else if (type__IM__CA__1.value.toLowerCase() === "multimedia teaching material") {
-    CO_FS__1.value = 16;
-  } else if (type__IM__CA__1.value.toLowerCase() === "testing material") {
-    CO_FS__1.value = 10; 
-  }
-});
+// const type__IM__CA__1 = document.getElementById('type__IM__CA__1');
+//   // const cont = document.getElementById('CA__cont__1') //@param myparam ????
+//   const CO_FS__1 = document.getElementById('CA-FS__1')
+//   type__IM__CA__1.addEventListener("change", () => {
+//   if (type__IM__CA__1.value.toLowerCase() === "none") {
+//     CO_FS__1.value = 30;
+//   }else if (type__IM__CA__1.value.toLowerCase() === "textbook") {
+//     CO_FS__1.value = 30;
+//   } else if (type__IM__CA__1.value.toLowerCase() === "textbook chapter") {
+//     CO_FS__1.value = 10;
+//   } else if (type__IM__CA__1.value.toLowerCase() === "manual/module/workbook") {
+//     CO_FS__1.value = 16;
+//   } else if (type__IM__CA__1.value.toLowerCase() === "multimedia teaching material") {
+//     CO_FS__1.value = 16;
+//   } else if (type__IM__CA__1.value.toLowerCase() === "testing material") {
+//     CO_FS__1.value = 10; 
+//   }
+// });
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
