@@ -1,13 +1,14 @@
 <?php
-    date_default_timezone_set('Asia/Manila');
-    $server = "localhost";
-    $user = "root";
-    $pass = "";
-    $database = "capstone";
+date_default_timezone_set('Asia/Manila');
+$server = "localhost";
+$user = "root";
+$pass = "";
+$database = "capstone";
 
-    $conn = mysqli_connect($server, $user, $pass, $database);
+// Create a new MySQLi connection object
+$conn = new mysqli($server, $user, $pass, $database);
 
-    if (!$conn) {
-        die("<script>alert('Connection Failed.')</script>");
-    }
-?>
+// Check for a successful connection
+if ($conn->connect_error) {
+    die("<script>alert('Connection Failed: " . $conn->connect_error . "')</script>");
+}

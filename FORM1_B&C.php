@@ -11,7 +11,7 @@ if(isset($_POST['Submit_btn'])){
     
     if($sole_author == ""  OR $co_author == ""  OR $acad_prog == ""  OR $adviser == ""  OR $panel == ""  OR $mentor == ""){
       ?>
-       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script>
             $(document).ready(function(){
@@ -30,7 +30,7 @@ if(isset($_POST['Submit_btn'])){
     }else{
       $conn->query("UPDATE kra_1 SET Crit_B_sole_autho = '$sole_author', Crit_B_co_autho = '$co_author', Crit_B_academe = '$acad_prog', Crit_C_Adviser = '$adviser', Crit_C_Panel = '$panel', Crit_C_Mentor = '$mentor' WHERE id = 1") or die($conn->error);
       ?>
-      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script>
           $(document).ready(function(){

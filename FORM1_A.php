@@ -6,7 +6,7 @@ if(isset($_POST['submit_btn'])){
 
     if ($student == "" OR $faculty == ""){
         ?>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script>
             $(document).ready(function(){
@@ -25,7 +25,7 @@ if(isset($_POST['submit_btn'])){
     }else{
       $conn->query("UPDATE kra_1 SET Crit_A_student_eval = '$student', Crit_A_supervisor_eval = '$faculty' WHERE id = 1") or die($conn->error);
       ?>
-      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script>
           $(document).ready(function(){

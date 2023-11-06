@@ -1,43 +1,27 @@
 <!-- ! PHP BACK-END DOWN BELOW -->
 <?php
  session_start();
- include ('functions.php');
- $conn = DatabaseConnection();
- if(isset($_POST['Login']))
- {
-     if (empty($_POST['Username']) || empty($_POST['Password']))
-        {
+ require ('functions.php');
+if (isset($_POST['Login'])) {
+    if (empty($_POST['Username']) || empty($_POST['Password'])) {
         echo '<script>alert("Please fill up all information")</script>';
-        }
-     else
-     {  
-         $query = "SELECT * FROM users WHERE username = :username AND password = :password";
-         $stmt = $conn -> prepare ($query);
-         $stmt -> execute(
-            array
-            (
-            'username'  => $_POST['Username'],
-            'password'  => $_POST['Password']
-            ) );
+    } else {
+        $query = "SELECT * FROM users WHERE username = ? AND password = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("ss", $_POST['Username'], $_POST['Password']);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-         $count = $stmt->rowcount();
-         if ($count > 0)
-         {
-            $any = $stmt -> fetch(PDO::FETCH_ASSOC);
-            $_SESSION["user_id"] = $any["user_id"];
+        $count = $result->num_rows;
+        if ($count > 0) {
+            $user = $result->fetch_assoc();
+            $_SESSION["user_id"] = $user["user_id"];
             header("location: dashboard.php");
-         }
-         else
-         {
+        } else {
             echo '<script>alert("Invalid Username or Password")</script>';
-         }
-     }
- }
- elseif (isset($_POST['Cancel']))
- {
-    header("location: index.php");
- }
-            
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +30,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./CSS/style.css">
     <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmPodt5vh1lKwmlGvOSj3xeXqUp_TokegUQV_5WxVqgw&s">
     <title>Log in</title>
 </head>
