@@ -539,10 +539,8 @@ if (isset($_POST['submit_btn'])) {
 </html>
 
 
-<script>
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+<script>
     function calc_NCPA() {
         const var1 = document.getElementById('NCPA1').value
         const var2 = document.getElementById('NCPA_2').value
