@@ -800,6 +800,7 @@ if (isset($_POST['submit_btn'])) {
         document.getElementById('cont_final_res').value = parseInt(cont_res1.value) + parseInt(cont_res2.value) + parseInt(cont_res3.value) + parseInt(cont_res4.value);
     }
 
+    //TODO: Upon submit, sum up section totals and save to DB
 
 </script>
 </html>

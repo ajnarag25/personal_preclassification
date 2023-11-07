@@ -1830,5 +1830,9 @@ if (isset($_POST['submit_btn'])) {
 
         document.getElementById('WMD_finale_res').value = (scd_res3.value * 10 + scd_res2.value * 10 + scd_res1.value * 10) / 10
     }
+
+    //TODO: Upon submit, sum up section totals and save to DB
+
 </script>
+
 </html>
