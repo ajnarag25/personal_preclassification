@@ -1,5 +1,7 @@
 <?php
 
+//            TODO: implement update to db function
+
 if (isset($_POST['submit_btn'])) {
     // insert function here
 } else {
@@ -267,60 +269,60 @@ if (isset($_POST['submit_btn'])) {
         </tr>
 
         <tr>
-            <td><input id="" type="text"></td>
-            <td><input id="" type="date"></td>
-            <td><input id="" type="date"></td>
-            <td><input id="" type="text"></td>
+            <td><input id="SIA_1" type="text"></td>
+            <td><input id="SIA_2" type="date"></td>
+            <td><input id="SIA_3" type="date"></td>
+            <td><input id="SIA_4" type="text"></td>
             <td>
-                <select name="" id="">
+                <select name="" id="SIA_5">
                     <option value="none">Select Option</option>
                     <option value="local">Local</option>
-                    <option value="Int">International</option>
+                    <option value="int">International</option>
                 </select>
             </td>
-            <td><input id="" type="text"></td>
-            <td><input id="" disabled type="text"></td>
+            <td><input id="SIA_6" type="text"></td>
+            <td><input id="SIA_result_1" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="date"></td>
-            <td><input type="text"></td>
+            <td><input id="SIA_7" type="text"></td>
+            <td><input id="SIA_8" type="date"></td>
+            <td><input id="SIA_9" type="date"></td>
+            <td><input id="SIA_10" type="text"></td>
             <td>
-                <select name="">
-                    <option value="">Select Option</option>
-                    <option value="">Local</option>
-                    <option value="">International</option>
+                <select id="SIA_11" name="">
+                    <option value="none">Select Option</option>
+                    <option value="local">Local</option>
+                    <option value="int">International</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="SIA_12" type="text"></td>
+            <td><input id="SIA_result_2" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="date"></td>
-            <td><input type="text"></td>
+            <td><input id="SIA_13" type="text"></td>
+            <td><input id="SIA_14" type="date"></td>
+            <td><input id="SIA_15" type="date"></td>
+            <td><input id="SIA_16" type="text"></td>
             <td>
-                <select name="">
-                    <option value="">Select Option</option>
-                    <option value="">Local</option>
-                    <option value="">International</option>
+                <select id="SIA_17" name="">
+                    <option value="none">Select Option</option>
+                    <option value="local">Local</option>
+                    <option value="int">International</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="SIA_18" type="text"></td>
+            <td><input id="SIA_result_3" readonly type="text"></td>
         </tr>
 
         <tr>
             <td colspan="4"></td>
             <td>
-                <button>Calculate</button>
+                <button onclick="calc_SIA()" type="button">Calculate</button>
             </td>
             <td>Total:</td>
-            <td><input disabled type="text"></td>
+            <td><input id="SIA_result_total" name="SIA_Score" type="text"></td>
         </tr>
     </table>
 
@@ -340,49 +342,50 @@ if (isset($_POST['submit_btn'])) {
             <td>Faculty Points</td>
         </tr>
 
+        <!--        TODO: Change input id's 4, 9 , 14, 19 to select fields with options 'Academic Competition' and 'Research Award'      -->
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="SAJ_1" type="text"></td>
+            <td><input id="SAJ_2" type="text"></td>
+            <td><input id="SAJ_3" type="date"></td>
+            <td><input id="SAJ_4" type="text"></td>
+            <td><input id="SAJ_5" type="text"></td>
+            <td><input id="SAJ_result_1" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="SAJ_6" type="text"></td>
+            <td><input id="SAJ_7" type="text"></td>
+            <td><input id="SAJ_8" type="date"></td>
+            <td><input id="SAJ_9" type="text"></td>
+            <td><input id="SAJ_10" type="text"></td>
+            <td><input id="SAJ_result_2" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="SAJ_11" type="text"></td>
+            <td><input id="SAJ_12" type="text"></td>
+            <td><input id="SAJ_13" type="date"></td>
+            <td><input id="SAJ_14" type="text"></td>
+            <td><input id="SAJ_15" type="text"></td>
+            <td><input id="SAJ_result_3" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="SAJ_16" type="text"></td>
+            <td><input id="SAJ_17" type="text"></td>
+            <td><input id="SAJ_18" type="date"></td>
+            <td><input id="SAJ_19" type="text"></td>
+            <td><input id="SAJ_20" type="text"></td>
+            <td><input id="SAJ_result_4" readonly type="text"></td>
         </tr>
 
         <tr>
             <td colspan="3"></td>
             <td>
-                <button>Calculate</button>
+                <button onclick="calc_SAJ()" type="button">Calculate</button>
             </td>
             <td>Total:</td>
-            <td><input disabled type="text"></td>
+            <td><input id="SAJ_result_total" readonly type="text"></td>
         </tr>
     </table>
 
@@ -407,59 +410,59 @@ if (isset($_POST['submit_btn'])) {
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
+            <td><input id="SAASC_1" type="text"></td>
+            <td><input id="SAASC_2" type="text"></td>
+            <td><input id="SAASC_3" type="text"></td>
+            <td><input id="SAASC_4" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">Select Option</option>
-                    <option value="">Local</option>
-                    <option value="">International</option>
+                <select name="" id="SAASC_5">
+                    <option value="none">Select Option</option>
+                    <option value="local">Local</option>
+                    <option value="international">International</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="SAASC_6" type="text"></td>
+            <td><input id="SAASC_result_1" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
+            <td><input id="SAASC_7" type="text"></td>
+            <td><input id="SAASC_8" type="text"></td>
+            <td><input id="SAASC_9" type="text"></td>
+            <td><input id="SAASC_10" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">Select Option</option>
-                    <option value="">Local</option>
-                    <option value="">International</option>
+                <select name="" id="SAASC_11">
+                    <option value="none">Select Option</option>
+                    <option value="local">Local</option>
+                    <option value="international">International</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="SAASC_12" type="text"></td>
+            <td><input id="SAASC_result_2" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
+            <td><input id="SAASC_13" type="text"></td>
+            <td><input id="SAASC_14" type="text"></td>
+            <td><input id="SAASC_15" type="text"></td>
+            <td><input id="SAASC_16" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">Select Option</option>
-                    <option value="">Local</option>
-                    <option value="">International</option>
+                <select name="" id="SAASC_17">
+                    <option value="none">Select Option</option>
+                    <option value="local">Local</option>
+                    <option value="international">International</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="SAASC_18" type="text"></td>
+            <td><input id="SAASC_result_3" readonly type="text"></td>
         </tr>
         <tr>
             <td colspan="4"></td>
             <td>
-                <button>Calculate</button>
+                <button onclick="calc_SAASC()" type="button">Calculate</button>
             </td>
             <td>Total:</td>
-            <td><input disabled type="text"></td>
+            <td><input id="SAASC_result_total" readonly type="text"></td>
         </tr>
     </table>
 
@@ -474,8 +477,12 @@ if (isset($_POST['submit_btn'])) {
             <td>Period of Engagement <br>
                 (mm/dd/yyyy to mm/dd/yyyy)
             </td>
-            <td>No. of engagements</td>  <!-- TODO: Missing HTML for faculty points -->
+            <td>No. of engagements</td>
         </tr>
+
+        <!--        TODO: Missing HTML for faculty points          -->
+        <!--        TODO: name IDs          -->
+        <!--        TODO: implement formula         -->
 
         <tr>
             <td>Writer of occasional newspaper column</td>
@@ -541,63 +548,63 @@ if (isset($_POST['submit_btn'])) {
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date" name="" id=""></td>
-            <td><input type="date" name="" id=""></td>
+            <td><input id="FOEH_1" type="text"></td>
+            <td><input id="FOEH_2" type="text"></td>
+            <td><input id="FOEH_3" type="text"></td>
+            <td><input id="FOEH_4" type="date" name=""></td>
+            <td><input id="FOEH_5" type="date" name=""></td>
             <td>
-                <select name="" id="">
-                    <option value="">Select Option</option>
-                    <option value="">Local</option>
-                    <option value="">International</option>
+                <select id="FOEH_6" name="">
+                    <option value="none">Select Option</option>
+                    <option value="local">Local</option>
+                    <option value="international">International</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="FOEH_7" type="text"></td>
+            <td><input id="FOEH_result_1" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date" name="" id=""></td>
-            <td><input type="date" name="" id=""></td>
+            <td><input id="FOEH_8" type="text"></td>
+            <td><input id="FOEH_9" type="text"></td>
+            <td><input id="FOEH_10" type="text"></td>
+            <td><input id="FOEH_11" type="date" name=""></td>
+            <td><input id="FOEH_12" type="date" name=""></td>
             <td>
-                <select name="" id="">
-                    <option value="">Select Option</option>
-                    <option value="">Local</option>
-                    <option value="">International</option>
+                <select id="FOEH_13" name="">
+                    <option value="none">Select Option</option>
+                    <option value="local">Local</option>
+                    <option value="international">International</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="FOEH_14" type="text"></td>
+            <td><input id="FOEH_result_2" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date" name="" id=""></td>
-            <td><input type="date" name="" id=""></td>
+            <td><input id="FOEH_15" type="text"></td>
+            <td><input id="FOEH_16" type="text"></td>
+            <td><input id="FOEH_17" type="text"></td>
+            <td><input id="FOEH_18" type="date" name=""></td>
+            <td><input id="FOEH_19" type="date" name=""></td>
             <td>
-                <select name="" id="">
-                    <option value="">Select Option</option>
-                    <option value="">Local</option>
-                    <option value="">International</option>
+                <select id="FOEH_20" name="">
+                    <option value="none">Select Option</option>
+                    <option value="local">Local</option>
+                    <option value="international">International</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="FOEH_21" type="text"></td>
+            <td><input id="FOEH_result_3" readonly type="text"></td>
         </tr>
 
         <tr>
             <td colspan="5"></td>
             <td>
-                <button>Calculate</button>
+                <button onclick="calc_FOEH()" type="button">Calculate</button>
             </td>
             <td>Total:</td>
-            <td><input disabled type="text"></td>
+            <td><input id="FOEH_result_total" readonly type="text"></td>
         </tr>
     </table>
 
@@ -619,71 +626,71 @@ if (isset($_POST['submit_btn'])) {
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
+            <td><input id="FESOP_1" type="text"></td>
+            <td><input id="FESOP_2" type="text"></td>
+            <td><input id="FESOP_3" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">Select Option</option>
-                    <option value="">Head</option>
-                    <option value="">Participant</option>
+                <select id="FESOP_4" name="">
+                    <option value="none">Select Option</option>
+                    <option value="head">Head</option>
+                    <option value="participant">Participant</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text" disabled></td>
+            <td><input id="FESOP_5" type="text"></td>
+            <td><input id="FESOP_result_1" type="text" readonly></td>
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
+            <td><input id="FESOP_6" type="text"></td>
+            <td><input id="FESOP_7" type="text"></td>
+            <td><input id="FESOP_8" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">Select Option</option>
-                    <option value="">Head</option>
-                    <option value="">Participant</option>
+                <select id="FESOP_9" name="">
+                    <option value="none">Select Option</option>
+                    <option value="head">Head</option>
+                    <option value="participant">Participant</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text" disabled></td>
+            <td><input id="FESOP_10" type="text"></td>
+            <td><input id="FESOP_result_2" type="text" readonly></td>
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
+            <td><input id="FESOP_11" type="text"></td>
+            <td><input id="FESOP_12" type="text"></td>
+            <td><input id="FESOP_13" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">Select Option</option>
-                    <option value="">Head</option>
-                    <option value="">Participant</option>
+                <select id="FESOP_14" name="">
+                    <option value="none">Select Option</option>
+                    <option value="head">Head</option>
+                    <option value="participant">Participant</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text" disabled></td>
+            <td><input id="FESOP_15" type="text"></td>
+            <td><input id="FESOP_result_3" type="text" readonly></td>
         </tr>
 
         <tr>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
+            <td><input id="FESOP_16" type="text"></td>
+            <td><input id="FESOP_17" type="text"></td>
+            <td><input id="FESOP_18" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">Select Option</option>
-                    <option value="">Head</option>
-                    <option value="">Participant</option>
+                <select id="FESOP_19" name="">
+                    <option value="none">Select Option</option>
+                    <option value="head">Head</option>
+                    <option value="participant">Participant</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text" disabled></td>
+            <td><input id="FESOP_20" type="text"></td>
+            <td><input id="FESOP_result_4" type="text" readonly></td>
         </tr>
         <tr>
             <td colspan="3"></td>
             <td>
-                <button>Calculate</button>
+                <button onclick="calc_FESOP()" type="button">Calculate</button>
             </td>
             <td>Total:</td>
-            <td><input disabled type="text"></td>
+            <td><input id="FESOP_result_total" readonly type="text"></td>
         </tr>
 
     </table>
@@ -858,51 +865,401 @@ if (isset($_POST['submit_btn'])) {
         document.getElementById('TIG_finale_res').value = parseFloat(the_Res2.value) + parseFloat(the_Res3.value) + parseFloat(the_Res1.value)
     }
 
-    //TODO: Criterion B
+    function calc_SIA() {
+        const SIA_1 = document.getElementById('SIA_1').value
+        const SIA_2 = document.getElementById('SIA_2').value
+        const SIA_3 = document.getElementById('SIA_3').value
+        const SIA_4 = document.getElementById('SIA_4').value
+        const SIA_5 = document.getElementById('SIA_5').value
+        const SIA_6 = document.getElementById('SIA_6').value
+        const SIA_result_1 = document.getElementById('SIA_result_1')
 
-    // function () {
-    //     const var1 = document.getElementById('').value
-    //     const var2 = document.getElementById('').value
-    //     const var3 = document.getElementById('').value
-    //     const var4 = document.getElementById('').value
-    //     const var5 = document.getElementById('').value
-    //     const var6 = document.getElementById('').value
-    //     const var7 = document.getElementById('').value
-    //     const the_Res1 = document.getElementById('')
-    //     if (var1 !== "" && var2 !== "" && var3 !== "" && var4 !== "" && var5 !== "" && var6 !== "") {
-    //         the_Res1.value = 20
-    //     } else {
-    //         the_Res1.value = 0;
-    //     }
-    //
-    //     const test21 = document.getElementById('').value
-    //     const test22 = document.getElementById('').value
-    //     const test23 = document.getElementById('').value
-    //     const test24 = document.getElementById('').value
-    //     const test25 = document.getElementById('').value
-    //     const test26 = document.getElementById('').value
-    //     const the_Res2 = document.getElementById('')
-    //     if (test21 !== "" && test22 !== "" && test23 !== "" && test24 !== "" && test25 !== "" && test26 !== "") {
-    //         the_Res2.value = 20
-    //     } else {
-    //         the_Res2.value = 0;
-    //     }
-    //
-    //
-    //     const fgh31 = document.getElementById('').value
-    //     const fgh32 = document.getElementById('').value
-    //     const fgh33 = document.getElementById('').value
-    //     const fgh34 = document.getElementById('').value
-    //     const fgh35 = document.getElementById('').value
-    //     const fgh36 = document.getElementById('').value
-    //     const the_Res3 = document.getElementById('')
-    //     if (test21 !== "" && test22 !== "" && test23 !== "" && test24 !== "" && test25 !== "" && test26 !== "") {
-    //         the_Res3.value = 20
-    //     } else {
-    //         the_Res3.value = 0;
-    //     }
-    //
-    //     document.getElementById('').value = parseInt(the_Res2.value) + parseInt(the_Res3.value) + parseInt(the_Res1.value)
-    // }
+        if (SIA_1 !== "" && SIA_2 !== "" && SIA_3 !== "" && SIA_4 !== "" && SIA_5 !== "" && SIA_6 !== "") {
+            if (SIA_5 === 'none') {
+                SIA_result_1.value = 0;
+            } else if (SIA_5 === 'local') {
+                SIA_result_1.value = 8;
+            } else if (SIA_5 === 'int') {
+                SIA_result_1.value = 10;
+            }
+        } else {
+            SIA_result_1.value = 0;
+        }
+
+        const SIA_7 = document.getElementById('SIA_7').value
+        const SIA_8 = document.getElementById('SIA_8').value
+        const SIA_9 = document.getElementById('SIA_9').value
+        const SIA_10 = document.getElementById('SIA_10').value
+        const SIA_11 = document.getElementById('SIA_11').value
+        const SIA_12 = document.getElementById('SIA_12').value
+        const SIA_result_2 = document.getElementById('SIA_result_2')
+
+        if (SIA_7 !== "" && SIA_8 !== "" && SIA_9 !== "" && SIA_10 !== "" && SIA_11 !== "" && SIA_12 !== "") {
+            if (SIA_11 === 'none') {
+                SIA_result_2.value = 0;
+            } else if (SIA_11 === 'local') {
+                SIA_result_2.value = 8;
+            } else if (SIA_11 === 'int') {
+                SIA_result_2.value = 10;
+            }
+        } else {
+            SIA_result_2.value = 0;
+        }
+
+        const SIA_13 = document.getElementById('SIA_13').value
+        const SIA_14 = document.getElementById('SIA_14').value
+        const SIA_15 = document.getElementById('SIA_15').value
+        const SIA_16 = document.getElementById('SIA_16').value
+        const SIA_17 = document.getElementById('SIA_17').value
+        const SIA_18 = document.getElementById('SIA_18').value
+        const SIA_result_3 = document.getElementById('SIA_result_3')
+
+        if (SIA_13 !== "" && SIA_14 !== "" && SIA_15 !== "" && SIA_16 !== "" && SIA_17 !== "" && SIA_18 !== "") {
+            if (SIA_17 === 'none') {
+                SIA_result_3.value = 0;
+            } else if (SIA_17 === 'local') {
+                SIA_result_3.value = 8;
+            } else if (SIA_17 === 'int') {
+                SIA_result_3.value = 10;
+            }
+        } else {
+            SIA_result_3.value = 0;
+        }
+
+        document.getElementById('SIA_result_total').value = parseFloat(SIA_result_1.value) + parseFloat(SIA_result_2.value) + parseFloat(SIA_result_3.value);
+    }
+
+    //TODO: 1.2 SAJ update control blocks formula to reflect new select tags
+    //TODO: 1.2 SAJ sum up scores
+
+    function calc_SAJ() {
+        const SAJ_1 = document.getElementById('SAJ_1').value
+        const SAJ_2 = document.getElementById('SAJ_2').value
+        const SAJ_3 = document.getElementById('SAJ_3').value
+        const SAJ_4 = document.getElementById('SAJ_4').value
+        const SAJ_5 = document.getElementById('SAJ_5').value
+        const SAJ_result_1 = document.getElementById('SAJ_result_1')
+
+        if (SAJ_1 !== "" && SAJ_2 !== "" && SAJ_3 !== "" && SAJ_4 !== "" && SAJ_5 !== "") {
+            if (SAJ_5 === 'none') {
+                SAJ_result_1.value = 0;
+            } else if (SAJ_5 === 'local') {
+                SAJ_result_1.value = 8;
+            } else if (SAJ_5 === 'int') {
+                SAJ_result_1.value = 10;
+            }
+        } else {
+            SAJ_result_1.value = 0;
+        }
+
+        const SAJ_6 = document.getElementById('SAJ_6').value
+        const SAJ_7 = document.getElementById('SAJ_7').value
+        const SAJ_8 = document.getElementById('SAJ_8').value
+        const SAJ_9 = document.getElementById('SAJ_9').value
+        const SAJ_10 = document.getElementById('SAJ_10').value
+        const SAJ_result_2 = document.getElementById('SAJ_result_2')
+
+        if (SAJ_6 !== "" && SAJ_7 !== "" && SAJ_8 !== "" && SAJ_9 !== "" && SAJ_10 !== "") {
+            if (SAJ_10 === 'none') {
+                SAJ_result_2.value = 0;
+            } else if (SAJ_10 === 'local') {
+                SAJ_result_2.value = 8;
+            } else if (SAJ_10 === 'int') {
+                SAJ_result_2.value = 10;
+            }
+        } else {
+            SAJ_result_2.value = 0;
+        }
+
+        const SAJ_11 = document.getElementById('SAJ_11').value
+        const SAJ_12 = document.getElementById('SAJ_12').value
+        const SAJ_13 = document.getElementById('SAJ_13').value
+        const SAJ_14 = document.getElementById('SAJ_14').value
+        const SAJ_15 = document.getElementById('SAJ_15').value
+        const SAJ_result_3 = document.getElementById('SAJ_result_3')
+
+        if (SAJ_11 !== "" && SAJ_12 !== "" && SAJ_13 !== "" && SAJ_14 !== "" && SAJ_15 !== "") {
+            if (SAJ_15 === 'none') {
+                SAJ_result_3.value = 0;
+            } else if (SAJ_15 === 'local') {
+                SAJ_result_3.value = 8;
+            } else if (SAJ_15 === 'int') {
+                SAJ_result_3.value = 10;
+            }
+        } else {
+            SAJ_result_3.value = 0;
+        }
+
+        const SAJ_16 = document.getElementById('SAJ_16').value
+        const SAJ_17 = document.getElementById('SAJ_17').value
+        const SAJ_18 = document.getElementById('SAJ_18').value
+        const SAJ_19 = document.getElementById('SAJ_19').value
+        const SAJ_20 = document.getElementById('SAJ_20').value
+        const SAJ_result_4 = document.getElementById('SAJ_result_4')
+
+        if (SAJ_16 !== "" && SAJ_17 !== "" && SAJ_18 !== "" && SAJ_19 !== "" && SAJ_20 !== "") {
+            if (SAJ_20 === 'none') {
+                SAJ_result_4.value = 0;
+            } else if (SAJ_20 === 'local') {
+                SAJ_result_4.value = 8;
+            } else if (SAJ_20 === 'int') {
+                SAJ_result_4.value = 10;
+            }
+        } else {
+            SAJ_result_4.value = 0;
+        }
+
+        document.getElementById('SAJ_result_total').value = parseFloat(SAJ_result_1.value) + parseFloat(SAJ_result_2.value) + parseFloat(SAJ_result_3.value) + parseFloat(SAJ_result_4.value);
+    }
+
+    function calc_SAASC() {
+        const SAASC_1 = document.getElementById('SAASC_1').value
+        const SAASC_2 = document.getElementById('SAASC_2').value
+        const SAASC_3 = document.getElementById('SAASC_3').value
+        const SAASC_4 = document.getElementById('SAASC_4').value
+        const SAASC_5 = document.getElementById('SAASC_5').value
+        const SAASC_6 = document.getElementById('SAASC_6').value
+        const SAASC_result_1 = document.getElementById('SAASC_result_1')
+
+        if (SAASC_1 !== "" && SAASC_2 !== "" && SAASC_3 !== "" && SAASC_4 !== "" && SAASC_5 !== "" && SAASC_6 !== "") {
+            if (SAASC_5 === 'none') {
+                SAASC_result_1.value = 0;
+            } else if (SAASC_5 === 'local') {
+                SAASC_result_1.value = 8;
+            } else if (SAASC_5 === 'international') {
+                SAASC_result_1.value = 10;
+            }
+        } else {
+            SAASC_result_1.value = 0;
+        }
+
+        const SAASC_7 = document.getElementById('SAASC_7').value
+        const SAASC_8 = document.getElementById('SAASC_8').value
+        const SAASC_9 = document.getElementById('SAASC_9').value
+        const SAASC_10 = document.getElementById('SAASC_10').value
+        const SAASC_11 = document.getElementById('SAASC_11').value
+        const SAASC_12 = document.getElementById('SAASC_12').value
+        const SAASC_result_2 = document.getElementById('SAASC_result_2')
+
+        if (SAASC_7 !== "" && SAASC_8 !== "" && SAASC_9 !== "" && SAASC_10 !== "" && SAASC_11 !== "" && SAASC_12 !== "") {
+            if (SAASC_11 === 'none') {
+                SAASC_result_2.value = 0;
+            } else if (SAASC_11 === 'local') {
+                SAASC_result_2.value = 8;
+            } else if (SAASC_11 === 'international') {
+                SAASC_result_2.value = 10;
+            }
+        } else {
+            SAASC_result_2.value = 0;
+        }
+
+        const SAASC_13 = document.getElementById('SAASC_13').value
+        const SAASC_14 = document.getElementById('SAASC_14').value
+        const SAASC_15 = document.getElementById('SAASC_15').value
+        const SAASC_16 = document.getElementById('SAASC_16').value
+        const SAASC_17 = document.getElementById('SAASC_17').value
+        const SAASC_18 = document.getElementById('SAASC_18').value
+        const SAASC_result_3 = document.getElementById('SAASC_result_3')
+
+        if (SAASC_13 !== "" && SAASC_14 !== "" && SAASC_15 !== "" && SAASC_16 !== "" && SAASC_17 !== "" && SAASC_18 !== "") {
+            if (SAASC_17 === 'none') {
+                SAASC_result_3.value = 0;
+            } else if (SAASC_17 === 'local') {
+                SAASC_result_3.value = 8;
+            } else if (SAASC_17 === 'international') {
+                SAASC_result_3.value = 10;
+            }
+        } else {
+            SAASC_result_3.value = 0;
+        }
+
+    }
+
+    function calc_FOEH() {
+        const FOEH_1 = document.getElementById('FOEH_1').value
+        const FOEH_2 = document.getElementById('FOEH_2').value
+        const FOEH_3 = document.getElementById('FOEH_3').value
+        const FOEH_4 = document.getElementById('FOEH_4').value
+        const FOEH_5 = document.getElementById('FOEH_5').value
+        const FOEH_6 = document.getElementById('FOEH_6').value
+        const FOEH_7 = document.getElementById('FOEH_7').value
+        const FOEH_result_1 = document.getElementById('FOEH_result_1')
+
+        if (FOEH_1 !== "" &&
+            FOEH_2 !== "" &&
+            FOEH_3 !== "" &&
+            FOEH_4 !== "" &&
+            FOEH_5 !== "" &&
+            FOEH_6 !== "" &&
+            FOEH_7 !== "") {
+            if (FOEH_6 === 'none') {
+                FOEH_result_1.value = 0;
+            } else if (FOEH_6 === 'local') {
+                FOEH_result_1.value = 2 * FOEH_7;
+            } else if (FOEH_6 === 'international') {
+                FOEH_result_1.value = 3 * FOEH_7;
+            }
+        } else {
+            FOEH_result_1.value = 0;
+        }
+
+        const FOEH_8 = document.getElementById('FOEH_8').value
+        const FOEH_9 = document.getElementById('FOEH_9').value
+        const FOEH_10 = document.getElementById('FOEH_10').value
+        const FOEH_11 = document.getElementById('FOEH_11').value
+        const FOEH_12 = document.getElementById('FOEH_12').value
+        const FOEH_13 = document.getElementById('FOEH_13').value
+        const FOEH_14 = document.getElementById('FOEH_14').value
+        const FOEH_result_2 = document.getElementById('FOEH_result_2')
+
+        if (FOEH_8 !== "" &&
+            FOEH_9 !== "" &&
+            FOEH_10 !== "" &&
+            FOEH_11 !== "" &&
+            FOEH_12 !== "" &&
+            FOEH_13 !== "" &&
+            FOEH_14 !== "") {
+            if (FOEH_13 === 'none') {
+                FOEH_result_2.value = 0;
+            } else if (FOEH_13 === 'local') {
+                FOEH_result_2.value = 2 * FOEH_14;
+            } else if (FOEH_13 === 'international') {
+                FOEH_result_2.value = 3 * FOEH_14;
+            }
+        } else {
+            FOEH_result_2.value = 0;
+        }
+
+        const FOEH_15 = document.getElementById('FOEH_15').value
+        const FOEH_16 = document.getElementById('FOEH_16').value
+        const FOEH_17 = document.getElementById('FOEH_17').value
+        const FOEH_18 = document.getElementById('FOEH_18').value
+        const FOEH_19 = document.getElementById('FOEH_19').value
+        const FOEH_20 = document.getElementById('FOEH_20').value
+        const FOEH_21 = document.getElementById('FOEH_21').value
+        const FOEH_result_3 = document.getElementById('FOEH_result_3')
+
+        if (FOEH_15 !== "" &&
+            FOEH_16 !== "" &&
+            FOEH_17 !== "" &&
+            FOEH_18 !== "" &&
+            FOEH_19 !== "" &&
+            FOEH_20 !== "" &&
+            FOEH_21 !== "") {
+            if (FOEH_20 === 'none') {
+                FOEH_result_3.value = 0;
+            } else if (FOEH_20 === 'local') {
+                FOEH_result_3.value = 2 * FOEH_21;
+            } else if (FOEH_20 === 'international') {
+                FOEH_result_3.value = 3 * FOEH_21;
+            }
+        } else {
+            FOEH_result_3.value = 0;
+        }
+
+        document.getElementById('FOEH_result_total').value = parseFloat(FOEH_result_1.value) + parseFloat(FOEH_result_2.value) +parseFloat(FOEH_result_3.value);
+
+    }
+
+    function calc_FESOP() {
+        const FESOP_1 = document.getElementById('FESOP_1').value
+        const FESOP_2 = document.getElementById('FESOP_2').value
+        const FESOP_3 = document.getElementById('FESOP_3').value
+        const FESOP_4 = document.getElementById('FESOP_4').value
+        const FESOP_5 = document.getElementById('FESOP_5').value
+        const FESOP_result_1 = document.getElementById('FESOP_result_1')
+
+        if (FESOP_1 !== "" &&
+            FESOP_2 !== "" &&
+            FESOP_3 !== "" &&
+            FESOP_4 !== "" &&
+            FESOP_5 !== "") {
+            if (FESOP_4 === 'none') {
+                FESOP_result_1.value = 0;
+            } else if (FESOP_4 === 'head') {
+                FESOP_result_1.value = 5;
+            } else if (FESOP_4 === 'participant') {
+                FESOP_result_1.value = 2;
+            }
+
+        } else {
+            FESOP_result_1.value = 0;
+        }
+
+        const FESOP_6 = document.getElementById('FESOP_6').value
+        const FESOP_7 = document.getElementById('FESOP_7').value
+        const FESOP_8 = document.getElementById('FESOP_8').value
+        const FESOP_9 = document.getElementById('FESOP_9').value
+        const FESOP_10 = document.getElementById('FESOP_10').value
+        const FESOP_result_2 = document.getElementById('FESOP_result_2')
+
+        if (FESOP_6 !== "" &&
+            FESOP_7 !== "" &&
+            FESOP_8 !== "" &&
+            FESOP_9 !== "" &&
+            FESOP_10 !== "") {
+            if (FESOP_9 === 'none') {
+                FESOP_result_2.value = 0;
+            } else if (FESOP_9 === 'head') {
+                FESOP_result_2.value = 5;
+            } else if (FESOP_9 === 'participant') {
+                FESOP_result_2.value = 2;
+            }
+
+        } else {
+            FESOP_result_2.value = 0;
+        }
+
+        const FESOP_11 = document.getElementById('FESOP_11').value
+        const FESOP_12 = document.getElementById('FESOP_12').value
+        const FESOP_13 = document.getElementById('FESOP_13').value
+        const FESOP_14 = document.getElementById('FESOP_14').value
+        const FESOP_15 = document.getElementById('FESOP_15').value
+        const FESOP_result_3 = document.getElementById('FESOP_result_3')
+
+        if (FESOP_11 !== "" &&
+            FESOP_12 !== "" &&
+            FESOP_13 !== "" &&
+            FESOP_14 !== "" &&
+            FESOP_15 !== "") {
+            if (FESOP_14 === 'none') {
+                FESOP_result_3.value = 0;
+            } else if (FESOP_14 === 'head') {
+                FESOP_result_3.value = 5;
+            } else if (FESOP_14 === 'participant') {
+                FESOP_result_3.value = 2;
+            }
+
+        } else {
+            FESOP_result_3.value = 0;
+        }
+
+        const FESOP_16 = document.getElementById('FESOP_16').value
+        const FESOP_17 = document.getElementById('FESOP_17').value
+        const FESOP_18 = document.getElementById('FESOP_18').value
+        const FESOP_19 = document.getElementById('FESOP_19').value
+        const FESOP_20 = document.getElementById('FESOP_20').value
+        const FESOP_result_4 = document.getElementById('FESOP_result_4')
+
+        if (FESOP_16 !== "" &&
+            FESOP_17 !== "" &&
+            FESOP_18 !== "" &&
+            FESOP_19 !== "" &&
+            FESOP_20 !== "") {
+            if (FESOP_19 === 'none') {
+                FESOP_result_4.value = 0;
+            } else if (FESOP_19 === 'head') {
+                FESOP_result_4.value = 5;
+            } else if (FESOP_19 === 'participant') {
+                FESOP_result_4.value = 2;
+            }
+
+        } else {
+            FESOP_result_4.value = 0;
+        }
+
+        document.getElementById('FESOP_result_total').value = parseFloat(FESOP_result_1.value) + parseFloat(FESOP_result_2.value) +parseFloat(FESOP_result_3.value) +parseFloat(FESOP_result_4.value);
+
+    }
 
 </script>
