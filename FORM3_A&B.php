@@ -1,13 +1,76 @@
 <?php
 
+require 'functions.php';
 //            TODO: implement update to db function
 
 if (isset($_POST['submit_btn'])) {
-    // insert function here
-} else {
-    if (isset($_POST['cancel_btn'])) {
-        header('location: dashboard.php');
-    } else {
+
+    $scoreFTE = $_POST['FTE_final_res'];
+    $scoreTIG = $_POST['TIG_finale_res'];
+    $scoreSIA = $_POST['SIA_result_total'];
+//    $scoreSAJ = $_POST['SAJ_result_total']; TODO: Change input id's 4, 9 , 14, 19 to select fields with options 'Academic Competition' and 'Research Award'
+    $scoreSAASC = $_POST['SAASC_result_total'];
+//    $score = $_POST['']; TODO: Services through media faculty score html
+    $scoreFOEH = $_POST['FOEH_result_total'];
+    $scoreFESOP = $_POST['FESOP_result_total'];
+
+
+    if (
+        empty($scoreFTE) &&
+        empty($scoreTIG) &&
+        empty($scoreSIA) &&
+//        $scoreSAJ = "" && TODO: uncomment when column type of input id's 4, 9 , 14, 19 are updated
+        empty($scoreSAASC) &&
+        empty($scoreFOEH) &&
+        empty($scoreFESOP)
+
+    ) {
+        ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please provide the required faculty score',
+                    text: 'Something went wrong!',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Okay'
+                })
+            })
+        </script>
+        <?php
+    } else { // TODO: Crit_B.1.4.1-4  html then update to db // TODO: Crit_B_1.2 html then update to db
+        $conn->query(
+            "UPDATE kra_3 SET 
+                 Crit_A_LNAP = '$scoreFTE',
+                 Crit_A_CTIG = '$scoreTIG',
+                 `Crit_B_1.1` = '$scoreSIA',
+                 `Crit_B_1.3` = '$scoreSAASC',
+                 `Crit_B_1.5` = '$scoreFOEH',
+                 `Crit_B_2.1` = '$scoreFESOP'
+                 WHERE KRA3_ID = 1") or die($conn->error);
+        ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Successfully saved!',
+                    text: 'Inserted into database',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Okay'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "dashboard.php";
+                    }
+                })
+
+            })
+        </script>
+        <?php
+
     }
 }
 
@@ -169,7 +232,7 @@ if (isset($_POST['submit_btn'])) {
                 <button onclick="Calcu_FTE()" type="button">Calculate</button>
             </td>
             <td>Total:</td>
-            <td><input id="FTE_final_res" readonly type="text"></td>
+            <td><input id="FTE_final_res" name="FTE_final_res" readonly type="text"></td>
         </tr>
     </table>
 
@@ -237,7 +300,7 @@ if (isset($_POST['submit_btn'])) {
             <button onclick="calcu_TIG()" type="button">Calculate</button>
         </td>
         <td>Total:</td>
-        <td><input id="TIG_finale_res" readonly type="text"></td>
+        <td><input id="TIG_finale_res" name="TIG_finale_res" readonly type="text"></td>
         </tr>
 
     </table>
@@ -322,7 +385,7 @@ if (isset($_POST['submit_btn'])) {
                 <button onclick="calc_SIA()" type="button">Calculate</button>
             </td>
             <td>Total:</td>
-            <td><input id="SIA_result_total" name="SIA_Score" type="text"></td>
+            <td><input id="SIA_result_total" name="SIA_result_total" type="text"></td>
         </tr>
     </table>
 
@@ -385,7 +448,7 @@ if (isset($_POST['submit_btn'])) {
                 <button onclick="calc_SAJ()" type="button">Calculate</button>
             </td>
             <td>Total:</td>
-            <td><input id="SAJ_result_total" readonly type="text"></td>
+            <td><input id="SAJ_result_total" name="SAJ_result_total" readonly type="text"></td>
         </tr>
     </table>
 
@@ -462,7 +525,7 @@ if (isset($_POST['submit_btn'])) {
                 <button onclick="calc_SAASC()" type="button">Calculate</button>
             </td>
             <td>Total:</td>
-            <td><input id="SAASC_result_total" readonly type="text"></td>
+            <td><input id="SAASC_result_total" name="SAASC_result_total" readonly type="text"></td>
         </tr>
     </table>
 
@@ -604,7 +667,7 @@ if (isset($_POST['submit_btn'])) {
                 <button onclick="calc_FOEH()" type="button">Calculate</button>
             </td>
             <td>Total:</td>
-            <td><input id="FOEH_result_total" readonly type="text"></td>
+            <td><input id="FOEH_result_total" name="FOEH_result_total" readonly type="text"></td>
         </tr>
     </table>
 
@@ -690,7 +753,7 @@ if (isset($_POST['submit_btn'])) {
                 <button onclick="calc_FESOP()" type="button">Calculate</button>
             </td>
             <td>Total:</td>
-            <td><input id="FESOP_result_total" readonly type="text"></td>
+            <td><input id="FESOP_result_total" name="FESOP_result_total" readonly type="text"></td>
         </tr>
 
     </table>
@@ -1073,6 +1136,8 @@ if (isset($_POST['submit_btn'])) {
             SAASC_result_3.value = 0;
         }
 
+        document.getElementById('SAASC_result_total').value = parseFloat(SAASC_result_1.value) + parseFloat(SAASC_result_2.value) + parseFloat(SAASC_result_3.value)
+
     }
 
     function calc_FOEH() {
@@ -1157,7 +1222,7 @@ if (isset($_POST['submit_btn'])) {
             FOEH_result_3.value = 0;
         }
 
-        document.getElementById('FOEH_result_total').value = parseFloat(FOEH_result_1.value) + parseFloat(FOEH_result_2.value) +parseFloat(FOEH_result_3.value);
+        document.getElementById('FOEH_result_total').value = parseFloat(FOEH_result_1.value) + parseFloat(FOEH_result_2.value) + parseFloat(FOEH_result_3.value);
 
     }
 
@@ -1258,7 +1323,7 @@ if (isset($_POST['submit_btn'])) {
             FESOP_result_4.value = 0;
         }
 
-        document.getElementById('FESOP_result_total').value = parseFloat(FESOP_result_1.value) + parseFloat(FESOP_result_2.value) +parseFloat(FESOP_result_3.value) +parseFloat(FESOP_result_4.value);
+        document.getElementById('FESOP_result_total').value = parseFloat(FESOP_result_1.value) + parseFloat(FESOP_result_2.value) + parseFloat(FESOP_result_3.value) + parseFloat(FESOP_result_4.value);
 
     }
 
