@@ -164,11 +164,6 @@ table {
       <td><input disabled type="text"></td>
     </tr>
     <tr>
-      <td>1.5 For every hour of training/seminar/workshop conducted as Resource Person/Convenor/ Facilitator / Moderator/Keynote Speaker/Plenary Speaker/Panelist</td>
-      <td><input disabled type="text"></td>
-      <td></td>
-    </tr>
-    <tr>
       <td><b>TOTAL: </b></td>
       <td><input disabled type="text"></td>
       <td></td>
