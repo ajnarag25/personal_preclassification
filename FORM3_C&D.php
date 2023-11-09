@@ -23,7 +23,7 @@ if (isset($_POST['Submit_btn'])) {
         <?php
     } else {
         $conn->query(
-            "UPDATE kra_3 SET Crit_C_1 = '$scoreStudent', Crit_D_1  = '$scoreAdmin' WHERE KRA3_ID = 1") or die($conn->error);
+            "UPDATE kra_3 SET Crit_C_1 = '$scoreStudent', Crit_C_total = '$scoreStudent', Crit_D_1  = '$scoreAdmin', Crit_D_total = '$scoreAdmin' WHERE KRA3_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
