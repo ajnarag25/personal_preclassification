@@ -12,3 +12,7 @@ $conn = new mysqli($server, $user, $pass, $database);
 if ($conn->connect_error) {
     die("<script>alert('Connection Failed: " . $conn->connect_error . "')</script>");
 }
+
+function limitTo40($value) {
+    return min($value, 40);
+}
