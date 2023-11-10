@@ -1,13 +1,62 @@
 <?php
+require 'functions.php';
 if (isset($_POST['submit_btn'])) {
-//    TODO: update to database
-} else {
-    if (isset($_POST['cancel_btn'])) {
-        header('location: dashboard.php');
+    $scoreFEA = $_POST['FEA_score'];
+    $scoreFEY = $_POST['FEY_score'];
+    $scoreFEYO = $_POST['FEYO_score'];
+    $scoreDTotal = $scoreFEY + $scoreFEYO;
+    if (
+        empty($scoreFEA) &&
+        empty($scoreFEY) &&
+        empty($scoreFEYO) &&
+        empty($scoreDTotal)
+    ) {
+        ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Please provide the required faculty score',
+                    text: 'Something went wrong!',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Okay'
+                })
+            })
+        </script>
+        <?php
     } else {
+        $conn->query(
+            "UPDATE kra_4 SET
+                 Crit_C_1st = '$scoreFEA',
+                 Crit_C_total = '$scoreFEA',
+                 Crit_D_1st = '$scoreFEY',
+                 Crit_D_2nd = '$scoreFEYO',
+                 Crit_D_total = '$scoreDTotal',
+                 KRA4_total = Crit_A_total + Crit_B_total + Crit_C_total + Crit_D_total
+             WHERE Kra4_ID = 1") or die($conn->error);
+        ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Successfully saved!',
+                    text: 'Inserted into database',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Okay'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "dashboard.php";
+                    }
+                })
+            })
+        </script>
+        <?php
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -164,7 +213,7 @@ if (isset($_POST['submit_btn'])) {
         <tr>
             <td colspan="3"></td>
             <td>Total:</td>
-            <td><input id="FEA_result_total" type="text" readonly></td>
+            <td><input id="FEA_result_total" name="FEA_score" type="text" readonly></td>
             <td>
                 <button onclick="calcCriterionC()" type="button">Calculate</button>
             </td>
@@ -241,7 +290,7 @@ if (isset($_POST['submit_btn'])) {
         <tr>
             <td colspan="3"></td>
             <td>Total:</td>
-            <td><input id="FEY_result_total" type="text" readonly></td>
+            <td><input id="FEY_result_total" name="FEY_score" type="text" readonly></td>
             <td>
                 <button onclick="calcCriterionD_FEY()" type="button">Calculate</button>
             </td>
@@ -314,7 +363,7 @@ if (isset($_POST['submit_btn'])) {
         <tr>
             <td colspan="3"></td>
             <td>Total:</td>
-            <td><input id="FEYO_result_total" type="text" readonly></td>
+            <td><input id="FEYO_result_total" name="FEYO_score" type="text" readonly></td>
             <td>
                 <button onclick="calcCriterionD_FEYO()" type="button">Calculate</button>
             </td>
@@ -441,7 +490,7 @@ if (isset($_POST['submit_btn'])) {
     }
 
     function calcCriterionD_FEYO() {
-        
+
         const FEYO_select_1 = document.getElementById('FEYO_select_1').value
         const FEYO_1 = document.getElementById('FEYO_1').value
         const FEYO_2 = document.getElementById('FEYO_2').value
@@ -468,9 +517,9 @@ if (isset($_POST['submit_btn'])) {
 
         if (FEYO_select_2 && FEYO_3 && FEYO_4 && FEYO_date_3 && FEYO_date_4) {
             FEYO_result_2.value = (
-                    FEYO_select_2 === "managerial" ? FEYO_4 * 4 :
-                        FEYO_select_2 === "technical" ? FEYO_4 * 3 :
-                            FEYO_select_2 === "support" ? FEYO_4 * 2 : 0
+                FEYO_select_2 === "managerial" ? FEYO_4 * 4 :
+                    FEYO_select_2 === "technical" ? FEYO_4 * 3 :
+                        FEYO_select_2 === "support" ? FEYO_4 * 2 : 0
             )
         } else {
             FEYO_result_2.value = 0;
@@ -485,14 +534,14 @@ if (isset($_POST['submit_btn'])) {
 
         if (FEYO_select_3 && FEYO_5 && FEYO_6 && FEYO_date_5 && FEYO_date_6) {
             FEYO_result_3.value = (
-                    FEYO_select_3 === "managerial" ? FEYO_6 * 4 :
-                        FEYO_select_3 === "technical" ? FEYO_6 * 3 :
-                            FEYO_select_3 === "support" ? FEYO_6 * 2 : 0
+                FEYO_select_3 === "managerial" ? FEYO_6 * 4 :
+                    FEYO_select_3 === "technical" ? FEYO_6 * 3 :
+                        FEYO_select_3 === "support" ? FEYO_6 * 2 : 0
             )
         } else {
             FEYO_result_3.value = 0;
         }
-        
+
         const FEYO_result_total = document.getElementById('FEYO_result_total')
         FEYO_result_total.value = parseFloat(FEYO_result_1.value) + parseFloat(FEYO_result_2.value) + parseFloat(FEYO_result_3.value);
     }
