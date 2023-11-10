@@ -28,7 +28,16 @@ if(isset($_POST['Submit_btn'])){
         </script>
       <?php
     }else{
-      $conn->query("UPDATE kra_1 SET Crit_B_sole_autho = '$sole_author', Crit_B_co_autho = '$co_author', Crit_B_academe = '$acad_prog', Crit_C_Adviser = '$adviser', Crit_C_Panel = '$panel', Crit_C_Mentor = '$mentor' WHERE id = 1") or die($conn->error);
+      $conn->query("UPDATE kra_1 SET Crit_B_sole_autho = '$sole_author', 
+                 Crit_B_co_autho = '$co_author', 
+                 Crit_B_academe = '$acad_prog', 
+                 Crit_B_total = Crit_B_co_autho + Crit_B_sole_autho + Crit_B_academe,
+                 Crit_C_Adviser = '$adviser', 
+                 Crit_C_Panel = '$panel', 
+                 Crit_C_Mentor = '$mentor',
+                 Crit_C_total = Crit_C_Adviser + Crit_C_Panel + Crit_C_Mentor,
+                 Total_kra_1 = Crit_A_student_eval + Crit_A_supervisor_eval + Crit_B_total + Crit_C_total
+             WHERE id = 1") or die($conn->error);
       ?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
