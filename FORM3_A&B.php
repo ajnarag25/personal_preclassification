@@ -8,9 +8,13 @@ if (isset($_POST['submit_btn'])) {
     $scoreFTE = $_POST['FTE_final_res'];
     $scoreTIG = $_POST['TIG_finale_res'];
     $scoreSIA = $_POST['SIA_result_total'];
-//    $scoreSAJ = $_POST['SAJ_result_total']; TODO: Change input id's 4, 9 , 14, 19 to select fields with options 'Academic Competition' and 'Research Award'
+    $scoreSAJ = $_POST['SAJ_result_total'];
     $scoreSAASC = $_POST['SAASC_result_total'];
-//    $score = $_POST['']; TODO: Services through media faculty score html
+    $scoreSTM_1 = $_POST['STM_1'];
+    $scoreSTM_2 = $_POST['STM_2'];
+    $scoreSTM_3 = $_POST['STM_3'];
+    $scoreSTM_4 = $_POST['STM_4'];
+    $scoreSTM_total = $_POST['STM_total_result'];
     $scoreFOEH = $_POST['FOEH_result_total'];
     $scoreFESOP = $_POST['FESOP_result_total'];
 
@@ -19,8 +23,9 @@ if (isset($_POST['submit_btn'])) {
         empty($scoreFTE) &&
         empty($scoreTIG) &&
         empty($scoreSIA) &&
-//        $scoreSAJ = "" && TODO: uncomment when column type of input id's 4, 9 , 14, 19 are updated
+        empty($scoreSAJ) &&
         empty($scoreSAASC) &&
+        empty($scoreSTM_total) &&
         empty($scoreFOEH) &&
         empty($scoreFESOP)
 
@@ -40,15 +45,23 @@ if (isset($_POST['submit_btn'])) {
             })
         </script>
         <?php
-    } else { // TODO: Crit_B.1.4.1-4  html then update to db // TODO: Crit_B_1.2 html then update to db
+    } else { // TODO: Crit_B.1.4.1-4  html then update to db
         $conn->query(
             "UPDATE kra_3 SET 
                  Crit_A_LNAP = '$scoreFTE',
                  Crit_A_CTIG = '$scoreTIG',
+                 Crit_A_total = Crit_A_LNAP + Crit_A_CTIG,
                  `Crit_B_1.1` = '$scoreSIA',
+                 `Crit_B_1.2` = '$scoreSAJ',
                  `Crit_B_1.3` = '$scoreSAASC',
+                 `Crit_B_1.4.1` = '$scoreSTM_1',
+                 `Crit_B_1.4.2` = '$scoreSTM_2',
+                 `Crit_B_1.4.3` = '$scoreSTM_3',
+                 `Crit_B_1.4.4` = '$scoreSTM_4',
                  `Crit_B_1.5` = '$scoreFOEH',
-                 `Crit_B_2.1` = '$scoreFESOP'
+                 `Crit_B_2.1` = '$scoreFESOP',
+                 Crit_B_total = `Crit_B_1.1` + `Crit_B_1.2` + `Crit_B_1.3` + `Crit_B_1.4.1` + `Crit_B_1.4.2` + `Crit_B_1.4.3` + `Crit_B_1.4.4` + `Crit_B_1.5` + `Crit_B_2.1`,
+                 KRA3_total = Crit_A_total + Crit_B_total + Crit_C_total + Crit_D_total
                  WHERE KRA3_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -405,12 +418,16 @@ if (isset($_POST['submit_btn'])) {
             <td>Faculty Points</td>
         </tr>
 
-        <!--        TODO: Change input id's 4, 9 , 14, 19 to select fields with options 'Academic Competition' and 'Research Award'      -->
         <tr>
             <td><input id="SAJ_1" type="text"></td>
             <td><input id="SAJ_2" type="text"></td>
             <td><input id="SAJ_3" type="date"></td>
-            <td><input id="SAJ_4" type="text"></td>
+            <td><select id="SAJ_selection_1">
+                    <option value="none">Select option</option>
+                    <option value="academic">Academic Competition</option>
+                    <option value="research">Research Award</option>
+                </select>
+            </td>
             <td><input id="SAJ_5" type="text"></td>
             <td><input id="SAJ_result_1" readonly type="text"></td>
         </tr>
@@ -419,7 +436,12 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="SAJ_6" type="text"></td>
             <td><input id="SAJ_7" type="text"></td>
             <td><input id="SAJ_8" type="date"></td>
-            <td><input id="SAJ_9" type="text"></td>
+            <td><select id="SAJ_selection_2">
+                    <option value="none">Select option</option>
+                    <option value="academic">Academic Competition</option>
+                    <option value="research">Research Award</option>
+                </select>
+            </td>
             <td><input id="SAJ_10" type="text"></td>
             <td><input id="SAJ_result_2" readonly type="text"></td>
         </tr>
@@ -428,7 +450,12 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="SAJ_11" type="text"></td>
             <td><input id="SAJ_12" type="text"></td>
             <td><input id="SAJ_13" type="date"></td>
-            <td><input id="SAJ_14" type="text"></td>
+            <td><select id="SAJ_selection_3">
+                    <option value="none">Select option</option>
+                    <option value="academic">Academic Competition</option>
+                    <option value="research">Research Award</option>
+                </select>
+            </td>
             <td><input id="SAJ_15" type="text"></td>
             <td><input id="SAJ_result_3" readonly type="text"></td>
         </tr>
@@ -437,7 +464,12 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="SAJ_16" type="text"></td>
             <td><input id="SAJ_17" type="text"></td>
             <td><input id="SAJ_18" type="date"></td>
-            <td><input id="SAJ_19" type="text"></td>
+            <td><select id="SAJ_selection_4">
+                    <option value="none">Select option</option>
+                    <option value="academic">Academic Competition</option>
+                    <option value="research">Research Award</option>
+                </select>
+            </td>
             <td><input id="SAJ_20" type="text"></td>
             <td><input id="SAJ_result_4" readonly type="text"></td>
         </tr>
@@ -541,51 +573,52 @@ if (isset($_POST['submit_btn'])) {
                 (mm/dd/yyyy to mm/dd/yyyy)
             </td>
             <td>No. of engagements</td>
+            <td>Faculty Points</td>
         </tr>
-
-        <!--        TODO: Missing HTML for faculty points          -->
-        <!--        TODO: name IDs          -->
-        <!--        TODO: implement formula         -->
 
         <tr>
             <td>Writer of occasional newspaper column</td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="STM_1" type="text"></td>
+            <td><input id="STM_2" type="text"></td>
+            <td><input id="STM_3" type="text"></td>
+            <td><input id="STM_4" type="text"></td>
+            <td><input id="STM_total_1" name="STM_1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>Writer of regular newspaper column</td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="STM_5" type="text"></td>
+            <td><input id="STM_6" type="text"></td>
+            <td><input id="STM_7" type="text"></td>
+            <td><input id="STM_8" type="text"></td>
+            <td><input id="STM_total_2" name="STM_2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>Host of TV/Radio Program</td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="STM_9" type="text"></td>
+            <td><input id="STM_10" type="text"></td>
+            <td><input id="STM_11" type="text"></td>
+            <td><input id="STM_12" type="text"></td>
+            <td><input id="STM_total_3" name="STM_3" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>Guesting as technical expert for TV or radio program/print media/online media</td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input disabled type="text"></td>
+            <td><input id="STM_13" type="text"></td>
+            <td><input id="STM_14" type="text"></td>
+            <td><input id="STM_15" type="text"></td>
+            <td><input id="STM_16" type="text"></td>
+            <td><input id="STM_total_4" name="STM_4" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td colspan="2"></td>
+            <td colspan="3"></td>
             <td>
-                <button>Calculate</button>
+                <button onclick="calc_STM()" type="button">Calculate</button>
             </td>
             <td>Total:</td>
-            <td><input disabled type="text"></td>
+            <td><input id="STM_total_result" name="STM_total_result" readonly type="text"></td>
         </tr>
     </table>
     <br><br><br>
@@ -769,6 +802,7 @@ if (isset($_POST['submit_btn'])) {
 
 
 <script>
+
     function Calcu_FTE() {
         const var1 = document.getElementById('FTE1').value
         const var2 = document.getElementById('FTE2').value
@@ -992,24 +1026,21 @@ if (isset($_POST['submit_btn'])) {
         document.getElementById('SIA_result_total').value = parseFloat(SIA_result_1.value) + parseFloat(SIA_result_2.value) + parseFloat(SIA_result_3.value);
     }
 
-    //TODO: 1.2 SAJ update control blocks formula to reflect new select tags
-    //TODO: 1.2 SAJ sum up scores
-
     function calc_SAJ() {
         const SAJ_1 = document.getElementById('SAJ_1').value
         const SAJ_2 = document.getElementById('SAJ_2').value
         const SAJ_3 = document.getElementById('SAJ_3').value
-        const SAJ_4 = document.getElementById('SAJ_4').value
+        const SAJ_selection_1 = document.getElementById('SAJ_selection_1').value
         const SAJ_5 = document.getElementById('SAJ_5').value
         const SAJ_result_1 = document.getElementById('SAJ_result_1')
 
-        if (SAJ_1 !== "" && SAJ_2 !== "" && SAJ_3 !== "" && SAJ_4 !== "" && SAJ_5 !== "") {
-            if (SAJ_5 === 'none') {
+        if (SAJ_1 !== "" && SAJ_2 !== "" && SAJ_3 !== "" && SAJ_selection_1 !== "" && SAJ_5 !== "") {
+            if (SAJ_selection_1 === 'none') {
                 SAJ_result_1.value = 0;
-            } else if (SAJ_5 === 'local') {
-                SAJ_result_1.value = 8;
-            } else if (SAJ_5 === 'int') {
-                SAJ_result_1.value = 10;
+            } else if (SAJ_selection_1 === 'research') {
+                SAJ_result_1.value = 2;
+            } else if (SAJ_selection_1 === 'academic') {
+                SAJ_result_1.value = 1;
             }
         } else {
             SAJ_result_1.value = 0;
@@ -1018,17 +1049,17 @@ if (isset($_POST['submit_btn'])) {
         const SAJ_6 = document.getElementById('SAJ_6').value
         const SAJ_7 = document.getElementById('SAJ_7').value
         const SAJ_8 = document.getElementById('SAJ_8').value
-        const SAJ_9 = document.getElementById('SAJ_9').value
+        const SAJ_selection_2 = document.getElementById('SAJ_selection_2').value
         const SAJ_10 = document.getElementById('SAJ_10').value
         const SAJ_result_2 = document.getElementById('SAJ_result_2')
 
-        if (SAJ_6 !== "" && SAJ_7 !== "" && SAJ_8 !== "" && SAJ_9 !== "" && SAJ_10 !== "") {
-            if (SAJ_10 === 'none') {
+        if (SAJ_6 !== "" && SAJ_7 !== "" && SAJ_8 !== "" && SAJ_selection_2 !== "" && SAJ_10 !== "") {
+            if (SAJ_selection_2 === 'none') {
                 SAJ_result_2.value = 0;
-            } else if (SAJ_10 === 'local') {
-                SAJ_result_2.value = 8;
-            } else if (SAJ_10 === 'int') {
-                SAJ_result_2.value = 10;
+            } else if (SAJ_selection_2 === 'research') {
+                SAJ_result_2.value = 2;
+            } else if (SAJ_selection_2 === 'academic') {
+                SAJ_result_2.value = 1;
             }
         } else {
             SAJ_result_2.value = 0;
@@ -1037,17 +1068,17 @@ if (isset($_POST['submit_btn'])) {
         const SAJ_11 = document.getElementById('SAJ_11').value
         const SAJ_12 = document.getElementById('SAJ_12').value
         const SAJ_13 = document.getElementById('SAJ_13').value
-        const SAJ_14 = document.getElementById('SAJ_14').value
+        const SAJ_selection_3 = document.getElementById('SAJ_selection_3').value
         const SAJ_15 = document.getElementById('SAJ_15').value
         const SAJ_result_3 = document.getElementById('SAJ_result_3')
 
-        if (SAJ_11 !== "" && SAJ_12 !== "" && SAJ_13 !== "" && SAJ_14 !== "" && SAJ_15 !== "") {
-            if (SAJ_15 === 'none') {
+        if (SAJ_11 !== "" && SAJ_12 !== "" && SAJ_13 !== "" && SAJ_selection_3 !== "" && SAJ_15 !== "") {
+            if (SAJ_selection_3 === 'none') {
                 SAJ_result_3.value = 0;
-            } else if (SAJ_15 === 'local') {
-                SAJ_result_3.value = 8;
-            } else if (SAJ_15 === 'int') {
-                SAJ_result_3.value = 10;
+            } else if (SAJ_selection_3 === 'research') {
+                SAJ_result_3.value = 2;
+            } else if (SAJ_selection_3 === 'academic') {
+                SAJ_result_3.value = 1;
             }
         } else {
             SAJ_result_3.value = 0;
@@ -1056,17 +1087,17 @@ if (isset($_POST['submit_btn'])) {
         const SAJ_16 = document.getElementById('SAJ_16').value
         const SAJ_17 = document.getElementById('SAJ_17').value
         const SAJ_18 = document.getElementById('SAJ_18').value
-        const SAJ_19 = document.getElementById('SAJ_19').value
+        const SAJ_selection_4 = document.getElementById('SAJ_selection_4').value
         const SAJ_20 = document.getElementById('SAJ_20').value
         const SAJ_result_4 = document.getElementById('SAJ_result_4')
 
-        if (SAJ_16 !== "" && SAJ_17 !== "" && SAJ_18 !== "" && SAJ_19 !== "" && SAJ_20 !== "") {
-            if (SAJ_20 === 'none') {
+        if (SAJ_16 !== "" && SAJ_17 !== "" && SAJ_18 !== "" && SAJ_selection_4 !== "" && SAJ_20 !== "") {
+            if (SAJ_selection_4 === 'none') {
                 SAJ_result_4.value = 0;
-            } else if (SAJ_20 === 'local') {
-                SAJ_result_4.value = 8;
-            } else if (SAJ_20 === 'int') {
-                SAJ_result_4.value = 10;
+            } else if (SAJ_selection_4 === 'research') {
+                SAJ_result_4.value = 2;
+            } else if (SAJ_selection_4 === 'academic') {
+                SAJ_result_4.value = 1;
             }
         } else {
             SAJ_result_4.value = 0;
@@ -1137,6 +1168,61 @@ if (isset($_POST['submit_btn'])) {
         }
 
         document.getElementById('SAASC_result_total').value = parseFloat(SAASC_result_1.value) + parseFloat(SAASC_result_2.value) + parseFloat(SAASC_result_3.value)
+
+    }
+
+    function calc_STM() {
+
+        const STM_1 = document.getElementById('STM_1').value
+        const STM_2 = document.getElementById('STM_2').value
+        const STM_3 = document.getElementById('STM_3').value
+        const STM_4 = document.getElementById('STM_4').value
+        const STM_total_1 = document.getElementById('STM_total_1')
+
+        if (STM_1 && STM_2 && STM_3 && STM_4) {
+            STM_total_1.value = STM_4 * 2;
+        } else {
+            STM_total_1.value = 0;
+        }
+
+        const STM_5 = document.getElementById('STM_5').value
+        const STM_6 = document.getElementById('STM_6').value
+        const STM_7 = document.getElementById('STM_7').value
+        const STM_8 = document.getElementById('STM_8').value
+        const STM_total_2 = document.getElementById('STM_total_2')
+
+        if (STM_5 && STM_6 && STM_7 && STM_8) {
+            STM_total_2.value = STM_8 * 2;
+        } else {
+            STM_total_2.value = 0;
+        }
+
+        const STM_9 = document.getElementById('STM_9').value
+        const STM_10 = document.getElementById('STM_10').value
+        const STM_11 = document.getElementById('STM_11').value
+        const STM_12 = document.getElementById('STM_12').value
+        const STM_total_3 = document.getElementById('STM_total_3')
+
+        if (STM_9 && STM_10 && STM_11 && STM_12) {
+            STM_total_3.value = STM_12 * 2;
+        } else {
+            STM_total_3.value = 0;
+        }
+
+        const STM_13 = document.getElementById('STM_13').value
+        const STM_14 = document.getElementById('STM_14').value
+        const STM_15 = document.getElementById('STM_15').value
+        const STM_16 = document.getElementById('STM_16').value
+        const STM_total_4 = document.getElementById('STM_total_4')
+
+        if (STM_13 && STM_14 && STM_15 && STM_16) {
+            STM_total_4.value = STM_16 * 2;
+        } else {
+            STM_total_4.value = 0;
+        }
+
+        const STM_total_result = document.getElementById('STM_total_result')
+        STM_total_result.value = parseFloat(STM_total_1.value) + parseFloat(STM_total_2.value) + parseFloat(STM_total_3.value) + parseFloat(STM_total_4.value);
 
     }
 
