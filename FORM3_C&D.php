@@ -23,7 +23,13 @@ if (isset($_POST['Submit_btn'])) {
         <?php
     } else {
         $conn->query(
-            "UPDATE kra_3 SET Crit_C_1 = '$scoreStudent', Crit_C_total = '$scoreStudent', Crit_D_1  = '$scoreAdmin', Crit_D_total = '$scoreAdmin' WHERE KRA3_ID = 1") or die($conn->error);
+            "UPDATE kra_3 SET 
+                 Crit_C_1 = '$scoreStudent',
+                 Crit_C_total = '$scoreStudent',
+                 Crit_D_1  = '$scoreAdmin',
+                 Crit_D_total = '$scoreAdmin',
+                 KRA3_total = Crit_A_total + Crit_B_total + Crit_C_total + Crit_D_total
+             WHERE KRA3_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -203,7 +209,7 @@ if (isset($_POST['Submit_btn'])) {
                     <td><input type="number" id="A4-2" required min="0" max="100"></td>
                 </tr>
                 <tr>
-                    <td colspan="1">Total:</td>
+                    <td colspan="1">Faculty Score:</td>
                     <td><input type="text" readonly id="FS__stud" name="score_student"></td>
                     <td>
                         <button onclick="calcu_client()" type="button">Calculate</button>
@@ -340,7 +346,7 @@ if (isset($_POST['Submit_btn'])) {
         const clientSatisfactionRatingScore = document.getElementById('FS__stud');
 
         if (reason === 'none' || reason === 'not_applicable') {
-            clientSatisfactionRatingScore.value = overallSemAvg;
+            clientSatisfactionRatingScore.value = (overallSemAvg / 100) * 20;
         } else if (reason === 'study_leave' || reason === 'sabbatical_leave' || reason === 'maternity_leave') {
             clientSatisfactionRatingScore.value = (((sem1Sum + sem2Sum) / (8 - semesters)) / 100 * 20).toFixed(2);
         }
