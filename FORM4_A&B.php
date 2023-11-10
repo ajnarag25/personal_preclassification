@@ -2,9 +2,9 @@
 require 'functions.php';
 if (isset($_POST['Submit_btn'])) {
     $scoreFCIM = $_POST['FCIM_total'];
-    $scoreFDD = limitTo40($_POST['FDD_total']);
-    $scoreAD = limitTo40($_POST['AD_total']);
-    $scoreBFirst = limitTo40($scoreFDD + $scoreAD);
+    $scoreFDD = $_POST['FDD_total'];
+    $scoreAD = $_POST['AD_total'];
+    $scoreBFirst = $scoreFDD + $scoreAD;
     $scoreFEP = $_POST['FEP_total'];
     $scoreFEPP = $_POST['FEPP_total'];
     $scoreBTotal = $scoreBFirst + $scoreFEP + $scoreFEPP;
