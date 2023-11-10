@@ -36,10 +36,20 @@ if (isset($_POST['submit_btn'])) {
         <?php
     } else {
         $conn->query(
-                "UPDATE kra_2 SET Crit_B_PI_SI = '$scoreIP_SI', Crit_B_PI_CI  = '$scoreIP_MI', Crit_B_UMID_SI = '$scoreUMID_SI',
-                 Crit_B_UMID_CI = '$scoreUMID_MI', Crit_B_CPP_Local = '$scoreCPP_L', Crit_B_CPP_International = '$scoreCPP_I',
-                 Crit_B_NPI_SI = '$scoreNSP_SD', Crit_B_NPI_CI = '$scoreNSP_MD', Crit_B_NPI_USP ='$scoreUSP_SCD',
-                 Crit_B_NPVA_SD ='$scoreNPV_SCD', Crit_B_NPVA_CD = '$scoreNPV_MD'
+                "UPDATE kra_2 SET 
+                 Crit_B_PI_SI = '$scoreIP_SI', 
+                 Crit_B_PI_CI  = '$scoreIP_MI', 
+                 Crit_B_UMID_SI = '$scoreUMID_SI',
+                 Crit_B_UMID_CI = '$scoreUMID_MI', 
+                 Crit_B_CPP_Local = '$scoreCPP_L', 
+                 Crit_B_CPP_International = '$scoreCPP_I',
+                 Crit_B_NPI_SI = '$scoreNSP_SD', 
+                 Crit_B_NPI_CI = '$scoreNSP_MD', 
+                 Crit_B_NPI_USP ='$scoreUSP_SCD',
+                 Crit_B_NPVA_SD ='$scoreNPV_SCD', 
+                 Crit_B_NPVA_CD = '$scoreNPV_MD',
+                 Crit_B_Total = Crit_B_PI_SI + Crit_B_PI_CI + Crit_B_UMID_SI + Crit_B_UMID_CI + Crit_B_CPP_Local + Crit_B_CPP_International + Crit_B_NPI_SI + Crit_B_NPI_CI + Crit_B_NPI_USP + Crit_B_NPVA_SD + Crit_B_NPVA_CD,
+                 KRA_2_total = Crit_A_total + Crit_B_Total + Crit_C_total
                  WHERE KRA2_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -538,7 +548,7 @@ if (isset($_POST['submit_btn'])) {
             <td>Name of Patented Product</td>
             <td>Type of Product</td>
             <td>Date Patented</td>
-            <td>Date Accepted, Published or Granted Date Product was first Commercialized</td>
+            <td>Date Product was first Commercialized</td>
             <td>Area/Place Commercialized</td>
             <td>Faculty Score</td>
 
@@ -601,7 +611,7 @@ if (isset($_POST['submit_btn'])) {
             <td>Name of Patented Product</td>
             <td>Type of Product</td>
             <td>Date Patented</td>
-            <td>Date Accepted, Published or Granted Date Product was first Commercialized</td>
+            <td>Date Product was first Commercialized</td>
             <td>Area/Place Commercialized</td>
             <td>Faculty Score</td>
         </tr>
@@ -726,6 +736,7 @@ if (isset($_POST['submit_btn'])) {
             <td>Date Copyrighted</td>
             <td>Date Utilized</td>
             <td>Name of End User/s</td>
+            <td>Contribution</td>
             <td>Faculty Score</td>
 
         </tr>
@@ -736,6 +747,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="NSP_MD-2" type="date"></td>
             <td><input id="NSP_MD-3" type="date"></td>
             <td><input id="NSP_MD-4" type="text"></td>
+            <td><input id="NSP_contribution_1" type="text"></td>
             <td><input id="NSP_MD_res1" readonly type="text" value="0"></td>
         </tr>
         <tr>
@@ -744,6 +756,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="NSP_MD-6" type="date"></td>
             <td><input id="NSP_MD-7" type="date"></td>
             <td><input id="NSP_MD-8" type="text"></td>
+            <td><input id="NSP_contribution_2" type="text"></td>
             <td><input id="NSP_MD_res2" readonly type="text" value="0"></td>
         </tr>
 
@@ -753,6 +766,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="NSP_MD-10" type="date"></td>
             <td><input id="NSP_MD-11" type="date"></td>
             <td><input id="NSP_MD-12" type="text"></td>
+            <td><input id="NSP_contribution_3" type="text"></td>
             <td><input id="NSP_MD_res3" readonly type="text" value="0"></td>
         </tr>
 
@@ -762,11 +776,12 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="NSP_MD-14" type="date"></td>
             <td><input id="NSP_MD-15" type="date"></td>
             <td><input id="NSP_MD-16" type="text"></td>
+            <td><input id="NSP_contribution_4" type="text"></td>
             <td><input id="NSP_MD_res4" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
-            <td colspan="3"></td>
+            <td colspan="4"></td>
             <td>
                 <button type="button" onclick="calc_NSP_MD()">Calculate</button>
             </td>
@@ -992,7 +1007,6 @@ if (isset($_POST['submit_btn'])) {
     </div>
 </form>
 
-<!-- TODO: MISSING HTML FOR RESEARCH PUBLICATION CITED SECTION (LOCAL, INTERNATIONAL, TOTAL POINTS) -->
 
 </body>
 <script>
@@ -1101,7 +1115,6 @@ if (isset($_POST['submit_btn'])) {
 
     })
 
-    //TODO: add limit for max points per row and max total points
 
     const IP_MI_Stage2 = document.getElementById('MI_PTA__2')
     const IP_MI_Contribution_2 = document.getElementById('MI_I_2')
@@ -1277,10 +1290,11 @@ if (isset($_POST['submit_btn'])) {
     });
 
     function calcUMIDSIFinalScore() {
-        document.getElementById('UMID_final_FS').value = parseFloat(UMID_SI_SCORE1.value) + parseFloat(UMID_SI_SCORE2.value) + parseFloat(UMID_SI_SCORE3.value) + parseFloat(UMID_SI_SCORE4.value);
+        document.getElementById('UMID_final_FS').value =
+            parseFloat(UMID_SI_SCORE1.value) + parseFloat(UMID_SI_SCORE2.value) + parseFloat(UMID_SI_SCORE3.value) + parseFloat(UMID_SI_SCORE4.value);
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     const UMID_MI_STAGE1 = document.getElementById('UMID_MI__1')
     const UMID_MI_CONTRIBUTION1 = document.getElementById('UMID_MI_CONTRIBUTION1')
@@ -1414,7 +1428,7 @@ if (isset($_POST['submit_btn'])) {
         document.getElementById('UMID_MI_FS_Final').value = (UMID_MI_SCORE1.value * 10 + UMID_MI_SCORE2.value * 10 + UMID_MI_SCORE3.value * 10 + UMID_MI_SCORE4.value * 10) / 10;
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function calc_cpp_local() {
         const NSP1 = document.getElementById('CPP1').value
         const NSP2 = document.getElementById('CPP2').value
@@ -1470,7 +1484,7 @@ if (isset($_POST['submit_btn'])) {
         document.getElementById('cpp_local_finale').value = parseFloat(ress1.value) + parseFloat(ress2.value) + parseFloat(ress3.value) + parseFloat(ress4.value);
     }
 
-    // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function calc_cpp_International() {
         const NSP1 = document.getElementById('CPP_i1').value
         const NSP2 = document.getElementById('CPP_i2').value
@@ -1526,60 +1540,7 @@ if (isset($_POST['submit_btn'])) {
         document.getElementById('cpp_international_finale').value = parseFloat(ress1.value) + parseFloat(ress2.value) + parseFloat(ress3.value) + parseFloat(ress4.value)
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // function caclu_NSP_SD() { // 2.1.1 NSP Sole-dev                                  //DUPLICATE
-    //     const SD1 = document.getElementById('NSP_SD-1').value
-    //     const SD2 = document.getElementById('NSP_SD-2').value
-    //     const SD3 = document.getElementById('NSP_SD-3').value
-    //     const SD4 = document.getElementById('NSP_SD-4').value
-    //     const SD_res1 = document.getElementById('NSP_SD_res1');
-    //
-    //     if (SD1 !== "" && SD2 !== "" && SD3 !== "" && SD4 !== "") {
-    //         SD_res1.value = 10
-    //     } else {
-    //         SD_res1.value = 0
-    //     }
-    //
-    //     const SD5 = document.getElementById('NSP_SD-5').value
-    //     const SD6 = document.getElementById('NSP_SD-6').value
-    //     const SD7 = document.getElementById('NSP_SD-7').value
-    //     const SD8 = document.getElementById('NSP_SD-8').value
-    //     const SD_res2 = document.getElementById('NSP_SD_res2');
-    //
-    //     if (SD5 !== "" && SD6 !== "" && SD7 !== "" && SD8 !== "") {
-    //         SD_res2.value = 10
-    //     } else {
-    //         SD_res2.value = 0
-    //     }
-    //
-    //     const SD9 = document.getElementById('NSP_SD-9').value
-    //     const SD10 = document.getElementById('NSP_SD-10').value
-    //     const SD11 = document.getElementById('NSP_SD-11').value
-    //     const SD12 = document.getElementById('NSP_SD-12').value
-    //     const SD_res3 = document.getElementById('NSP_SD_res3');
-    //
-    //     if (SD9 !== "" && SD10 !== "" && SD11 !== "" && SD12 !== "") {
-    //         SD_res3.value = 10
-    //     } else {
-    //         SD_res3.value = 0
-    //     }
-    //
-    //     const SD13 = document.getElementById('NSP_SD-13').value
-    //     const SD14 = document.getElementById('NSP_SD-14').value
-    //     const SD15 = document.getElementById('NSP_SD-15').value
-    //     const SD16 = document.getElementById('NSP_SD-16').value
-    //     const SD_res4 = document.getElementById('NSP_SD_res4');
-    //
-    //     if (SD13 !== "" && SD14 !== "" && SD15 !== "" && SD16 !== "") {
-    //         SD_res4.value = 10
-    //     } else {
-    //         SD_res4.value = 0
-    //     }
-    //
-    //     document.getElementById('NSP_SD_finale_res').value = parseInt(SD_res1.value) + parseInt(SD_res2.value) + parseInt(SD_res3.value) + parseInt(SD_res4.value)
-    // };
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function calc_NSP_SD() { //! 2.1.1 NSP Sole-dev
         const SD1 = document.getElementById('NSP_SD-1').value
         const SD2 = document.getElementById('NSP_SD-2').value
@@ -1632,18 +1593,17 @@ if (isset($_POST['submit_btn'])) {
         document.getElementById('NSP_SD_finale_res').value = parseFloat(SD_res1.value) + parseFloat(SD_res2.value) + parseFloat(SD_res3.value) + parseFloat(SD_res4.value)
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function calc_NSP_MD() { // * 2.1.1 NSP Multiple developers
         const SD1 = document.getElementById('NSP_MD-1').value
         const SD2 = document.getElementById('NSP_MD-2').value
         const SD3 = document.getElementById('NSP_MD-3').value
         const SD4 = document.getElementById('NSP_MD-4').value
+        const SD_contribution_1 = document.getElementById('NSP_contribution_1').value
         const SD_res1 = document.getElementById('NSP_MD_res1');
 
-        //TODO: contribution html missing
-
-        if (SD1 !== "" && SD2 !== "" && SD3 !== "" && SD4 !== "") {
-            SD_res1.value = 10
+        if (SD1 !== "" && SD2 !== "" && SD3 !== "" && SD4 !== "" && SD_contribution_1 !== "") {
+            SD_res1.value = (10 * SD_contribution_1) / 100;
         } else {
             SD_res1.value = 0
         }
@@ -1652,10 +1612,11 @@ if (isset($_POST['submit_btn'])) {
         const SD6 = document.getElementById('NSP_MD-6').value
         const SD7 = document.getElementById('NSP_MD-7').value
         const SD8 = document.getElementById('NSP_MD-8').value
+        const SD_contribution_2 = document.getElementById('NSP_contribution_2').value
         const SD_res2 = document.getElementById('NSP_MD_res2');
 
-        if (SD5 !== "" && SD6 !== "" && SD7 !== "" && SD8 !== "") {
-            SD_res2.value = 10
+        if (SD5 !== "" && SD6 !== "" && SD7 !== "" && SD8 !== "" && SD_contribution_2 !== "") {
+            SD_res2.value = (10 * SD_contribution_2) / 100;
         } else {
             SD_res2.value = 0
         }
@@ -1664,10 +1625,11 @@ if (isset($_POST['submit_btn'])) {
         const SD10 = document.getElementById('NSP_MD-10').value
         const SD11 = document.getElementById('NSP_MD-11').value
         const SD12 = document.getElementById('NSP_MD-12').value
+        const SD_contribution_3 = document.getElementById('NSP_contribution_3').value
         const SD_res3 = document.getElementById('NSP_MD_res3');
 
-        if (SD9 !== "" && SD10 !== "" && SD11 !== "" && SD12 !== "") {
-            SD_res3.value = 10
+        if (SD9 !== "" && SD10 !== "" && SD11 !== "" && SD12 !== "" && SD_contribution_3 !== "") {
+            SD_res3.value = (10 * SD_contribution_3) / 100;
         } else {
             SD_res3.value = 0
         }
@@ -1676,18 +1638,19 @@ if (isset($_POST['submit_btn'])) {
         const SD14 = document.getElementById('NSP_MD-14').value
         const SD15 = document.getElementById('NSP_MD-15').value
         const SD16 = document.getElementById('NSP_MD-16').value
+        const SD_contribution_4 = document.getElementById('NSP_contribution_4').value
         const MD_res4 = document.getElementById('NSP_MD_res4');
 
-        if (SD13 !== "" && SD14 !== "" && SD15 !== "" && SD16 !== "") {
-            MD_res4.value = 10
+        if (SD13 !== "" && SD14 !== "" && SD15 !== "" && SD16 !== "" && SD_contribution_4 !== "") {
+            MD_res4.value = (10 * SD_contribution_4) / 100;
         } else {
             MD_res4.value = 0
         }
 
-        document.getElementById('NSP_MD_finale_res').value = parseInt(SD_res1.value) + parseInt(SD_res2.value) + parseInt(SD_res3.value) + parseInt(MD_res4.value)
+        document.getElementById('NSP_MD_finale_res').value = parseFloat(SD_res1.value) + parseFloat(SD_res2.value) + parseFloat(SD_res3.value) + parseFloat(MD_res4.value)
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     const usp1 = document.getElementById('USP_cont_1')
     const usp2 = document.getElementById('USP_fs1')
@@ -1745,7 +1708,7 @@ if (isset($_POST['submit_btn'])) {
         document.getElementById('USP_SCD_finale_res').value = parseFloat(usp2.value) + parseFloat(usp4.value) + parseFloat(usp6.value) + parseFloat(usp8.value);
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function calcu_scd() {
         const ha_vard_1 = document.getElementById('SCDP_1').value
         const ha_vard_2 = document.getElementById('SCDP_2').value
@@ -1783,10 +1746,10 @@ if (isset($_POST['submit_btn'])) {
             scd_res3.value = 0;
         }
 
-        document.getElementById('scdp_final_res').value = parseInt(scd_res3.value) + parseInt(scd_res2.value) + parseInt(scd_res1.value)
+        document.getElementById('scdp_final_res').value = parseFloat(scd_res3.value) + parseFloat(scd_res2.value) + parseFloat(scd_res1.value)
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     function calcu_WMD() {
         const ha_vard_1 = document.getElementById('WMD_1').value
@@ -1830,8 +1793,6 @@ if (isset($_POST['submit_btn'])) {
 
         document.getElementById('WMD_finale_res').value = (scd_res3.value * 10 + scd_res2.value * 10 + scd_res1.value * 10) / 10
     }
-
-    //TODO: Upon submit, sum up section totals and save to DB
 
 </script>
 
