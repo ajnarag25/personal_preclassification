@@ -26,7 +26,14 @@ if (isset($_POST['submit_btn'])) {
         <?php
     } else {
         $conn->query(
-            "UPDATE kra_2 SET Crit_C_PA = '$scoreNCPA', Crit_C_Exhibition  = '$scoreExhibition', Crit_C_Designs = '$scoreJuried', `Crit_C_Lit-pub` = '$scoreLitPub'  WHERE KRA2_ID = 1") or die($conn->error);
+            "UPDATE kra_2 SET 
+                 Crit_C_PA = '$scoreNCPA',
+                 Crit_C_Exhibition  = '$scoreExhibition',
+                 Crit_C_Designs = '$scoreJuried',
+                 `Crit_C_Lit-pub` = '$scoreLitPub',
+                 Crit_C_total = Crit_C_PA + Crit_C_Exhibition + Crit_C_Designs + `Crit_C_Lit-pub`,
+                 KRA_2_total = Crit_A_total + Crit_B_Total + Crit_C_total
+             WHERE KRA2_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -538,8 +545,6 @@ if (isset($_POST['submit_btn'])) {
 </body>
 </html>
 
-
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 <script>
     function calc_NCPA() {
         const var1 = document.getElementById('NCPA1').value
@@ -768,7 +773,5 @@ if (isset($_POST['submit_btn'])) {
         document.getElementById('pub_finale_fs').value = parseFloat(the_Res2.value) + parseFloat(the_Res3.value) + parseFloat(the_Res1.value)
     }
 
-    //TODO: Upon submit, sum up section totals and save to DB
-    //TODO: Total for KRA2
 
 </script>
