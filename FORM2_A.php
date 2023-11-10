@@ -1143,8 +1143,5 @@ if (isset($_POST['submit_btn'])) {
             parseFloat(international_result_2.value) + parseFloat(international_result_3.value) + parseFloat(international_result_4.value);
     }
 
-
-    //TODO: Upon submit, sum up section totals and save to DB
-
 </script>
 </html>

@@ -132,6 +132,16 @@ if (isset($_POST['submit_btn'])) {
         background-size: cover;
     }
 
+    .cancel_btn {
+        border: none;
+        background-color: #7d0201;
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
     .row__des td {
         padding: 10px;
         color: white;
