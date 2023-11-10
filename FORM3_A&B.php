@@ -1,7 +1,6 @@
 <?php
 
 require 'functions.php';
-//            TODO: implement update to db function
 
 if (isset($_POST['submit_btn'])) {
 
@@ -45,7 +44,7 @@ if (isset($_POST['submit_btn'])) {
             })
         </script>
         <?php
-    } else { // TODO: Crit_B.1.4.1-4  html then update to db
+    } else {
         $conn->query(
             "UPDATE kra_3 SET 
                  Crit_A_LNAP = '$scoreFTE',

@@ -40,7 +40,8 @@ if (isset($_POST['Submit_btn'])) {
                  Crit_B_1st = '$scoreBFirst',
                  Crit_B_2nd = '$scoreFEP',
                  Crit_B_3rd = '$scoreFEPP',
-                 Crit_B_total = '$scoreBTotal'
+                 Crit_B_total = '$scoreBTotal',
+                 KRA4_total = Crit_A_total + Crit_B_total + Crit_C_total + Crit_D_total
              WHERE Kra4_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

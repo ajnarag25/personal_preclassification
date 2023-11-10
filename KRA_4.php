@@ -1,3 +1,9 @@
+<?php
+
+require 'functions.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,8 +79,33 @@ table {
 }
 </style>
 <body>
+
+<?php
+
+$query = "SELECT * FROM kra_4 WHERE Kra4_ID = 1";
+$result = mysqli_query($conn, $query);
+while ($row = mysqli_fetch_array($result)) {
+?>
   
 <h1 class="title">KRA IV</h1>
+
+    <?php
+
+    $A_1st = $row['Crit_A_1st'];
+    $A_total = $row['Crit_A_total'];
+    $B_1st = $row['Crit_B_1st'];
+    $B_2nd = $row['Crit_B_2nd'];
+    $B_3rd = $row['Crit_B_3rd'];
+    $B_total = $row['Crit_B_total'];
+    $C_1st = $row['Crit_C_1st'];
+    $C_total = $row['Crit_C_total'];
+    $D_1st = $row['Crit_D_1st'];
+    $D_2nd = $row['Crit_D_2nd'];
+    $D_total = $row['Crit_D_total'];
+    $KRA4_total = $row['KRA4_total'];
+
+
+    ?>
 
 <br><br><br>
   <table>
@@ -88,13 +119,13 @@ table {
     </tr>
     <tr>
       <td>MEMBERSHIP AND ROLE/CONTRIBUTION IN ORGANIZATIONS, SCIENTIFIC SOCIETY, ETC.</td>
-      <td><input disabled type="text"></td>
+      <td><input value="<?= $A_1st ?>" disabled type="text"></td>
       <td></td>
     </tr>
     <tr>
       <td><b>TOTAL POINTS FOR CRITERION A:</b></td>
-      <td><input disabled type="text"></td>
-      <td><input disabled type="text"></td>
+      <td><input value="<?= $A_total ?>" disabled type="text"></td>
+      <td><input value="<?= $A_total ?>" disabled type="text"></td>
     </tr>
   </table>
 
@@ -111,23 +142,23 @@ table {
     </tr>
     <tr>
       <td>EDUCATIONAL QUALIFICATION (MAX - 40 POINTS)</td>
-      <td><input disabled type="text"></td>
-      <td><input disabled type="text"></td>
+      <td><input value="<?= $B_1st ?>" disabled type="text"></td>
+      <td><input value="<?= $B_1st ?>" disabled type="text"></td>
     </tr>
     <tr>
       <td>PARTICIPATION IN CONFERENCES, SEMINARS, WORKSHOPS, IMMERSIONS (Max = 10 PTS)</td>
-      <td><input disabled type="text"></td>
-      <td><input disabled type="text"></td>
+      <td><input value="<?= $B_2nd ?>" disabled type="text"></td>
+      <td><input value="<?= $B_2nd ?>" disabled type="text"></td>
     </tr>
     <tr>
       <td>PAPER PRESENTATION IN CENFERENCES (Max = 10 POINTS)</td>
-      <td><input disabled type="text"></td>
-      <td><input disabled type="text"></td>
+      <td><input value="<?= $B_3rd ?>" disabled type="text"></td>
+      <td><input value="<?= $B_3rd ?>" disabled type="text"></td>
     </tr>
     <tr>
       <td><b>TOTAL POINTS FOR CRITERION B</b></td>
-      <td><input disabled type="text"></td>
-      <td><input disabled type="text"></td>
+      <td><input value="<?= $B_total ?>" disabled type="text"></td>
+      <td><input value="<?= $B_total ?>" disabled type="text"></td>
     </tr>
   </table>
   <br><br><br>
@@ -143,13 +174,13 @@ table {
     </tr>
     <tr>
       <td>AWARDS AND DISTINCTIONS RECEIVED</td>
-      <td><input disabled type="text"></td>
-      <td><input disabled type="text"></td>
+      <td><input value="<?= $C_1st ?>" disabled type="text"></td>
+      <td><input value="<?= $C_1st ?>" disabled type="text"></td>
     </tr>
     <tr>
       <td><b>TOTAL POINTS FOR CRITERION C</b></td>
-      <td><input disabled type="text"></td>
-      <td><input disabled type="text"></td>
+      <td><input value="<?= $C_total ?>" disabled type="text"></td>
+      <td><input value="<?= $C_total ?>" disabled type="text"></td>
     </tr>
   </table>
   <br><br><br>
@@ -164,26 +195,29 @@ table {
     </tr>
     <tr>
       <td>ACADEMIC SERVICE IN HIGHER EDUCATION</td>
-      <td><input disabled type="text"></td>
+      <td><input value="<?= $D_1st ?>" disabled type="text"></td>
       <td></td>
     </tr>
     <tr>
       <td>INDUSTRY SERVICES (NON-ACADEMIC ORGANIZATIONS)</td>
-      <td><input disabled type="text"></td>
+      <td><input value="<?= $D_2nd ?>" disabled type="text"></td>
       <td></td>
     </tr>
     <tr>
       <td><b>TOTAL POINTS FOR CRITERION D</b></td>
-      <td><input disabled type="text"></td>
-      <td><input disabled type="text"></td>
+      <td><input value="<?= $D_total ?>" disabled type="text"></td>
+      <td><input value="<?= $D_total ?>" disabled type="text"></td>
     </tr>
     <tr>
       <td><b>GRAND TOTAL POINTS FOR KRA IV (MAX - 100 points)</b></td>
-      <td><input disabled type="text"></td>
-      <td><input disabled type="text"></td>
+      <td><input value="<?= $KRA4_total ?>" disabled type="text"></td>
+      <td><input value="<?= $KRA4_total ?>" disabled type="text"></td>
     </tr>
   </table>
 
+<?php
+}
+?>
 
 </body>
 </html>
