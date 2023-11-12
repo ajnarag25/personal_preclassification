@@ -242,7 +242,7 @@ const LR20 = document.getElementById('LR_5')
 const LR_FS_4 = document.getElementById('LR_FS_4')
 
 
-function test() {
+function calc_localAuthors() {
   if(LR1 != null){
     if(LR2 != null){
       if(LR3 != null){
