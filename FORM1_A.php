@@ -23,7 +23,12 @@ if(isset($_POST['submit_btn'])){
         </script>
         <?php
     }else{
-      $conn->query("UPDATE kra_1 SET Crit_A_student_eval = '$student', Crit_A_supervisor_eval = '$faculty' WHERE id = 1") or die($conn->error);
+      $conn->query("UPDATE kra_1 SET 
+                 Crit_A_student_eval = '$student', 
+                 Crit_A_supervisor_eval = '$faculty', 
+                 Crit_A_total = Crit_A_student_eval + Crit_A_supervisor_eval, 
+                 Crit_A_total_allowed = Crit_A_total
+             WHERE id = 1") or die($conn->error);
       ?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

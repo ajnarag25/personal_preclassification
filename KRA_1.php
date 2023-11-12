@@ -1,15 +1,7 @@
 <?php
 include 'functions.php';
 error_reporting(0);
-// if(isset($_POST[''])){
-
-// }
-
-// else if() {
-
-// }
-// else{
-// }
+//TODO: add new columns to database for each allowable points per criteria
 ?>
 
 <!DOCTYPE html>
@@ -121,15 +113,12 @@ table {
   <tr>
     <td><b>TOTAL POINTS FOR CRITERION A: </b></td>
     <td>
-    <?php 
-      $aa = $row['Crit_A_student_eval'];
-      $bb = $row['Crit_A_supervisor_eval'];
+    <?php
 
-      $result = $aa + $bb;
     ?>
-    <input disabled type="text" value="<?php echo $result ?>">
+    <input disabled type="text" value="<?php echo $row['Crit_A_total'] ?>">
     </td>
-    <td><input disabled type="text" value="<?php echo $result ?>"></td>
+    <td><input disabled type="text" value="<?php echo $row['Crit_A_total_allowed'] ?>"></td>
   </tr>
 </table>
 
@@ -166,20 +155,17 @@ table {
 
   <tr>
     <td>ACADEMIC PROGRAM DEVELOPED/REVISED AND IMPLEMENTED</td>
-    <td><input disabled type="text" value="5"></td>
+    <td><input disabled type="text" value="<?= $row['Crit_B_academe'] ?>"></td>
     <td></td>
   </tr>
 
   <tr>
     <td><b>TOTAL POINTS FOR CRITERION B: </b></td>
     <?php 
-      $aa = $row['Crit_B_sole_autho'];
-      $bb = $row['Crit_B_co_autho'];
 
-      $result2 = $aa + $bb + 5;
     ?>
-    <td><input disabled type="text" colspan="4" value="<?php echo $result2 ?>"></td>
-    <td><input disabled type="text" value="30"></td>
+    <td><input disabled type="text" colspan="4" value="<?= $row['Crit_B_total'] ?>"></td>
+    <td><input disabled type="text" value="<?= $row['Crit_B_total_allowed'] ?>"></td>
   </tr>
 </table>
 <br><br><br>
@@ -223,8 +209,8 @@ table {
 
       $result3 = $aa + $bb + $cc;
     ?>
-    <td><input disabled type="text" value="<?php echo $result3; ?>"></td>
-    <td><input disabled type="number" value="10"></td>
+    <td><input disabled type="text" value="<?php echo $row['Crit_C_total']; ?>"></td>
+    <td><input disabled type="number" value="<?= $row['Crit_C_total_allowed'] ?>"></td>
   </tr>
 
   <tr>
