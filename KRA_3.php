@@ -17,7 +17,7 @@ require 'functions.php';
 <style>
   @font-face{
   font-family: Inter;
-  src: url(./fonts/Inter-VariableFont_slnt\,wght.ttf);
+      src: url(./Fonts/Inter-VariableFont_slnt,wght.ttf);
 }
 
 body{
@@ -137,7 +137,7 @@ while ($row = mysqli_fetch_array($result)) {
         <td><input value="<?= $A_CTIG ?>" disabled type="text"></td>
         <td></td>
       </tr>
-      <tr> 
+      <tr>
         <td><b>TOTAL POINTS FOR CRITERION A: </b></td>
         <td><input value="<?= $A_total ?>" disabled type="text"></td>
         <td><input value="<?= $A_total ?>" disabled type="text"></td>
@@ -229,7 +229,7 @@ while ($row = mysqli_fetch_array($result)) {
 <br><br><br>
 
   <table>
-    <tr class="row__des"> 
+    <tr class="row__des">
       <td colspan="3">CRITERION C - QUALITY OF EXTENSION (MAX = 20 POINTS)</td>
     </tr>
 
@@ -273,7 +273,7 @@ while ($row = mysqli_fetch_array($result)) {
       <td><input value="<?= $D_total ?>" disabled type="text"></td>
       <td><input value="<?= $D_total ?>" disabled type="text"></td>
     </tr>
-    
+
     <tr class=" ">
       <td><h2><b>GRAND TOTAL POINTS FOR KRA III (MAX - 100 points)</b></h2></td>
       <td><input value="<?= $KRA3_total ?>" disabled type="text"></td>

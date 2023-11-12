@@ -3,8 +3,12 @@
 require_once 'functions.php';
     if (isset($_POST['Register']))      
     {
-        insert_data__user($_POST['u_name'],$_POST['p_word']);
+        $username = $_POST['u_name'];
+        $password = $_POST['p_word'];
+
+        $conn->query("INSERT INTO users (username, password) VALUES('$username', '$password')") or die($conn->error);
         echo '<script>alert("Login Info Saved")</script>';
+        header('location:login.php');
     }
 
     else if (isset($_POST['Cancel']))
@@ -22,8 +26,7 @@ require_once 'functions.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- <link rel="stylesheet" href="./css/test.css"> -->
+    <link rel="stylesheet" href="./CSS/style.css">
     <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmPodt5vh1lKwmlGvOSj3xeXqUp_TokegUQV_5WxVqgw&s">
     <title>Registration</title>
 </head>
@@ -31,7 +34,7 @@ require_once 'functions.php';
 <style>
     
 #bg_all{
-  background-image: url(./assets/BG_all.png);
+  background-image: url(./Assets/BG_all.png);
   background-size: cover;
   background-repeat: no-repeat;
 }

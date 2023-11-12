@@ -17,7 +17,7 @@ require 'functions.php';
 <style>
     @font-face {
         font-family: Inter;
-        src: url(./fonts/Inter-VariableFont_slnt\,wght.ttf);
+        src: url(./Fonts/Inter-VariableFont_slnt,wght.ttf);
     }
 
 

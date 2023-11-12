@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <html>
  
@@ -7,7 +7,7 @@
 <header>
     <div id="header_div">
         <div id="evsu_logo">
-            <img src="./assets/evsu-logo-removebg-preview.png" alt="">  
+            <img src="./Assets/evsu-logo-removebg-preview.png" alt="">
         </div>
 
         <h2>Eastern Visayas State University</h2>
@@ -18,7 +18,7 @@
     </div>
 </header>
 
-<script src="./Js/Date.js">
+<script src="./JS/Date.js">
 
 </script>
 </html>

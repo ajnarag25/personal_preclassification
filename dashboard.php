@@ -23,7 +23,7 @@ header('location: logout.php');
   <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./css/dashboard.css"> -->
+     <link rel="stylesheet" href="./CSS/dashboard.css">
     <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmPodt5vh1lKwmlGvOSj3xeXqUp_TokegUQV_5WxVqgw&s">
     <title>Dashboard</title>
 </head>
@@ -31,7 +31,7 @@ header('location: logout.php');
 <style>
   @font-face{
   font-family: Inter;
-  src: url(./fonts/Inter-VariableFont_slnt,wght.ttf);
+  src: url(./Fonts/Inter-VariableFont_slnt,wght.ttf);
   }
   * {
   margin: 0;
@@ -117,13 +117,13 @@ header{
   width: 100%;
 } 
 
-#system-title{
-  font-size: 2.1em;
-  height: 8vh;
-  display: flex;
-  background-color: #7d0201;
+/*#system-title{*/
+/*  font-size: 2.1em;*/
+/*  height: 8vh;*/
+/*  display: flex;*/
+/*  background-color: blue;*/
 
-}
+/*}*/
 
 #system-title h2{
   color: white;
