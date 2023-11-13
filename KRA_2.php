@@ -106,10 +106,13 @@ while ($row = mysqli_fetch_array($result)) {
     $total_2 = $leadResearcher + $contributor;
 
     $local = $row['Crit_A_Local'];
+    $local_Allowed = $row['Crit_A_Local_Allowed'];
     $international = $row['Crit_A_International'];
+    $international_Allowed = $row['Crit_A_International_Allowed'];
     $total_3 = $local + $international;
 
-    $total_A = $total_1 + $total_2 + $total_3;
+    $total_A = $row['Crit_A_total'];
+    $total_A_allowed = $row['Crit_A_total_allowed'];
     ?>
 
     <table>
@@ -177,13 +180,13 @@ while ($row = mysqli_fetch_array($result)) {
         <tr>
             <td>Local (MAX = 40 POINTS)</td>
             <td><input type="text" value="<?= $local ?>" disabled></td>
-            <TD><input type="text" value="<?= $local ?>" disabled></TD>
+            <TD><input type="text" value="<?= $local_Allowed ?>" disabled></TD>
         </tr>
 
         <tr>
             <td>International (MAX = 60 POINTS)</td>
             <td><input type="text" value="<?= $international ?>" disabled></td>
-            <td><input type="text" value="<?= $international ?>" disabled></td>
+            <td><input type="text" value="<?= $international_Allowed ?>" disabled></td>
         </tr>
 
         <tr>
@@ -195,7 +198,7 @@ while ($row = mysqli_fetch_array($result)) {
         <tr>
             <td><b>TOTAL POINTS FOR CRITERION A: </b></td>
             <td><input type="text" value="<?= $total_A ?>" disabled></td>
-            <td><input type="text" value="<?= $total_A ?>" disabled></td>
+            <td><input type="text" value="<?= $total_A_allowed ?>" disabled></td>
         </tr>
     </table>
     <table>
@@ -210,19 +213,23 @@ while ($row = mysqli_fetch_array($result)) {
         $UMID_SI = $row['Crit_B_UMID_SI'];
         $UMID_CI = $row['Crit_B_UMID_CI'];
         $CPP_L = $row['Crit_B_CPP_Local'];
+        $CPP_L_allowed = $row['Crit_B_CPP_Local_allowed'];
         $CPP_I = $row['Crit_B_CPP_International'];
+        $CPP_I_allowed = $row['Crit_B_CPP_International_allowed'];
         $NPI_SI = $row['Crit_B_NPI_SI'];
         $NPI_CI = $row['Crit_B_NPI_CI'];
         $NPI_USP = $row['Crit_B_NPI_USP'];
         $NPVA_SD = $row['Crit_B_NPVA_SD'];
         $NPVA_CD = $row['Crit_B_NPVA_CD'];
         $total_B = $row['Crit_B_Total'];
+        $total_B_total_allowed = $row['Crit_B_Total_allowed'];
         $PA = $row['Crit_C_PA'];
         $Exhib = $row['Crit_C_Exhibition'];
         $Designs = $row['Crit_C_Designs'];
         $Lit_pub = $row['Crit_C_Lit-pub'];
         $total_C = $row['Crit_C_total'];
         $totalKRA2 = $row['KRA_2_total'];
+        $totalKRA2_allowed = $row['KRA_2_total_allowed'];
         ?>
 
         <tr class="row__des">
@@ -245,12 +252,12 @@ while ($row = mysqli_fetch_array($result)) {
         <tr>
             <td>- Sole Inventor</td>
             <td><input value="<?= $PI_SI ?>" disabled type="text"></td>
-            <td><input value="<?= $PI_SI ?>" disabled type="text"></td>
+            <td></td>
         </tr>
         <tr>
             <td>- Co-Inventor</td>
             <td><input value="<?= $PI_CI ?>" disabled type="text"></td>
-            <td><input value="<?= $PI_CI ?>" disabled type="text"></td>
+            <td></td>
         </tr>
         <tr class="row__des">
             <td>Utility Model and Industrial Design</td>
@@ -259,30 +266,27 @@ while ($row = mysqli_fetch_array($result)) {
         <tr>
             <td>- Sole Inventor</td>
             <td><input value="<?= $UMID_SI ?>" disabled type="text"></td>
-            <td><input value="<?= $UMID_SI ?>" disabled type="text"></td>
+            <td></td>
         </tr>
         <tr>
             <td>- Co-Inventor</td>
             <td><input value="<?= $UMID_CI ?>" disabled type="text"></td>
-            <td><input value="<?= $UMID_CI ?>" disabled type="text"></td>
+            <td></td>
         </tr>
         <tr class="row__des">
             <td>Commercialized Patented Product</td>
             <td colspan="2"></td>
         </tr>
-        <!-- <tr>
-          <td>Commercialized Patented Product</td>
-          <td><input disabled type="text"></td>
-          <td></td>
-        </tr> -->
         <tr>
             <td>Local (MAX = 20 POINTS)</td>
             <td><input value="<?= $CPP_L ?>" disabled type="text"></td>
+            <td><input value="<?= $CPP_L_allowed ?>" disabled type="text"></td>
             <td></td>
         </tr>
         <tr>
             <td>International (MAX = 30 POINTS)</td>
             <td><input value="<?= $CPP_I ?>" disabled type="text"></td>
+            <td><input value="<?= $CPP_I_allowed ?>" disabled type="text"></td>
             <td></td>
         </tr>
         <tr class="row__des">
@@ -296,20 +300,19 @@ while ($row = mysqli_fetch_array($result)) {
 
         <tr>
             <td>New Software Products</td>
-            <td></td>
-            <td></td>
+            <td colspan="2"></td>
         </tr>
 
         <tr>
             <td>- Sole Inventor</td>
             <td><input value="<?= $NPI_SI?>" disabled type="text"></td>
-            <td><input value="<?= $NPI_SI?>" disabled type="text"></td>
+            <td></td>
         </tr>
 
         <tr>
             <td>- Co-Inventor</td>
             <td><input value="<?= $NPI_CI?>" disabled type="text"></td>
-            <td><input value="<?= $NPI_CI?>" disabled type="text"></td>
+            <td></td>
         </tr>
 
         <tr>
@@ -387,7 +390,7 @@ while ($row = mysqli_fetch_array($result)) {
         <tr>
             <td><b><h2>GRAND TOTAL POINTS FOR KRA II (MAX - 100 points)</h2></b></td>
             <td><input value="<?= $totalKRA2 ?>" disabled type="text"></td>
-            <td><input value="<?= $totalKRA2 ?>" disabled type="text"></td>
+            <td><input value="<?= $totalKRA2_allowed ?>" disabled type="text"></td>
         </tr>
     </table>
 <?php } ?>

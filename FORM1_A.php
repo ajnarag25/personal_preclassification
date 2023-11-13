@@ -281,8 +281,6 @@ function calcu_student() {
   var A7 = parseInt(document.getElementById("A4-1").value);
   var A8 = parseInt(document.getElementById("A4-2").value);
 
-
-  // TODO: Recreate the formula here
   var result  = parseFloat((A1 + A2 + A3 + A4 + A5 +A6 + A7 + A8) /8)
   document.getElementById('OAR__stud').value = result
   document.getElementById('FS__stud').value = parseFloat((result /100)*36)

@@ -34,9 +34,13 @@ if (isset($_POST['submit_btn'])) {
                  Crit_A_LR = '$scoreLR', 
                  Crit_A_Contrib = '$scoreC',
                  Crit_A_Local = '$scoreLocal',
+                 Crit_A_Local_Allowed = IF(Crit_A_Local > 40, 40, Crit_A_Local),
                  Crit_A_International = '$scoreInternational',
+                 Crit_A_International_Allowed = IF(Crit_A_International > 60, 60, Crit_A_International),
                  Crit_A_total = Crit_A_SA + Crit_A_CA +  Crit_A_LR +  Crit_A_Contrib +  Crit_A_Local +  Crit_A_International,
-                 KRA_2_total = Crit_A_total + Crit_B_Total + Crit_C_total
+                 Crit_A_total_allowed = IF(Crit_A_total > 100, 100, Crit_A_total),
+                 KRA_2_total = Crit_A_total + Crit_B_Total + Crit_C_total,
+                 KRA_2_total_allowed = IF(KRA_2_total > 100, 100, KRA_2_total)
              WHERE KRA2_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

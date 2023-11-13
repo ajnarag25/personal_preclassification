@@ -1,7 +1,6 @@
 <?php
 include 'functions.php';
 error_reporting(0);
-//TODO: add new columns to database for each allowable points per criteria
 ?>
 
 <!DOCTYPE html>

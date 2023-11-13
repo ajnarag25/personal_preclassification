@@ -32,7 +32,9 @@ if (isset($_POST['submit_btn'])) {
                  Crit_C_Designs = '$scoreJuried',
                  `Crit_C_Lit-pub` = '$scoreLitPub',
                  Crit_C_total = Crit_C_PA + Crit_C_Exhibition + Crit_C_Designs + `Crit_C_Lit-pub`,
-                 KRA_2_total = Crit_A_total + Crit_B_Total + Crit_C_total
+                 Crit_C_Total_allowed = IF(Crit_C_total > 100, 100, Crit_C_total),
+                 KRA_2_total = Crit_A_total + Crit_B_Total + Crit_C_total,
+                 KRA_2_total_allowed = IF(KRA_2_total > 100, 100, KRA_2_total)
              WHERE KRA2_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -186,7 +188,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="NCPA_3" type="date"></td>
             <td><input id="NCPA_4" type="text"></td>
             <td><input id="NCPA_5" type="text"></td>
-            <td><input id="NCPA_res1" disabled type="text"></td>
+            <td><input id="NCPA_res1" readonly type="text"></td>
         </tr>
 
         <tr>
@@ -211,7 +213,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="NCPA_23" type="date"></td>
             <td><input id="NCPA_24" type="text"></td>
             <td><input id="NCPA_25" type="text"></td>
-            <td><input id="NCPA_res2" disabled type="text"></td>
+            <td><input id="NCPA_res2" readonly type="text"></td>
         </tr>
 
         <tr>
@@ -236,7 +238,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="NCPA_33" type="date"></td>
             <td><input id="NCPA_34" type="text"></td>
             <td><input id="NCPA_35" type="text"></td>
-            <td><input id="NCPA_res3" disabled type="text"></td>
+            <td><input id="NCPA_res3" readonly type="text"></td>
         </tr>
 
         <tr>
@@ -294,7 +296,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="EXB4" type="date"></td>
             <td><input id="EXB5" type="text"></td>
             <td><input id="EXB6" type="text"></td>
-            <td><input id="EXB_res1" disabled type="text"></td>
+            <td><input id="EXB_res1" readonly type="text"></td>
         </tr>
 
         <tr>
@@ -324,7 +326,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="EXB24" type="date"></td>
             <td><input id="EXB25" type="text"></td>
             <td><input id="EXB26" type="text"></td>
-            <td><input id="EXB_res2" disabled type="text"></td>
+            <td><input id="EXB_res2" readonly type="text"></td>
         </tr>
 
         <tr>
@@ -354,7 +356,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="EXB34" type="date"></td>
             <td><input id="EXB35" type="text"></td>
             <td><input id="EXB36" type="text"></td>
-            <td><input id="EXB_res3" disabled type="text"></td>
+            <td><input id="EXB_res3" readonly type="text"></td>
         </tr>
 
 
@@ -398,7 +400,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="JR4" type="date"></td>
             <td><input id="JR5" type="text"></td>
             <td><input id="JR6" type="text"></td>
-            <td><input id="JR_res1" disabled type="text"></td>
+            <td><input id="JR_res1" readonly type="text"></td>
         </tr>
 
         <tr>
@@ -416,7 +418,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="JR24" type="date"></td>
             <td><input id="JR25" type="text"></td>
             <td><input id="JR26" type="text"></td>
-            <td><input id="JR_res2" disabled type="text"></td>
+            <td><input id="JR_res2" readonly type="text"></td>
         </tr>
 
         <tr>
@@ -434,7 +436,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="JR34" type="date"></td>
             <td><input id="JR35" type="text"></td>
             <td><input id="JR36" type="text"></td>
-            <td><input id="JR_res3" disabled type="text"></td>
+            <td><input id="JR_res3" readonly type="text"></td>
         </tr>
 
         <tr>
@@ -483,7 +485,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="LIT4" type="date"></td>
             <td><input id="LIT5" type="text"></td>
             <td><input id="LIT6" type="text"></td>
-            <td><input id="Lit_res1" disabled type="text"></td>
+            <td><input id="Lit_res1" readonly type="text"></td>
         </tr>
 
         <tr>
@@ -503,7 +505,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="LIT24" type="date"></td>
             <td><input id="LIT25" type="text"></td>
             <td><input id="LIT26" type="text"></td>
-            <td><input id="Lit_res2" disabled type="text"></td>
+            <td><input id="Lit_res2" readonly type="text"></td>
         </tr>
 
         <tr>
@@ -523,7 +525,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input id="LIT34" type="date"></td>
             <td><input id="LIT35" type="text"></td>
             <td><input id="LIT36" type="text"></td>
-            <td><input id="Lit_res3" disabled type="text"></td>
+            <td><input id="Lit_res3" readonly type="text"></td>
         </tr>
 
         <tr>

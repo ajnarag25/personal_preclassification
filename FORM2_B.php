@@ -42,14 +42,18 @@ if (isset($_POST['submit_btn'])) {
                  Crit_B_UMID_SI = '$scoreUMID_SI',
                  Crit_B_UMID_CI = '$scoreUMID_MI', 
                  Crit_B_CPP_Local = '$scoreCPP_L', 
+                 Crit_B_CPP_Local_allowed = IF(Crit_B_CPP_Local > 20, 20 , Crit_B_CPP_Local),
                  Crit_B_CPP_International = '$scoreCPP_I',
+                 Crit_B_CPP_International_allowed = IF(Crit_B_CPP_International > 30, 30 , Crit_B_CPP_International),
                  Crit_B_NPI_SI = '$scoreNSP_SD', 
                  Crit_B_NPI_CI = '$scoreNSP_MD', 
                  Crit_B_NPI_USP ='$scoreUSP_SCD',
                  Crit_B_NPVA_SD ='$scoreNPV_SCD', 
                  Crit_B_NPVA_CD = '$scoreNPV_MD',
                  Crit_B_Total = Crit_B_PI_SI + Crit_B_PI_CI + Crit_B_UMID_SI + Crit_B_UMID_CI + Crit_B_CPP_Local + Crit_B_CPP_International + Crit_B_NPI_SI + Crit_B_NPI_CI + Crit_B_NPI_USP + Crit_B_NPVA_SD + Crit_B_NPVA_CD,
-                 KRA_2_total = Crit_A_total + Crit_B_Total + Crit_C_total
+                 Crit_B_Total_allowed = IF(Crit_B_Total > 100, 100, Crit_B_Total),
+                 KRA_2_total = Crit_A_total + Crit_B_Total + Crit_C_total,
+                 KRA_2_total_allowed = IF(KRA_2_total > 100, 100, KRA_2_total)
                  WHERE KRA2_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
