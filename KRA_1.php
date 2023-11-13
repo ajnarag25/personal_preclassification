@@ -208,26 +208,14 @@ table {
 
       $result3 = $aa + $bb + $cc;
     ?>
-    <td><input disabled type="text" value="<?php echo $row['Crit_C_total']; ?>"></td>
+    <td><input disabled type="text" value="<?php echo $row['Crit_C_total'] ?>"></td>
     <td><input disabled type="number" value="<?= $row['Crit_C_total_allowed'] ?>"></td>
   </tr>
 
   <tr>
     <td>GRAND TOTAL POINTS FOR KRA 1 (MAX - 100 points)</td>
-    <?php 
-      $aa = $result;
-      $bb = $result2;
-      $cc = $result3;
-
-      $result4 = $aa + $bb + $cc;
-    ?>
-    <td><input disabled type="text" disabled value="<?php echo $result4 ?>"></td>
-    <?php 
-      $aa = $result;
-
-      $result5 = $aa + 30 + 10;
-    ?>
-    <td><input disabled type="text" disabled value="<?php echo $result5 ?>"></td>
+    <td><input disabled type="text" disabled value="<?php echo $row['Total_kra_1'] ?>"></td>
+    <td><input disabled type="text" disabled value="<?php echo $row['Total_kra_1_allowed'] ?>"></td>
   </tr>
 </table>
 <?php } ?>

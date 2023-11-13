@@ -53,7 +53,7 @@ if (isset($_POST['submit_btn'])) {
                  Crit_B_Total = Crit_B_PI_SI + Crit_B_PI_CI + Crit_B_UMID_SI + Crit_B_UMID_CI + Crit_B_CPP_Local + Crit_B_CPP_International + Crit_B_NPI_SI + Crit_B_NPI_CI + Crit_B_NPI_USP + Crit_B_NPVA_SD + Crit_B_NPVA_CD,
                  Crit_B_Total_allowed = IF(Crit_B_Total > 100, 100, Crit_B_Total),
                  KRA_2_total = Crit_A_total + Crit_B_Total + Crit_C_total,
-                 KRA_2_total_allowed = IF(KRA_2_total > 100, 100, KRA_2_total)
+                 KRA_2_total_allowed = Crit_A_total_allowed + Crit_B_Total_allowed + Crit_C_Total_allowed
                  WHERE KRA2_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
