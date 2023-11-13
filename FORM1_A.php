@@ -29,7 +29,7 @@ if(isset($_POST['submit_btn'])){
                  Crit_A_total = Crit_A_student_eval + Crit_A_supervisor_eval, 
                  Crit_A_total_allowed = Crit_A_total,
                  Total_kra_1 = Crit_A_total + Crit_B_total + Crit_C_total,
-                 Total_kra_1_allowed = Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed
+                 Total_kra_1_allowed = IF(Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed > 100, 100, Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed)
              WHERE id = 1") or die($conn->error);
       ?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

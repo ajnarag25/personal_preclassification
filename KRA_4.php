@@ -93,16 +93,25 @@ while ($row = mysqli_fetch_array($result)) {
 
     $A_1st = $row['Crit_A_1st'];
     $A_total = $row['Crit_A_total'];
+    $A_total_allowed = $row['Crit_A_total_allowed'];
     $B_1st = $row['Crit_B_1st'];
+    $B_1st_allowed = $row['Crit_B_1st_allowed'];
     $B_2nd = $row['Crit_B_2nd'];
+    $B_2nd_allowed = $row['Crit_B_2nd_allowed'];
     $B_3rd = $row['Crit_B_3rd'];
+    $B_3rd_allowed = $row['Crit_B_3rd_allowed'];
     $B_total = $row['Crit_B_total'];
+    $B_total_allowed = $row['Crit_B_total_allowed'];
     $C_1st = $row['Crit_C_1st'];
+    $C_1st_allowed = $row['Crit_C_1st_allowed'];
     $C_total = $row['Crit_C_total'];
+    $C_total_allowed = $row['Crit_C_total_allowed'];
     $D_1st = $row['Crit_D_1st'];
     $D_2nd = $row['Crit_D_2nd'];
     $D_total = $row['Crit_D_total'];
+    $D_total_allowed = $row['Crit_D_total_allowed'];
     $KRA4_total = $row['KRA4_total'];
+    $KRA4_total_allowed = $row['KRA4_total_allowed'];
 
 
     ?>
@@ -125,7 +134,7 @@ while ($row = mysqli_fetch_array($result)) {
     <tr>
       <td><b>TOTAL POINTS FOR CRITERION A:</b></td>
       <td><input value="<?= $A_total ?>" disabled type="text"></td>
-      <td><input value="<?= $A_total ?>" disabled type="text"></td>
+      <td><input value="<?= $A_total_allowed ?>" disabled type="text"></td>
     </tr>
   </table>
 
@@ -143,22 +152,22 @@ while ($row = mysqli_fetch_array($result)) {
     <tr>
       <td>EDUCATIONAL QUALIFICATION (MAX - 40 POINTS)</td>
       <td><input value="<?= $B_1st ?>" disabled type="text"></td>
-      <td><input value="<?= $B_1st ?>" disabled type="text"></td>
+      <td><input value="<?= $B_1st_allowed ?>" disabled type="text"></td>
     </tr>
     <tr>
       <td>PARTICIPATION IN CONFERENCES, SEMINARS, WORKSHOPS, IMMERSIONS (Max = 10 PTS)</td>
       <td><input value="<?= $B_2nd ?>" disabled type="text"></td>
-      <td><input value="<?= $B_2nd ?>" disabled type="text"></td>
+      <td><input value="<?= $B_2nd_allowed ?>" disabled type="text"></td>
     </tr>
     <tr>
-      <td>PAPER PRESENTATION IN CENFERENCES (Max = 10 POINTS)</td>
+      <td>PAPER PRESENTATION IN CONFERENCES (Max = 10 POINTS)</td>
       <td><input value="<?= $B_3rd ?>" disabled type="text"></td>
-      <td><input value="<?= $B_3rd ?>" disabled type="text"></td>
+      <td><input value="<?= $B_3rd_allowed ?>" disabled type="text"></td>
     </tr>
     <tr>
       <td><b>TOTAL POINTS FOR CRITERION B</b></td>
       <td><input value="<?= $B_total ?>" disabled type="text"></td>
-      <td><input value="<?= $B_total ?>" disabled type="text"></td>
+      <td><input value="<?= $B_total_allowed ?>" disabled type="text"></td>
     </tr>
   </table>
   <br><br><br>
@@ -175,12 +184,12 @@ while ($row = mysqli_fetch_array($result)) {
     <tr>
       <td>AWARDS AND DISTINCTIONS RECEIVED</td>
       <td><input value="<?= $C_1st ?>" disabled type="text"></td>
-      <td><input value="<?= $C_1st ?>" disabled type="text"></td>
+      <td><input value="<?= $C_1st_allowed ?>" disabled type="text"></td>
     </tr>
     <tr>
       <td><b>TOTAL POINTS FOR CRITERION C</b></td>
       <td><input value="<?= $C_total ?>" disabled type="text"></td>
-      <td><input value="<?= $C_total ?>" disabled type="text"></td>
+      <td><input value="<?= $C_total_allowed ?>" disabled type="text"></td>
     </tr>
   </table>
   <br><br><br>
@@ -206,12 +215,12 @@ while ($row = mysqli_fetch_array($result)) {
     <tr>
       <td><b>TOTAL POINTS FOR CRITERION D</b></td>
       <td><input value="<?= $D_total ?>" disabled type="text"></td>
-      <td><input value="<?= $D_total ?>" disabled type="text"></td>
+      <td><input value="<?= $D_total_allowed ?>" disabled type="text"></td>
     </tr>
     <tr>
       <td><b>GRAND TOTAL POINTS FOR KRA IV (MAX - 100 points)</b></td>
       <td><input value="<?= $KRA4_total ?>" disabled type="text"></td>
-      <td><input value="<?= $KRA4_total ?>" disabled type="text"></td>
+      <td><input value="<?= $KRA4_total_allowed ?>" disabled type="text"></td>
     </tr>
   </table>
 

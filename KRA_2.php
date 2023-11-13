@@ -228,6 +228,7 @@ while ($row = mysqli_fetch_array($result)) {
         $Designs = $row['Crit_C_Designs'];
         $Lit_pub = $row['Crit_C_Lit-pub'];
         $total_C = $row['Crit_C_total'];
+        $total_C_allowed = $row['Crit_C_Total_allowed'];
         $totalKRA2 = $row['KRA_2_total'];
         $totalKRA2_allowed = $row['KRA_2_total_allowed'];
         ?>
@@ -384,7 +385,7 @@ while ($row = mysqli_fetch_array($result)) {
         <tr>
             <td><b>TOTAL POINTS FOR CRITERION C (MAX - 100 points)</b></td>
             <td><input value="<?= $total_C ?>" disabled type="text"></td>
-            <td><input value="<?= $total_C ?>" disabled type="text"></td>
+            <td><input value="<?= $total_C_allowed ?>" disabled type="text"></td>
         </tr>
 
         <tr>

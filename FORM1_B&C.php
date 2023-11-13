@@ -40,7 +40,7 @@ if (isset($_POST['Submit_btn'])) {
                  Crit_C_total = Crit_C_Adviser + Crit_C_Panel + Crit_C_Mentor,
                  Crit_C_total_allowed = IF(Crit_C_total > 30, 30, Crit_C_total) ,
                  Total_kra_1 =  Crit_A_total + Crit_B_total + Crit_C_total,
-                 Total_kra_1_allowed = Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed
+                 Total_kra_1_allowed = IF(Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed > 100, 100, Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed)
              WHERE id = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

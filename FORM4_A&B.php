@@ -37,11 +37,17 @@ if (isset($_POST['Submit_btn'])) {
             "UPDATE kra_4 SET
                  Crit_A_1st = '$scoreFCIM',
                  Crit_A_total = '$scoreFCIM',
+                 Crit_A_total_allowed = IF(Crit_A_total > 20, 20, Crit_A_total),
                  Crit_B_1st = '$scoreBFirst',
+                 Crit_B_1st_allowed = IF(Crit_B_1st > 40, 40, Crit_B_1st),
                  Crit_B_2nd = '$scoreFEP',
+                 Crit_B_2nd_allowed = IF(Crit_B_2nd > 10, 10, Crit_B_2nd),
                  Crit_B_3rd = '$scoreFEPP',
+                 Crit_B_3rd_allowed = IF(Crit_B_3rd > 10, 10, Crit_B_3rd),
                  Crit_B_total = '$scoreBTotal',
-                 KRA4_total = Crit_A_total + Crit_B_total + Crit_C_total + Crit_D_total
+                 Crit_B_total_allowed = IF(Crit_B_1st_allowed + Crit_B_2nd_allowed + Crit_B_3rd_allowed > 60, 60, Crit_B_1st_allowed + Crit_B_2nd_allowed + Crit_B_3rd_allowed),
+                 KRA4_total = Crit_A_total + Crit_B_total + Crit_C_total + Crit_D_total,
+                 KRA4_total_allowed = IF(Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed + Crit_D_total_allowed > 100, 100, Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed + Crit_D_total_allowed)
              WHERE Kra4_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -30,11 +30,15 @@ if (isset($_POST['submit_btn'])) {
         $conn->query(
             "UPDATE kra_4 SET
                  Crit_C_1st = '$scoreFEA',
+                 Crit_C_1st_allowed = Crit_C_1st,
                  Crit_C_total = '$scoreFEA',
+                 Crit_C_total_allowed = IF(Crit_C_total > 30, 30, Crit_C_total),
                  Crit_D_1st = '$scoreFEY',
                  Crit_D_2nd = '$scoreFEYO',
                  Crit_D_total = '$scoreDTotal',
-                 KRA4_total = Crit_A_total + Crit_B_total + Crit_C_total + Crit_D_total
+                 Crit_D_total_allowed = IF(Crit_D_total > 30, 30, Crit_D_total),
+                 Crit_D_total_allowed = IF(Crit_D_total > 20, 20 , Crit_D_total),
+                 KRA4_total_allowed = IF(Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed + Crit_D_total_allowed > 100, 100, Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed + Crit_D_total_allowed)
              WHERE Kra4_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

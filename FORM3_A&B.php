@@ -64,9 +64,12 @@ if (isset($_POST['submit_btn'])) {
                  `Crit_B_2.1` = '$scoreFESOP',
                  `Crit_B_2.1_allowed` = IF(`Crit_B_2.1` > 30, 30, `Crit_B_2.1`),
                  Crit_B_total = `Crit_B_1.1` + `Crit_B_1.2` + `Crit_B_1.3` + `Crit_B_1.4.1` + `Crit_B_1.4.2` + `Crit_B_1.4.3` + `Crit_B_1.4.4` + `Crit_B_1.5` + `Crit_B_2.1`,
-                 Crit_B_total_allowed = IF(Crit_B_total > 50, 50, Crit_B_total),
+                 Crit_B_total_allowed = IF(
+                     `Crit_B_1.1` + `Crit_B_1.2` + `Crit_B_1.3` + `Crit_B_1.4.1_allowed` + `Crit_B_1.4.2` + `Crit_B_1.4.3` + `Crit_B_1.4.4_allowed` + `Crit_B_1.5` + `Crit_B_2.1_allowed` > 50, 
+                     50, 
+                     Crit_B_total),
                  KRA3_total = Crit_A_total + Crit_B_total + Crit_C_total + Crit_D_total,
-                 KRA3_total_allowed = Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed + Crit_D_total_allowed
+                 KRA3_total_allowed = IF(Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed + Crit_D_total_allowed > 100, 100, Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed + Crit_D_total_allowed)
                  WHERE KRA3_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
