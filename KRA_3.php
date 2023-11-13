@@ -99,21 +99,29 @@ while ($row = mysqli_fetch_array($result)) {
     $A_LNAP = $row['Crit_A_LNAP'];
     $A_CTIG = $row['Crit_A_CTIG'];
     $A_total = $row['Crit_A_total'];
+    $A_total_allowed = $row['Crit_A_total_allowed'];
     $B_1_1 = $row['Crit_B_1.1'];
     $B_1_2 = $row['Crit_B_1.2'];
     $B_1_3 = $row['Crit_B_1.3'];
     $B_1_4_1 = $row['Crit_B_1.4.1'];
+    $B_1_4_1_allowed = $row['Crit_B_1.4.1_allowed'];
     $B_1_4_2 = $row['Crit_B_1.4.2'];
     $B_1_4_3 = $row['Crit_B_1.4.3'];
     $B_1_4_4 = $row['Crit_B_1.4.4'];
+    $B_1_4_4_allowed = $row['Crit_B_1.4.4_allowed'];
     $B_1_5 = $row['Crit_B_1.5'];
     $B_2_1 = $row['Crit_B_2.1'];
+    $B_2_1_allowed = $row['Crit_B_2.1_allowed'];
     $B_total = $row['Crit_B_total'];
+    $B_total_allowed = $row['Crit_B_total_allowed'];
     $C_1 = $row['Crit_C_1'];
     $C_total = $row['Crit_C_total'];
+    $C_total_allowed = $row['Crit_C_total_allowed'];
     $D_1 = $row['Crit_D_1'];
     $D_total = $row['Crit_D_total'];
+    $D_total_allowed = $row['Crit_D_total_allowed'];
     $KRA3_total = $row['KRA3_total'];
+    $KRA3_total_allowed = $row['KRA3_total_allowed'];
 
     ?>
 
@@ -140,7 +148,7 @@ while ($row = mysqli_fetch_array($result)) {
       <tr>
         <td><b>TOTAL POINTS FOR CRITERION A: </b></td>
         <td><input value="<?= $A_total ?>" disabled type="text"></td>
-        <td><input value="<?= $A_total ?>" disabled type="text"></td>
+        <td><input value="<?= $A_total_allowed ?>" disabled type="text"></td>
       </tr>
   </table>
 <br><br><br>
@@ -182,7 +190,7 @@ while ($row = mysqli_fetch_array($result)) {
     <tr>
       <td>1.4.1  Writer of occasional newspaper column (MAX = 10 POINTS)</td>
       <td><input value="<?= $B_1_4_1 ?>" disabled type="text"></td>
-      <td><input value="<?= $B_1_4_1 ?>" disabled type="text"></td>
+      <td><input value="<?= $B_1_4_1_allowed ?>" disabled type="text"></td>
     </tr>
     <tr>
       <td>1.4.2  Writer of regular newspaper column</td>
@@ -197,7 +205,7 @@ while ($row = mysqli_fetch_array($result)) {
     <tr>
       <td>1.4.4  Guesting as technical expert for TV/radio program/print/online media (MAX = 10 POINTS)</td>
       <td><input value="<?= $B_1_4_4 ?>" disabled type="text"></td>
-      <td><input value="<?= $B_1_4_4 ?>" disabled type="text"></td>
+      <td><input value="<?= $B_1_4_4_allowed ?>" disabled type="text"></td>
     </tr>
       <tr class="row__des">
           <td>1.5 For every hour of training course, seminar, workshop</td>
@@ -217,12 +225,12 @@ while ($row = mysqli_fetch_array($result)) {
     <tr>
       <td>2.1 For every service-oriented project in the community (including advocacy initiatives)</td>
       <td><input value="<?= $B_2_1 ?>" disabled type="text"></td>
-      <td><input value="<?= $B_2_1 ?>" disabled type="text"></td>
+      <td><input value="<?= $B_2_1_allowed ?>" disabled type="text"></td>
     </tr>
     <tr class="">
       <td><b>TOTAL POINTS FOR CRITERION B: </b></td>
       <td><input value="<?= $B_total ?>" disabled type="text"></td>
-      <td><input value="<?= $B_total ?>" disabled type="text"></td>
+      <td><input value="<?= $B_total_allowed ?>" disabled type="text"></td>
     </tr>
   </table>
 
@@ -248,7 +256,7 @@ while ($row = mysqli_fetch_array($result)) {
     <tr>
       <td><b>TOTAL POINTS FOR CRITERION C (MAX = 20 points)</b></td>
       <td><input value="<?= $C_total ?>" disabled type="text"></td>
-      <td><input value="<?= $C_total ?>" disabled type="text"></td>
+      <td><input value="<?= $C_total_allowed ?>" disabled type="text"></td>
     </tr>
   </table>
 
@@ -271,13 +279,13 @@ while ($row = mysqli_fetch_array($result)) {
     <tr>
       <td><b>TOTAL POINTS FOR CRITERION C (MAX = 20 POINTS)</b></td>
       <td><input value="<?= $D_total ?>" disabled type="text"></td>
-      <td><input value="<?= $D_total ?>" disabled type="text"></td>
+      <td><input value="<?= $D_total_allowed ?>" disabled type="text"></td>
     </tr>
 
     <tr class=" ">
       <td><h2><b>GRAND TOTAL POINTS FOR KRA III (MAX - 100 points)</b></h2></td>
       <td><input value="<?= $KRA3_total ?>" disabled type="text"></td>
-      <td><input value="<?= $KRA3_total ?>" disabled type="text"></td>
+      <td><input value="<?= $KRA3_total_allowed ?>" disabled type="text"></td>
     </tr>
   </table>
 <?php

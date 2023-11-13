@@ -26,9 +26,12 @@ if (isset($_POST['Submit_btn'])) {
             "UPDATE kra_3 SET 
                  Crit_C_1 = '$scoreStudent',
                  Crit_C_total = '$scoreStudent',
+                 Crit_C_total_allowed = IF(Crit_C_total > 20, 20, Crit_C_total),
                  Crit_D_1  = '$scoreAdmin',
                  Crit_D_total = '$scoreAdmin',
-                 KRA3_total = Crit_A_total + Crit_B_total + Crit_C_total + Crit_D_total
+                 Crit_D_total_allowed = IF(Crit_D_total > 20, 20, Crit_D_total),
+                 KRA3_total = Crit_A_total + Crit_B_total + Crit_C_total + Crit_D_total,
+                 KRA3_total_allowed = IF(KRA3_total > 100, 100, KRA3_total)
              WHERE KRA3_ID = 1") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
