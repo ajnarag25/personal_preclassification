@@ -299,7 +299,7 @@ $result4 = $conn->query($query4);
                             </script>
                         </div>
                         <div>
-                            <h3>KRA 3</h3>
+                            <h3>KRA 4</h3>
                         </div>
                     </div>
                 </div>
