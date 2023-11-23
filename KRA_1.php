@@ -1,5 +1,10 @@
 <?php
 include 'functions.php';
+session_start();
+if(!isset($_SESSION['user'])){
+  header('location: login.php');
+}
+
 error_reporting(0);
 ?>
 

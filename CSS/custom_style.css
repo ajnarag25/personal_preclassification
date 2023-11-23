@@ -1,0 +1,218 @@
+* {
+    scroll-behavior: smooth;
+}
+
+.main {
+    background-image: url('../assets/BG_all.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 110vh;
+}
+
+.feedback {
+    background-color: #F4F1E8;
+}
+
+.bg-custom {
+    font-family: 'Inter', sans-serif;
+    background-color: #EDAE43;
+}
+
+.main-color {
+    color: #5D3E3E;
+}
+
+.about {
+    text-decoration: none;
+    color: #5D3E3E;
+}
+
+.about:hover {
+    text-decoration: none;
+    color: #8d1111;
+}
+
+
+.index-title h2 span {
+    font-size: 55px;
+    font-family: Anton;
+}
+
+.index-title {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 50%;
+    height: 100vh;
+    padding: 10px;
+}
+
+.custom-cover {
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 110vh;
+    padding: 20px;
+}
+
+.impact {
+    font-family: Impact, Haettenschweiler, 'Bold', sans-serif;
+    font-size: 80px;
+}
+
+.anton {
+    font-family: 'Anton', sans-serif;
+    font-size: 70px;
+    text-shadow: 2px 2px #5a5a5a;
+}
+
+.marg {
+    margin-top: 50px;
+}
+
+.right {
+    float: right;
+}
+
+.signup-custom {
+    background-color: #545454;
+    border: none;
+    color: white;
+    padding: 25px;
+    border-radius: 30px;
+    font-size: 20px;
+    width: 30%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.signup-custom:hover {
+    background-color: #6d6d6d;
+    color: white;
+}
+
+.login-custom {
+    background-color: #7D0201;
+    border: none;
+    color: white;
+    padding: 25px;
+    border-radius: 30px;
+    font-size: 20px;
+    width: 30%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-custom:hover {
+    background-color: #a30404;
+    color: white;
+}
+
+.send-custom {
+    background-color: #7D0201;
+    border: none;
+    color: white;
+    padding: 25px;
+    border-radius: 30px;
+    font-size: 20px;
+    width: 40%;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.send-custom:hover {
+    background-color: #a30404;
+}
+
+.download-custom {
+    background-color: #7D0201;
+    border: none;
+    color: white;
+    padding: 25px;
+    font-size: 20px;
+    width: 100%;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.download-custom:hover {
+    background-color: #a30404;
+}
+
+.text-red {
+    color: #803225;
+
+}
+
+.about-1 {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.about-2 {
+    font-style: italic;
+}
+
+.card-custom {
+    background-color: #803225;
+    padding: 10px;
+}
+
+.card-custom2 {
+    border: solid #803225;
+    font-size: 40px;
+    padding: 20px;
+}
+
+.input-custom {
+    border: solid #5D3E3E;
+    padding: 15px;
+}
+
+.input-login {
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+.login-head {
+    font-size: 35px;
+}
+
+.login-button {
+    background-color: #803225;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #994030;
+    color: white;
+}
+
+.login-card {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: solid #803225 10px;
+    padding: 20px;
+}
+
+.privacy {
+    color: #752e22;
+}
+
+@media only screen and (max-width: 1400px) {
+    .index-title {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .impact {
+        font-size: 60px;
+    }
+
+    .main-color {
+        font-size: 20px;
+    }
+}

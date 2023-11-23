@@ -1,5 +1,10 @@
 <?php
 require 'functions.php';
+session_start();
+if(!isset($_SESSION['user'])){
+  header('location: login.php');
+}
+
 if (isset($_POST['Submit_btn'])) {
     $scoreFCIM = $_POST['FCIM_total'];
     $scoreFDD = $_POST['FDD_total'];

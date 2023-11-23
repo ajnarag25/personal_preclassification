@@ -1,20 +1,14 @@
-<?php
-if (isset($_POST['Log-out'])) { 
-header('location: logout.php');
-}
-// else if() {
-
-// }else if() {
-
-// }else if() {
-
-// }else if() {
-
-// }else(){
-
-// }
-
+<?php 
+    include('functions.php');
+    session_start();
+    if(!isset($_SESSION['user'])){
+        header('location: login.php');
+    }
+    if (isset($_POST['Log-out'])) { 
+      header('location: logout.php');
+      }
 ?>
+
 
 
 <!DOCTYPE html>
