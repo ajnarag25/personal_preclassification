@@ -41,7 +41,7 @@
                             <h4>About</h4>
                         </a>
                         <h3 class="mx-3">|</h3>
-                        <a href="">
+                        <a href="login.php">
                             <img src="Assets/profile.png" width="55" alt="">
                         </a>
                     </div>
@@ -80,6 +80,11 @@
         </div>
     </div>
 
+    <?php 
+        $query = "SELECT * FROM about";
+        $result = mysqli_query($conn, $query);
+        while ($row = mysqli_fetch_array($result)) {
+    ?>
     <div class="main mt-5" id="about">
         <div class="custom-cover">
             <div class="container">
@@ -89,10 +94,7 @@
                     <hr>
                     <h4 class="about-1">Creating Culture of Continuous Improvement- Welcome to the Personal
                         Pre-assessment Web Portal!</h4>
-                    <h4 class="about-2 mt-5">Our user-friendly portal simplifies the faculty pre-assessment process with
-                        transparent workflows and expert guidance. Explore valuable insights on our website and benefit
-                        from secure data management and progress tracking. Join us for a streamlined, transparent, and
-                        efficient pre-assessment experience!</h4>
+                    <h4 class="about-2 mt-5"><?php echo $row['about'] ?></h4>
                     <h1 class="mt-5 text-red"><b>Meet Our Team</b></h1>
                     <hr>
                 </div>
@@ -157,11 +159,11 @@
                 <div class="row align-items-center" data-aos="zoom-out" data-aos-duration="1000" data-aos-once="true">
                     <div class="col">
                         <h4 class="about-1 mt-5"><b>Address:</b></h4>
-                        <h4 class="">6XRW+3W9, Salazar St, Downtown, Tacloban City, Leyte</h4>
+                        <h4 class=""><?php echo $row['address'] ?></h4>
                         <h4 class="about-1 mt-5"><b>Phone:</b></h4>
-                        <h4 class="">(053) 321 1084</h4>
+                        <h4 class=""><?php echo $row['phone'] ?></h4>
                         <h4 class="about-1 mt-5"><b>Email:</b></h4>
-                        <h4 class="">lyka.cabuello@evsu.edu.ph <br> nicole.yadao@evsu.edu.ph</h4>
+                        <h4 class=""><?php echo $row['email'] ?></h4>
                     </div>
                     <div class="col">
                         <div class="card-custom mt-5">
@@ -176,7 +178,7 @@
             </div>
         </div>
     </div>
-
+    <?php } ?>
 
 
     <script src="JS/jquery.js"></script>

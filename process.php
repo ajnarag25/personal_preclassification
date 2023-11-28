@@ -8,6 +8,7 @@
         $department = $_POST['department'];
         $password1 = $_POST['pass1'];
         $password2 = $_POST['pass2'];
+        $email = $_POST['email'];
 
         $sql = "SELECT * FROM users WHERE username='$username' AND department='$department'";
         $result = mysqli_query($conn, $sql);
@@ -22,8 +23,8 @@
             header('location:registration.php');
         }else{
             if (!$result->num_rows > 0) {
-                $conn->query("INSERT INTO users (username, password, department) 
-                VALUES('$username', '".password_hash($password1, PASSWORD_DEFAULT)."', '$department')") or die($conn->error);
+                $conn->query("INSERT INTO users (username, password, email, department, status) 
+                VALUES('$username', '".password_hash($password1, PASSWORD_DEFAULT)."', '$email', '$department', 'Active')") or die($conn->error);
                 $_SESSION['status'] = 'Successfully Created the Account';
                 $_SESSION['status_icon'] = 'success';
                 header('location:login.php');
@@ -46,12 +47,16 @@
         $prompt = mysqli_query($conn, $login);
         $getData = mysqli_fetch_array($prompt);
 
-        if ($user === 'admin' && $pass === 'admin123' && $type === 'system_admin' ){
+        $loginAdmin ="SELECT * FROM admin WHERE username='$user' and password='$pass'";
+        $promptAdmin = mysqli_query($conn, $loginAdmin);
+        $getDataAdmin = mysqli_fetch_array($promptAdmin);
+
+        if ($getDataAdmin && $dept == 'Administrator'){
             $_SESSION['admin'] = $user;
             unset($_SESSION['status']);
             header('location:admin/index.php');
         }else{
-            if ($getData != null){
+            if ($getData != null && $getData['status'] == 'Active'){
                 if (password_verify($pass, $getData['password'])){
                     $_SESSION['user'] = $getData;
                     unset($_SESSION['status']);
@@ -62,7 +67,7 @@
                     header('location:login.php');
                 }
             }else{
-                $_SESSION['status'] = 'Invalid Credentials';
+                $_SESSION['status'] = 'Invalid Credentials / Deactivated Account';
                 $_SESSION['status_icon'] = 'error';
                 header('location:login.php');
             }

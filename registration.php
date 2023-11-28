@@ -42,7 +42,7 @@
                             <h4>About</h4>
                         </a>
                         <h3 class="mx-3">|</h3>
-                        <a href="">
+                        <a href="login.php">
                             <img src="Assets/profile.png" width="55" alt="">
                         </a>
                     </div>
@@ -75,15 +75,16 @@
                             <br>
                             <select class="form-select input-login w-50" name="department" id="" required>
                                 <option value="" selected disabled>Select Department</option>
-                                <option value="College of Architecture and Allied Discipline">College of Architecture
-                                    and Allied Discipline</option>
-                                <option value="College of Arts and Sciences">College of Arts and Sciences</option>
-                                <option value="College of Business and Entrepreneurship">College of Business and
-                                    Entrepreneurship</option>
-                                <option value="College of Education">College of Education</option>
-                                <option value="College of Engineering">College of Engineering</option>
-                                <option value="College of Technology">College of Technology</option>
+                                <?php 
+                                    $query = "SELECT * FROM department";
+                                    $result = mysqli_query($conn, $query);
+                                    while ($row = mysqli_fetch_array($result)) {
+                                ?>
+                                <option value="<?php echo $row['dept']  ?>"><?php echo $row['dept'] ?></option>
+                                <?php } ?>
                             </select>
+                            <br>
+                            <input type="text" placeholder="Email" name="email" class="form-control input-login w-50" required>
                             <br>
                             <input type="password" name="pass1" placeholder="Password" class="form-control input-login w-50" required>
                             <br>
@@ -101,7 +102,6 @@
                     </h6>
                 </div>
             </div>
-
         </center>
 
     </div>

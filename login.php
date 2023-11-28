@@ -82,6 +82,7 @@
                                 <option value="College of Education">College of Education</option>
                                 <option value="College of Engineering">College of Engineering</option>
                                 <option value="College of Technology">College of Technology</option>
+                                <option value="Administrator">Administrator</option>
                             </select>
                             <br>
                             <input type="password" name="password" placeholder="Password" class="form-control input-login w-50" required>

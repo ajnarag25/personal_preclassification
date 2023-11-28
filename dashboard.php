@@ -273,8 +273,8 @@ form button{
     <div id="menu_icon" onclick="closeNav()">X</div>
     <ul class="menu">
       <li><a href="dashboard.php">   <span>Dashboard</span> </a></li>
-      <li> <a href="request_form.php">   <span>Request Form</span></a></li>
-      <li> <a href="ISS_File.php">   <span>Individual Summary Sheet</span></a></li>
+      <!-- <li> <a href="request_form.php">   <span>Request Form</span></a></li>
+      <li> <a href="ISS_File.php">   <span>Individual Summary Sheet</span></a></li> -->
       <li> <a href="Analytics.php">   <span>Analytics</span></a></li>
       <form  id="Log-out" method="post"> <button name="Log-out">Log Out</button></form>
     </ul>
