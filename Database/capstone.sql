@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2023 at 02:56 PM
+-- Generation Time: Nov 30, 2023 at 03:54 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,6 +20,84 @@ SET time_zone = "+00:00";
 --
 -- Database: `capstone`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about`
+--
+
+CREATE TABLE `about` (
+  `id` int(11) NOT NULL,
+  `about` text NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `about`
+--
+
+INSERT INTO `about` (`id`, `about`, `address`, `phone`, `email`) VALUES
+(1, 'Our user-friendly portal simplifies the faculty pre-assessment process with transparent workflows and expert guidance. Explore valuable insights on our website and benefit from secure data management and progress tracking. Join us for a streamlined, transparent, and efficient pre-assessment experience!', '6XRW+3W9, Salazar St, Downtown, Tacloban City, Leyte', '(053) 321 1084', 'personal_preclassification@evsu.edu.ph');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `email`, `password`) VALUES
+(1, 'administrators', 'admin@gmail.com', 'admin123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `communication`
+--
+
+CREATE TABLE `communication` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `department`
+--
+
+CREATE TABLE `department` (
+  `id` int(11) NOT NULL,
+  `dept` varchar(255) NOT NULL,
+  `users` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `department`
+--
+
+INSERT INTO `department` (`id`, `dept`, `users`) VALUES
+(1, 'College of Architecture and Allied Discipline', 0),
+(2, 'College of Arts and Science', 0),
+(3, 'College of Business and Entrepreneurship', 0),
+(4, 'College of Education', 0),
+(5, 'College of Engineering', 0),
+(6, 'College of Technology', 0);
 
 -- --------------------------------------------------------
 
@@ -226,23 +304,36 @@ CREATE TABLE `personal_info` (
 
 CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `department` varchar(150) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `date_updated` text NOT NULL,
+  `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `user_id` int(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`username`, `password`, `user_id`) VALUES
-('admin', 'admin', 1),
-('evsuclient', '123', 2),
-('', '', 3),
-('nov12', 'nov12', 4);
-
---
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `communication`
+--
+ALTER TABLE `communication`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `department`
+--
+ALTER TABLE `department`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `employee_info`
@@ -275,6 +366,24 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `communication`
+--
+ALTER TABLE `communication`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `department`
+--
+ALTER TABLE `department`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `employee_info`
 --
 ALTER TABLE `employee_info`
@@ -296,7 +405,7 @@ ALTER TABLE `personal_info`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(25) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
