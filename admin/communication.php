@@ -155,29 +155,47 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Status</th>
                                     <th>Email</th>
-                                    <th>Department</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php 
+                                    $query = "SELECT * FROM communication";
+                                    $result = mysqli_query($conn, $query);
+                                    while ($row = mysqli_fetch_array($result)) {
+                                ?>
                                 <tr>
-                                    <th>Juan Delacruz</th>
-                                    <td class="text-success">Active</td>
-                                    <td>juandelacruz@gmail.com</td>
-                                    <td>College of Engineering</td>
-                                    <td><button class="btn btn-secondary text-white">Edit</button> <button
-                                            class="btn btn-danger text-white">Delete</button></td>
+                                    <th><?php echo $row['name'] ?></th>
+                                    <td><?php echo $row['email'] ?></td>
+                                    <td><button class="btn btn-secondary text-white" data-bs-toggle="modal" data-bs-target="#msg<?php echo $row['id'] ?>">View Message</button>
                                 </tr>
-                                <tr>
-                                    <th>Sabrina Jimenez</th>
-                                    <td class="text-danger">Not Active</td>
-                                    <td>sabrinajimenez@gmail.com</td>
-                                    <td>College of Education</td>
-                                    <td><button class="btn btn-secondary text-white">Edit</button> <button
-                                            class="btn btn-danger text-white">Delete</button></td>
-                                </tr>
+                                <!-- Modal Edit Account-->
+                                <div class="modal fade" id="msg<?php echo $row['id'] ?>" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Feedback of User: <?php echo $row['name'] ?></h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <form action="process.php" method="POST">
+                                                <div class="modal-body">
+                                                    <input type="hidden" value="<?php echo $row['email'] ?>" name="email">
+                                                    <label for="">Feedback:</label>
+                                                    <textarea class="form-control" name="" id="" cols="10" rows="5" readonly><?php echo $row['message'] ?></textarea>
+                                                    <hr>
+                                                    <label for="">Compose Message:</label>
+                                                    <textarea class="form-control" name="msg" id="" cols="10" rows="5"></textarea>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" name="sendFeedback" class="btn btn-danger text-white">Send</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -200,12 +218,35 @@
     <script src="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="dist/js/pages/dashboards/dashboard1.js"></script>
     <script src="dist/js/datatable.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(document).ready(function () {
             $('#users-table').DataTable();
             $('#roles-table').DataTable();
         });
     </script>
+    <!-- Validation Messages -->
+    <?php 
+        if (isset($_SESSION['status']) && $_SESSION['status'] !='')
+        {
+    ?>
+    <script>
+        $(document).ready(function(){
+            Swal.fire({
+                icon: '<?php echo $_SESSION['status_icon'] ?>',
+                title: '<?php echo $_SESSION['status'] ?>',
+                confirmButtonColor: 'rgb(0, 0, 0)',
+                confirmButtonText: 'Okay'
+            });
+            <?php  unset($_SESSION['status']); ?>
+        })
+    </script>
+    
+    <?php
+    }else{
+        unset($_SESSION['status']);
+    }
+    ?>
 </body>
 
 </html>

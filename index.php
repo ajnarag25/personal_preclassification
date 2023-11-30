@@ -139,12 +139,12 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">
                     <h1 class="text-red"><b>Feedback</b></h1>
-                    <form action="">
-                        <input type="text" class="form-control mt-5 input-custom" placeholder="Name" required>
-                        <input type="text" class="form-control mt-3 input-custom" placeholder="Email" required>
-                        <textarea class="form-control mt-3 input-custom" placeholder="Type your recommendation here..."
+                    <form action="process.php" method="post">
+                        <input type="text" class="form-control mt-5 input-custom" name="name" placeholder="Name" required>
+                        <input type="email" class="form-control mt-3 input-custom" name="email" placeholder="Email" required>
+                        <textarea class="form-control mt-3 input-custom" name="message" placeholder="Type your recommendation here..."
                             name="" id="" cols="30" rows="10" required></textarea>
-                        <button type="submit" class="send-custom mt-5">Send</button>
+                        <button type="submit" name="feedback" class="send-custom mt-5">Send</button>
                     </form>
 
                 </div>
@@ -185,12 +185,35 @@
     <script src="JS/bootstrap.js"></script>
     <script src="JS/Date.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         AOS.init({
             duration: 3000,
             once: true,
         });
     </script>
+        <!-- Validation Messages -->
+        <?php 
+        if (isset($_SESSION['status']) && $_SESSION['status'] !='')
+        {
+    ?>
+    <script>
+        $(document).ready(function(){
+            Swal.fire({
+                icon: '<?php echo $_SESSION['status_icon'] ?>',
+                title: '<?php echo $_SESSION['status'] ?>',
+                confirmButtonColor: 'rgb(0, 0, 0)',
+                confirmButtonText: 'Okay'
+            });
+            <?php  unset($_SESSION['status']); ?>
+        })
+    </script>
+    
+    <?php
+    }else{
+        unset($_SESSION['status']);
+    }
+    ?>
 </body>
 
 </html>

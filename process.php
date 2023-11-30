@@ -74,4 +74,23 @@
         }
     }
 
+    if (isset($_POST['feedback'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $msg = $_POST['message'];
+
+        if (!empty($name) && !empty($email)) {
+            $conn->query("INSERT INTO communication (name, email, message) 
+            VALUES('$name', '$email', '$msg')") or die($conn->error);
+            $_SESSION['status'] = 'Successfully Send your Feedback';
+            $_SESSION['status_icon'] = 'success';
+            header('location:index.php');
+        }else{
+            $_SESSION['status'] = 'An error occured sending your Feedback';
+            $_SESSION['status_icon'] = 'error';
+            header('location:index.php');
+        }
+   
+    }
+
 ?>

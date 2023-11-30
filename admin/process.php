@@ -74,6 +74,7 @@
         
     }
 
+    // add account
     if (isset($_POST['addAccount'])) {
         $username = $_POST['username'];
         $email = $_POST['email'];
@@ -97,6 +98,7 @@
 
     }
 
+    // edit admin
     if (isset($_POST['editAdmin'])) {
         $id = $_POST['admin_id'];
         $username = $_POST['username'];
@@ -118,6 +120,24 @@
         }
     
 
+    }
+      // send feedback
+      if (isset($_POST['sendFeedback'])) {
+        $messages = $_POST['msg'];
+        $emails = $_POST['email'];
+        
+        if (!empty($emails)){
+            include 'send_feedback.php';
+            $_SESSION['status'] = 'Successfully Send the Message';
+            $_SESSION['status_icon'] = 'success';
+            header('location:communication.php');
+        }else{
+            $_SESSION['status'] = 'An Error Occured!';
+            $_SESSION['status_icon'] = 'danger';
+            header('location:communication.php');
+        }
+
+    
     }
 
 ?>
