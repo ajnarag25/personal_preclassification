@@ -8,7 +8,7 @@ if(!isset($_SESSION['user'])){
 if(isset($_POST['submit_btn'])){
     $student = $_POST['student_eval'];
     $faculty = $_POST['faculty_eval'];
-
+    $id = $_SESSION['user']['user_id'];
     if ($student == "" OR $faculty == ""){
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -35,7 +35,7 @@ if(isset($_POST['submit_btn'])){
                  Crit_A_total_allowed = Crit_A_total,
                  Total_kra_1 = Crit_A_total + Crit_B_total + Crit_C_total,
                  Total_kra_1_allowed = IF(Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed > 100, 100, Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed)
-             WHERE id = 1") or die($conn->error);
+             WHERE id = $id") or die($conn->error);
       ?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -169,7 +169,7 @@ td{
 <body>
 
   <h1 class="title">CRITERION A - TEACHING EFFECTIVENESS (MAX = 60 POINTS)</h1> 
-  
+
 <form method="POST" action="FORM1_A.php">
   <div class="Form1_A">
     <br><br><br>

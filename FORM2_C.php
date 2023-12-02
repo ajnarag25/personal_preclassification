@@ -6,7 +6,7 @@ if(!isset($_SESSION['user'])){
 }
 
 if (isset($_POST['submit_btn'])) {
-
+    $id = $_SESSION['user']['user_id'];
     $scoreNCPA = $_POST['NCPA_Score'];
     $scoreExhibition = $_POST['Exhibition_Score'];
     $scoreJuried = $_POST['Juried_Score'];
@@ -40,7 +40,7 @@ if (isset($_POST['submit_btn'])) {
                  Crit_C_Total_allowed = IF(Crit_C_total > 100, 100, Crit_C_total),
                  KRA_2_total = Crit_A_total + Crit_B_Total + Crit_C_total,
                  KRA_2_total_allowed = IF(Crit_A_total_allowed + Crit_B_Total_allowed + Crit_C_Total_allowed > 100, 100, Crit_A_total_allowed + Crit_B_Total_allowed + Crit_C_Total_allowed)
-             WHERE KRA2_ID = 1") or die($conn->error);
+             WHERE KRA2_ID = $id") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

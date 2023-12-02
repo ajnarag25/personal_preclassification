@@ -88,7 +88,8 @@ table {
 
   <br><br><br>
   <?php 
-      $query = "SELECT * FROM kra_1 WHERE id = 1";
+      $id = $_SESSION['user']['user_id'];
+      $query = "SELECT * FROM kra_1 WHERE id = $id";
       $result = mysqli_query($conn, $query);
       while ($row = mysqli_fetch_array($result)) {
   ?>

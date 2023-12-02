@@ -1,17 +1,18 @@
 <?php
 
 require 'functions.php';
-
-$query1 = "SELECT Crit_A_total_allowed, Crit_B_total_allowed, Crit_C_total_allowed FROM kra_1 WHERE id = 1";
+session_start();
+$id = $_SESSION['user']['user_id'];
+$query1 = "SELECT Crit_A_total_allowed, Crit_B_total_allowed, Crit_C_total_allowed FROM kra_1 WHERE id = $id";
 $result1 = $conn->query($query1);
 
-$query2 = "SELECT Crit_A_total_allowed, Crit_B_Total_allowed, Crit_C_Total_allowed FROM kra_2 WHERE KRA2_ID = 1";
+$query2 = "SELECT Crit_A_total_allowed, Crit_B_Total_allowed, Crit_C_Total_allowed FROM kra_2 WHERE KRA2_ID = $id";
 $result2 = $conn->query($query2);
 
-$query3 = "SELECT Crit_A_total_allowed, Crit_B_total_allowed, Crit_C_total_allowed, Crit_D_total_allowed FROM kra_3 WHERE KRA3_ID = 1";
+$query3 = "SELECT Crit_A_total_allowed, Crit_B_total_allowed, Crit_C_total_allowed, Crit_D_total_allowed FROM kra_3 WHERE KRA3_ID = $id";
 $result3 = $conn->query($query3);
 
-$query4 = "SELECT Crit_A_total_allowed, Crit_B_total_allowed, Crit_C_total_allowed, Crit_D_total_allowed FROM kra_4 WHERE Kra4_ID = 1";
+$query4 = "SELECT Crit_A_total_allowed, Crit_B_total_allowed, Crit_C_total_allowed, Crit_D_total_allowed FROM kra_4 WHERE Kra4_ID = $id";
 $result4 = $conn->query($query4);
 
 ?>

@@ -6,7 +6,7 @@ if(!isset($_SESSION['user'])){
 }
 
 if (isset($_POST['Submit_btn'])) {
-
+    $id = $_SESSION['user']['user_id'];
     $sole_author = $_POST['sole_author'];
     $co_author = $_POST['co_author'];
     $acad_prog = $_POST['acad_prog'];
@@ -46,7 +46,7 @@ if (isset($_POST['Submit_btn'])) {
                  Crit_C_total_allowed = IF(Crit_C_total > 30, 30, Crit_C_total) ,
                  Total_kra_1 =  Crit_A_total + Crit_B_total + Crit_C_total,
                  Total_kra_1_allowed = IF(Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed > 100, 100, Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed)
-             WHERE id = 1") or die($conn->error);
+             WHERE id = $id") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

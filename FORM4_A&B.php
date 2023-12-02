@@ -6,6 +6,7 @@ if(!isset($_SESSION['user'])){
 }
 
 if (isset($_POST['Submit_btn'])) {
+    $id = $_SESSION['user']['user_id'];
     $scoreFCIM = $_POST['FCIM_total'];
     $scoreFDD = $_POST['FDD_total'];
     $scoreAD = $_POST['AD_total'];
@@ -53,7 +54,7 @@ if (isset($_POST['Submit_btn'])) {
                  Crit_B_total_allowed = IF(Crit_B_1st_allowed + Crit_B_2nd_allowed + Crit_B_3rd_allowed > 60, 60, Crit_B_1st_allowed + Crit_B_2nd_allowed + Crit_B_3rd_allowed),
                  KRA4_total = Crit_A_total + Crit_B_total + Crit_C_total + Crit_D_total,
                  KRA4_total_allowed = IF(Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed + Crit_D_total_allowed > 100, 100, Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed + Crit_D_total_allowed)
-             WHERE Kra4_ID = 1") or die($conn->error);
+             WHERE Kra4_ID = $id") or die($conn->error);
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
