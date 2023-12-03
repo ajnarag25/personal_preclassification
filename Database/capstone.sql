@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2023 at 03:54 PM
+-- Generation Time: Dec 03, 2023 at 04:53 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -142,13 +142,6 @@ CREATE TABLE `kra_1` (
   `Total_kra_1_allowed` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `kra_1`
---
-
-INSERT INTO `kra_1` (`id`, `Crit_A_student_eval`, `Crit_A_supervisor_eval`, `Crit_A_total`, `Crit_A_total_allowed`, `Crit_B_sole_autho`, `Crit_B_co_autho`, `Crit_B_academe`, `Crit_B_total`, `Crit_B_total_allowed`, `Crit_C_Adviser`, `Crit_C_Panel`, `Crit_C_Mentor`, `Crit_C_total`, `Crit_C_total_allowed`, `Total_kra_1`, `Total_kra_1_allowed`) VALUES
-(1, 3.96, 2.64, 6.6, 6.6, 30, 3.9, 10, 43.9, 30, 12, 4, 3, 19, 19, 69.5, 55.6);
-
 -- --------------------------------------------------------
 
 --
@@ -192,13 +185,6 @@ CREATE TABLE `kra_2` (
   `KRA_2_total_allowed` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `kra_2`
---
-
-INSERT INTO `kra_2` (`KRA2_ID`, `Crit_A_SA`, `Crit_A_CA`, `Crit_A_LR`, `Crit_A_Contrib`, `Crit_A_Local`, `Crit_A_Local_Allowed`, `Crit_A_International_Allowed`, `Crit_A_International`, `Crit_A_total`, `Crit_A_total_allowed`, `Crit_B_PI_SI`, `Crit_B_PI_CI`, `Crit_B_UMID_SI`, `Crit_B_UMID_CI`, `Crit_B_CPP_Local`, `Crit_B_CPP_Local_allowed`, `Crit_B_CPP_International_allowed`, `Crit_B_CPP_International`, `Crit_B_NPI_SI`, `Crit_B_NPI_CI`, `Crit_B_NPI_USP`, `Crit_B_NPVA_SD`, `Crit_B_NPVA_CD`, `Crit_B_Total`, `Crit_B_Total_allowed`, `Crit_C_PA`, `Crit_C_Exhibition`, `Crit_C_Designs`, `Crit_C_Lit-pub`, `Crit_C_total`, `Crit_C_Total_allowed`, `KRA_2_total`, `KRA_2_total_allowed`) VALUES
-(1, 50, 0, 0, 0, 0, 0, 0, 0, 50, 50, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 20, 20, 0, 0, 0, 20, 20, 90, 90);
-
 -- --------------------------------------------------------
 
 --
@@ -235,13 +221,6 @@ CREATE TABLE `kra_3` (
   `KRA3_total_allowed` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `kra_3`
---
-
-INSERT INTO `kra_3` (`KRA3_ID`, `Crit_A_LNAP`, `Crit_A_CTIG`, `Crit_A_total`, `Crit_A_total_allowed`, `Crit_B_1.1`, `Crit_B_1.2`, `Crit_B_1.3`, `Crit_B_1.4.1`, `Crit_B_1.4.1_allowed`, `Crit_B_1.4.2`, `Crit_B_1.4.3`, `Crit_B_1.4.4`, `Crit_B_1.4.4_allowed`, `Crit_B_1.5`, `Crit_B_2.1`, `Crit_B_2.1_allowed`, `Crit_B_total`, `Crit_B_total_allowed`, `Crit_C_1`, `Crit_C_total`, `Crit_C_total_allowed`, `Crit_D_1`, `Crit_D_total`, `Crit_D_total_allowed`, `KRA3_total`, `KRA3_total_allowed`) VALUES
-(1, 5, 0, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4.6, 4.6, 4.6, 20, 20, 20, 29.6, 29.6);
-
 -- --------------------------------------------------------
 
 --
@@ -272,13 +251,6 @@ CREATE TABLE `kra_4` (
   `KRA4_total` float NOT NULL,
   `KRA4_total_allowed` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `kra_4`
---
-
-INSERT INTO `kra_4` (`Kra4_ID`, `Crit_A_1st`, `Crit_A_total`, `Crit_A_total_allowed`, `Crit_B_1st`, `Crit_B_1st_allowed`, `Crit_B_2nd`, `Crit_B_2nd_allowed`, `Crit_B_3rd`, `Crit_B_3rd_allowed`, `Crit_B_total`, `Crit_B_total_allowed`, `Crit_C_1st`, `Crit_C_1st_allowed`, `Crit_C_total`, `Crit_C_total_allowed`, `Crit_D_1st`, `Crit_D_2nd`, `Crit_D_total`, `Crit_D_total_allowed`, `KRA4_total`, `KRA4_total_allowed`) VALUES
-(1, 5, 5, 5, 40, 40, 0, 0, 0, 0, 40, 40, 2, 2, 2, 2, 6, 12, 18, 18, 201, 65);
 
 -- --------------------------------------------------------
 
@@ -343,10 +315,28 @@ ALTER TABLE `employee_info`
   ADD KEY `personal_id` (`personal_id`);
 
 --
+-- Indexes for table `kra_1`
+--
+ALTER TABLE `kra_1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kra_2`
+--
+ALTER TABLE `kra_2`
+  ADD PRIMARY KEY (`KRA2_ID`);
+
+--
 -- Indexes for table `kra_3`
 --
 ALTER TABLE `kra_3`
   ADD PRIMARY KEY (`KRA3_ID`);
+
+--
+-- Indexes for table `kra_4`
+--
+ALTER TABLE `kra_4`
+  ADD PRIMARY KEY (`Kra4_ID`);
 
 --
 -- Indexes for table `personal_info`
@@ -390,10 +380,28 @@ ALTER TABLE `employee_info`
   MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `kra_1`
+--
+ALTER TABLE `kra_1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `kra_2`
+--
+ALTER TABLE `kra_2`
+  MODIFY `KRA2_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `kra_3`
 --
 ALTER TABLE `kra_3`
-  MODIFY `KRA3_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `KRA3_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `kra_4`
+--
+ALTER TABLE `kra_4`
+  MODIFY `Kra4_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `personal_info`

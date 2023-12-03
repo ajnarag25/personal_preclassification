@@ -149,348 +149,162 @@
             </div>
 
             <div class="container-fluid">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="users-tab" data-bs-toggle="tab" data-bs-target="#users"
-                            type="button" role="tab" aria-controls="users" aria-selected="true">Users</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="dept-tab" data-bs-toggle="tab" data-bs-target="#dept" type="button"
-                            role="tab" aria-controls="dept" aria-selected="false">Departments</button>
-                    </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="users" role="tabpanel" aria-labelledby="users-tab">
-                        <div class="card">
-                            <div class="card-body m-3">
-                                <table class="table table-hover" id="users-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Username</th>
-                                            <th>Email</th>
-                                            <th>Department</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php 
-                                            $query = "SELECT * FROM users";
-                                            $result = mysqli_query($conn, $query);
-                                            while ($row = mysqli_fetch_array($result)) {
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $row['username'] ?></td>
-                                            <td><?php echo $row['email'] ?></td>
-                                            <td><?php echo $row['department'] ?></td>
-                                            <td><button class="btn btn-secondary text-white"  data-bs-toggle="modal" data-bs-target="#analytics<?php echo $row['user_id'] ?>">View</button></td>
-                                        </tr>
-                                        
-                                        <!-- View Analytcis-->
-                                        <div class="modal fade" id="analytics<?php echo $row['user_id'] ?>" tabindex="-1" aria-labelledby="" aria-hidden="true">
-                                            <div class="modal-dialog modal-xl">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="">Analytics of User: <?php echo $row['username'] ?></h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
+                <div class="card p-5">
+                <table class="table table-hover" id="users-table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php 
+                        $query = "SELECT * FROM users";
+                        $result = mysqli_query($conn, $query);
 
-                                                    <?php 
-                                                    $id = $row['user_id'];
-                                                    $query1 = "SELECT Crit_A_total_allowed, Crit_B_total_allowed, Crit_C_total_allowed FROM kra_1 WHERE id = $id";
-                                                    $result1 = $conn->query($query1);
-                                                    
-                                                    $query2 = "SELECT Crit_A_total_allowed, Crit_B_Total_allowed, Crit_C_Total_allowed FROM kra_2 WHERE KRA2_ID = $id";
-                                                    $result2 = $conn->query($query2);
-                                                    
-                                                    $query3 = "SELECT Crit_A_total_allowed, Crit_B_total_allowed, Crit_C_total_allowed, Crit_D_total_allowed FROM kra_3 WHERE KRA3_ID = $id";
-                                                    $result3 = $conn->query($query3);
-                                                    
-                                                    $query4 = "SELECT Crit_A_total_allowed, Crit_B_total_allowed, Crit_C_total_allowed, Crit_D_total_allowed FROM kra_4 WHERE Kra4_ID = $id";
-                                                    $result4 = $conn->query($query4);
+                        while ($row = mysqli_fetch_array($result)) {
+                            $id = $row['user_id'];
+                        ?>
+                            <tr>
+                                <td><?php echo $row['username'] ?></td>
+                                <td><?php echo $row['email'] ?></td>
+                                <td><?php echo $row['department'] ?></td>
+                                <td>
+                                    <button class="btn btn-secondary text-white"  data-bs-toggle="modal" data-bs-target="#analytics<?php echo $id ?>">View</button>
+                                </td>
+                            </tr>
+
+                            <!-- View Analytics -->
+                            <div class="modal fade" id="analytics<?php echo $id ?>" tabindex="-1" aria-labelledby="" aria-hidden="true">
+                                <div class="modal-dialog modal-m">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="">Analytics of User: <?php echo $row['username'] ?></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header">
+                                                KRA Summary
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row text-center">
+                                                    <?php
+                                                        $queryKRA = "SELECT 
+                                                                        'kra_1' AS kra_type,
+                                                                        Crit_A_total_allowed AS A,
+                                                                        Crit_B_total_allowed AS B,
+                                                                        Crit_C_total_allowed AS C,
+                                                                        NULL AS D
+                                                                    FROM kra_1
+                                                                    WHERE id = $id
+                                                                    
+                                                                    UNION ALL
+                                                                    
+                                                                    SELECT 
+                                                                        'kra_2' AS kra_type,
+                                                                        Crit_A_total_allowed AS A,
+                                                                        Crit_B_Total_allowed AS B,
+                                                                        Crit_C_Total_allowed AS C,
+                                                                        NULL AS D
+                                                                    FROM kra_2
+                                                                    WHERE KRA2_ID = $id
+                                                                    
+                                                                    UNION ALL
+                                                                    
+                                                                    SELECT 
+                                                                        'kra_3' AS kra_type,
+                                                                        Crit_A_total_allowed AS A,
+                                                                        Crit_B_total_allowed AS B,
+                                                                        Crit_C_total_allowed AS C,
+                                                                        Crit_D_total_allowed AS D
+                                                                    FROM kra_3
+                                                                    WHERE KRA3_ID = $id
+                                                                    
+                                                                    UNION ALL
+                                                                    
+                                                                    SELECT 
+                                                                        'kra_4' AS kra_type,
+                                                                        Crit_A_total_allowed AS A,
+                                                                        Crit_B_total_allowed AS B,
+                                                                        Crit_C_total_allowed AS C,
+                                                                        Crit_D_total_allowed AS D
+                                                                    FROM kra_4
+                                                                    WHERE Kra4_ID = $id";
+
+                                                        $resultKRA = $conn->query($queryKRA);
+                                                        $data = array();
+
+                                                        while ($kraRow = $resultKRA->fetch_assoc()) {
+                                                            $kraType = $kraRow['kra_type'];
+
+                                                            $data['labels'][] = $kraType . ' - Criterion A';
+                                                            $data['values'][] = $kraRow['A'];
+
+                                                            $data['labels'][] = $kraType . ' - Criterion B';
+                                                            $data['values'][] = $kraRow['B'];
+
+                                                            $data['labels'][] = $kraType . ' - Criterion C';
+                                                            $data['values'][] = $kraRow['C'];
+
+                                                            if ($kraType === 'kra_3' || $kraType === 'kra_4') {
+                                                                $data['labels'][] = $kraType . ' - Criterion D';
+                                                                $data['values'][] = $kraRow['D'];
+                                                            }
+                                                        }
                                                     ?>
-                                                  <div class="card">
-                                                    <div class="card-header">
-                                                        KRA Summary
+
+                                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                                    <div>
+                                                        <canvas id="myCombinedPieChart<?php echo $id; ?>" width="400" height="200"></canvas>
+                                                        <script>
+                                                            var dataForCombinedChart<?php echo $id; ?> = <?php echo json_encode($data); ?>;
+                                                            var ctxCombined<?php echo $id; ?> = document.getElementById('myCombinedPieChart<?php echo $id; ?>').getContext('2d');
+
+                                                            var myCombinedPieChart<?php echo $id; ?> = new Chart(ctxCombined<?php echo $id; ?>, {
+                                                                type: 'pie',
+                                                                data: {
+                                                                    labels: dataForCombinedChart<?php echo $id; ?>.labels,
+                                                                    datasets: [{
+                                                                        data: dataForCombinedChart<?php echo $id; ?>.values,
+                                                                        backgroundColor: [
+                                                                            'rgba(0, 355, 0, 1)', // Green (KRA 1)
+                                                                            'rgba(355, 0, 0, 1)', // Red (KRA 2)
+                                                                            'rgba(0, 0, 355, 1)', // Blue (KRA 3)
+                                                                            'rgba(148, 0, 271, 1)' // Violet (KRA 4)
+                                                                        ],
+                                                                        borderColor: [
+                                                                            'rgba(0, 0, 0, 0)'
+                                                                        ],
+                                                                        borderWidth: 1
+                                                                    }]
+                                                                },
+                                                                options: {
+                                                                    offset: 30,
+                                                                    legend: {
+                                                                        display: true,
+                                                                        position: 'bottom',
+                                                                        labels: {
+                                                                            fontColor: 'black'
+                                                                        }
+                                                                    }
+                                                                }
+                                                            });
+                                                        </script>
                                                     </div>
-                                                    <div class="card-body">
-
-                                                        <div class="row text-center">
-                                                            <!-- Column 1 -->
-                                                            <div class="col-3">
-                                                                <div>
-
-                                                                    <?php
-                                                                    $data = array();
-                                                                    while ($row = $result1->fetch_assoc()) {
-                                                                        $data['labels'][] = 'Criterion A';
-                                                                        $data['values'][] = $row['Crit_A_total_allowed'];
-
-                                                                        $data['labels'][] = 'Criterion B';
-                                                                        $data['values'][] = $row['Crit_B_total_allowed'];
-
-                                                                        $data['labels'][] = 'Criterion C';
-                                                                        $data['values'][] = $row['Crit_C_total_allowed'];
-                                                                    }
-                                                                    ?>
-
-                                                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                                                    <canvas id="myPieChart1" width="400" height="200"></canvas>
-                                                                    <script>
-                                                                        // Access the formatted data from PHP
-                                                                        var dataForChart = <?php echo json_encode($data); ?>;
-
-                                                                        // Get the canvas element
-                                                                        var ctx = document.getElementById('myPieChart1').getContext('2d');
-
-                                                                        // Create a pie chart
-                                                                        var myPieChart1 = new Chart(ctx, {
-                                                                            type: 'pie',
-                                                                            data: {
-                                                                                labels: dataForChart.labels,
-                                                                                datasets: [{
-                                                                                    data: dataForChart.values,
-                                                                                    backgroundColor: [
-                                                                                        'rgb(211,44,44)', // Red for Criterion A
-                                                                                        'rgba(54, 162, 235, 1)', // Blue for Criterion B
-                                                                                        'rgba(255, 206, 86, 1)', // Yellow for Criterion C
-                                                                                    ],
-                                                                                    borderColor: [
-                                                                                        'rgba(0, 0, 0, 0)'
-                                                                                    ],
-                                                                                    borderWidth: 1
-                                                                                }]
-                                                                            },
-                                                                            options: {
-                                                                                offset: 30
-                                                                            }
-                                                                        });
-                                                                    </script>
-
-                                                                </div>
-
-                                                                <div>
-                                                                    <h3>KRA 1</h3>
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- Column 2 -->
-                                                            <div class="col-3">
-                                                                <div>
-                                                                    <?php
-                                                                    $data = array();
-                                                                    while ($row = $result2->fetch_assoc()) {
-                                                                        $data['labels'][] = 'Criterion A';
-                                                                        $data['values'][] = $row['Crit_A_total_allowed'];
-
-                                                                        $data['labels'][] = 'Criterion B';
-                                                                        $data['values'][] = $row['Crit_B_Total_allowed'];
-
-                                                                        $data['labels'][] = 'Criterion C';
-                                                                        $data['values'][] = $row['Crit_C_Total_allowed'];
-                                                                    }
-                                                                    ?>
-
-                                                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                                                    <canvas id="myPieChart2" width="400" height="200"></canvas>
-                                                                    <script>
-                                                                        // Access the formatted data from PHP
-                                                                        var dataForChart = <?php echo json_encode($data); ?>;
-
-                                                                        // Get the canvas element
-                                                                        var ctx = document.getElementById('myPieChart2').getContext('2d');
-
-                                                                        // Create a pie chart
-                                                                        var myPieChart2 = new Chart(ctx, {
-                                                                            type: 'pie',
-                                                                            data: {
-                                                                                labels: dataForChart.labels,
-                                                                                datasets: [{
-                                                                                    data: dataForChart.values,
-                                                                                    backgroundColor: [
-                                                                                        'rgb(211,44,44)', // Red for Criterion A
-                                                                                        'rgba(54, 162, 235, 1)', // Blue for Criterion B
-                                                                                        'rgba(255, 206, 86, 1)', // Yellow for Criterion C
-                                                                                    ],
-                                                                                    borderColor: [
-                                                                                        'rgba(0, 0, 0, 0)'
-                                                                                    ],
-                                                                                    borderWidth: 1
-                                                                                }]
-                                                                            },
-                                                                            options: {
-                                                                                offset: 30
-                                                                            }
-                                                                        });
-                                                                    </script>
-                                                                </div>
-                                                                <div>
-                                                                    <h3>KRA 2</h3>
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- Column 3 -->
-                                                            <div class="col-3">
-                                                                <div>
-                                                                    <?php
-                                                                    $data = array();
-                                                                    while ($row = $result3->fetch_assoc()) {
-                                                                        $data['labels'][] = 'Criterion A';
-                                                                        $data['values'][] = $row['Crit_A_total_allowed'];
-
-                                                                        $data['labels'][] = 'Criterion B';
-                                                                        $data['values'][] = $row['Crit_B_total_allowed'];
-
-                                                                        $data['labels'][] = 'Criterion C';
-                                                                        $data['values'][] = $row['Crit_C_total_allowed'];
-
-                                                                        $data['labels'][] = 'Criterion D';
-                                                                        $data['values'][] = $row['Crit_D_total_allowed'];
-                                                                    }
-                                                                    ?>
-
-                                                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                                                    <canvas id="myPieChart3" width="400" height="200"></canvas>
-                                                                    <script>
-                                                                        // Access the formatted data from PHP
-                                                                        var dataForChart = <?php echo json_encode($data); ?>;
-
-                                                                        // Get the canvas element
-                                                                        var ctx = document.getElementById('myPieChart3').getContext('2d');
-
-                                                                        // Create a pie chart
-                                                                        var myPieChart3 = new Chart(ctx, {
-                                                                            type: 'pie',
-                                                                            data: {
-                                                                                labels: dataForChart.labels,
-                                                                                datasets: [{
-                                                                                    data: dataForChart.values,
-                                                                                    backgroundColor: [
-                                                                                        'rgb(211,44,44)', // Red for Criterion A
-                                                                                        'rgba(54, 162, 235, 1)', // Blue for Criterion B
-                                                                                        'rgba(255, 206, 86, 1)', // Yellow for Criterion C
-                                                                                        'rgb(78,159,57)' // Green for Criterion D
-                                                                                    ],
-                                                                                    borderColor: [
-                                                                                        'rgba(0, 0, 0, 0)'
-                                                                                    ],
-                                                                                    borderWidth: 1
-                                                                                }]
-                                                                            },
-                                                                            options: {
-                                                                                offset: 30
-                                                                            }
-                                                                        });
-                                                                    </script>
-                                                                </div>
-                                                                <div>
-                                                                    <h3>KRA 3</h3>
-                                                                </div>
-                                                            </div>
-
-                                                            <!-- Column 4 -->
-                                                            <div class="col-3">
-                                                                <div>
-                                                                    <?php
-                                                                    $data = array();
-                                                                    while ($row = $result4->fetch_assoc()) {
-                                                                        $data['labels'][] = 'Criterion A';
-                                                                        $data['values'][] = $row['Crit_A_total_allowed'];
-
-                                                                        $data['labels'][] = 'Criterion B';
-                                                                        $data['values'][] = $row['Crit_B_total_allowed'];
-
-                                                                        $data['labels'][] = 'Criterion C';
-                                                                        $data['values'][] = $row['Crit_C_total_allowed'];
-
-                                                                        $data['labels'][] = 'Criterion D';
-                                                                        $data['values'][] = $row['Crit_D_total_allowed'];
-                                                                    }
-                                                                    ?>
-
-                                                                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                                                                    <canvas id="myPieChart4" width="400" height="200"></canvas>
-                                                                    <script>
-                                                                        // Access the formatted data from PHP
-                                                                        var dataForChart = <?php echo json_encode($data); ?>;
-
-                                                                        // Get the canvas element
-                                                                        var ctx = document.getElementById('myPieChart4').getContext('2d');
-
-                                                                        // Create a pie chart
-                                                                        var myPieChart4 = new Chart(ctx, {
-                                                                            type: 'pie',
-                                                                            data: {
-                                                                                labels: dataForChart.labels,
-                                                                                datasets: [{
-                                                                                    data: dataForChart.values,
-                                                                                    backgroundColor: [
-                                                                                        'rgb(211,44,44)', // Red for Criterion A
-                                                                                        'rgba(54, 162, 235, 1)', // Blue for Criterion B
-                                                                                        'rgba(255, 206, 86, 1)', // Yellow for Criterion C
-                                                                                        'rgb(78,159,57)' // Green for Criterion D
-                                                                                    ],
-                                                                                    borderColor: [
-                                                                                        'rgba(0, 0, 0, 0)'
-                                                                                    ],
-                                                                                    borderWidth: 1
-                                                                                }]
-                                                                            },
-                                                                            options: {
-                                                                                offset: 30
-                                                                            }
-                                                                        });
-                                                                    </script>
-                                                                </div>
-                                                                <div>
-                                                                    <h3>KRA 4</h3>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="dept" role="tabpanel" aria-labelledby="dept-tab">
-                        <div class="card">
-                            <div class="card-body m-3">
-                                <table class="table table-hover" id="roles-table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Roles</th>
-                                            <th scope="col">No. of Users</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>College of Engineering</td>
-                                            <td>5</td>
-                                            <td><button class="btn btn-secondary text-white">Edit</button> <button
-                                                    class="btn btn-danger text-white">Delete</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>College of Education</td>
-                                            <td>3</td>
-                                            <td><button class="btn btn-secondary text-white">Edit</button> <button
-                                                    class="btn btn-danger text-white">Delete</button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                        <?php } ?>
 
+                    </tbody>
+                </table>
                 </div>
-
             </div>
 
             <footer class="footer text-center">

@@ -134,7 +134,7 @@
         if (!empty($name) && !empty($email)) {
             $conn->query("INSERT INTO communication (name, email, message) 
             VALUES('$name', '$email', '$msg')") or die($conn->error);
-            $_SESSION['status'] = 'Successfully Send your Feedback';
+            $_SESSION['status'] = 'Successfully Sent your Feedback';
             $_SESSION['status_icon'] = 'success';
             header('location:index.php');
         }else{
