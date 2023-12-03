@@ -121,9 +121,8 @@ if (isset($_POST['Submit_btn'])) {
         height: auto;
     }
 
-    body {
-        background: url('./Assets/KRA_files_bg.jpg');
-        background-size: cover;
+    body{
+        background-color: #E3E3E3;
     }
 
     .cancel_btn {

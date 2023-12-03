@@ -25,9 +25,8 @@ if(!isset($_SESSION['user'])){
     }
 
 
-    body {
-        background: url('./Assets/KRA_files_bg.jpg');
-        background-size: cover;
+    body{
+        background-color: #E3E3E3;
     }
 
     * {

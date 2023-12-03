@@ -89,8 +89,7 @@ if(isset($_POST['submit_btn'])){
 }
 
 body{
-  background: url('./Assets/KRA_files_bg.jpg');
-  background-size: cover;
+  background-color: #E3E3E3;
 }
 
 .title{

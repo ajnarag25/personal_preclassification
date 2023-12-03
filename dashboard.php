@@ -129,7 +129,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="card">
+                        <div class="card h-100">
                             <div class="card-body" style="background-color: rgba(255, 255, 0, 0.534);">
                                 <div class="text-center">
                                     <h3 class="card-title"><b>INSTURCTION</b></h3>
@@ -160,7 +160,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card">
+                        <div class="card h-100">
                             <div class="card-body" style="background-color: rgba(116, 212, 72, 0.534);">
                                 <div class="text-center">
                                     <h3 class="card-title"><b>RESEARCH, INNOVATION & CREATIVE WORK</b></h3>
@@ -191,7 +191,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card">
+                        <div class="card h-100">
                             <div class="card-body" style="background-color: #72FFDE;">
                                 <div class="text-center">
                                     <h3 class="card-title"><b>EXTENSION</b></h3>
@@ -221,7 +221,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card">
+                        <div class="card h-100">
                             <div class="card-body" style="background-color: #cbcecd;">
                                 <div class="text-center">
                                     <h3 class="card-title"><b>PROFESSIONAL DEVELOPMENT</b> </h3>
