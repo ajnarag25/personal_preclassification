@@ -78,7 +78,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated"
                                 aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="../logout.php"><i class="ti-shift-right me-1 ms-1"></i>
+                                <a class="dropdown-item" href="logout.php"><i class="ti-shift-right me-1 ms-1"></i>
                                     Logout</a>
                             </ul>
                         </li>
@@ -382,6 +382,123 @@
                 </div>
 
             </div>
+            
+            <center>
+            <div class="card" style="width:50%">
+                <div class="card-header">
+                    Overall KRA Summary
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <?php
+                            $queryKRA = "SELECT 
+                                            'kra_1' AS kra_type,
+                                            Crit_A_total_allowed AS A,
+                                            Crit_B_total_allowed AS B,
+                                            Crit_C_total_allowed AS C,
+                                            NULL AS D
+                                        FROM kra_1
+                                        WHERE id = $id
+                                        
+                                        UNION ALL
+                                        
+                                        SELECT 
+                                            'kra_2' AS kra_type,
+                                            Crit_A_total_allowed AS A,
+                                            Crit_B_Total_allowed AS B,
+                                            Crit_C_Total_allowed AS C,
+                                            NULL AS D
+                                        FROM kra_2
+                                        WHERE KRA2_ID = $id
+                                        
+                                        UNION ALL
+                                        
+                                        SELECT 
+                                            'kra_3' AS kra_type,
+                                            Crit_A_total_allowed AS A,
+                                            Crit_B_total_allowed AS B,
+                                            Crit_C_total_allowed AS C,
+                                            Crit_D_total_allowed AS D
+                                        FROM kra_3
+                                        WHERE KRA3_ID = $id
+                                        
+                                        UNION ALL
+                                        
+                                        SELECT 
+                                            'kra_4' AS kra_type,
+                                            Crit_A_total_allowed AS A,
+                                            Crit_B_total_allowed AS B,
+                                            Crit_C_total_allowed AS C,
+                                            Crit_D_total_allowed AS D
+                                        FROM kra_4
+                                        WHERE Kra4_ID = $id";
+
+                            $resultKRA = $conn->query($queryKRA);
+                            $data = array();
+
+                            while ($kraRow = $resultKRA->fetch_assoc()) {
+                                $kraType = $kraRow['kra_type'];
+
+                                $data['labels'][] = $kraType . ' - Criterion A';
+                                $data['values'][] = $kraRow['A'];
+
+                                $data['labels'][] = $kraType . ' - Criterion B';
+                                $data['values'][] = $kraRow['B'];
+
+                                $data['labels'][] = $kraType . ' - Criterion C';
+                                $data['values'][] = $kraRow['C'];
+
+                                if ($kraType === 'kra_3' || $kraType === 'kra_4') {
+                                    $data['labels'][] = $kraType . ' - Criterion D';
+                                    $data['values'][] = $kraRow['D'];
+                                }
+                            }
+                        ?>
+
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <div>
+                            <canvas id="myCombinedPieChart<?php echo $id; ?>" width="400" height="200"></canvas>
+                            <script>
+                                var dataForCombinedChart<?php echo $id; ?> = <?php echo json_encode($data); ?>;
+                                var ctxCombined<?php echo $id; ?> = document.getElementById('myCombinedPieChart<?php echo $id; ?>').getContext('2d');
+
+                                var myCombinedPieChart<?php echo $id; ?> = new Chart(ctxCombined<?php echo $id; ?>, {
+                                    type: 'pie',
+                                    data: {
+                                        labels: dataForCombinedChart<?php echo $id; ?>.labels,
+                                        datasets: [{
+                                            data: dataForCombinedChart<?php echo $id; ?>.values,
+                                            backgroundColor: [
+                                                'rgb(211,44,44)', // Red (KRA 1)
+                                                'rgba(54, 162, 235, 1)', // Blue (KRA 2)
+                                                'rgba(255, 206, 86, 1)', // Yellow (KRA 3)
+                                                'rgba(148, 0, 271, 1)' // Violet (KRA 4)
+                                            ],
+                                            borderColor: [
+                                                'rgba(0, 0, 0, 0)'
+                                            ],
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        offset: 30,
+                                        legend: {
+                                            display: true,
+                                            position: 'bottom',
+                                            labels: {
+                                                fontColor: 'black'
+                                            }
+                                        }
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </center>
+        
+
 
             </div>
 

@@ -63,7 +63,7 @@
                 <div class="m-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true">
                     <div class="marg">
                         <h2 class="impact">PERSONAL</h2>
-                        <h2 class="impact">PRECLASSIFICATION</h2>
+                        <h2 class="impact">PRE-ASSESSMENT</h2>
                         <br>
                         <h2 class="anton text-warning">Web Portal</h2>
                     </div>

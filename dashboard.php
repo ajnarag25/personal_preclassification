@@ -65,7 +65,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated"
                                 aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="../logout.php"><i class="ti-shift-right me-1 ms-1"></i>
+                                <a class="dropdown-item" href="logout.php"><i class="ti-shift-right me-1 ms-1"></i>
                                     Logout</a>
                             </ul>
                         </li>
@@ -132,7 +132,7 @@
                         <div class="card h-100">
                             <div class="card-body" style="background-color: rgba(255, 255, 0, 0.534);">
                                 <div class="text-center">
-                                    <h3 class="card-title"><b>INSTURCTION</b></h3>
+                                    <h3 class="card-title"><b>INSTRUCTION</b></h3>
                                  
                                     Form 1A - Teaching Effectiveness <br>
                                     Form 1B - Curriculum & Instructional Materials Development <br>

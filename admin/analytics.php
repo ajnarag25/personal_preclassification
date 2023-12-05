@@ -270,9 +270,9 @@
                                                                     datasets: [{
                                                                         data: dataForCombinedChart<?php echo $id; ?>.values,
                                                                         backgroundColor: [
-                                                                            'rgba(0, 355, 0, 1)', // Green (KRA 1)
-                                                                            'rgba(355, 0, 0, 1)', // Red (KRA 2)
-                                                                            'rgba(0, 0, 355, 1)', // Blue (KRA 3)
+                                                                            'rgb(211,44,44)', // Red (KRA 1)
+                                                                            'rgba(54, 162, 235, 1)', // Blue (KRA 2)
+                                                                            'rgba(255, 206, 86, 1)', // Yellow (KRA 3)
                                                                             'rgba(148, 0, 271, 1)' // Violet (KRA 4)
                                                                         ],
                                                                         borderColor: [
