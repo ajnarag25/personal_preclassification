@@ -186,6 +186,7 @@
     <script src="JS/Date.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script src="JS/download_file.js"></script>
     <script>
         AOS.init({
             duration: 3000,
