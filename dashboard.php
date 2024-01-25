@@ -91,6 +91,12 @@
                                 <span class="hide-menu">Analytics</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="individual.php" aria-expanded="false">
+                                <i class="mdi mdi-book"></i>
+                                <span class="hide-menu">Individual Summary Sheet</span>
+                            </a>
+                        </li>
             
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="logout.php"
