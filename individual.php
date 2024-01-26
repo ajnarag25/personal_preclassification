@@ -142,97 +142,138 @@
                             </tr>
                         </thead>
                         <tbody>
+
+                            <?php 
+                                $id = $_SESSION['user']['user_id'];
+
+                                $query = "SELECT * FROM kra_1 WHERE id = $id";
+                                $result = mysqli_query($conn, $query);
+                                while ($row = mysqli_fetch_array($result)) {
+                                
+                                $total1 = $row['Crit_A_total'] + $row['Crit_B_total'] + $row['Crit_C_total'];
+                            ?>
+
                              <!-- KRA 1 -->
                             <tr class="table-primary">
-                                <th scope="row" class="text-center"><b>KRA I Instruction (100 Points)</b></th>
+                                <th scope="row" class="text-center"><b>KRA I Instruction</b></th>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion A - <b>Teaching Effectiveness</b> (60 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_A_total'] ?></td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion B - <b>Curriculum and/or Instructional Materials Developed</b> (30 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_B_total'] ?></td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion C - <b>Speial Proj, Capstone Proj, Thesis, Dissertation & Mentorship Service </b></th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_C_total'] ?></td>
                             </tr>
                             <tr>
-                                <th scope="row" class="text-center bg-secondary text-white"> <b>TOTAL </b></th>
-                                <td class="bg-warning text-white"><b>0.00</b></td>
+                                <th scope="row" class="text-center bg-secondary text-white"> <b>GRAND TOTAL POINTS FOR KRA 1 </b></th>
+                                <td class="bg-danger text-white"><b><?php echo $total1; ?></b></td>
                             </tr>
 
+                            <?php } ?>
+                            
+                            <?php
+                                $query = "SELECT * FROM kra_2 WHERE KRA2_ID = $id";
+                                $result = mysqli_query($conn, $query);
+                                while ($row = mysqli_fetch_array($result)) {
+
+                                $total2 = $row['Crit_A_total'] + $row['Crit_B_Total'] + $row['Crit_C_total'];
+                            ?>
                             <!-- KRA 2 -->
                             <tr class="table-primary">
-                                <th scope="row" class="text-center"><b>KRA II - Research, Innovation and/or  Creative Work (100 Points)</b></th>
+                                <th scope="row" class="text-center"><b>KRA II - Research, Innovation and/or  Creative Work</b></th>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion A - <b>Research Outputs Published</b> (100 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_A_total'] ?></td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion B - <b>Inventions</b> (100 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_B_Total'] ?></td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion C - <b>Creative Works </b> (100 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_C_total'] ?></td>
                             </tr>
                             <tr>
-                                <th scope="row" class="text-center bg-secondary text-white"> <b>TOTAL </b></th>
-                                <td class="bg-warning text-white"><b>0.00</b></td>
+                                <th scope="row" class="text-center bg-secondary text-white"> <b>GRAND TOTAL POINTS FOR KRA II </b></th>
+                                <td class="bg-danger text-white"><b><?php echo $total2 ?></b></td>
                             </tr>
 
+                            <?php } ?>
+                            
+                            <?php
+                                $query = "SELECT * FROM kra_3 WHERE KRA3_ID = $id";
+                                $result = mysqli_query($conn, $query);
+                                while ($row = mysqli_fetch_array($result)) {
+
+                                $total3 = $row['Crit_A_total'] + $row['Crit_B_total'] + $row['Crit_C_total'] + $row['Crit_D_total'];
+                            ?>
                             <!-- KRA 3 -->
                             <tr class="table-primary">
-                                <th scope="row" class="text-center"><b>KRA III - Extension Services (100 Points)</b></th>
+                                <th scope="row" class="text-center"><b>KRA III - Extension Services</b></th>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion A - <b>Service to the Institution</b> (30 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_A_total'] ?></td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion B - <b>Service of the Community</b> (50 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_B_total'] ?></td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion C - <b>Quality of Extension Service </b> (20 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_C_total'] ?></td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion D - <b>Bonus Criterion </b> (20 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_D_total'] ?></td>
                             </tr>
                             <tr>
-                                <th scope="row" class="text-center bg-secondary text-white"> <b>TOTAL </b></th>
-                                <td class="bg-warning text-white"><b>0.00</b></td>
+                                <th scope="row" class="text-center bg-secondary text-white"> <b>GRAND TOTAL POINTS FOR KRA III </b></th>
+                                <td class="bg-danger text-white"><b><?php echo $total3 ?></b></td>
                             </tr>
 
+                            <?php } ?>
+                            
+                            <?php
+                                $query = "SELECT * FROM kra_4 WHERE Kra4_ID = $id";
+                                $result = mysqli_query($conn, $query);
+                                while ($row = mysqli_fetch_array($result)) {
+
+                                $total4 = $row['Crit_A_total'] + $row['Crit_B_total'] + $row['Crit_C_total'] + $row['Crit_D_total'];
+                            ?>
                             <!-- KRA 4 -->
                             <tr class="table-primary">
-                                <th scope="row" class="text-center"><b>KRA IV - Professional Development (100 Points)</b></th>
+                                <th scope="row" class="text-center"><b>KRA IV - Professional Development</b></th>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion A - <b>Involvement in Professional Organization</b> (20 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_A_total'] ?></td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion B - <b>Continuing Development</b> (60 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_B_total'] ?></td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion C - <b>Awards and Recognition </b> (20 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_C_total'] ?></td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion D - <b>Bonus Criterion </b> (20 points)</th>
-                                <td>0.00</td>
+                                <td><?php echo $row['Crit_D_total'] ?></td>
                             </tr>
                             <tr>
-                                <th scope="row" class="text-center bg-secondary text-white"> <b>TOTAL </b></th>
-                                <td class="bg-warning text-white"><b>0.00</b></td>
+                                <th scope="row" class="text-center bg-secondary text-white"> <b>GRAND TOTAL POINTS FOR KRA IV </b></th>
+                                <td class="bg-danger text-white"><b><?php echo $total4 ?></b></td>
                             </tr>
+
+                            <?php } ?>
+
                         </tbody>
                     </table>
                 </div>
