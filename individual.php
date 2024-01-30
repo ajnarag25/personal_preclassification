@@ -273,7 +273,310 @@
                             </tr>
 
                             <?php } ?>
+                            
+                        </tbody>
+                    </table>
+                    <br>
+                    <table class="table table-bordered table-responsive">
+                        <thead>
+                            <tr>
+                                <!-- <th rowspan="2">KRA 1</th> -->
+                                <th class="w-25 bg-primary text-white text-center">Faculty Rank</th>
+                                <th colspan="3" class="text-center bg-primary text-white">KRA 1</th>
+                                <th colspan="3" class="text-center bg-primary text-white">KRA 2</th>
+                                <th colspan="3" class="text-center bg-primary text-white">KRA 3</th>
+                                <th colspan="3" class="text-center bg-primary text-white">KRA 4</th>
+                                <th class="w-25 bg-primary text-white text-center">Total Points</th>
 
+                            </tr>
+                            <tr>
+                                <th class="bg-secondary text-white"></th>
+                                <th class="bg-secondary text-white">Score</th>
+                                <th class="bg-secondary text-white">Weight</th>
+                                <th class="bg-secondary text-white">PTS</th>
+
+                                <th class="bg-secondary text-white">Score</th>
+                                <th class="bg-secondary text-white">Weight</th>
+                                <th class="bg-secondary text-white">PTS</th>
+
+                                <th class="bg-secondary text-white">Score</th>
+                                <th class="bg-secondary text-white">Weight</th>
+                                <th class="bg-secondary text-white">PTS</th>
+
+                                <th class="bg-secondary text-white">Score</th>
+                                <th class="bg-secondary text-white">Weight</th>
+                                <th class="bg-secondary text-white">PTS</th>
+
+                                <th class="bg-secondary text-white"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th></th>
+
+                                <td>0.00</td>
+                                <td>60%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>10%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>20%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>10%</td>
+                                <td>0.00</td>
+
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>0.00</td>
+                                <td>50%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>20%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>20%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>10%</td>
+                                <td>0.00</td>
+
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>0.00</td>
+                                <td>40%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>30%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>20%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>10%</td>
+                                <td>0.00</td>
+
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>0.00</td>
+                                <td>30%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>40%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>20%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>10%</td>
+                                <td>0.00</td>
+
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>0.00</td>
+                                <td>20%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>50%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>20%</td>
+                                <td>0.00</td>
+
+                                <td>0.00</td>
+                                <td>10%</td>
+                                <td>0.00</td>
+
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <table class="table table-bordered">
+                        <thead>
+                            <th class="bg-primary text-white text-center">Score Bracket</th>
+                            <th class="bg-primary text-white text-center">No. of Sub-rank Increment</th>
+                            <th class="bg-primary text-white text-center">Current Faculty Rank</th>
+                            <th class="bg-primary text-white text-center">Action</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">41-50</td>
+                                <td class="text-center">1 sub-rank</td>	
+                                <td>Qualified for Auto. 1-Sub Rank (for PhD)?</td>
+                                <td>
+                                    <select class="form-select" name="" id="">
+                                        <option value="">YES</option>
+                                        <option value="">NO</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">51-60</td>
+                                <td class="text-center">2 sub-rank</td>
+                                <td>Base Rank</td>
+                                <td>
+                                    <select class="form-select" name="" id="">
+                                        <option value="">Instructor I</option>
+                                        <option value="">Instructor II</option>
+                                        <option value="">Instructor III</option>
+                                        <option value="">Assistant Professor I</option>
+                                        <option value="">Assistant Professor II</option>
+                                        <option value="">Assistant Professor III</option>
+                                        <option value="">Assistant Professor IV</option>
+                                        <option value="">Associate Professor I</option>
+                                        <option value="">Associate Professor II</option>
+                                        <option value="">Associate Professor III</option>
+                                        <option value="">Associate Professor IV</option>
+                                        <option value="">Associate Professor V</option>
+                                        <option value="">Professor I</option>
+                                        <option value="">Professor II</option>
+                                        <option value="">Professor III</option>
+                                        <option value="">Professor IV</option>
+                                        <option value="">Professor V</option>
+                                        <option value="">Professor VI</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">61-70</td>
+                                <td class="text-center">3 sub-rank</td>	
+                                <td>No. of Sub-Rank Increment based on Base Rank</td>
+                                <td>
+                                    <select class="form-select" name="" id="">
+                                        <option value=""></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">71-80</td>
+                                <td class="text-center">4 sub-rank</td>
+                                <td>Initial Reclassified Rank (first computation)</td>
+                                <td>
+                                    <select class="form-select" name="" id="">
+                                        <option value="">Instructor I</option>
+                                        <option value="">Instructor II</option>
+                                        <option value="">Instructor III</option>
+                                        <option value="">Assistant Professor I</option>
+                                        <option value="">Assistant Professor II</option>
+                                        <option value="">Assistant Professor III</option>
+                                        <option value="">Assistant Professor IV</option>
+                                        <option value="">Associate Professor I</option>
+                                        <option value="">Associate Professor II</option>
+                                        <option value="">Associate Professor III</option>
+                                        <option value="">Associate Professor IV</option>
+                                        <option value="">Associate Professor V</option>
+                                        <option value="">Professor I</option>
+                                        <option value="">Professor II</option>
+                                        <option value="">Professor III</option>
+                                        <option value="">Professor IV</option>
+                                        <option value="">Professor V</option>
+                                        <option value="">Professor VI</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">81-90</td>
+                                <td class="text-center">5 sub-rank</td>
+                                <td>No. of Sub-Rank Increment based on Reclassified Rank</td>
+                                <td>
+                                    <select class="form-select" name="" id="">
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                        <option value="">5</option>
+                                        <option value="">6</option>
+                                </td>	
+                            </tr>
+                            <tr>
+                                <td class="text-center">91-100</td>
+                                <td class="text-center">6 sub-rank</td>	
+                                <td>Reclassified Rank (recomputation)</td>
+                                <td>
+                                    <select class="form-select" name="" id="">
+                                        <option value="">Instructor I</option>
+                                        <option value="">Instructor II</option>
+                                        <option value="">Instructor III</option>
+                                        <option value="">Assistant Professor I</option>
+                                        <option value="">Assistant Professor II</option>
+                                        <option value="">Assistant Professor III</option>
+                                        <option value="">Assistant Professor IV</option>
+                                        <option value="">Associate Professor I</option>
+                                        <option value="">Associate Professor II</option>
+                                        <option value="">Associate Professor III</option>
+                                        <option value="">Associate Professor IV</option>
+                                        <option value="">Associate Professor V</option>
+                                        <option value="">Professor I</option>
+                                        <option value="">Professor II</option>
+                                        <option value="">Professor III</option>
+                                        <option value="">Professor IV</option>
+                                        <option value="">Professor V</option>
+                                        <option value="">Professor VI</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>	
+                                <td>Qualified for Auto. 1-Sub Rank (for Awards)?</td>
+                                <td>
+                                    <select class="form-select" name="" id="">
+                                        <option value="">YES</option>
+                                        <option value="">NO</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>	
+                                <td>Final Recommended Faculty Rank</td>
+                                <td>
+                                    <select class="form-select" name="" id="">
+                                        <option value="">Instructor I</option>
+                                        <option value="">Instructor II</option>
+                                        <option value="">Instructor III</option>
+                                        <option value="">Assistant Professor I</option>
+                                        <option value="">Assistant Professor II</option>
+                                        <option value="">Assistant Professor III</option>
+                                        <option value="">Assistant Professor IV</option>
+                                        <option value="">Associate Professor I</option>
+                                        <option value="">Associate Professor II</option>
+                                        <option value="">Associate Professor III</option>
+                                        <option value="">Associate Professor IV</option>
+                                        <option value="">Associate Professor V</option>
+                                        <option value="">Professor I</option>
+                                        <option value="">Professor II</option>
+                                        <option value="">Professor III</option>
+                                        <option value="">Professor IV</option>
+                                        <option value="">Professor V</option>
+                                        <option value="">Professor VI</option>
+                                    </select>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
