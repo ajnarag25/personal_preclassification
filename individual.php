@@ -135,10 +135,10 @@
             <div class="container-fluid">
                 <div class="container">
                     <table class="table table-bordered">
-                        <thead class="table-secondary">
+                        <thead class="bg-primary">
                             <tr class="text-center">
-                                <th scope="col" width="70%"><b>CRITERIA</b></th>
-                                <th scope="col" width="30%"><b>FACULTY</b></th>
+                                <th class="text-white" scope="col" width="70%">CRITERIA</th>
+                                <th class="text-white" scope="col" width="30%">FACULTY</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -150,28 +150,71 @@
                                 $result = mysqli_query($conn, $query);
                                 while ($row = mysqli_fetch_array($result)) {
                                 
-                                $total1 = $row['Crit_A_total'] + $row['Crit_B_total'] + $row['Crit_C_total'];
+                                // $total1 = $row['Crit_A_total'] + $row['Crit_B_total'] + $row['Crit_C_total'];
                             ?>
 
                              <!-- KRA 1 -->
                             <tr class="table-primary">
-                                <th scope="row" class="text-center"><b>KRA I Instruction</b></th>
+                                <th scope="row" class="text-center"><b>KRA I Instruction (100 Points) </b></th>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion A - <b>Teaching Effectiveness</b> (60 points)</th>
-                                <td><?php echo $row['Crit_A_total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d1 = $row['Crit_A_total'];
+                                        if($d1 < 60){
+                                            echo $d1;
+                                        }else{
+                                            $d1 = 60;
+                                            echo $d1;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion B - <b>Curriculum and/or Instructional Materials Developed</b> (30 points)</th>
-                                <td><?php echo $row['Crit_B_total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d2 = $row['Crit_B_total'];
+                                        if($d2 < 30){
+                                            echo $d2;
+                                        }else{
+                                            $d2 = 30;
+                                            echo $d2;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row">Criterion C - <b>Speial Proj, Capstone Proj, Thesis, Dissertation & Mentorship Service </b></th>
-                                <td><?php echo $row['Crit_C_total'] ?></td>
+                                <th scope="row">Criterion C - <b>Speial Proj, Capstone Proj, Thesis, Dissertation & Mentorship Service (10 points)</b></th>
+                                <td>
+                                    <?php 
+                                        $d3 = $row['Crit_C_total'];
+                                        if($d3 < 10){
+                                            echo $d3;
+                                        }else{
+                                            $d3 = 10;
+                                            echo $d3;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row" class="text-center bg-secondary text-white"> <b>GRAND TOTAL POINTS FOR KRA 1 </b></th>
-                                <td class="bg-danger text-white"><b><?php echo $total1; ?></b></td>
+                                <th scope="row" class="text-center bg-secondary text-white"> <b>TOTAL </b></th>
+                                <td class="bg-danger text-white">
+                                    <b>
+                                        <?php 
+                                            $total1 = $d1 + $d2 + $d3; 
+                                            if($total1 > 100){
+                                                $total1 = 100;
+                                                echo $total1;
+                                            }else{
+                                                echo $total1;
+                                            }
+                                          
+                                        ?>
+                                    </b>
+                                </td>
                             </tr>
 
                             <?php } ?>
@@ -181,27 +224,69 @@
                                 $result = mysqli_query($conn, $query);
                                 while ($row = mysqli_fetch_array($result)) {
 
-                                $total2 = $row['Crit_A_total'] + $row['Crit_B_Total'] + $row['Crit_C_total'];
+                                // $total2 = $row['Crit_A_total'] + $row['Crit_B_Total'] + $row['Crit_C_total'];
                             ?>
                             <!-- KRA 2 -->
                             <tr class="table-primary">
-                                <th scope="row" class="text-center"><b>KRA II - Research, Innovation and/or  Creative Work</b></th>
+                                <th scope="row" class="text-center"><b>KRA II - Research, Innovation and/or  Creative Work (100 Points)</b></th>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion A - <b>Research Outputs Published</b> (100 points)</th>
-                                <td><?php echo $row['Crit_A_total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d4 = $row['Crit_A_total'];
+                                        if($d4 < 100){
+                                            echo $d4;
+                                        }else{
+                                            $d4 = 100;
+                                            echo $d4;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion B - <b>Inventions</b> (100 points)</th>
-                                <td><?php echo $row['Crit_B_Total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d5 = $row['Crit_B_Total'];
+                                        if($d5 < 100){
+                                            echo $d5;
+                                        }else{
+                                            $d5 = 100;
+                                            echo $d5;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion C - <b>Creative Works </b> (100 points)</th>
-                                <td><?php echo $row['Crit_C_total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d6 = $row['Crit_C_total'];
+                                        if($d6 < 100){
+                                            echo $d6;
+                                        }else{
+                                            $d6 = 100;
+                                            echo $d6;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row" class="text-center bg-secondary text-white"> <b>GRAND TOTAL POINTS FOR KRA II </b></th>
-                                <td class="bg-danger text-white"><b><?php echo $total2 ?></b></td>
+                                <th scope="row" class="text-center bg-secondary text-white"> <b>TOTAL </b></th>
+                                <td class="bg-danger text-white">
+                                    <b>
+                                        <?php 
+                                            $total2 = $d4 + $d5 + $d6;
+                                            if($total2 > 100){
+                                                $total2 = 100;
+                                                echo $total2;
+                                            }else{
+                                                echo $total2;
+                                            }
+                                        ?>
+                                    </b>
+                                </td>
                             </tr>
 
                             <?php } ?>
@@ -211,31 +296,83 @@
                                 $result = mysqli_query($conn, $query);
                                 while ($row = mysqli_fetch_array($result)) {
 
-                                $total3 = $row['Crit_A_total'] + $row['Crit_B_total'] + $row['Crit_C_total'] + $row['Crit_D_total'];
+                                // $total3 = $row['Crit_A_total'] + $row['Crit_B_total'] + $row['Crit_C_total'] + $row['Crit_D_total'];
                             ?>
                             <!-- KRA 3 -->
                             <tr class="table-primary">
-                                <th scope="row" class="text-center"><b>KRA III - Extension Services</b></th>
+                                <th scope="row" class="text-center"><b>KRA III - Extension Services (100 Points)</b></th>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion A - <b>Service to the Institution</b> (30 points)</th>
-                                <td><?php echo $row['Crit_A_total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d7 = $row['Crit_A_total'];
+                                        if($d7 < 30){
+                                            echo $d7;
+                                        }else{
+                                            $d7 = 30;
+                                            echo $d7;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion B - <b>Service of the Community</b> (50 points)</th>
-                                <td><?php echo $row['Crit_B_total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d8 = $row['Crit_B_total'];
+                                        if($d8 < 50){
+                                            echo $d8;
+                                        }else{
+                                            $d8 = 50;
+                                            echo $d8;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion C - <b>Quality of Extension Service </b> (20 points)</th>
-                                <td><?php echo $row['Crit_C_total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d9 = $row['Crit_C_total'];
+                                        if($d9 < 20){
+                                            echo $d9;
+                                        }else{
+                                            $d9 = 20;
+                                            echo $d9;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion D - <b>Bonus Criterion </b> (20 points)</th>
-                                <td><?php echo $row['Crit_D_total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d10 = $row['Crit_D_total'];
+                                        if($d10 < 20){
+                                            echo $d10;
+                                        }else{
+                                            $d10 = 20;
+                                            echo $d10;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row" class="text-center bg-secondary text-white"> <b>GRAND TOTAL POINTS FOR KRA III </b></th>
-                                <td class="bg-danger text-white"><b><?php echo $total3 ?></b></td>
+                                <th scope="row" class="text-center bg-secondary text-white"> <b>TOTAL </b></th>
+                                <td class="bg-danger text-white">
+                                    <b>
+                                        <?php
+                                            $total3 = $d7 + $d8 + $d9 + $d10;
+                                            if($total3 > 100){
+                                                $total3 = 100;
+                                                echo $total3;
+                                            }else{
+                                                echo $total3;
+                                            }
+                                        ?>
+                                    </b>
+                                </td>
                             </tr>
 
                             <?php } ?>
@@ -245,31 +382,83 @@
                                 $result = mysqli_query($conn, $query);
                                 while ($row = mysqli_fetch_array($result)) {
 
-                                $total4 = $row['Crit_A_total'] + $row['Crit_B_total'] + $row['Crit_C_total'] + $row['Crit_D_total'];
+                                // $total4 = $row['Crit_A_total'] + $row['Crit_B_total'] + $row['Crit_C_total'] + $row['Crit_D_total'];
                             ?>
                             <!-- KRA 4 -->
                             <tr class="table-primary">
-                                <th scope="row" class="text-center"><b>KRA IV - Professional Development</b></th>
+                                <th scope="row" class="text-center"><b>KRA IV - Professional Development (100 Points)</b></th>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion A - <b>Involvement in Professional Organization</b> (20 points)</th>
-                                <td><?php echo $row['Crit_A_total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d11 = $row['Crit_A_total'];
+                                        if($d11 < 20){
+                                            echo $d11;
+                                        }else{
+                                            $d11 = 20;
+                                            echo $d11;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion B - <b>Continuing Development</b> (60 points)</th>
-                                <td><?php echo $row['Crit_B_total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d12 = $row['Crit_B_total'];
+                                        if($d12 < 60){
+                                            echo $d12;
+                                        }else{
+                                            $d12 = 60;
+                                            echo $d12;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion C - <b>Awards and Recognition </b> (20 points)</th>
-                                <td><?php echo $row['Crit_C_total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d13 = $row['Crit_C_total'];
+                                        if($d13 < 20){
+                                            echo $d13;
+                                        }else{
+                                            $d13 = 20;
+                                            echo $d13;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">Criterion D - <b>Bonus Criterion </b> (20 points)</th>
-                                <td><?php echo $row['Crit_D_total'] ?></td>
+                                <td>
+                                    <?php 
+                                        $d14 = $row['Crit_D_total'];
+                                        if($d14 < 20){
+                                            echo $d14;
+                                        }else{
+                                            $d14 = 20;
+                                            echo $d14;
+                                        }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
-                                <th scope="row" class="text-center bg-secondary text-white"> <b>GRAND TOTAL POINTS FOR KRA IV </b></th>
-                                <td class="bg-danger text-white"><b><?php echo $total4 ?></b></td>
+                                <th scope="row" class="text-center bg-secondary text-white"> <b>TOTAL</b></th>
+                                <td class="bg-danger text-white">
+                                    <b>
+                                        <?php
+                                            $total4 = $d11 + $d12 + $d13 + $d14;
+                                            if($total4 > 100){
+                                                $total4 = 100;
+                                                echo $total4;
+                                            }else{
+                                                echo $total4;
+                                            }
+                                        ?>
+                                    </b>
+                                </td>
                             </tr>
 
                             <?php } ?>
@@ -312,105 +501,230 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th></th>
+                                <th>Instructor (I-III)</th>
 
-                                <td>0.00</td>
+                                <td><?php echo $total1; ?></td>
                                 <td>60%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $inst1 = round($total1 * 0.60, 2);
+                                        echo $inst1; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total2; ?></td>
                                 <td>10%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $inst2 = round($total2 * 0.10, 2);
+                                        echo $inst2; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total3; ?></td>
                                 <td>20%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $inst3 = round($total3 * 0.20, 2);
+                                        echo $inst3; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total4; ?></td>
                                 <td>10%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $inst4 = round($total4 * 0.10, 2);
+                                        echo $inst4; 
+                                    ?>
+                                </td>
 
-                                <td></td>
+                                <td class="text-center">
+                                    <?php 
+                                        $inst_total = $inst1 + $inst2 + $inst3 + $inst4;
+                                        echo round($inst_total);
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
-                                <th></th>
-                                <td>0.00</td>
+                                <th>Asst. Professor (I-IV)</th>
+                                <td><?php echo $total1; ?></td>
                                 <td>50%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $asst1 = round($total1 * 0.50, 2);
+                                        echo $asst1; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total2; ?></td>
                                 <td>20%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $asst2 = round($total2 * 0.20, 2);
+                                        echo $asst2; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total3; ?></td>
                                 <td>20%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $asst3 = round($total3 * 0.20, 2);
+                                        echo $asst3; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total4; ?></td>
                                 <td>10%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $asst4 = round($total4 * 0.10, 2);
+                                        echo $asst4; 
+                                    ?>
+                                </td>
 
-                                <td></td>
+                                <td class="text-center">
+                                    <?php 
+                                        $asst_total = $asst1 + $asst2 + $asst3 + $asst4;
+                                        echo round($asst_total);
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
-                                <th></th>
-                                <td>0.00</td>
+                                <th>Assoc. Professor (I-V)</th>
+                                <td><?php echo $total1; ?></td>
                                 <td>40%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $assoc1 = round($total1 * 0.40, 2);
+                                        echo $assoc1; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total2; ?></td>
                                 <td>30%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $assoc2 = round($total2 * 0.30, 2);
+                                        echo $assoc2; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total3; ?></td>
                                 <td>20%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $assoc3 = round($total3 * 0.20, 2);
+                                        echo $assoc3; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total4; ?></td>
                                 <td>10%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $assoc4 = round($total4 * 0.10, 2);
+                                        echo $assoc4; 
+                                    ?>
+                                </td>
 
-                                <td></td>
+                                <td class="text-center">
+                                    <?php 
+                                        $assoc_total = $assoc1 + $assoc2 + $assoc3 + $assoc4;
+                                        echo round($assoc_total);
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
-                                <th></th>
-                                <td>0.00</td>
+                                <th>Professor (I-VI)</th>
+                                <td><?php echo $total1; ?></td>
                                 <td>30%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $prof1 = round($total1 * 0.30, 2);
+                                        echo $prof1; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total2; ?></td>
                                 <td>40%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $prof2 = round($total2 * 0.40, 2);
+                                        echo $prof2; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total3; ?></td>
                                 <td>20%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $prof3 = round($total3 * 0.20, 2);
+                                        echo $prof3; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total4; ?></td>
                                 <td>10%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $prof4 = round($total4 * 0.10, 2);
+                                        echo $prof4; 
+                                    ?>
+                                </td>
 
-                                <td></td>
+                                <td class="text-center">
+                                    <?php 
+                                        $prof_total = $prof1 + $prof2 + $prof3 + $prof4;
+                                        echo round($prof_total);
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
-                                <th></th>
-                                <td>0.00</td>
+                                <th>College/Univ. Prof.</th>
+                                <td><?php echo $total1; ?></td>
                                 <td>20%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $univ1 = round($total1 * 0.20, 2);
+                                        echo $univ1; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total2; ?></td>
                                 <td>50%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $univ2 = round($total2 * 0.50, 2);
+                                        echo $univ2; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total3; ?></td>
                                 <td>20%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $univ3 = round($total3 * 0.20, 2);
+                                        echo $univ3; 
+                                    ?>
+                                </td>
 
-                                <td>0.00</td>
+                                <td><?php echo $total4; ?></td>
                                 <td>10%</td>
-                                <td>0.00</td>
+                                <td>
+                                    <?php 
+                                        $univ4 = round($total4 * 0.10, 2);
+                                        echo $univ4; 
+                                    ?>
+                                </td>
 
-                                <td></td>
+                                <td class="text-center">
+                                    <?php 
+                                        $univ_total = $univ1 + $univ2 + $univ3 + $univ4;
+                                        echo round($univ_total);
+                                    ?>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
