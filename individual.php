@@ -135,7 +135,7 @@
             <div class="container-fluid">
                 <div class="container">
                     <table class="table table-bordered">
-                        <thead class="bg-primary">
+                        <thead class="" style="background-color:#7D0201">
                             <tr class="text-center">
                                 <th class="text-white" scope="col" width="70%">CRITERIA</th>
                                 <th class="text-white" scope="col" width="30%">FACULTY</th>
@@ -201,7 +201,7 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-center bg-secondary text-white"> <b>TOTAL </b></th>
-                                <td class="bg-danger text-white">
+                                <td class="text-white" style="background-color:#7D0201">
                                     <b>
                                         <?php 
                                             $total1 = $d1 + $d2 + $d3; 
@@ -274,7 +274,7 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-center bg-secondary text-white"> <b>TOTAL </b></th>
-                                <td class="bg-danger text-white">
+                                <td class="text-white" style="background-color:#7D0201">
                                     <b>
                                         <?php 
                                             $total2 = $d4 + $d5 + $d6;
@@ -360,7 +360,7 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-center bg-secondary text-white"> <b>TOTAL </b></th>
-                                <td class="bg-danger text-white">
+                                <td class="text-white" style="background-color:#7D0201">
                                     <b>
                                         <?php
                                             $total3 = $d7 + $d8 + $d9 + $d10;
@@ -446,7 +446,7 @@
                             </tr>
                             <tr>
                                 <th scope="row" class="text-center bg-secondary text-white"> <b>TOTAL</b></th>
-                                <td class="bg-danger text-white">
+                                <td class="text-white" style="background-color:#7D0201">
                                     <b>
                                         <?php
                                             $total4 = $d11 + $d12 + $d13 + $d14;
@@ -470,12 +470,12 @@
                         <thead>
                             <tr>
                                 <!-- <th rowspan="2">KRA 1</th> -->
-                                <th class="w-25 bg-primary text-white text-center">Faculty Rank</th>
-                                <th colspan="3" class="text-center bg-primary text-white">KRA 1</th>
-                                <th colspan="3" class="text-center bg-primary text-white">KRA 2</th>
-                                <th colspan="3" class="text-center bg-primary text-white">KRA 3</th>
-                                <th colspan="3" class="text-center bg-primary text-white">KRA 4</th>
-                                <th class="w-25 bg-primary text-white text-center">Total Points</th>
+                                <th class="w-25 text-white text-center" style="background-color:#7D0201">Faculty Rank</th>
+                                <th colspan="3" class="text-center text-white" style="background-color:#7D0201">KRA 1</th>
+                                <th colspan="3" class="text-center text-white" style="background-color:#7D0201">KRA 2</th>
+                                <th colspan="3" class="text-center text-white" style="background-color:#7D0201">KRA 3</th>
+                                <th colspan="3" class="text-center text-white" style="background-color:#7D0201">KRA 4</th>
+                                <th class="w-25 text-white text-center" style="background-color:#7D0201">Total Points</th>
 
                             </tr>
                             <tr>
@@ -731,10 +731,10 @@
                     <br>
                     <table class="table table-bordered">
                         <thead>
-                            <th class="bg-primary text-white text-center">Score Bracket</th>
-                            <th class="bg-primary text-white text-center">No. of Sub-rank Increment</th>
-                            <th class="bg-primary text-white text-center">Current Faculty Rank</th>
-                            <th class="bg-primary text-white text-center">Action</th>
+                            <th class="text-white text-center" style="background-color:#7D0201">Score Bracket</th>
+                            <th class="text-white text-center" style="background-color:#7D0201">No. of Sub-rank Increment</th>
+                            <th class="text-white text-center" style="background-color:#7D0201">Current Faculty Rank</th>
+                            <th class="text-white text-center" style="background-color:#7D0201">Action</th>
                         </thead>
                         <tbody>
                             <tr>
