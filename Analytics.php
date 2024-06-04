@@ -150,15 +150,59 @@
                     KRA Summary
                 </div>
                 <div class="card-body">
-
-                    <div class="row text-center">
+                    <div>
+                        <div class="row">
+                            <div class="col-3">
+                                <ul>
+                                    <li><b> <span class="text-danger">Criterion A</span>  - Teaching Effectiveness </b></li>
+                                    <br>
+                                    <li><b> <span class="text-primary">Criterion B</span> - Curriculum and Instructional Materials Development </b></li>
+                                    <br>
+                                    <li><b> <span class="text-warning">Criterion C</span> - Thesis, Dissertation and Mentorship Services </b></li>
+                                </ul>
+                            </div>
+                            <div class="col-3">
+                                <ul>
+                                    <li><b> <span class="text-danger">Criterion A</span>  - Research Outputs </b></li>
+                                    <br>
+                                    <li><b> <span class="text-primary">Criterion B</span> - Inventions </b></li>
+                                    <br>
+                                    <li><b> <span class="text-warning">Criterion C</span> - Creative Works </b></li>
+                                </ul>
+                            </div>
+                            <div class="col-3">
+                                <ul>
+                                    <li><b> <span class="text-danger">Criterion A</span>  - Service to the Institution </b></li>
+                                    <br>
+                                    <li><b> <span class="text-primary">Criterion B</span> - Service to the Community </b></li>
+                                    <br>
+                                    <li><b> <span class="text-warning">Criterion C</span> - Quality of Extension Services </b></li>
+                                    <br>
+                                    <li><b> <span class="text-success">Criterion D</span> - Bonus Criterion </b></li>
+                                </ul>
+                            </div>
+                            <div class="col-3">
+                                <ul>
+                                    <li><b> <span class="text-danger">Criterion A</span>  - Involvement in Professional Organization </b></li>
+                                    <br>
+                                    <li><b> <span class="text-primary">Criterion B</span> - Continuing Development </b></li>
+                                    <br>
+                                    <li><b> <span class="text-warning">Criterion C</span> - Awards and Recognition </b></li>
+                                    <br>
+                                    <li><b> <span class="text-success">Criterion D</span> - Bonus Indicators for Newly Appointed Faculty </b></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
                         <!-- Column 1 -->
                         <div class="col-3">
                             <div>
-
                                 <?php
                                 $data = array();
                                 while ($row = $result1->fetch_assoc()) {
+
                                     $data['labels'][] = 'Criterion A';
                                     $data['values'][] = $row['Crit_A_total_allowed'];
 
@@ -205,8 +249,8 @@
 
                             </div>
 
-                            <div>
-                                <h3>KRA 1</h3>
+                            <div class="text-center">
+                                <h4 class="mt-3">KRA 1 - Instruction</h4>
                             </div>
                         </div>
 
@@ -260,8 +304,8 @@
                                     });
                                 </script>
                             </div>
-                            <div>
-                                <h3>KRA 2</h3>
+                            <div class="text-center">
+                                <h4 class="mt-3">KRA 2 - Research, Innovation & Creative Work</h4>
                             </div>
                         </div>
 
@@ -319,8 +363,8 @@
                                     });
                                 </script>
                             </div>
-                            <div>
-                                <h3>KRA 3</h3>
+                            <div class="text-center">
+                                <h4 class="mt-3">KRA 3 - Extension</h4>
                             </div>
                         </div>
 
@@ -378,8 +422,8 @@
                                     });
                                 </script>
                             </div>
-                            <div>
-                                <h3>KRA 4</h3>
+                            <div class="text-center">
+                                <h4 class="mt-3">KRA 4 - Professional Development</h4>
                             </div>
                         </div>
                     </div>

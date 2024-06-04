@@ -178,7 +178,7 @@
 
                             <!-- View Analytics -->
                             <div class="modal fade" id="analytics<?php echo $id ?>" tabindex="-1" aria-labelledby="" aria-hidden="true">
-                                <div class="modal-dialog modal-m">
+                                <div class="modal-dialog modal-xl">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="">Analytics of User: <?php echo $row['username'] ?></h5>
@@ -190,6 +190,65 @@
                                                 KRA Summary
                                             </div>
                                             <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <div class="text-center">
+                                                            <b>KRA 1</b>
+                                                        </div>
+                                                        <br>
+                                                        <ul>
+                                                            <li><b> <span class="text-danger">Criterion A</span>  - Teaching Effectiveness </b></li>
+                                                            <br>
+                                                            <li><b> <span class="text-primary">Criterion B</span> - Curriculum and Instructional Materials Development </b></li>
+                                                            <br>
+                                                            <li><b> <span class="text-warning">Criterion C</span> - Thesis, Dissertation and Mentorship Services </b></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="text-center">
+                                                            <b>KRA 2</b>
+                                                        </div>
+                                                        <br>
+                                                        <ul>
+                                                            <li><b> <span class="text-danger">Criterion A</span>  - Research Outputs </b></li>
+                                                            <br>
+                                                            <li><b> <span class="text-primary">Criterion B</span> - Inventions </b></li>
+                                                            <br>
+                                                            <li><b> <span class="text-warning">Criterion C</span> - Creative Works </b></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="text-center">
+                                                            <b>KRA 3</b>
+                                                        </div>
+                                                        <br>
+                                                        <ul>
+                                                            <li><b> <span class="text-danger">Criterion A</span>  - Service to the Institution </b></li>
+                                                            <br>
+                                                            <li><b> <span class="text-primary">Criterion B</span> - Service to the Community </b></li>
+                                                            <br>
+                                                            <li><b> <span class="text-warning">Criterion C</span> - Quality of Extension Services </b></li>
+                                                            <br>
+                                                            <li><b> <span class="text-success">Criterion D</span> - Bonus Criterion </b></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="text-center">
+                                                            <b>KRA 4</b>
+                                                        </div>
+                                                        <br>
+                                                        <ul>
+                                                            <li><b> <span class="text-danger">Criterion A</span>  - Involvement in Professional Organization </b></li>
+                                                            <br>
+                                                            <li><b> <span class="text-primary">Criterion B</span> - Continuing Development </b></li>
+                                                            <br>
+                                                            <li><b> <span class="text-warning">Criterion C</span> - Awards and Recognition </b></li>
+                                                            <br>
+                                                            <li><b> <span class="text-success">Criterion D</span> - Bonus Indicators for Newly Appointed Faculty </b></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <hr>
                                                 <div class="row text-center">
                                                     <?php
                                                         $queryKRA = "SELECT 
