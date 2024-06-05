@@ -156,7 +156,7 @@
                                 <ul>
                                     <li><b> <span class="text-danger">Criterion A</span>  - Teaching Effectiveness </b></li>
                                     <br>
-                                    <li><b> <span class="text-primary">Criterion B</span> - Curriculum and Instructional Materials Development </b></li>
+                                    <li><b> <span class="" style="color:rgba(54, 162, 235, 1)">Criterion B</span> - Curriculum and Instructional Materials Development </b></li>
                                     <br>
                                     <li><b> <span class="text-warning">Criterion C</span> - Thesis, Dissertation and Mentorship Services </b></li>
                                 </ul>
@@ -165,7 +165,7 @@
                                 <ul>
                                     <li><b> <span class="text-danger">Criterion A</span>  - Research Outputs </b></li>
                                     <br>
-                                    <li><b> <span class="text-primary">Criterion B</span> - Inventions </b></li>
+                                    <li><b> <span class="" style="color:rgba(54, 162, 235, 1)">Criterion B</span> - Inventions </b></li>
                                     <br>
                                     <li><b> <span class="text-warning">Criterion C</span> - Creative Works </b></li>
                                 </ul>
@@ -174,7 +174,7 @@
                                 <ul>
                                     <li><b> <span class="text-danger">Criterion A</span>  - Service to the Institution </b></li>
                                     <br>
-                                    <li><b> <span class="text-primary">Criterion B</span> - Service to the Community </b></li>
+                                    <li><b> <span class="" style="color:rgba(54, 162, 235, 1)">Criterion B</span> - Service to the Community </b></li>
                                     <br>
                                     <li><b> <span class="text-warning">Criterion C</span> - Quality of Extension Services </b></li>
                                     <br>
@@ -185,7 +185,7 @@
                                 <ul>
                                     <li><b> <span class="text-danger">Criterion A</span>  - Involvement in Professional Organization </b></li>
                                     <br>
-                                    <li><b> <span class="text-primary">Criterion B</span> - Continuing Development </b></li>
+                                    <li><b> <span class="" style="color:rgba(54, 162, 235, 1)">Criterion B</span> - Continuing Development </b></li>
                                     <br>
                                     <li><b> <span class="text-warning">Criterion C</span> - Awards and Recognition </b></li>
                                     <br>
@@ -433,15 +433,57 @@
             </div>
             
             <center>
-            <div class="card" style="width:50%">
+            <div class="card" style="width:80%">
                 <div class="card-header">
                     Overall KRA Summary
                 </div>
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <ul>
+                                <li><b> <span class="text-danger">KRA 1 Criterion A</span>  - Teaching Effectiveness </b></li>
+                                <br>
+                                <li><b> <span class="" style="color:rgba(54, 162, 235, 1)">KRA 1 Criterion B</span> - Curriculum and Instructional Materials Development </b></li>
+                                <br>
+                                <li><b> <span class="text-warning">KRA 1 Criterion C</span> - Thesis, Dissertation and Mentorship Services </b></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <ul>
+                                <li><b> <span class="text-primary">KRA 2 Criterion A</span>  - Research Outputs </b></li>
+                                <br>
+                                <li><b> <span class="text-danger">KRA 2 Criterion B</span> - Inventions </b></li>
+                                <br>
+                                <li><b> <span class="" style="color:rgba(54, 162, 235, 1)">KRA 2 Criterion C</span> - Creative Works </b></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <ul>
+                                <li><b> <span class="text-warning">KRA 3 Criterion A</span>  - Service to the Institution </b></li>
+                                <br>
+                                <li><b> <span class="text-primary" >KRA 3 Criterion B</span> - Service to the Community </b></li>
+                                <br>
+                                <li><b> <span class="text-danger">KRA 3 Criterion C</span> - Quality of Extension Services </b></li>
+                                <br>
+                                <li><b> <span class="" style="color:rgba(54, 162, 235, 1)">KRA 3 Criterion D</span> - Bonus Criterion </b></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <ul>
+                                <li><b> <span class="text-warning">KRA 4 Criterion A</span>  - Involvement in Professional Organization </b></li>
+                                <br>
+                                <li><b> <span class="text-primary">KRA 4 Criterion B</span> - Continuing Development </b></li>
+                                <br>
+                                <li><b> <span class="text-danger">KRA 4 Criterion C</span> - Awards and Recognition </b></li>
+                                <br>
+                                <li><b> <span class="" style="color:rgba(54, 162, 235, 1)">KRA 4 Criterion D</span> - Bonus Indicators for Newly Appointed Faculty </b></li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="row text-center">
                         <?php
                             $queryKRA = "SELECT 
-                                            'kra_1' AS kra_type,
+                                            'KRA 1' AS kra_type,
                                             Crit_A_total_allowed AS A,
                                             Crit_B_total_allowed AS B,
                                             Crit_C_total_allowed AS C,
@@ -452,7 +494,7 @@
                                         UNION ALL
                                         
                                         SELECT 
-                                            'kra_2' AS kra_type,
+                                            'KRA 2' AS kra_type,
                                             Crit_A_total_allowed AS A,
                                             Crit_B_Total_allowed AS B,
                                             Crit_C_Total_allowed AS C,
@@ -463,7 +505,7 @@
                                         UNION ALL
                                         
                                         SELECT 
-                                            'kra_3' AS kra_type,
+                                            'KRA 3' AS kra_type,
                                             Crit_A_total_allowed AS A,
                                             Crit_B_total_allowed AS B,
                                             Crit_C_total_allowed AS C,
@@ -474,7 +516,7 @@
                                         UNION ALL
                                         
                                         SELECT 
-                                            'kra_4' AS kra_type,
+                                            'KRA 4' AS kra_type,
                                             Crit_A_total_allowed AS A,
                                             Crit_B_total_allowed AS B,
                                             Crit_C_total_allowed AS C,
@@ -497,7 +539,8 @@
                                 $data['labels'][] = $kraType . ' - Criterion C';
                                 $data['values'][] = $kraRow['C'];
 
-                                if ($kraType === 'kra_3' || $kraType === 'kra_4') {
+                   
+                                if ($kraType == 'KRA 3' || $kraType == 'KRA 4') {
                                     $data['labels'][] = $kraType . ' - Criterion D';
                                     $data['values'][] = $kraRow['D'];
                                 }
