@@ -199,10 +199,10 @@
                         <!-- Column 1 -->
                         <div class="col-3">
                             <div>
+                                <h6 class="text-center">Pie Graph</h6>
                                 <?php
                                 $data = array();
                                 while ($row = $result1->fetch_assoc()) {
-
                                     $data['labels'][] = 'Criterion A';
                                     $data['values'][] = $row['Crit_A_total_allowed'];
 
@@ -215,16 +215,19 @@
                                 ?>
 
                                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+                                
+                                <!-- Pie Chart -->
                                 <canvas id="myPieChart1" width="400" height="200"></canvas>
                                 <script>
                                     // Access the formatted data from PHP
                                     var dataForChart = <?php echo json_encode($data); ?>;
 
-                                    // Get the canvas element
-                                    var ctx = document.getElementById('myPieChart1').getContext('2d');
+                                    // Get the canvas element for Pie Chart
+                                    var ctxPie = document.getElementById('myPieChart1').getContext('2d');
 
                                     // Create a pie chart
-                                    var myPieChart1 = new Chart(ctx, {
+                                    var myPieChart1 = new Chart(ctxPie, {
                                         type: 'pie',
                                         data: {
                                             labels: dataForChart.labels,
@@ -246,17 +249,75 @@
                                         }
                                     });
                                 </script>
+                                
+                                <hr>
+                                <h6 class="text-center">Bar Graph</h6>
+                                <!-- Bar Chart -->
+                                <canvas id="myBarChart1" width="400" height="200"></canvas>
+                                <script>
+                                    // Get the canvas element for Bar Chart
+                                    var ctxBar = document.getElementById('myBarChart1').getContext('2d');
 
+                                    // Create a bar chart
+                                    var myBarChart1 = new Chart(ctxBar, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: dataForChart.labels,
+                                            datasets: [{
+                                                label: 'Total Allowed',
+                                                data: dataForChart.values,
+                                                backgroundColor: [
+                                                    'rgb(211,44,44)', // Red for Criterion A
+                                                    'rgba(54, 162, 235, 1)', // Blue for Criterion B
+                                                    'rgba(255, 206, 86, 1)', // Yellow for Criterion C
+                                                ],
+                                                borderColor: [
+                                                    'rgba(0, 0, 0, 0)'
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        },
+                                        options: {
+                                            plugins: {
+                                                tooltip: {
+                                                    enabled: false // Disable tooltips
+                                                },
+                                                datalabels: {
+                                                    anchor: 'end',
+                                                    align: 'end',
+                                                    color: 'black',
+                                                    font: {
+                                                        weight: 'bold'
+                                                    },
+                                                    formatter: function(value, context) {
+                                                        return value;
+                                                    }
+                                                },
+                                                legend: {
+                                                    display: false // Hide legend
+                                                }
+                                            },
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        },
+                                        plugins: [ChartDataLabels]
+                                    });
+                                </script>
                             </div>
 
                             <div class="text-center">
-                                <h4 class="mt-3">KRA 1 - Instruction</h4>
+                                <h4 class="mt-3"><strong>KRA 1 - Instruction</strong></h4>
                             </div>
                         </div>
+
 
                         <!-- Column 2 -->
                         <div class="col-3">
                             <div>
+                                <h6 class="text-center">Pie Graph</h6>
                                 <?php
                                 $data = array();
                                 while ($row = $result2->fetch_assoc()) {
@@ -272,6 +333,8 @@
                                 ?>
 
                                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
                                 <canvas id="myPieChart2" width="400" height="200"></canvas>
                                 <script>
                                     // Access the formatted data from PHP
@@ -303,6 +366,63 @@
                                         }
                                     });
                                 </script>
+
+                                <hr>
+                                <h6 class="text-center">Bar Graph</h6>
+                                <!-- Bar Chart -->
+                                <canvas id="myBarChart2" width="400" height="200"></canvas>
+                                <script>
+                                    // Get the canvas element for Bar Chart
+                                    var ctxBar = document.getElementById('myBarChart2').getContext('2d');
+
+                                    // Create a bar chart
+                                    var myBarChart2 = new Chart(ctxBar, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: dataForChart.labels,
+                                            datasets: [{
+                                                label: 'Total Allowed',
+                                                data: dataForChart.values,
+                                                backgroundColor: [
+                                                    'rgb(211,44,44)', // Red for Criterion A
+                                                    'rgba(54, 162, 235, 1)', // Blue for Criterion B
+                                                    'rgba(255, 206, 86, 1)', // Yellow for Criterion C
+                                                ],
+                                                borderColor: [
+                                                    'rgba(0, 0, 0, 0)'
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        },
+                                        options: {
+                                            plugins: {
+                                                tooltip: {
+                                                    enabled: false // Disable tooltips
+                                                },
+                                                datalabels: {
+                                                    anchor: 'end',
+                                                    align: 'end',
+                                                    color: 'black',
+                                                    font: {
+                                                        weight: 'bold'
+                                                    },
+                                                    formatter: function(value, context) {
+                                                        return value;
+                                                    }
+                                                },
+                                                legend: {
+                                                    display: false // Hide legend
+                                                }
+                                            },
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        },
+                                        plugins: [ChartDataLabels]
+                                    });
+                                </script>
                             </div>
                             <div class="text-center">
                                 <h4 class="mt-3">KRA 2 - Research, Innovation & Creative Work</h4>
@@ -312,6 +432,7 @@
                         <!-- Column 3 -->
                         <div class="col-3">
                             <div>
+                                <h6 class="text-center">Pie Graph</h6>
                                 <?php
                                 $data = array();
                                 while ($row = $result3->fetch_assoc()) {
@@ -330,6 +451,8 @@
                                 ?>
 
                                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
                                 <canvas id="myPieChart3" width="400" height="200"></canvas>
                                 <script>
                                     // Access the formatted data from PHP
@@ -362,15 +485,75 @@
                                         }
                                     });
                                 </script>
+
+                                <hr>
+                                <h6 class="text-center">Bar Graph</h6>
+                                <!-- Bar Chart -->
+                                <canvas id="myBarChart3" width="400" height="200"></canvas>
+                                <script>
+                                    // Get the canvas element for Bar Chart
+                                    var ctxBar = document.getElementById('myBarChart3').getContext('2d');
+
+                                    // Create a bar chart
+                                    var myBarChart3 = new Chart(ctxBar, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: dataForChart.labels,
+                                            datasets: [{
+                                                label: 'Total Allowed',
+                                                data: dataForChart.values,
+                                                backgroundColor: [
+                                                    'rgb(211,44,44)', // Red for Criterion A
+                                                    'rgba(54, 162, 235, 1)', // Blue for Criterion B
+                                                    'rgba(255, 206, 86, 1)', // Yellow for Criterion C
+                                                    'rgb(78,159,57)', // Green for Criterion D
+                                                ],
+                                                borderColor: [
+                                                    'rgba(0, 0, 0, 0)'
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        },
+                                        options: {
+                                            plugins: {
+                                                tooltip: {
+                                                    enabled: false // Disable tooltips
+                                                },
+                                                datalabels: {
+                                                    anchor: 'end',
+                                                    align: 'end',
+                                                    color: 'black',
+                                                    font: {
+                                                        weight: 'bold'
+                                                    },
+                                                    formatter: function(value, context) {
+                                                        return value;
+                                                    }
+                                                },
+                                                legend: {
+                                                    display: false // Hide legend
+                                                }
+                                            },
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        },
+                                        plugins: [ChartDataLabels]
+                                    });
+                                </script>
+
                             </div>
                             <div class="text-center">
-                                <h4 class="mt-3">KRA 3 - Extension</h4>
+                                <h4 class="mt-3"><strong>KRA 3 - Extension</strong></h4>
                             </div>
                         </div>
 
                         <!-- Column 4 -->
                         <div class="col-3">
                             <div>
+                                <h6 class="text-center">Pie Graph</h6>
                                 <?php
                                 $data = array();
                                 while ($row = $result4->fetch_assoc()) {
@@ -389,6 +572,8 @@
                                 ?>
 
                                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
                                 <canvas id="myPieChart4" width="400" height="200"></canvas>
                                 <script>
                                     // Access the formatted data from PHP
@@ -421,6 +606,65 @@
                                         }
                                     });
                                 </script>
+
+                                <hr>
+                                <h6 class="text-center">Bar Graph</h6>
+                                <!-- Bar Chart -->
+                                <canvas id="myBarChart4" width="400" height="200"></canvas>
+                                <script>
+                                    // Get the canvas element for Bar Chart
+                                    var ctxBar = document.getElementById('myBarChart4').getContext('2d');
+
+                                    // Create a bar chart
+                                    var myBarChart4 = new Chart(ctxBar, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: dataForChart.labels,
+                                            datasets: [{
+                                                label: 'Total Allowed',
+                                                data: dataForChart.values,
+                                                backgroundColor: [
+                                                    'rgb(211,44,44)', // Red for Criterion A
+                                                    'rgba(54, 162, 235, 1)', // Blue for Criterion B
+                                                    'rgba(255, 206, 86, 1)', // Yellow for Criterion C
+                                                    'rgb(78,159,57)', // Green for Criterion D
+                                                ],
+                                                borderColor: [
+                                                    'rgba(0, 0, 0, 0)'
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        },
+                                        options: {
+                                            plugins: {
+                                                tooltip: {
+                                                    enabled: false // Disable tooltips
+                                                },
+                                                datalabels: {
+                                                    anchor: 'end',
+                                                    align: 'end',
+                                                    color: 'black',
+                                                    font: {
+                                                        weight: 'bold'
+                                                    },
+                                                    formatter: function(value, context) {
+                                                        return value;
+                                                    }
+                                                },
+                                                legend: {
+                                                    display: false // Hide legend
+                                                }
+                                            },
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        },
+                                        plugins: [ChartDataLabels]
+                                    });
+                                </script>
+
                             </div>
                             <div class="text-center">
                                 <h4 class="mt-3">KRA 4 - Professional Development</h4>
@@ -539,7 +783,6 @@
                                 $data['labels'][] = $kraType . ' - Criterion C';
                                 $data['values'][] = $kraRow['C'];
 
-                   
                                 if ($kraType == 'KRA 3' || $kraType == 'KRA 4') {
                                     $data['labels'][] = $kraType . ' - Criterion D';
                                     $data['values'][] = $kraRow['D'];
@@ -548,7 +791,11 @@
                         ?>
 
                         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+                        
+                        <hr>
                         <div>
+                            <h6>Pie Graph</h6>
                             <canvas id="myCombinedPieChart<?php echo $id; ?>" width="400" height="200"></canvas>
                             <script>
                                 var dataForCombinedChart<?php echo $id; ?> = <?php echo json_encode($data); ?>;
@@ -585,7 +832,64 @@
                                 });
                             </script>
                         </div>
+                        
+                        <hr>
+                        <div>
+                            <h6>Bar Graph</h6>
+                            <canvas id="myCombinedBarChart<?php echo $id; ?>" width="400" height="200"></canvas>
+                            <script>
+                                var ctxBarCombined<?php echo $id; ?> = document.getElementById('myCombinedBarChart<?php echo $id; ?>').getContext('2d');
+
+                                var myCombinedBarChart<?php echo $id; ?> = new Chart(ctxBarCombined<?php echo $id; ?>, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: dataForCombinedChart<?php echo $id; ?>.labels,
+                                        datasets: [{
+                                            data: dataForCombinedChart<?php echo $id; ?>.values,
+                                            backgroundColor: [
+                                                'rgb(211,44,44)', // Red (KRA 1)
+                                                'rgba(54, 162, 235, 1)', // Blue (KRA 2)
+                                                'rgba(255, 206, 86, 1)', // Yellow (KRA 3)
+                                                'rgba(148, 0, 271, 1)' // Violet (KRA 4)
+                                            ],
+                                            borderColor: [
+                                                'rgba(0, 0, 0, 0)'
+                                            ],
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        plugins: {
+                                            tooltip: {
+                                                enabled: false // Disable tooltips
+                                            },
+                                            datalabels: {
+                                                anchor: 'end',
+                                                align: 'end',
+                                                color: 'black',
+                                                font: {
+                                                    weight: 'bold'
+                                                },
+                                                formatter: function(value, context) {
+                                                    return value;
+                                                }
+                                            },
+                                            legend: {
+                                                display: false // Hide legend
+                                            }
+                                        },
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    },
+                                    plugins: [ChartDataLabels]
+                                });
+                            </script>
+                        </div>
                     </div>
+
                 </div>
             </div>
             </center>

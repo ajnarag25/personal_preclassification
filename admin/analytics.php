@@ -300,6 +300,8 @@
                                                     ?>
 
                                                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                                    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+                                                    
                                                     <div>
                                                         <canvas id="myCombinedPieChart<?php echo $id; ?>" width="400" height="200"></canvas>
                                                         <script>
@@ -337,7 +339,62 @@
                                                             });
                                                         </script>
                                                     </div>
+
+                                                    <div>
+                                                        <canvas id="myCombinedBarChart<?php echo $id; ?>" width="400" height="200"></canvas>
+                                                        <script>
+                                                            var ctxBarCombined<?php echo $id; ?> = document.getElementById('myCombinedBarChart<?php echo $id; ?>').getContext('2d');
+
+                                                            var myCombinedBarChart<?php echo $id; ?> = new Chart(ctxBarCombined<?php echo $id; ?>, {
+                                                                type: 'bar',
+                                                                data: {
+                                                                    labels: dataForCombinedChart<?php echo $id; ?>.labels,
+                                                                    datasets: [{
+                                                                        data: dataForCombinedChart<?php echo $id; ?>.values,
+                                                                        backgroundColor: [
+                                                                            'rgb(211,44,44)', // Red (KRA 1)
+                                                                            'rgba(54, 162, 235, 1)', // Blue (KRA 2)
+                                                                            'rgba(255, 206, 86, 1)', // Yellow (KRA 3)
+                                                                            'rgba(148, 0, 271, 1)' // Violet (KRA 4)
+                                                                        ],
+                                                                        borderColor: [
+                                                                            'rgba(0, 0, 0, 0)'
+                                                                        ],
+                                                                        borderWidth: 1
+                                                                    }]
+                                                                },
+                                                                options: {
+                                                                    plugins: {
+                                                                        tooltip: {
+                                                                            enabled: false // Disable tooltips
+                                                                        },
+                                                                        datalabels: {
+                                                                            anchor: 'end',
+                                                                            align: 'end',
+                                                                            color: 'black',
+                                                                            font: {
+                                                                                weight: 'bold'
+                                                                            },
+                                                                            formatter: function(value, context) {
+                                                                                return value;
+                                                                            }
+                                                                        },
+                                                                        legend: {
+                                                                            display: false // Hide legend
+                                                                        }
+                                                                    },
+                                                                    scales: {
+                                                                        y: {
+                                                                            beginAtZero: true
+                                                                        }
+                                                                    }
+                                                                },
+                                                                plugins: [ChartDataLabels]
+                                                            });
+                                                        </script>
+                                                    </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
