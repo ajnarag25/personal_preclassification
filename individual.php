@@ -736,162 +736,104 @@
                             <th class="text-white text-center" style="background-color:#7D0201">Current Faculty Rank</th>
                             <th class="text-white text-center" style="background-color:#7D0201">Action</th>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-center">41-50</td>
-                                <td class="text-center">1 sub-rank</td>	
-                                <td>Qualified for Auto. 1-Sub Rank (for PhD)?</td>
-                                <td>
-                                    <select class="form-select" name="" id="">
-                                        <option value="">YES</option>
-                                        <option value="">NO</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">51-60</td>
-                                <td class="text-center">2 sub-rank</td>
-                                <td>Base Rank</td>
-                                <td>
-                                    <select class="form-select" name="" id="">
-                                        <option value="">Instructor I</option>
-                                        <option value="">Instructor II</option>
-                                        <option value="">Instructor III</option>
-                                        <option value="">Assistant Professor I</option>
-                                        <option value="">Assistant Professor II</option>
-                                        <option value="">Assistant Professor III</option>
-                                        <option value="">Assistant Professor IV</option>
-                                        <option value="">Associate Professor I</option>
-                                        <option value="">Associate Professor II</option>
-                                        <option value="">Associate Professor III</option>
-                                        <option value="">Associate Professor IV</option>
-                                        <option value="">Associate Professor V</option>
-                                        <option value="">Professor I</option>
-                                        <option value="">Professor II</option>
-                                        <option value="">Professor III</option>
-                                        <option value="">Professor IV</option>
-                                        <option value="">Professor V</option>
-                                        <option value="">Professor VI</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">61-70</td>
-                                <td class="text-center">3 sub-rank</td>	
-                                <td>No. of Sub-Rank Increment based on Base Rank</td>
-                                <td>
-                                    <select class="form-select" name="" id="">
-                                        <option value=""></option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">71-80</td>
-                                <td class="text-center">4 sub-rank</td>
-                                <td>Initial Reclassified Rank (first computation)</td>
-                                <td>
-                                    <select class="form-select" name="" id="">
-                                        <option value="">Instructor I</option>
-                                        <option value="">Instructor II</option>
-                                        <option value="">Instructor III</option>
-                                        <option value="">Assistant Professor I</option>
-                                        <option value="">Assistant Professor II</option>
-                                        <option value="">Assistant Professor III</option>
-                                        <option value="">Assistant Professor IV</option>
-                                        <option value="">Associate Professor I</option>
-                                        <option value="">Associate Professor II</option>
-                                        <option value="">Associate Professor III</option>
-                                        <option value="">Associate Professor IV</option>
-                                        <option value="">Associate Professor V</option>
-                                        <option value="">Professor I</option>
-                                        <option value="">Professor II</option>
-                                        <option value="">Professor III</option>
-                                        <option value="">Professor IV</option>
-                                        <option value="">Professor V</option>
-                                        <option value="">Professor VI</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">81-90</td>
-                                <td class="text-center">5 sub-rank</td>
-                                <td>No. of Sub-Rank Increment based on Reclassified Rank</td>
-                                <td>
-                                    <select class="form-select" name="" id="">
-                                        <option value="">1</option>
-                                        <option value="">2</option>
-                                        <option value="">3</option>
-                                        <option value="">4</option>
-                                        <option value="">5</option>
-                                        <option value="">6</option>
-                                </td>	
-                            </tr>
-                            <tr>
-                                <td class="text-center">91-100</td>
-                                <td class="text-center">6 sub-rank</td>	
-                                <td>Reclassified Rank (recomputation)</td>
-                                <td>
-                                    <select class="form-select" name="" id="">
-                                        <option value="">Instructor I</option>
-                                        <option value="">Instructor II</option>
-                                        <option value="">Instructor III</option>
-                                        <option value="">Assistant Professor I</option>
-                                        <option value="">Assistant Professor II</option>
-                                        <option value="">Assistant Professor III</option>
-                                        <option value="">Assistant Professor IV</option>
-                                        <option value="">Associate Professor I</option>
-                                        <option value="">Associate Professor II</option>
-                                        <option value="">Associate Professor III</option>
-                                        <option value="">Associate Professor IV</option>
-                                        <option value="">Associate Professor V</option>
-                                        <option value="">Professor I</option>
-                                        <option value="">Professor II</option>
-                                        <option value="">Professor III</option>
-                                        <option value="">Professor IV</option>
-                                        <option value="">Professor V</option>
-                                        <option value="">Professor VI</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>	
-                                <td>Qualified for Auto. 1-Sub Rank (for Awards)?</td>
-                                <td>
-                                    <select class="form-select" name="" id="">
-                                        <option value="">YES</option>
-                                        <option value="">NO</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>	
-                                <td>Final Recommended Faculty Rank</td>
-                                <td>
-                                    <select class="form-select" name="" id="">
-                                        <option value="">Instructor I</option>
-                                        <option value="">Instructor II</option>
-                                        <option value="">Instructor III</option>
-                                        <option value="">Assistant Professor I</option>
-                                        <option value="">Assistant Professor II</option>
-                                        <option value="">Assistant Professor III</option>
-                                        <option value="">Assistant Professor IV</option>
-                                        <option value="">Associate Professor I</option>
-                                        <option value="">Associate Professor II</option>
-                                        <option value="">Associate Professor III</option>
-                                        <option value="">Associate Professor IV</option>
-                                        <option value="">Associate Professor V</option>
-                                        <option value="">Professor I</option>
-                                        <option value="">Professor II</option>
-                                        <option value="">Professor III</option>
-                                        <option value="">Professor IV</option>
-                                        <option value="">Professor V</option>
-                                        <option value="">Professor VI</option>
-                                    </select>
-                                </td>
-                            </tr>
+                        <form action="process.php" method="POST">
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">41-50</td>
+                                    <td class="text-center">1 sub-rank</td>	
+                                    <td>Qualified for Auto. 1-Sub Rank (for PhD)?</td>
+                                    <td>
+                                        <select id="1subrank" class="form-select" name="1subrank" id="" required>
+                                            <option value="" selected disabled>--Select--</option>
+                                            <option value="YES">YES</option>
+                                            <option value="NO">NO</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">51-60</td>
+                                    <td class="text-center">2 sub-rank</td>
+                                    <td>Base Rank</td>
+                                    <td>
+                                        <input class="form-control" type="text" name="2subrank" id="incrementRank" readonly>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">61-70</td>
+                                    <td class="text-center">3 sub-rank</td>	
+                                    <td>No. of Sub-Rank Increment based on Base Rank</td>
+                                    <td>
+                                        <input class="form-control" value="" name="3subrank" type="text" id="displayVal" readonly>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">71-80</td>
+                                    <td class="text-center">4 sub-rank</td>
+                                    <td>Initial Reclassified Rank (first computation)</td>
+                                    <td>
+                                        <input class="form-control" name="4subrank" type="text" id="incrementRank2" readonly>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">81-90</td>
+                                    <td class="text-center">5 sub-rank</td>
+                                    <td>No. of Sub-Rank Increment based on Reclassified Rank</td>
+                                    <?php 
+                                        $check_scoreboard = $inst_total + $asst_total + $assoc_total + $prof_total + $univ_total;
+                                        $scoreboard =  $check_scoreboard / 5;
+                                        
+                                        if($scoreboard <= 16.66666666666667){
+                                            $scores = 1;
+                                        }elseif($scoreboard <= 33.33333333333334){
+                                            $scores = 2;
+                                        }elseif($scoreboard <= 50.00000000000001){
+                                            $scores = 3;
+                                        }elseif($scoreboard <= 66.66666666666668){
+                                            $scores = 4;
+                                        }elseif($scoreboard <= 83.33333333333335){
+                                            $scores = 5;
+                                        }else{
+                                            $scores = 6;
+                                        }
+
+                                    ?>
+                                    <td>
+                                        <input class="form-control" id="checkScores" name="5subrank" type="text" name="" value="<?php echo $scores ?>" readonly>
+                                    </td>	
+                                </tr>
+                                <tr>
+                                    <td class="text-center">91-100</td>
+                                    <td class="text-center">6 sub-rank</td>	
+                                    <td>Reclassified Rank (recomputation)</td>
+                                    <td>
+                                        <input class="form-control" name="6subrank" type="text" id="incrementRank3" readonly>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>	
+                                    <td>Qualified for Auto. 1-Sub Rank (for Awards)?</td>
+                                    <td>
+                                        <select id="2subrank" class="form-select" name="7subrank" required>
+                                            <option value="" selected disabled>--Select--</option>
+                                            <option value="YES">YES</option>
+                                            <option value="NO">NO</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>	
+                                    <td>Final Recommended Faculty Rank</td>
+                                    <td>
+                                        <input class="form-control" name="final" type="text" id="incrementRank4" readonly>
+                                        <br>
+                                        <input type="hidden" value="<?php echo $id ?>" name="id_user">
+                                        <button class="btn btn-danger w-100 text-white" name="faculty_ok">Ok</button>
+                                    </td>
+                                </tr>
                         </tbody>
+                        </form>
                     </table>
                 </div>
             </div>
@@ -909,6 +851,7 @@
     <script src="admin/dist/js/custom.min.js"></script>
     <script src="admin/assets/libs/chartist/dist/chartist.min.js"></script>
     <script src="admin/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="js/individual.js"></script>
 </body>
 
 </html>

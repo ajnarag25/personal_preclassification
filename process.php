@@ -145,5 +145,35 @@
    
     }
 
+
+    // Faculty Rank Score
+
+    if (isset($_POST['faculty_ok'])) {
+        $id_user  = $_POST['id_user'];
+        $subrank1 = $_POST['1subrank'];
+        $subrank2 = $_POST['2subrank'];
+        $subrank3 = $_POST['3subrank'];
+        $subrank4 = $_POST['4subrank'];
+        $subrank5 = $_POST['5subrank'];
+        $subrank6 = $_POST['6subrank'];
+        $subrank7 = $_POST['7subrank'];
+        $final    = $_POST['final'];
+
+        if($id_user != ''){
+            $conn->query("INSERT INTO faculty_rank (id_user, 1subrank, 2subrank, 3subrank, 4subrank, 5subrank, 6subrank, 7subrank, final, status) 
+            VALUES('$id_user', '$subrank1', '$subrank2', '$subrank3', '$subrank4', '$subrank5', '$subrank6', '$subrank7', '$final', 'Update')") or die($conn->error);
+    
+            $_SESSION['status'] = '';
+            $_SESSION['status_icon'] = 'success';
+            header('location:index.php');
+        }else{
+            $_SESSION['status'] = 'An Error Occured!';
+            $_SESSION['status_icon'] = 'error';
+            header('location:individual.php');
+        }
+
+
+    }
+
 ?>
 
