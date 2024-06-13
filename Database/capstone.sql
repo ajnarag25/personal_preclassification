@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2023 at 04:53 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jun 13, 2024 at 08:43 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `about` (
   `address` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `about`
@@ -53,7 +53,7 @@ CREATE TABLE `admin` (
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
@@ -73,7 +73,7 @@ CREATE TABLE `communication` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `message` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,7 @@ CREATE TABLE `department` (
   `id` int(11) NOT NULL,
   `dept` varchar(255) NOT NULL,
   `users` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `department`
@@ -114,7 +114,27 @@ CREATE TABLE `employee_info` (
   `address` varchar(50) NOT NULL,
   `personal_id` int(11) NOT NULL,
   `employee_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faculty_rank`
+--
+
+CREATE TABLE `faculty_rank` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `1subrank` text NOT NULL,
+  `2subrank` text NOT NULL,
+  `3subrank` text NOT NULL,
+  `4subrank` text NOT NULL,
+  `5subrank` text NOT NULL,
+  `6subrank` text NOT NULL,
+  `7subrank` text NOT NULL,
+  `final` text NOT NULL,
+  `status` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -140,7 +160,7 @@ CREATE TABLE `kra_1` (
   `Crit_C_total_allowed` float NOT NULL,
   `Total_kra_1` float NOT NULL,
   `Total_kra_1_allowed` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -183,7 +203,7 @@ CREATE TABLE `kra_2` (
   `Crit_C_Total_allowed` float NOT NULL,
   `KRA_2_total` float NOT NULL,
   `KRA_2_total_allowed` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -219,7 +239,7 @@ CREATE TABLE `kra_3` (
   `Crit_D_total_allowed` float NOT NULL,
   `KRA3_total` float NOT NULL,
   `KRA3_total_allowed` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -250,7 +270,7 @@ CREATE TABLE `kra_4` (
   `Crit_D_total_allowed` float NOT NULL,
   `KRA4_total` float NOT NULL,
   `KRA4_total_allowed` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -266,7 +286,7 @@ CREATE TABLE `personal_info` (
   `graduate_year` varchar(50) NOT NULL,
   `user_id` int(25) NOT NULL,
   `personal_id` int(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -283,7 +303,7 @@ CREATE TABLE `users` (
   `date_updated` text NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `user_id` int(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -313,6 +333,12 @@ ALTER TABLE `department`
 ALTER TABLE `employee_info`
   ADD PRIMARY KEY (`employee_id`),
   ADD KEY `personal_id` (`personal_id`);
+
+--
+-- Indexes for table `faculty_rank`
+--
+ALTER TABLE `faculty_rank`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `kra_1`
@@ -378,6 +404,12 @@ ALTER TABLE `department`
 --
 ALTER TABLE `employee_info`
   MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `faculty_rank`
+--
+ALTER TABLE `faculty_rank`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `kra_1`
