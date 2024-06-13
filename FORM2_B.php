@@ -19,9 +19,9 @@ if (isset($_POST['submit_btn'])) {
     $scoreNPV_SCD = $_POST['NPV_SCD'];
     $scoreNPV_MD = $_POST['NPV_MD'];
 
-    if ($scoreIP_SI == "" or $scoreIP_MI == "" or $scoreUMID_SI == "" or $scoreUMID_MI == ""
-    or $scoreCPP_L == "" or $scoreCPP_I == "" or $scoreNSP_SD == ""or $scoreNSP_MD == ""or $scoreUSP_SCD == ""
-        or $scoreNPV_SCD == "" or $scoreNPV_MD == "") {
+    if ($scoreIP_SI == "" AND $scoreIP_MI == "" AND $scoreUMID_SI == "" AND $scoreUMID_MI == ""
+    AND $scoreCPP_L == "" AND $scoreCPP_I == "" AND $scoreNSP_SD == ""AND $scoreNSP_MD == ""AND $scoreUSP_SCD == ""
+        AND $scoreNPV_SCD == "" AND $scoreNPV_MD == "") {
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -29,7 +29,7 @@ if (isset($_POST['submit_btn'])) {
             $(document).ready(function () {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Please provide the required faculty score',
+                    title: 'Please do not leave it blank',
                     text: 'Something went wrong!',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'Okay'

@@ -14,7 +14,7 @@ if (isset($_POST['Submit_btn'])) {
     $panel = $_POST['panel'];
     $mentor = $_POST['mentor'];
 
-    if ($sole_author == "" or $co_author == "" or $acad_prog == "" or $adviser == "" or $panel == "" or $mentor == "") {
+    if ($sole_author == "" AND $co_author == "" AND $acad_prog == "" AND $adviser == "" AND $panel == "" AND $mentor == "") {
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -22,7 +22,7 @@ if (isset($_POST['Submit_btn'])) {
             $(document).ready(function () {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Please provide the required faculty score',
+                    title: 'Please do not leave it blank',
                     text: 'Something went wrong!',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'Okay'

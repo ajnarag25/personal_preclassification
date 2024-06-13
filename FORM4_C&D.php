@@ -7,9 +7,9 @@ if(!isset($_SESSION['user'])){
 
 if (isset($_POST['submit_btn'])) {
     $id = $_SESSION['user']['user_id'];
-    $scoreFEA = $_POST['FEA_score'];
-    $scoreFEY = $_POST['FEY_score'];
-    $scoreFEYO = $_POST['FEYO_score'];
+    $scoreFEA = isset($_POST['FEA_score']) ? (float)$_POST['FEA_score']: 0;
+    $scoreFEY = isset($_POST['FEY_score']) ? (float)$_POST['FEY_score']: 0;
+    $scoreFEYO = isset($_POST['FEYO_score']) ? (float)$_POST['FEYO_score']: 0;
     $scoreDTotal = $scoreFEY + $scoreFEYO;
     if (
         empty($scoreFEA) &&
@@ -24,7 +24,7 @@ if (isset($_POST['submit_btn'])) {
             $(document).ready(function () {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Please provide the required faculty score',
+                    title: 'Please do not leave it blank',
                     text: 'Something went wrong!',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'Okay'

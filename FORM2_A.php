@@ -14,7 +14,7 @@ if (isset($_POST['submit_btn'])) {
     $scoreLocal = $_POST['score_local_result'];
     $scoreInternational = $_POST['score_international_result'];
 
-    if ($scoreSA == "" or $scoreCO == "" or $scoreLR == "" or $scoreC == "" or $scoreLocal == "" or $scoreInternational == "") {
+    if ($scoreSA == "" AND $scoreCO == "" AND $scoreLR == "" AND $scoreC == "" AND $scoreLocal == "" AND $scoreInternational == "") {
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -22,7 +22,7 @@ if (isset($_POST['submit_btn'])) {
             $(document).ready(function () {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Please provide the required faculty score',
+                    title: 'Please do not leave it blank',
                     text: 'Something went wrong!',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'Okay'

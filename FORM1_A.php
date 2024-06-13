@@ -9,7 +9,7 @@ if(isset($_POST['submit_btn'])){
     $student = $_POST['student_eval'];
     $faculty = $_POST['faculty_eval'];
     $id = $_SESSION['user']['user_id'];
-    if ($student == "" OR $faculty == ""){
+    if ($student == "" AND $faculty == ""){
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -17,7 +17,7 @@ if(isset($_POST['submit_btn'])){
             $(document).ready(function(){
                 Swal.fire({
                 icon: 'error',
-                title: 'Please provide the required faculty score',
+                title: 'Please do not leave it blank',
                 text: 'Something went wrong!',
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'Okay'
@@ -184,23 +184,23 @@ td{
         </tr>
         <tr>  
           <td>AY 2019-2020</td>
-          <td> <input type="number" id="A1-1" required min="0" max="100"></td>
-          <td> <input type="number" id="A1-2" required min="0" max="100"></td>
+          <td> <input type="number" id="A1-1"  min="0" max="100"></td>
+          <td> <input type="number" id="A1-2"  min="0" max="100"></td>
         </tr>
         <tr>
           <td>AY 2020-2021</td>
-          <td><input type="number" id="A2-1" required min="0" max="100"></td>
-          <td><input type="number" id="A2-2" required min="0" max="100"></td>
+          <td><input type="number" id="A2-1"  min="0" max="100"></td>
+          <td><input type="number" id="A2-2"  min="0" max="100"></td>
         </tr>
         <tr>
           <td>AY 2021-2022</td>
-          <td><input type="number" id="A3-1" required min="0" max="100"></td>
-          <td><input type="number" id="A3-2" required min="0" max="100"></td>
+          <td><input type="number" id="A3-1"  min="0" max="100"></td>
+          <td><input type="number" id="A3-2"  min="0" max="100"></td>
         </tr>
         <tr>
           <td>AY 2022-2023</td>
-          <td><input type="number" id="A4-1" required min="0" max="100"></td>
-          <td><input type="number" id="A4-2" required min="0" max="100"></td>
+          <td><input type="number" id="A4-1"  min="0" max="100"></td>
+          <td><input type="number" id="A4-2"  min="0" max="100"></td>
         </tr>
         <tr class="row__des">
           <td colspan="2">OVERALL AVERAGE RATING</td>
@@ -233,23 +233,23 @@ td{
       </tr>
       <tr>
         <td>AY 2019-2020</td>
-        <td><input type="number" id="B1-1" required min="0" max="100"></td>
-        <td><input type="number" id="B1-2" required min="0" max="100"></td>
+        <td><input type="number" id="B1-1"  min="0" max="100"></td>
+        <td><input type="number" id="B1-2"  min="0" max="100"></td>
       </tr>
       <tr>
         <td>AY 2020-2021</td>
-        <td><input type="number" id="B2-1" required min="0" max="100"></td>
-        <td><input type="number" id="B2-2" required min="0" max="100"></td>
+        <td><input type="number" id="B2-1"  min="0" max="100"></td>
+        <td><input type="number" id="B2-2"  min="0" max="100"></td>
       </tr>
       <tr>
         <td>AY 2021-2022</td>
-        <td><input type="number" id="B3-1" required min="0" max="100"></td>
-        <td><input type="number" id="B3-2" required min="0" max="100"></td>
+        <td><input type="number" id="B3-1"  min="0" max="100"></td>
+        <td><input type="number" id="B3-2"  min="0" max="100"></td>
       </tr>
       <tr>
         <td>AY 2022-2023</td>
-        <td><input type="number" id="B4-1" required min="0" max="100"></td>
-        <td><input type="number" id="B4-2" required min="0" max="100"></td>
+        <td><input type="number" id="B4-1"  min="0" max="100"></td>
+        <td><input type="number" id="B4-2"  min="0" max="100"></td>
       </tr>
       <tr class="row__des">
         <td colspan="2">OVERALL AVERAGE RATING</td>

@@ -13,7 +13,7 @@ if (isset($_POST['submit_btn'])) {
     $scoreLitPub = $_POST['LitPub_Score'];
 
 
-    if ($scoreNCPA == "" or $scoreExhibition == "" or $scoreJuried == "" or $scoreLitPub == "") {
+    if ($scoreNCPA == "" AND $scoreExhibition == "" AND $scoreJuried == "" AND $scoreLitPub == "") {
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -21,7 +21,7 @@ if (isset($_POST['submit_btn'])) {
             $(document).ready(function () {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Please provide the required faculty score',
+                    title: 'Please do not leave it blank',
                     text: 'Something went wrong!',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'Okay'

@@ -7,12 +7,19 @@ if(!isset($_SESSION['user'])){
 
 if (isset($_POST['Submit_btn'])) {
     $id = $_SESSION['user']['user_id'];
-    $scoreFCIM = $_POST['FCIM_total'];
-    $scoreFDD = $_POST['FDD_total'];
-    $scoreAD = $_POST['AD_total'];
-    $scoreBFirst = $scoreFDD + $scoreAD;
-    $scoreFEP = $_POST['FEP_total'];
-    $scoreFEPP = $_POST['FEPP_total'];
+    $scoreFCIM = isset($_POST['FCIM_total']) ? (float)$_POST['FCIM_total'] : 0;
+    $scoreFDD = isset($_POST['FDD_total']) ? (float)$_POST['FDD_total'] : 0;
+    $scoreAD = isset($_POST['AD_total']) ? (float)$_POST['AD_total'] : 0;
+    
+    if ($scoreFDD && $scoreAD) {
+        $scoreBFirst = $scoreFDD + $scoreAD;
+    } else {
+        $scoreBFirst = 0; 
+    }
+    
+    $scoreFEP = isset($_POST['FEP_total']) ? (float)$_POST['FEP_total'] : 0;
+    $scoreFEPP = isset($_POST['FEPP_total']) ? (float)$_POST['FEPP_total'] : 0;
+    
     $scoreBTotal = $scoreBFirst + $scoreFEP + $scoreFEPP;
     if (
         empty($scoreFCIM) &&
@@ -28,7 +35,7 @@ if (isset($_POST['Submit_btn'])) {
             $(document).ready(function () {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Please provide the required faculty score',
+                    title: 'Please do not leave it blank',
                     text: 'Something went wrong!',
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'Okay'
