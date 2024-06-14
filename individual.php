@@ -821,17 +821,20 @@
                                                     $check_scoreboard = $inst_total + $asst_total + $assoc_total + $prof_total + $univ_total;
                                                     $scoreboard =  $check_scoreboard / 5;
                                                     
-                                                    if($scoreboard <= 16.66666666666667){
+                                                    if ($scoreboard <= 50) {
                                                         $scores = 1;
-                                                    }elseif($scoreboard <= 33.33333333333334){
+                                                    } elseif ($scoreboard <= 60) {
                                                         $scores = 2;
-                                                    }elseif($scoreboard <= 50.00000000000001){
+                                                    } elseif ($scoreboard <= 70) {
                                                         $scores = 3;
-                                                    }elseif($scoreboard <= 66.66666666666668){
+                                                    } elseif ($scoreboard <= 80) {
                                                         $scores = 4;
-                                                    }elseif($scoreboard <= 83.33333333333335){
+                                                    } elseif ($scoreboard <= 90) {
                                                         $scores = 5;
-                                                    }else{
+                                                    } elseif ($scoreboard <= 100) {
+                                                        $scores = 6;
+                                                    } else {
+                                                        // Handle any case where the scoreboard might be above 100 if necessary
                                                         $scores = 6;
                                                     }
 
@@ -904,7 +907,27 @@
                                             <td class="text-center">2 sub-rank</td>
                                             <td>Base Rank</td>
                                             <td>
-                                                <input class="form-control" type="text" name="2subrank" id="incrementRank" readonly>
+                                            <select class="form-select" name="2subrank" id="incrementRank">
+                                                    <option value="" selected disabled>--Select--</option>
+                                                    <option value="Instructor I">Instructor I</option>
+                                                    <option value="Instructor II">Instructor II</option>
+                                                    <option value="Instructor III">Instructor III</option>
+                                                    <option value="Assistant Professor I">Assistant Professor I</option>
+                                                    <option value="Assistant Professor II">Assistant Professor II</option>
+                                                    <option value="Assistant Professor III">Assistant Professor III</option>
+                                                    <option value="Assistant Professor IV">Assistant Professor IV</option>
+                                                    <option value="Associate Professor I">Associate Professor I</option>
+                                                    <option value="Associate Professor II">Associate Professor II</option>
+                                                    <option value="Associate Professor III">Associate Professor III</option>
+                                                    <option value="Associate Professor IV">Associate Professor IV</option>
+                                                    <option value="Associate Professor V">Associate Professor V</option>
+                                                    <option value="Professor I">Professor I</option>
+                                                    <option value="Professor II">Professor II</option>
+                                                    <option value="Professor III">Professor III</option>
+                                                    <option value="Professor IV">Professor IV</option>
+                                                    <option value="Professor V">Professor V</option>
+                                                    <option value="Professor VI">Professor VI</option>
+                                                </select>
                                             </td>
                                         </tr>
                                         <tr>
@@ -931,17 +954,20 @@
                                                 $check_scoreboard = $inst_total + $asst_total + $assoc_total + $prof_total + $univ_total;
                                                 $scoreboard =  $check_scoreboard / 5;
                                                 
-                                                if($scoreboard <= 16.66666666666667){
+                                                if ($scoreboard <= 50) {
                                                     $scores = 1;
-                                                }elseif($scoreboard <= 33.33333333333334){
+                                                } elseif ($scoreboard <= 60) {
                                                     $scores = 2;
-                                                }elseif($scoreboard <= 50.00000000000001){
+                                                } elseif ($scoreboard <= 70) {
                                                     $scores = 3;
-                                                }elseif($scoreboard <= 66.66666666666668){
+                                                } elseif ($scoreboard <= 80) {
                                                     $scores = 4;
-                                                }elseif($scoreboard <= 83.33333333333335){
+                                                } elseif ($scoreboard <= 90) {
                                                     $scores = 5;
-                                                }else{
+                                                } elseif ($scoreboard <= 100) {
+                                                    $scores = 6;
+                                                } else {
+                                                    // Handle any case where the scoreboard might be above 100 if necessary
                                                     $scores = 6;
                                                 }
 
