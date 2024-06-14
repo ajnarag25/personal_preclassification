@@ -773,7 +773,28 @@
                                                 <td class="text-center">2 sub-rank</td>
                                                 <td>Base Rank</td>
                                                 <td>
-                                                    <input class="form-control" type="text" name="2subrank" value="<?php echo $row_rank['2subrank'] ?>" id="incrementRank" readonly>
+                                                <select class="form-select" name="2subrank" id="incrementRank">
+                                                    <option value="" selected disabled>--Select--</option>
+                                                    <option value="Instructor I">Instructor I</option>
+                                                    <option value="Instructor II">Instructor II</option>
+                                                    <option value="Instructor III">Instructor III</option>
+                                                    <option value="Assistant Professor I">Assistant Professor I</option>
+                                                    <option value="Assistant Professor II">Assistant Professor II</option>
+                                                    <option value="Assistant Professor III">Assistant Professor III</option>
+                                                    <option value="Assistant Professor IV">Assistant Professor IV</option>
+                                                    <option value="Associate Professor I">Associate Professor I</option>
+                                                    <option value="Associate Professor II">Associate Professor II</option>
+                                                    <option value="Associate Professor III">Associate Professor III</option>
+                                                    <option value="Associate Professor IV">Associate Professor IV</option>
+                                                    <option value="Associate Professor V">Associate Professor V</option>
+                                                    <option value="Professor I">Professor I</option>
+                                                    <option value="Professor II">Professor II</option>
+                                                    <option value="Professor III">Professor III</option>
+                                                    <option value="Professor IV">Professor IV</option>
+                                                    <option value="Professor V">Professor V</option>
+                                                    <option value="Professor VI">Professor VI</option>
+                                                </select>
+                                                    <!-- <input class="form-control" type="text" name="2subrank" value="<?php echo $row_rank['2subrank'] ?>" id="incrementRank" readonly> -->
                                                 </td>
                                             </tr>
                                             <tr>
@@ -865,7 +886,6 @@
                                         <?php
                                         }
                                     }else{
-                                        echo 'hehe';
                                         ?>
                                         <tr>
                                             <td class="text-center">41-50</td>
