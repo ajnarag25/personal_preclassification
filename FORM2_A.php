@@ -4,9 +4,152 @@ session_start();
 if(!isset($_SESSION['user'])){
   header('location: login.php');
 }
+$id = $_SESSION['user']['user_id'];
 
+$query2_a = "SELECT * FROM form2_a WHERE user_id = $id";
+$result2_a = $conn->query($query2_a);
+
+while ($row = mysqli_fetch_array($result2_a)) {
+    $init_title_1_1_1 = $row['title_1_1_1'];
+    $init_title_1_1_2 = $row['title_1_1_2'];
+    $init_title_1_1_3 = $row['title_1_1_3'];
+    $init_title_1_1_4 = $row['title_1_1_4'];
+    $init_type_1_1_1 = $row['type_1_1_1'];
+    $init_type_1_1_2 = $row['type_1_1_2'];
+    $init_type_1_1_3 = $row['type_1_1_3'];
+    $init_type_1_1_4 = $row['type_1_1_4'];
+    $init_name_1_1_1 = $row['name_1_1_1'];
+    $init_name_1_1_2 = $row['name_1_1_2'];
+    $init_name_1_1_3 = $row['name_1_1_3'];
+    $init_name_1_1_4 = $row['name_1_1_4'];
+    $init_rev_1_1_1 = $row['rev_1_1_1'];
+    $init_rev_1_1_2 = $row['rev_1_1_2'];
+    $init_rev_1_1_3 = $row['rev_1_1_3'];
+    $init_rev_1_1_4 = $row['rev_1_1_4'];
+    $init_int_1_1_1 = $row['int_1_1_1'];
+    $init_int_1_1_2 = $row['int_1_1_2'];
+    $init_int_1_1_3 = $row['int_1_1_3'];
+    $init_int_1_1_4 = $row['int_1_1_4'];
+    $init_datepub_1_1_1 = $row['datepub_1_1_1'];
+    $init_datepub_1_1_2 = $row['datepub_1_1_2'];
+    $init_datepub_1_1_3 = $row['datepub_1_1_3'];
+    $init_datepub_1_1_4 = $row['datepub_1_1_4'];
+    $init_title_1_2_1 = $row['title_1_2_1'];
+    $init_title_1_2_2 = $row['title_1_2_2'];
+    $init_title_1_2_3 = $row['title_1_2_3'];
+    $init_title_1_2_4 = $row['title_1_2_4'];
+    $init_type_1_2_1 = $row['type_1_2_1'];
+    $init_type_1_2_2 = $row['type_1_2_2'];
+    $init_type_1_2_3 = $row['type_1_2_3'];
+    $init_type_1_2_4 = $row['type_1_2_4'];
+    $init_name_1_2_1 = $row['name_1_2_1'];
+    $init_name_1_2_2 = $row['name_1_2_2'];
+    $init_name_1_2_3 = $row['name_1_2_3'];
+    $init_name_1_2_4 = $row['name_1_2_4'];
+    $init_rev_1_2_1 = $row['rev_1_2_1'];
+    $init_rev_1_2_2 = $row['rev_1_2_2'];
+    $init_rev_1_2_3 = $row['rev_1_2_3'];
+    $init_rev_1_2_4 = $row['rev_1_2_4'];
+    $init_int_1_2_1 = $row['int_1_2_1'];
+    $init_int_1_2_2 = $row['int_1_2_2'];
+    $init_int_1_2_3 = $row['int_1_2_3'];
+    $init_int_1_2_4 = $row['int_1_2_4'];
+    $init_datepub_1_2_1 = $row['datepub_1_2_1'];
+    $init_datepub_1_2_2 = $row['datepub_1_2_2'];
+    $init_datepub_1_2_3 = $row['datepub_1_2_3'];
+    $init_datepub_1_2_4 = $row['datepub_1_2_4'];
+    $init_title_2_1_1 = $row['title_2_1_1'];
+    $init_title_2_1_2 = $row['title_2_1_2'];
+    $init_title_2_1_3 = $row['title_2_1_3'];
+    $init_title_2_1_4 = $row['title_2_1_4'];
+    $init_datecom_2_1_1 = $row['datecom_2_1_1'];
+    $init_datecom_2_1_2 = $row['datecom_2_1_2'];
+    $init_datecom_2_1_3 = $row['datecom_2_1_3'];
+    $init_datecom_2_1_4 = $row['datecom_2_1_4'];
+    $init_nameproj_2_1_1 = $row['nameproj_2_1_1'];
+    $init_nameproj_2_1_2 = $row['nameproj_2_1_2'];
+    $init_nameproj_2_1_3 = $row['nameproj_2_1_3'];
+    $init_nameproj_2_1_4 = $row['nameproj_2_1_4'];
+    $init_fund_2_1_1 = $row['fund_2_1_1'];
+    $init_fund_2_1_2 = $row['fund_2_1_2'];
+    $init_fund_2_1_3 = $row['fund_2_1_3'];
+    $init_fund_2_1_4 = $row['fund_2_1_4'];
+    $init_dateimp_2_1_1 = $row['dateimp_2_1_1'];
+    $init_dateimp_2_1_2 = $row['dateimp_2_1_2'];
+    $init_dateimp_2_1_3 = $row['dateimp_2_1_3'];
+    $init_dateimp_2_1_4 = $row['dateimp_2_1_4'];
+    $init_title_2_2_1 = $row['title_2_2_1'];
+    $init_title_2_2_2 = $row['title_2_2_2'];
+    $init_title_2_2_3 = $row['title_2_2_3'];
+    $init_title_2_2_4 = $row['title_2_2_4'];
+    $init_datecom_2_2_1 = $row['datecom_2_2_1'];
+    $init_datecom_2_2_2 = $row['datecom_2_2_2'];
+    $init_datecom_2_2_3 = $row['datecom_2_2_3'];
+    $init_datecom_2_2_4 = $row['datecom_2_2_4'];
+    $init_nameproj_2_2_1 = $row['nameproj_2_2_1'];
+    $init_nameproj_2_2_2 = $row['nameproj_2_2_2'];
+    $init_nameproj_2_2_3 = $row['nameproj_2_2_3'];
+    $init_nameproj_2_2_4 = $row['nameproj_2_2_4'];
+    $init_fund_2_2_1 = $row['fund_2_2_1'];
+    $init_fund_2_2_2 = $row['fund_2_2_2'];
+    $init_fund_2_2_3 = $row['fund_2_2_3'];
+    $init_fund_2_2_4 = $row['fund_2_2_4'];
+    $init_dateimp_2_2_1 = $row['dateimp_2_2_1'];
+    $init_dateimp_2_2_2 = $row['dateimp_2_2_2'];
+    $init_dateimp_2_2_3 = $row['dateimp_2_2_3'];
+    $init_dateimp_2_2_4 = $row['dateimp_2_2_4'];
+    $init_title_3_1_1 = $row['title_3_1_1'];
+    $init_title_3_1_2 = $row['title_3_1_2'];
+    $init_title_3_1_3 = $row['title_3_1_3'];
+    $init_title_3_1_4 = $row['title_3_1_4'];
+    $init_datepub_3_1_1 = $row['datepub_3_1_1'];
+    $init_datepub_3_1_2 = $row['datepub_3_1_2'];
+    $init_datepub_3_1_3 = $row['datepub_3_1_3'];
+    $init_datepub_3_1_4 = $row['datepub_3_1_4'];
+    $init_name_3_1_1 = $row['name_3_1_1'];
+    $init_name_3_1_2 = $row['name_3_1_2'];
+    $init_name_3_1_3 = $row['name_3_1_3'];
+    $init_name_3_1_4 = $row['name_3_1_4'];
+    $init_no_citation_3_1_1 = $row['no_citation_3_1_1'];
+    $init_no_citation_3_1_2 = $row['no_citation_3_1_2'];
+    $init_no_citation_3_1_3 = $row['no_citation_3_1_3'];
+    $init_no_citation_3_1_4 = $row['no_citation_3_1_4'];
+    $init_index_citation_3_1_1 = $row['index_citation_3_1_1'];
+    $init_index_citation_3_1_2 = $row['index_citation_3_1_2'];
+    $init_index_citation_3_1_3 = $row['index_citation_3_1_3'];
+    $init_index_citation_3_1_4 = $row['index_citation_3_1_4'];
+    $init_year_citation_3_1_1 = $row['year_citation_3_1_1'];
+    $init_year_citation_3_1_2 = $row['year_citation_3_1_2'];
+    $init_year_citation_3_1_3 = $row['year_citation_3_1_3'];
+    $init_year_citation_3_1_4 = $row['year_citation_3_1_4'];
+    $init_title_3_2_1 = $row['title_3_2_1'];
+    $init_title_3_2_2 = $row['title_3_2_2'];
+    $init_title_3_2_3 = $row['title_3_2_3'];
+    $init_title_3_2_4 = $row['title_3_2_4'];
+    $init_datepub_3_2_1 = $row['datepub_3_2_1'];
+    $init_datepub_3_2_2 = $row['datepub_3_2_2'];
+    $init_datepub_3_2_3 = $row['datepub_3_2_3'];
+    $init_datepub_3_2_4 = $row['datepub_3_2_4'];
+    $init_name_3_2_1 = $row['name_3_2_1'];
+    $init_name_3_2_2 = $row['name_3_2_2'];
+    $init_name_3_2_3 = $row['name_3_2_3'];
+    $init_name_3_2_4 = $row['name_3_2_4'];
+    $init_no_citation_3_2_1 = $row['no_citation_3_2_1'];
+    $init_no_citation_3_2_2 = $row['no_citation_3_2_2'];
+    $init_no_citation_3_2_3 = $row['no_citation_3_2_3'];
+    $init_no_citation_3_2_4 = $row['no_citation_3_2_4'];
+    $init_index_citation_3_2_1 = $row['index_citation_3_2_1'];
+    $init_index_citation_3_2_2 = $row['index_citation_3_2_2'];
+    $init_index_citation_3_2_3 = $row['index_citation_3_2_3'];
+    $init_index_citation_3_2_4 = $row['index_citation_3_2_4'];
+    $init_year_citation_3_2_1 = $row['year_citation_3_2_1'];
+    $init_year_citation_3_2_2 = $row['year_citation_3_2_2'];
+    $init_year_citation_3_2_3 = $row['year_citation_3_2_3'];
+    $init_year_citation_3_2_4 = $row['year_citation_3_2_4'];
+
+}
 if (isset($_POST['submit_btn'])) {
-    $id = $_SESSION['user']['user_id'];
+    
     $scoreSA = $_POST['score_SA'];
     $scoreCO = $_POST['score_CO'];
     $scoreLR = $_POST['score_LR'];
@@ -33,6 +176,361 @@ if (isset($_POST['submit_btn'])) {
         </script>
         <?php
     } else {
+        $title_1_1_1 = $_POST['title_1_1_1'];
+        $title_1_1_2 = $_POST['title_1_1_2'];
+        $title_1_1_3 = $_POST['title_1_1_3'];
+        $title_1_1_4 = $_POST['title_1_1_4'];
+        $type_1_1_1 = $_POST['type_1_1_1'];
+        $type_1_1_2 = $_POST['type_1_1_2'];
+        $type_1_1_3 = $_POST['type_1_1_3'];
+        $type_1_1_4 = $_POST['type_1_1_4'];
+        $name_1_1_1 = $_POST['name_1_1_1'];
+        $name_1_1_2 = $_POST['name_1_1_2'];
+        $name_1_1_3 = $_POST['name_1_1_3'];
+        $name_1_1_4 = $_POST['name_1_1_4'];
+        $rev_1_1_1 = $_POST['rev_1_1_1'];
+        $rev_1_1_2 = $_POST['rev_1_1_2'];
+        $rev_1_1_3 = $_POST['rev_1_1_3'];
+        $rev_1_1_4 = $_POST['rev_1_1_4'];
+        $int_1_1_1 = $_POST['int_1_1_1'];
+        $int_1_1_2 = $_POST['int_1_1_2'];
+        $int_1_1_3 = $_POST['int_1_1_3'];
+        $int_1_1_4 = $_POST['int_1_1_4'];
+        $datepub_1_1_1 = $_POST['datepub_1_1_1'];
+        $datepub_1_1_2 = $_POST['datepub_1_1_2'];
+        $datepub_1_1_3 = $_POST['datepub_1_1_3'];
+        $datepub_1_1_4 = $_POST['datepub_1_1_4'];
+        $title_1_2_1 = $_POST['title_1_2_1'];
+        $title_1_2_2 = $_POST['title_1_2_2'];
+        $title_1_2_3 = $_POST['title_1_2_3'];
+        $title_1_2_4 = $_POST['title_1_2_4'];
+        $type_1_2_1 = $_POST['type_1_2_1'];
+        $type_1_2_2 = $_POST['type_1_2_2'];
+        $type_1_2_3 = $_POST['type_1_2_3'];
+        $type_1_2_4 = $_POST['type_1_2_4'];
+        $name_1_2_1 = $_POST['name_1_2_1'];
+        $name_1_2_2 = $_POST['name_1_2_2'];
+        $name_1_2_3 = $_POST['name_1_2_3'];
+        $name_1_2_4 = $_POST['name_1_2_4'];
+        $rev_1_2_1 = $_POST['rev_1_2_1'];
+        $rev_1_2_2 = $_POST['rev_1_2_2'];
+        $rev_1_2_3 = $_POST['rev_1_2_3'];
+        $rev_1_2_4 = $_POST['rev_1_2_4'];
+        $int_1_2_1 = $_POST['int_1_2_1'];
+        $int_1_2_2 = $_POST['int_1_2_2'];
+        $int_1_2_3 = $_POST['int_1_2_3'];
+        $int_1_2_4 = $_POST['int_1_2_4'];
+        $datepub_1_2_1 = $_POST['datepub_1_2_1'];
+        $datepub_1_2_2 = $_POST['datepub_1_2_2'];
+        $datepub_1_2_3 = $_POST['datepub_1_2_3'];
+        $datepub_1_2_4 = $_POST['datepub_1_2_4'];
+        $title_2_1_1 = $_POST['title_2_1_1'];
+        $title_2_1_2 = $_POST['title_2_1_2'];
+        $title_2_1_3 = $_POST['title_2_1_3'];
+        $title_2_1_4 = $_POST['title_2_1_4'];
+        $datecom_2_1_1 = $_POST['datecom_2_1_1'];
+        $datecom_2_1_2 = $_POST['datecom_2_1_2'];
+        $datecom_2_1_3 = $_POST['datecom_2_1_3'];
+        $datecom_2_1_4 = $_POST['datecom_2_1_4'];
+        $nameproj_2_1_1 = $_POST['nameproj_2_1_1'];
+        $nameproj_2_1_2 = $_POST['nameproj_2_1_2'];
+        $nameproj_2_1_3 = $_POST['nameproj_2_1_3'];
+        $nameproj_2_1_4 = $_POST['nameproj_2_1_4'];
+        $fund_2_1_1 = $_POST['fund_2_1_1'];
+        $fund_2_1_2 = $_POST['fund_2_1_2'];
+        $fund_2_1_3 = $_POST['fund_2_1_3'];
+        $fund_2_1_4 = $_POST['fund_2_1_4'];
+        $dateimp_2_1_1 = $_POST['dateimp_2_1_1'];
+        $dateimp_2_1_2 = $_POST['dateimp_2_1_2'];
+        $dateimp_2_1_3 = $_POST['dateimp_2_1_3'];
+        $dateimp_2_1_4 = $_POST['dateimp_2_1_4'];
+        $title_2_2_1 = $_POST['title_2_2_1'];
+        $title_2_2_2 = $_POST['title_2_2_2'];
+        $title_2_2_3 = $_POST['title_2_2_3'];
+        $title_2_2_4 = $_POST['title_2_2_4'];
+        $datecom_2_2_1 = $_POST['datecom_2_2_1'];
+        $datecom_2_2_2 = $_POST['datecom_2_2_2'];
+        $datecom_2_2_3 = $_POST['datecom_2_2_3'];
+        $datecom_2_2_4 = $_POST['datecom_2_2_4'];
+        $nameproj_2_2_1 = $_POST['nameproj_2_2_1'];
+        $nameproj_2_2_2 = $_POST['nameproj_2_2_2'];
+        $nameproj_2_2_3 = $_POST['nameproj_2_2_3'];
+        $nameproj_2_2_4 = $_POST['nameproj_2_2_4'];
+        $fund_2_2_1 = $_POST['fund_2_2_1'];
+        $fund_2_2_2 = $_POST['fund_2_2_2'];
+        $fund_2_2_3 = $_POST['fund_2_2_3'];
+        $fund_2_2_4 = $_POST['fund_2_2_4'];
+        $dateimp_2_2_1 = $_POST['dateimp_2_2_1'];
+        $dateimp_2_2_2 = $_POST['dateimp_2_2_2'];
+        $dateimp_2_2_3 = $_POST['dateimp_2_2_3'];
+        $dateimp_2_2_4 = $_POST['dateimp_2_2_4'];
+        $title_3_1_1 = $_POST['title_3_1_1'];
+        $title_3_1_2 = $_POST['title_3_1_2'];
+        $title_3_1_3 = $_POST['title_3_1_3'];
+        $title_3_1_4 = $_POST['title_3_1_4'];
+        $datepub_3_1_1 = $_POST['datepub_3_1_1'];
+        $datepub_3_1_2 = $_POST['datepub_3_1_2'];
+        $datepub_3_1_3 = $_POST['datepub_3_1_3'];
+        $datepub_3_1_4 = $_POST['datepub_3_1_4'];
+        $name_3_1_1 = $_POST['name_3_1_1'];
+        $name_3_1_2 = $_POST['name_3_1_2'];
+        $name_3_1_3 = $_POST['name_3_1_3'];
+        $name_3_1_4 = $_POST['name_3_1_4'];
+        $no_citation_3_1_1 = $_POST['no_citation_3_1_1'];
+        $no_citation_3_1_2 = $_POST['no_citation_3_1_2'];
+        $no_citation_3_1_3 = $_POST['no_citation_3_1_3'];
+        $no_citation_3_1_4 = $_POST['no_citation_3_1_4'];
+        $index_citation_3_1_1 = $_POST['index_citation_3_1_1'];
+        $index_citation_3_1_2 = $_POST['index_citation_3_1_2'];
+        $index_citation_3_1_3 = $_POST['index_citation_3_1_3'];
+        $index_citation_3_1_4 = $_POST['index_citation_3_1_4'];
+        $year_citation_3_1_1 = $_POST['year_citation_3_1_1'];
+        $year_citation_3_1_2 = $_POST['year_citation_3_1_2'];
+        $year_citation_3_1_3 = $_POST['year_citation_3_1_3'];
+        $year_citation_3_1_4 = $_POST['year_citation_3_1_4'];
+        $title_3_2_1 = $_POST['title_3_2_1'];
+        $title_3_2_2 = $_POST['title_3_2_2'];
+        $title_3_2_3 = $_POST['title_3_2_3'];
+        $title_3_2_4 = $_POST['title_3_2_4'];
+        $datepub_3_2_1 = $_POST['datepub_3_2_1'];
+        $datepub_3_2_2 = $_POST['datepub_3_2_2'];
+        $datepub_3_2_3 = $_POST['datepub_3_2_3'];
+        $datepub_3_2_4 = $_POST['datepub_3_2_4'];
+        $name_3_2_1 = $_POST['name_3_2_1'];
+        $name_3_2_2 = $_POST['name_3_2_2'];
+        $name_3_2_3 = $_POST['name_3_2_3'];
+        $name_3_2_4 = $_POST['name_3_2_4'];
+        $no_citation_3_2_1 = $_POST['no_citation_3_2_1'];
+        $no_citation_3_2_2 = $_POST['no_citation_3_2_2'];
+        $no_citation_3_2_3 = $_POST['no_citation_3_2_3'];
+        $no_citation_3_2_4 = $_POST['no_citation_3_2_4'];
+        $index_citation_3_2_1 = $_POST['index_citation_3_2_1'];
+        $index_citation_3_2_2 = $_POST['index_citation_3_2_2'];
+        $index_citation_3_2_3 = $_POST['index_citation_3_2_3'];
+        $index_citation_3_2_4 = $_POST['index_citation_3_2_4'];
+        $year_citation_3_2_1 = $_POST['year_citation_3_2_1'];
+        $year_citation_3_2_2 = $_POST['year_citation_3_2_2'];
+        $year_citation_3_2_3 = $_POST['year_citation_3_2_3'];
+        $year_citation_3_2_4 = $_POST['year_citation_3_2_4'];
+        
+
+        $conn->query("INSERT INTO form2_a (
+            title_1_1_1, title_1_1_2, title_1_1_3, title_1_1_4, 
+            type_1_1_1, type_1_1_2, type_1_1_3, type_1_1_4, 
+            name_1_1_1, name_1_1_2, name_1_1_3, name_1_1_4, 
+            rev_1_1_1, rev_1_1_2, rev_1_1_3, rev_1_1_4, 
+            int_1_1_1, int_1_1_2, int_1_1_3, int_1_1_4, 
+            datepub_1_1_1, datepub_1_1_2, datepub_1_1_3, datepub_1_1_4,
+            title_1_2_1, title_1_2_2, title_1_2_3, title_1_2_4, 
+            type_1_2_1, type_1_2_2, type_1_2_3, type_1_2_4, 
+            name_1_2_1, name_1_2_2, name_1_2_3, name_1_2_4, 
+            rev_1_2_1, rev_1_2_2, rev_1_2_3, rev_1_2_4, 
+            int_1_2_1, int_1_2_2, int_1_2_3, int_1_2_4, 
+            datepub_1_2_1, datepub_1_2_2, datepub_1_2_3, datepub_1_2_4, 
+            title_2_1_1, title_2_1_2, title_2_1_3, title_2_1_4, 
+            datecom_2_1_1, datecom_2_1_2, datecom_2_1_3, datecom_2_1_4, 
+            nameproj_2_1_1, nameproj_2_1_2, nameproj_2_1_3, nameproj_2_1_4, 
+            fund_2_1_1, fund_2_1_2, fund_2_1_3, fund_2_1_4, 
+            dateimp_2_1_1, dateimp_2_1_2, dateimp_2_1_3, dateimp_2_1_4, 
+            title_2_2_1, title_2_2_2, title_2_2_3, title_2_2_4, 
+            datecom_2_2_1, datecom_2_2_2, datecom_2_2_3, datecom_2_2_4,
+            nameproj_2_2_1, nameproj_2_2_2, nameproj_2_2_3, nameproj_2_2_4, 
+            fund_2_2_1, fund_2_2_2, fund_2_2_3, fund_2_2_4, 
+            dateimp_2_2_1, dateimp_2_2_2, dateimp_2_2_3, dateimp_2_2_4, 
+            title_3_1_1, title_3_1_2, title_3_1_3, title_3_1_4, 
+            datepub_3_1_1, datepub_3_1_2, datepub_3_1_3, datepub_3_1_4, 
+            name_3_1_1, name_3_1_2, name_3_1_3, name_3_1_4, 
+            no_citation_3_1_1, no_citation_3_1_2, no_citation_3_1_3, no_citation_3_1_4, 
+            index_citation_3_1_1, index_citation_3_1_2, index_citation_3_1_3, index_citation_3_1_4, 
+            year_citation_3_1_1, year_citation_3_1_2, year_citation_3_1_3, year_citation_3_1_4, 
+            title_3_2_1, title_3_2_2, title_3_2_3, title_3_2_4, 
+            datepub_3_2_1, datepub_3_2_2, datepub_3_2_3, datepub_3_2_4, 
+            name_3_2_1, name_3_2_2, name_3_2_3, name_3_2_4, 
+            no_citation_3_2_1, no_citation_3_2_2, no_citation_3_2_3, no_citation_3_2_4, 
+            index_citation_3_2_1, index_citation_3_2_2, index_citation_3_2_3, index_citation_3_2_4, 
+            year_citation_3_2_1, year_citation_3_2_2, year_citation_3_2_3, year_citation_3_2_4,
+            user_id)
+        VALUES (
+            '$title_1_1_1', '$title_1_1_2', '$title_1_1_3', '$title_1_1_4', 
+            '$type_1_1_1', '$type_1_1_2', '$type_1_1_3', '$type_1_1_4',
+            '$name_1_1_1', '$name_1_1_2', '$name_1_1_3', '$name_1_1_4',
+            '$rev_1_1_1', '$rev_1_1_2', '$rev_1_1_3', '$rev_1_1_4',
+            '$int_1_1_1', '$int_1_1_2', '$int_1_1_3', '$int_1_1_4',
+            '$datepub_1_1_1', '$datepub_1_1_2', '$datepub_1_1_3', '$datepub_1_1_4',
+            '$title_1_2_1', '$title_1_2_2', '$title_1_2_3', '$title_1_2_4',
+            '$type_1_2_1', '$type_1_2_2', '$type_1_2_3', '$type_1_2_4',
+            '$name_1_2_1', '$name_1_2_2', '$name_1_2_3', '$name_1_2_4',
+            '$rev_1_2_1', '$rev_1_2_2', '$rev_1_2_3', '$rev_1_2_4',
+            '$int_1_2_1', '$int_1_2_2', '$int_1_2_3', '$int_1_2_4',
+            '$datepub_1_2_1', '$datepub_1_2_2', '$datepub_1_2_3', '$datepub_1_2_4',
+            '$title_2_1_1', '$title_2_1_2', '$title_2_1_3', '$title_2_1_4',
+            '$datecom_2_1_1', '$datecom_2_1_2', '$datecom_2_1_3', '$datecom_2_1_4',
+            '$nameproj_2_1_1', '$nameproj_2_1_2', '$nameproj_2_1_3', '$nameproj_2_1_4',
+            '$fund_2_1_1', '$fund_2_1_2', '$fund_2_1_3', '$fund_2_1_4',
+            '$dateimp_2_1_1', '$dateimp_2_1_2', '$dateimp_2_1_3', '$dateimp_2_1_4',
+            '$title_2_2_1', '$title_2_2_2', '$title_2_2_3', '$title_2_2_4',
+            '$datecom_2_2_1', '$datecom_2_2_2', '$datecom_2_2_3', '$datecom_2_2_4',
+            '$nameproj_2_2_1', '$nameproj_2_2_2', '$nameproj_2_2_3', '$nameproj_2_2_4',
+            '$fund_2_2_1', '$fund_2_2_2', '$fund_2_2_3', '$fund_2_2_4',
+            '$dateimp_2_2_1', '$dateimp_2_2_2', '$dateimp_2_2_3', '$dateimp_2_2_4',
+            '$title_3_1_1', '$title_3_1_2', '$title_3_1_3', '$title_3_1_4',
+            '$datepub_3_1_1', '$datepub_3_1_2', '$datepub_3_1_3', '$datepub_3_1_4',
+            '$name_3_1_1', '$name_3_1_2', '$name_3_1_3', '$name_3_1_4',
+            '$no_citation_3_1_1', '$no_citation_3_1_2', '$no_citation_3_1_3', '$no_citation_3_1_4',
+            '$index_citation_3_1_1', '$index_citation_3_1_2', '$index_citation_3_1_3', '$index_citation_3_1_4',
+            '$year_citation_3_1_1', '$year_citation_3_1_2', '$year_citation_3_1_3', '$year_citation_3_1_4',
+            '$title_3_2_1', '$title_3_2_2', '$title_3_2_3', '$title_3_2_4',
+            '$datepub_3_2_1', '$datepub_3_2_2', '$datepub_3_2_3', '$datepub_3_2_4',
+            '$name_3_2_1', '$name_3_2_2', '$name_3_2_3', '$name_3_2_4',
+            '$no_citation_3_2_1', '$no_citation_3_2_2', '$no_citation_3_2_3', '$no_citation_3_2_4',
+            '$index_citation_3_2_1', '$index_citation_3_2_2', '$index_citation_3_2_3', '$index_citation_3_2_4',
+            '$year_citation_3_2_1', '$year_citation_3_2_2', '$year_citation_3_2_3', '$year_citation_3_2_4',
+            $id)
+        ON DUPLICATE KEY UPDATE
+            title_1_1_1 = VALUES(title_1_1_1),
+            title_1_1_2 = VALUES(title_1_1_2),
+            title_1_1_3 = VALUES(title_1_1_3),
+            title_1_1_4 = VALUES(title_1_1_4),
+            type_1_1_1 = VALUES(type_1_1_1),
+            type_1_1_2 = VALUES(type_1_1_2),
+            type_1_1_3 = VALUES(type_1_1_3),
+            type_1_1_4 = VALUES(type_1_1_4),
+            name_1_1_1 = VALUES(name_1_1_1),
+            name_1_1_2 = VALUES(name_1_1_2),
+            name_1_1_3 = VALUES(name_1_1_3),
+            name_1_1_4 = VALUES(name_1_1_4),
+            rev_1_1_1 = VALUES(rev_1_1_1),
+            rev_1_1_2 = VALUES(rev_1_1_2),
+            rev_1_1_3 = VALUES(rev_1_1_3),
+            rev_1_1_4 = VALUES(rev_1_1_4),
+            int_1_1_1 = VALUES(int_1_1_1),
+            int_1_1_2 = VALUES(int_1_1_2),
+            int_1_1_3 = VALUES(int_1_1_3),
+            int_1_1_4 = VALUES(int_1_1_4),
+            datepub_1_1_1 = VALUES(datepub_1_1_1),
+            datepub_1_1_2 = VALUES(datepub_1_1_2),
+            datepub_1_1_3 = VALUES(datepub_1_1_3),
+            datepub_1_1_4 = VALUES(datepub_1_1_4),
+            title_1_2_1 = VALUES(title_1_2_1),
+            title_1_2_2 = VALUES(title_1_2_2),
+            title_1_2_3 = VALUES(title_1_2_3),
+            title_1_2_4 = VALUES(title_1_2_4),
+            type_1_2_1 = VALUES(type_1_2_1),
+            type_1_2_2 = VALUES(type_1_2_2),
+            type_1_2_3 = VALUES(type_1_2_3),
+            type_1_2_4 = VALUES(type_1_2_4),
+            name_1_2_1 = VALUES(name_1_2_1),
+            name_1_2_2 = VALUES(name_1_2_2),
+            name_1_2_3 = VALUES(name_1_2_3),
+            name_1_2_4 = VALUES(name_1_2_4),
+            rev_1_2_1 = VALUES(rev_1_2_1),
+            rev_1_2_2 = VALUES(rev_1_2_2),
+            rev_1_2_3 = VALUES(rev_1_2_3),
+            rev_1_2_4 = VALUES(rev_1_2_4),
+            int_1_2_1 = VALUES(int_1_2_1),
+            int_1_2_2 = VALUES(int_1_2_2),
+            int_1_2_3 = VALUES(int_1_2_3),
+            int_1_2_4 = VALUES(int_1_2_4),
+            datepub_1_2_1 = VALUES(datepub_1_2_1),
+            datepub_1_2_2 = VALUES(datepub_1_2_2),
+            datepub_1_2_3 = VALUES(datepub_1_2_3),
+            datepub_1_2_4 = VALUES(datepub_1_2_4),
+
+            title_2_1_1 = VALUES(title_2_1_1),
+            title_2_1_2 = VALUES(title_2_1_2),
+            title_2_1_3 = VALUES(title_2_1_3),
+            title_2_1_4 = VALUES(title_2_1_4),
+            datecom_2_1_1 = VALUES(datecom_2_1_1),
+            datecom_2_1_2 = VALUES(datecom_2_1_2),
+            datecom_2_1_3 = VALUES(datecom_2_1_3),
+            datecom_2_1_4 = VALUES(datecom_2_1_4),
+            nameproj_2_1_1 = VALUES(nameproj_2_1_1),
+            nameproj_2_1_2 = VALUES(nameproj_2_1_2),
+            nameproj_2_1_3 = VALUES(nameproj_2_1_3),
+            nameproj_2_1_4 = VALUES(nameproj_2_1_4),
+            fund_2_1_1 = VALUES(fund_2_1_1),
+            fund_2_1_2 = VALUES(fund_2_1_2),
+            fund_2_1_3 = VALUES(fund_2_1_3),
+            fund_2_1_4 = VALUES(fund_2_1_4),
+            dateimp_2_1_1 = VALUES(dateimp_2_1_1),
+            dateimp_2_1_2 = VALUES(dateimp_2_1_2),
+            dateimp_2_1_3 = VALUES(dateimp_2_1_3),
+            dateimp_2_1_4 = VALUES(dateimp_2_1_4),
+
+            title_2_2_1 = VALUES(title_2_2_1),
+            title_2_2_2 = VALUES(title_2_2_2),
+            title_2_2_3 = VALUES(title_2_2_3),
+            title_2_2_4 = VALUES(title_2_2_4),
+            datecom_2_2_1 = VALUES(datecom_2_2_1),
+            datecom_2_2_2 = VALUES(datecom_2_2_2),
+            datecom_2_2_3 = VALUES(datecom_2_2_3),
+            datecom_2_2_4 = VALUES(datecom_2_2_4),
+            nameproj_2_2_1 = VALUES(nameproj_2_2_1),
+            nameproj_2_2_2 = VALUES(nameproj_2_2_2),
+            nameproj_2_2_3 = VALUES(nameproj_2_2_3),
+            nameproj_2_2_4 = VALUES(nameproj_2_2_4),
+            fund_2_2_1 = VALUES(fund_2_2_1),
+            fund_2_2_2 = VALUES(fund_2_2_2),
+            fund_2_2_3 = VALUES(fund_2_2_3),
+            fund_2_2_4 = VALUES(fund_2_2_4),
+            dateimp_2_2_1 = VALUES(dateimp_2_2_1),
+            dateimp_2_2_2 = VALUES(dateimp_2_2_2),
+            dateimp_2_2_3 = VALUES(dateimp_2_2_3),
+            dateimp_2_2_4 = VALUES(dateimp_2_2_4),
+
+            title_3_1_1 = VALUES(title_3_1_1),
+            title_3_1_2 = VALUES(title_3_1_2),
+            title_3_1_3 = VALUES(title_3_1_3),
+            title_3_1_4 = VALUES(title_3_1_4),
+            datepub_3_1_1 = VALUES(datepub_3_1_1),
+            datepub_3_1_2 = VALUES(datepub_3_1_2),
+            datepub_3_1_3 = VALUES(datepub_3_1_3),
+            datepub_3_1_4 = VALUES(datepub_3_1_4),
+            name_3_1_1 = VALUES(name_3_1_1),
+            name_3_1_2 = VALUES(name_3_1_2),
+            name_3_1_3 = VALUES(name_3_1_3),
+            name_3_1_4 = VALUES(name_3_1_4),
+            no_citation_3_1_1 = VALUES(no_citation_3_1_1),
+            no_citation_3_1_2 = VALUES(no_citation_3_1_2),
+            no_citation_3_1_3 = VALUES(no_citation_3_1_3),
+            no_citation_3_1_4 = VALUES(no_citation_3_1_4),
+            index_citation_3_1_1 = VALUES(index_citation_3_1_1),
+            index_citation_3_1_2 = VALUES(index_citation_3_1_2),
+            index_citation_3_1_3 = VALUES(index_citation_3_1_3),
+            index_citation_3_1_4 = VALUES(index_citation_3_1_4),
+            year_citation_3_1_1 = VALUES(year_citation_3_1_1),
+            year_citation_3_1_2 = VALUES(year_citation_3_1_2),
+            year_citation_3_1_3 = VALUES(year_citation_3_1_3),
+            year_citation_3_1_4 = VALUES(year_citation_3_1_4),
+
+            title_3_2_1 = VALUES(title_3_2_1),
+            title_3_2_2 = VALUES(title_3_2_2),
+            title_3_2_3 = VALUES(title_3_2_3),
+            title_3_2_4 = VALUES(title_3_2_4),
+            datepub_3_2_1 = VALUES(datepub_3_2_1),
+            datepub_3_2_2 = VALUES(datepub_3_2_2),
+            datepub_3_2_3 = VALUES(datepub_3_2_3),
+            datepub_3_2_4 = VALUES(datepub_3_2_4),
+            name_3_2_1 = VALUES(name_3_2_1),
+            name_3_2_2 = VALUES(name_3_2_2),
+            name_3_2_3 = VALUES(name_3_2_3),
+            name_3_2_4 = VALUES(name_3_2_4),
+            no_citation_3_2_1 = VALUES(no_citation_3_2_1),
+            no_citation_3_2_2 = VALUES(no_citation_3_2_2),
+            no_citation_3_2_3 = VALUES(no_citation_3_2_3),
+            no_citation_3_2_4 = VALUES(no_citation_3_2_4),
+            index_citation_3_2_1 = VALUES(index_citation_3_2_1),
+            index_citation_3_2_2 = VALUES(index_citation_3_2_2),
+            index_citation_3_2_3 = VALUES(index_citation_3_2_3),
+            index_citation_3_2_4 = VALUES(index_citation_3_2_4),
+            year_citation_3_2_1 = VALUES(year_citation_3_2_1),
+            year_citation_3_2_2 = VALUES(year_citation_3_2_2),
+            year_citation_3_2_3 = VALUES(year_citation_3_2_3),
+            year_citation_3_2_4 = VALUES(year_citation_3_2_4);
+            "
+        ) or die($conn->error);
+
+
         $conn->query("UPDATE kra_2 SET 
                  Crit_A_SA = '$scoreSA', 
                  Crit_A_CA  = '$scoreCO', 
@@ -49,7 +547,7 @@ if (isset($_POST['submit_btn'])) {
                      Crit_A_SA + Crit_A_CA + Crit_A_LR + Crit_A_Contrib + Crit_A_Local_Allowed + Crit_A_International_Allowed),
                  KRA_2_total = Crit_A_total + Crit_B_Total + Crit_C_total,
                  KRA_2_total_allowed = IF(Crit_A_total_allowed + Crit_B_Total_allowed + Crit_C_Total_allowed > 100, 100, Crit_A_total_allowed + Crit_B_Total_allowed + Crit_C_Total_allowed)
-             WHERE KRA2_ID = $id") or die($conn->error);
+             WHERE KRA2_ID = $id") or die($conn->error); 
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -182,10 +680,12 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="SA_1" type="text"></td>
+            <td><input id="SA_1" name = "title_1_1_1" value = "<?php echo isset($init_title_1_1_1) ? $init_title_1_1_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="SA_RO_1">
-                    <option value="None">Select Option</option>
+                <select name="type_1_1_1" id="SA_RO_1">
+                    <option value = "<?php echo isset($init_type_1_1_1) ? $init_type_1_1_1 : "None"; ?>">
+                        <?php echo isset($init_type_1_1_1) ? $init_type_1_1_1 : "Select Option"; ?>
+                    </option>
                     <option value="Book">Book</option>
                     <option value="Journal Article">Journal Article</option>
                     <option value="Book Chapter">Book Chapter</option>
@@ -193,19 +693,21 @@ if (isset($_POST['submit_btn'])) {
                     <option value="Others">Other Peer-Reviewed Output</option>
                 </select>
             </td>
-            <td><input id="SA_2" type="text"></td>
-            <td><input id="SA_3" type="text"></td>
-            <td><input id="SA_4" type="text"></td>
-            <td><input id="SA_5" type="date"></td>
+            <td><input id="SA_2" name = "name_1_1_1" value = "<?php echo isset($init_name_1_1_1) ? $init_name_1_1_1 : ""; ?>" type="text"></td>
+            <td><input id="SA_3" name = "rev_1_1_1" value = "<?php echo isset($init_rev_1_1_1) ? $init_rev_1_1_1 : ""; ?>" type="text"></td>
+            <td><input id="SA_4" name = "int_1_1_1" value = "<?php echo isset($init_int_1_1_1) ? $init_int_1_1_1 : ""; ?>" type="text"></td>
+            <td><input id="SA_5" name = "datepub_1_1_1" value = "<?php echo isset($init_datepub_1_1_1) ? $init_datepub_1_1_1 : ""; ?>" type="date"></td>
             <td><input id="SA_FS_1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input id="SA_6" type="text"></td>
+            <td><input id="SA_6" name = "title_1_1_2" value = "<?php echo isset($init_title_1_1_2) ? $init_title_1_1_2 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="SA_RO_2">
-                    <option value="None">Select Option</option>
+            <select name="type_1_1_2" id="SA_RO_2">
+                    <option value = "<?php echo isset($init_type_1_1_2) ? $init_type_1_1_2 : "None"; ?>">
+                        <?php echo isset($init_type_1_1_2) ? $init_type_1_1_2 : "Select Option"; ?>
+                    </option>
                     <option value="Book">Book</option>
                     <option value="Journal Article">Journal Article</option>
                     <option value="Book Chapter">Book Chapter</option>
@@ -213,19 +715,22 @@ if (isset($_POST['submit_btn'])) {
                     <option value="Others">Other Peer-Reviewed Output</option>
                 </select>
             </td>
-            <td><input id="SA_7" type="text"></td>
-            <td><input id="SA_8" type="text"></td>
-            <td><input id="SA_9" type="text"></td>
-            <td><input id="SA_10" type="date"></td>
+            <td><input id="SA_7" name = "name_1_1_2" value = "<?php echo isset($init_name_1_1_2) ? $init_name_1_1_2 : ""; ?>" type="text"></td>
+            <td><input id="SA_8" name = "rev_1_1_2" value = "<?php echo isset($init_rev_1_1_2) ? $init_rev_1_1_2 : ""; ?>" type="text"></td>
+            <td><input id="SA_9" name = "int_1_1_2" value = "<?php echo isset($init_int_1_1_2) ? $init_int_1_1_2 : ""; ?>" type="text"></td>
+            <td><input id="SA_10" name = "datepub_1_1_2" value = "<?php echo isset($init_datepub_1_1_2) ? $init_datepub_1_1_2 : ""; ?>" type="date"></td>
             <td><input id="SA_FS_2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="SA_11" type="text"></td>
+            <td><input id="SA_11" name = "title_1_1_3" value = "<?php echo isset($init_title_1_1_3) ? $init_title_1_1_3 : ""; ?>" type="text"></td>
+
             <td>
-                <select name="" id="SA_RO_3">
-                    <option value="None">Select Option</option>
+                <select name="type_1_1_3" id="SA_RO_3">
+                    <option value = "<?php echo isset($init_type_1_1_3) ? $init_type_1_1_3 : "None"; ?>">
+                        <?php echo isset($init_type_1_1_3) ? $init_type_1_1_3 : "Select Option"; ?>
+                    </option>
                     <option value="Book">Book</option>
                     <option value="Journal Article">Journal Article</option>
                     <option value="Book Chapter">Book Chapter</option>
@@ -233,19 +738,22 @@ if (isset($_POST['submit_btn'])) {
                     <option value="Others">Other Peer-Reviewed Output</option>
                 </select>
             </td>
-            <td><input id="SA_12" type="text"></td>
-            <td><input id="SA_13" type="text"></td>
-            <td><input id="SA_14" type="text"></td>
-            <td><input id="SA_15" type="date"></td>
+
+            <td><input id="SA_12" name = "name_1_1_3" value = "<?php echo isset($init_name_1_1_3) ? $init_name_1_1_3 : ""; ?>" type="text"></td>
+            <td><input id="SA_13" name = "rev_1_1_3" value = "<?php echo isset($init_rev_1_1_3) ? $init_rev_1_1_3 : ""; ?>" type="text"></td>
+            <td><input id="SA_14" name = "int_1_1_3" value = "<?php echo isset($init_int_1_1_3) ? $init_int_1_1_3 : ""; ?>" type="text"></td>
+            <td><input id="SA_15" name = "datepub_1_1_3" value = "<?php echo isset($init_datepub_1_1_3) ? $init_datepub_1_1_3 : ""; ?>" type="date"></td>
             <td><input id="SA_FS_3" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input id="SA_16" type="text"></td>
+            <td><input id="SA_16" name = "title_1_1_4" value = "<?php echo isset($init_title_1_1_4) ? $init_title_1_1_4 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="SA_RO_4">
-                    <option value="None">Select Option</option>
+                <select name="type_1_1_4" id="SA_RO_4">
+                    <option value = "<?php echo isset($init_type_1_1_4) ? $init_type_1_1_4 : "None"; ?>">
+                        <?php echo isset($init_type_1_1_4) ? $init_type_1_1_4 : "Select Option"; ?>
+                    </option>
                     <option value="Book">Book</option>
                     <option value="Journal Article">Journal Article</option>
                     <option value="Book Chapter">Book Chapter</option>
@@ -253,10 +761,11 @@ if (isset($_POST['submit_btn'])) {
                     <option value="Others">Other Peer-Reviewed Output</option>
                 </select>
             </td>
-            <td><input id="SA_17" type="text"></td>
-            <td><input id="SA_18" type="text"></td>
-            <td><input id="SA_19" type="text"></td>
-            <td><input id="SA_20" type="date"></td>
+
+            <td><input id="SA_17" name = "name_1_1_4" value = "<?php echo isset($init_name_1_1_4) ? $init_name_1_1_4 : ""; ?>" type="text"></td>
+            <td><input id="SA_18" name = "rev_1_1_4" value = "<?php echo isset($init_rev_1_1_4) ? $init_rev_1_1_4 : ""; ?>" type="text"></td>
+            <td><input id="SA_19" name = "int_1_1_4" value = "<?php echo isset($init_int_1_1_4) ? $init_int_1_1_4 : ""; ?>" type="text"></td>
+            <td><input id="SA_20" name = "datepub_1_1_4" value = "<?php echo isset($init_datepub_1_1_4) ? $init_datepub_1_1_4 : ""; ?>" type="date"></td>
             <td><input id="SA_FS_4" readonly type="text"></td>
         </tr>
 
@@ -288,81 +797,91 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="CO_1" type="text"></td>
+            <td><input id="CO_1" name = "title_1_2_1" value = "<?php echo isset($init_title_1_2_1) ? $init_title_1_2_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="CO_RO_1">
-                    <option value="None">Select Option</option>
-                    <option value="Book">Book</option>
-                    <option value="Journal Article">Journal Article</option>
-                    <option value="Book Chapter">Book Chapter</option>
-                    <option value="Monograph">Monograph</option>
-                    <option value="Others">Other Peer-Reviewed Output</option>
+
+                <select name="type_1_2_1" id="CO_RO_1">
+                        <option value = "<?php echo isset($init_type_1_2_1) ? $init_type_1_2_1 : "None"; ?>">
+                            <?php echo isset($init_type_1_2_1) ? $init_type_1_2_1 : "Select Option"; ?>
+                        </option>
+                        <option value="Book">Book</option>
+                        <option value="Journal Article">Journal Article</option>
+                        <option value="Book Chapter">Book Chapter</option>
+                        <option value="Monograph">Monograph</option>
+                        <option value="Others">Other Peer-Reviewed Output</option>
                 </select>
             </td>
-            <td><input id="CO_2" type="text"></td>
-            <td><input id="CO_3" type="text"></td>
-            <td><input id="CO_4" type="text"></td>
-            <td><input id="CO_5" type="date"></td>
+            <td><input id="CO_2" name = "name_1_2_1" value = "<?php echo isset($init_name_1_2_1) ? $init_name_1_2_1 : ""; ?>" type="text"></td>
+            <td><input id="CO_3" name = "rev_1_2_1" value = "<?php echo isset($init_rev_1_2_1) ? $init_rev_1_2_1 : ""; ?>" type="text"></td>
+            <td><input id="CO_4" name = "int_1_2_1" value = "<?php echo isset($init_int_1_2_1) ? $init_int_1_2_1 : ""; ?>" type="text"></td>
+            <td><input id="CO_5" name = "datepub_1_2_1" value = "<?php echo isset($init_datepub_1_2_1) ? $init_datepub_1_2_1 : ""; ?>" type="date"></td>
             <td><input id="CO_FS_1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input id="CO_6" type="text"></td>
+            <td><input id="CO_6" name = "title_1_2_2" value = "<?php echo isset($init_title_1_2_2) ? $init_title_1_2_2 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="CO_RO_2">
-                    <option value="None">Select Option</option>
-                    <option value="Book">Book</option>
-                    <option value="Journal Article">Journal Article</option>
-                    <option value="Book Chapter">Book Chapter</option>
-                    <option value="Monograph">Monograph</option>
-                    <option value="Others">Other Peer-Reviewed Output</option>
+                <select name="type_1_2_2" id="CO_RO_2">
+                        <option value = "<?php echo isset($init_type_1_2_2) ? $init_type_1_2_2 : "None"; ?>">
+                            <?php echo isset($init_type_1_2_2) ? $init_type_1_2_2 : "Select Option"; ?>
+                        </option>
+                        <option value="Book">Book</option>
+                        <option value="Journal Article">Journal Article</option>
+                        <option value="Book Chapter">Book Chapter</option>
+                        <option value="Monograph">Monograph</option>
+                        <option value="Others">Other Peer-Reviewed Output</option>
                 </select>
             </td>
-            <td><input id="CO_7" type="text"></td>
-            <td><input id="CO_8" type="text"></td>
-            <td><input id="CO_9" type="text"></td>
-            <td><input id="CO_10" type="date"></td>
+            <td><input id="CO_7" name = "name_1_2_2" value = "<?php echo isset($init_name_1_2_2) ? $init_name_1_2_2 : ""; ?>" type="text"></td>
+            <td><input id="CO_8" name = "rev_1_2_2" value = "<?php echo isset($init_rev_1_2_2) ? $init_rev_1_2_2 : ""; ?>" type="text"></td>
+            <td><input id="CO_9" name = "int_1_2_2" value = "<?php echo isset($init_int_1_2_2) ? $init_int_1_2_2 : ""; ?>" type="text"></td>
+            <td><input id="CO_10" name = "datepub_1_2_2" value = "<?php echo isset($init_datepub_1_2_2) ? $init_datepub_1_2_2 : ""; ?>" type="date"></td>
             <td><input id="CO_FS_2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="CO_11" type="text"></td>
+            <td><input id="CO_11" name = "title_1_2_3" value = "<?php echo isset($init_title_1_2_3) ? $init_title_1_2_3 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="CO_RO_3">
-                    <option value="None">Select Option</option>
-                    <option value="Book">Book</option>
-                    <option value="Journal Article">Journal Article</option>
-                    <option value="Book Chapter">Book Chapter</option>
-                    <option value="Monograph">Monograph</option>
-                    <option value="Others">Other Peer-Reviewed Output</option>
+                <select name="type_1_2_3" id="CO_RO_3">
+                        <option value = "<?php echo isset($init_type_1_2_3) ? $init_type_1_2_3 : "None"; ?>">
+                            <?php echo isset($init_type_1_2_3) ? $init_type_1_2_3 : "Select Option"; ?>
+                        </option>
+                        <option value="Book">Book</option>
+                        <option value="Journal Article">Journal Article</option>
+                        <option value="Book Chapter">Book Chapter</option>
+                        <option value="Monograph">Monograph</option>
+                        <option value="Others">Other Peer-Reviewed Output</option>
                 </select>
             </td>
-            <td><input id="CO_12" type="text"></td>
-            <td><input id="CO_13" type="text"></td>
-            <td><input id="CO_14" type="text"></td>
-            <td><input id="CO_15" type="date"></td>
+
+            <td><input id="CO_12" name = "name_1_2_3" value = "<?php echo isset($init_name_1_2_3) ? $init_name_1_2_3 : ""; ?>" type="text"></td>
+            <td><input id="CO_13" name = "rev_1_2_3" value = "<?php echo isset($init_rev_1_2_3) ? $init_rev_1_2_3 : ""; ?>" type="text"></td>
+            <td><input id="CO_14" name = "int_1_2_3" value = "<?php echo isset($init_int_1_2_3) ? $init_int_1_2_3 : ""; ?>" type="text"></td>
+            <td><input id="CO_15" name = "datepub_1_2_3" value = "<?php echo isset($init_datepub_1_2_3) ? $init_datepub_1_2_3 : ""; ?>" type="date"></td>
             <td><input id="CO_FS_3" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input id="CO_16" type="text"></td>
+            <td><input id="CO_16" name = "title_1_2_4" value = "<?php echo isset($init_title_1_2_4) ? $init_title_1_2_4 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="CO_RO_4">
-                    <option value="None">Select Option</option>
-                    <option value="Book">Book</option>
-                    <option value="Journal Article">Journal Article</option>
-                    <option value="Book Chapter">Book Chapter</option>
-                    <option value="Monograph">Monograph</option>
-                    <option value="Others">Other Peer-Reviewed Output</option>
+                <select name="type_1_2_4" id="CO_RO_4">
+                        <option value = "<?php echo isset($init_type_1_2_4) ? $init_type_1_2_4 : "None"; ?>">
+                            <?php echo isset($init_type_1_2_4) ? $init_type_1_2_4 : "Select Option"; ?>
+                        </option>
+                        <option value="Book">Book</option>
+                        <option value="Journal Article">Journal Article</option>
+                        <option value="Book Chapter">Book Chapter</option>
+                        <option value="Monograph">Monograph</option>
+                        <option value="Others">Other Peer-Reviewed Output</option>
                 </select>
             </td>
-            <td><input id="CO_17" type="text"></td>
-            <td><input id="CO_18" type="text"></td>
-            <td><input id="CO_19" type="text"></td>
-            <td><input id="CO_20" type="date"></td>
+            <td><input id="CO_17" name = "name_1_2_4" value = "<?php echo isset($init_name_1_2_4) ? $init_name_1_2_4 : ""; ?>" type="text"></td>
+            <td><input id="CO_18" name = "rev_1_2_4" value = "<?php echo isset($init_rev_1_2_4) ? $init_rev_1_2_4 : ""; ?>" type="text"></td>
+            <td><input id="CO_19" name = "int_1_2_4" value = "<?php echo isset($init_int_1_2_4) ? $init_int_1_2_4 : ""; ?>" type="text"></td>
+            <td><input id="CO_20" name = "datepub_1_2_4" value = "<?php echo isset($init_datepub_1_2_4) ? $init_datepub_1_2_4 : ""; ?>" type="date"></td>
             <td><input id="CO_FS_4" readonly type="text"></td>
         </tr>
 
@@ -400,41 +919,42 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="LR_1" type="text"></td>
-            <td><input id="LR_2" type="date"></td>
-            <td><input id="LR_3" type="text"></td>
-            <td><input id="LR_4" type="text"></td>
-            <td><input id="LR_5" type="date"></td>
+            <td><input id="LR_1" name = "title_2_1_1" value = "<?php echo isset($init_title_2_1_1) ? $init_title_2_1_1 : ""; ?>" type="text"></td>
+            <td><input id="LR_2" name = "datecom_2_1_1" value = "<?php echo isset($init_date_com_2_1_1) ? $init_date_com_2_1_1 : ""; ?>" type="date"></td>
+            <td><input id="LR_3" name = "nameproj_2_1_1" value = "<?php echo isset($init_nameproj_2_1_1) ? $init_nameproj_2_1_1 : ""; ?>" type="text"></td>
+            <td><input id="LR_4" name = "fund_2_1_1" value = "<?php echo isset($init_fund_2_1_1) ? $init_fund_2_1_1 : ""; ?>" type="text"></td>
+            <td><input id="LR_5" name = "dateimp_2_1_1" value = "<?php echo isset($init_dateimp_2_1_1) ? $init_dateimp_2_1_1 : ""; ?>" type="date"></td>
             <td><input id="LR_FS_1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input id="LR_6" type="text"></td>
-            <td><input id="LR_7" type="date"></td>
-            <td><input id="LR_8" type="text"></td>
-            <td><input id="LR_9" type="text"></td>
-            <td><input id="LR_10" type="date"></td>
+            <td><input id="LR_6" name = "title_2_1_2" value = "<?php echo isset($init_title_2_1_2) ? $init_title_2_1_2 : ""; ?>" type="text"></td>
+            <td><input id="LR_7" name = "datecom_2_1_2" value = "<?php echo isset($init_date_com_2_1_2) ? $init_date_com_2_1_2 : ""; ?>" type="date"></td>
+            <td><input id="LR_8" name = "nameproj_2_1_2" value = "<?php echo isset($init_nameproj_2_1_2) ? $init_nameproj_2_1_2 : ""; ?>" type="text"></td>
+            <td><input id="LR_9" name = "fund_2_1_2" value = "<?php echo isset($init_fund_2_1_2) ? $init_fund_2_1_2 : ""; ?>" type="text"></td>
+            <td><input id="LR_10" name = "dateimp_2_1_2" value = "<?php echo isset($init_dateimp_2_1_2) ? $init_dateimp_2_1_2 : ""; ?>" type="date"></td>
+
             <td><input id="LR_FS_2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="LR_11" type="text"></td>
-            <td><input id="LR_12" type="date"></td>
-            <td><input id="LR_13" type="text"></td>
-            <td><input id="LR_14" type="text"></td>
-            <td><input id="LR_15" type="date"></td>
+            <td><input id="LR_11" name = "title_2_1_3" value = "<?php echo isset($init_title_2_1_3) ? $init_title_2_1_3 : ""; ?>" type="text"></td>
+            <td><input id="LR_12" name = "datecom_2_1_3" value = "<?php echo isset($init_date_com_2_1_3) ? $init_date_com_2_1_3 : ""; ?>" type="date"></td>
+            <td><input id="LR_13" name = "nameproj_2_1_3" value = "<?php echo isset($init_nameproj_2_1_3) ? $init_nameproj_2_1_3 : ""; ?>" type="text"></td>
+            <td><input id="LR_14" name = "fund_2_1_3" value = "<?php echo isset($init_fund_2_1_3) ? $init_fund_2_1_3 : ""; ?>" type="text"></td>
+            <td><input id="LR_15" name = "dateimp_2_1_3" value = "<?php echo isset($init_dateimp_2_1_3) ? $init_dateimp_2_1_3 : ""; ?>" type="date"></td>
             <td><input id="LR_FS_3" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input id="LR_16" type="text"></td>
-            <td><input id="LR_17" type="date"></td>
-            <td><input id="LR_18" type="text"></td>
-            <td><input id="LR_19" type="text"></td>
-            <td><input id="LR_20" type="date"></td>
+            <td><input id="LR_16" name = "title_2_1_4" value = "<?php echo isset($init_title_2_1_4) ? $init_title_2_1_4 : ""; ?>" type="text"></td>
+            <td><input id="LR_17" name = "datecom_2_1_4" value = "<?php echo isset($init_date_com_2_1_4) ? $init_date_com_2_1_4 : ""; ?>" type="date"></td>
+            <td><input id="LR_18" name = "nameproj_2_1_4" value = "<?php echo isset($init_nameproj_2_1_4) ? $init_nameproj_2_1_4 : ""; ?>" type="text"></td>
+            <td><input id="LR_19" name = "fund_2_1_4" value = "<?php echo isset($init_fund_2_1_4) ? $init_fund_2_1_4 : ""; ?>" type="text"></td>
+            <td><input id="LR_20" name = "dateimp_2_1_4" value = "<?php echo isset($init_dateimp_2_1_4) ? $init_dateimp_2_1_4: ""; ?>" type="date"></td>
             <td><input id="LR_FS_4" readonly type="text"></td>
         </tr>
 
@@ -469,41 +989,43 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="cont1" type="text"></td>
-            <td><input id="cont2" type="date"></td>
-            <td><input id="cont3" type="text"></td>
-            <td><input id="cont4" type="text"></td>
-            <td><input id="cont5" type="date"></td>
+            <td><input id="cont1" name = "title_2_2_1" value = "<?php echo isset($init_title_2_2_1) ? $init_title_2_2_1 : ""; ?>" type="text"></td>
+            <td><input id="cont2" name = "datecom_2_2_1" value = "<?php echo isset($init_datecom_2_2_1) ? $init_datecom_2_2_1 : ""; ?>" type="date"></td>
+            <td><input id="cont3" name = "nameproj_2_2_1" value = "<?php echo isset($init_nameproj_2_2_1) ? $init_nameproj_2_2_1 : ""; ?>" type="text"></td>
+            <td><input id="cont4" name = "fund_2_2_1" value = "<?php echo isset($init_fund_2_2_1) ? $init_fund_2_2_1 : ""; ?>" type="text"></td>
+            <td><input id="cont5" name = "dateimp_2_2_1" value = "<?php echo isset($init_dateimp_2_2_1) ? $init_dateimp_2_2_1 : ""; ?>" type="date"></td>
+            
             <td><input id="cont_res__1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input id="cont6" type="text"></td>
-            <td><input id="cont7" type="date"></td>
-            <td><input id="cont8" type="text"></td>
-            <td><input id="cont9" type="text"></td>
-            <td><input id="cont10" type="date"></td>
+            <td><input id="cont6" name = "title_2_2_2" value = "<?php echo isset($init_title_2_2_2) ? $init_title_2_2_2 : ""; ?>" type="text"></td>
+            <td><input id="cont7" name = "datecom_2_2_2" value = "<?php echo isset($init_datecom_2_2_2) ? $init_datecom_2_2_2 : ""; ?>" type="date"></td>
+            <td><input id="cont8" name = "nameproj_2_2_2" value = "<?php echo isset($init_nameproj_2_2_2) ? $init_nameproj_2_2_2 : ""; ?>" type="text"></td>
+            <td><input id="cont9" name = "fund_2_2_2" value = "<?php echo isset($init_fund_2_2_2) ? $init_fund_2_2_2 : ""; ?>" type="text"></td>
+            <td><input id="cont10" name = "dateimp_2_2_2" value = "<?php echo isset($init_dateimp_2_2_2) ? $init_dateimp_2_2_2 : ""; ?>" type="date"></td>
             <td><input id="cont_res__2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="cont11" type="text"></td>
-            <td><input id="cont12" type="date"></td>
-            <td><input id="cont13" type="text"></td>
-            <td><input id="cont14" type="text"></td>
-            <td><input id="cont15" type="date"></td>
+            <td><input id="cont11" name = "title_2_2_3" value = "<?php echo isset($init_title_2_2_3) ? $init_title_2_2_3 : ""; ?>" type="text"></td>
+            <td><input id="cont12" name = "datecom_2_2_3" value = "<?php echo isset($init_datecom_2_2_3) ? $init_datecom_2_2_3 : ""; ?>" type="date"></td>
+            <td><input id="cont13" name = "nameproj_2_2_3" value = "<?php echo isset($init_nameproj_2_2_3) ? $init_nameproj_2_2_3 : ""; ?>" type="text"></td>
+            <td><input id="cont14" name = "fund_2_2_3" value = "<?php echo isset($init_fund_2_2_3) ? $init_fund_2_2_3 : ""; ?>" type="text"></td>
+            <td><input id="cont15" name = "dateimp_2_2_3" value = "<?php echo isset($init_dateimp_2_2_3) ? $init_dateimp_2_2_3 : ""; ?>" type="date"></td>
             <td><input id="cont_res__3" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input id="cont16" type="text"></td>
-            <td><input id="cont17" type="date"></td>
-            <td><input id="cont18" type="text"></td>
-            <td><input id="cont19" type="text"></td>
-            <td><input id="cont20" type="date"></td>
+
+            <td><input id="cont16" name = "title_2_2_4" value = "<?php echo isset($init_title_2_2_4) ? $init_title_2_2_4 : ""; ?>" type="text"></td>
+            <td><input id="cont17" name = "datecom_2_2_4" value = "<?php echo isset($init_datecom_2_2_4) ? $init_datecom_2_2_4 : ""; ?>" type="date"></td>
+            <td><input id="cont18" name = "nameproj_2_2_4" value = "<?php echo isset($init_nameproj_2_2_4) ? $init_nameproj_2_2_4 : ""; ?>" type="text"></td>
+            <td><input id="cont19" name = "fund_2_2_4" value = "<?php echo isset($init_fund_2_2_4) ? $init_fund_2_2_4 : ""; ?>" type="text"></td>
+            <td><input id="cont20" name = "dateimp_2_2_4" value = "<?php echo isset($init_dateimp_2_2_4) ? $init_dateimp_2_2_4 : ""; ?>" type="date"></td>
             <td><input id="cont_res__4" readonly type="text"></td>
         </tr>
 
@@ -534,45 +1056,45 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="local_1" type="text"></td>
-            <td><input id="local_2" type="text"></td>
-            <td><input id="local_3" type="text"></td>
-            <td><input id="local_4" type="text"></td>
-            <td><input id="local_5" type="text"></td>
-            <td><input id="local_6" type="text"></td>
+            <td><input id="local_1" name = "title_3_1_1" value = "<?php echo isset($init_title_3_1_1) ? $init_title_3_1_1 : ""; ?>" type="text"></td>
+            <td><input id="local_2" name = "datepub_3_1_1" value = "<?php echo isset($init_datepub_3_1_1) ? $init_datepub_3_1_1 : ""; ?>" type="date"></td>
+            <td><input id="local_3" name = "name_3_1_1" value = "<?php echo isset($init_name_3_1_1) ? $init_name_3_1_1 : ""; ?>" type="text"></td>
+            <td><input id="local_4" name = "no_citation_3_1_1" value = "<?php echo isset($init_no_citation_3_1_1) ? $init_no_citation_3_1_1 : ""; ?>" type="text"></td>
+            <td><input id="local_5" name = "index_citation_3_1_1" value = "<?php echo isset($init_index_citation_3_1_1) ? $init_index_citation_3_1_1 : ""; ?>" type="text"></td>
+            <td><input id="local_6" name = "year_citation_3_1_1" value = "<?php echo isset($init_year_citation_3_1_1) ? $init_year_citation_3_1_1 : ""; ?>" type="text"></td>
             <td><input id="local_result_1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input id="local_7" type="text"></td>
-            <td><input id="local_8" type="text"></td>
-            <td><input id="local_9" type="text"></td>
-            <td><input id="local_10" type="text"></td>
-            <td><input id="local_11" type="text"></td>
-            <td><input id="local_12" type="text"></td>
+            <td><input id="local_7" name = "title_3_1_2" value = "<?php echo isset($init_title_3_1_2) ? $init_title_3_1_2 : ""; ?>" type="text"></td>
+            <td><input id="local_8" name = "datepub_3_1_2" value = "<?php echo isset($init_datepub_3_1_2) ? $init_datepub_3_1_2 : ""; ?>" type="date"></td>
+            <td><input id="local_9" name = "name_3_1_2" value = "<?php echo isset($init_name_3_1_2) ? $init_name_3_1_2 : ""; ?>" type="text"></td>
+            <td><input id="local_10" name = "no_citation_3_1_2" value = "<?php echo isset($init_no_citation_3_1_2) ? $init_no_citation_3_1_2 : ""; ?>" type="text"></td>
+            <td><input id="local_11" name = "index_citation_3_1_2" value = "<?php echo isset($init_index_citation_3_1_2) ? $init_index_citation_3_1_2 : ""; ?>" type="text"></td>
+            <td><input id="local_12" name = "year_citation_3_1_2" value = "<?php echo isset($init_year_citation_3_1_2) ? $init_year_citation_3_1_2 : ""; ?>" type="text"></td>
             <td><input id="local_result_2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="local_13" type="text"></td>
-            <td><input id="local_14" type="text"></td>
-            <td><input id="local_15" type="text"></td>
-            <td><input id="local_16" type="text"></td>
-            <td><input id="local_17" type="text"></td>
-            <td><input id="local_18" type="text"></td>
+            <td><input id="local_13" name = "title_3_1_3" value = "<?php echo isset($init_title_3_1_3) ? $init_title_3_1_3 : ""; ?>" type="text"></td>
+            <td><input id="local_14" name = "datepub_3_1_3" value = "<?php echo isset($init_datepub_3_1_3) ? $init_datepub_3_1_3 : ""; ?>" type="date"></td>
+            <td><input id="local_15" name = "name_3_1_3" value = "<?php echo isset($init_name_3_1_3) ? $init_name_3_1_3 : ""; ?>" type="text"></td>
+            <td><input id="local_16" name = "no_citation_3_1_3" value = "<?php echo isset($init_no_citation_3_1_3) ? $init_no_citation_3_1_3 : ""; ?>" type="text"></td>
+            <td><input id="local_17" name = "index_citation_3_1_3" value = "<?php echo isset($init_index_citation_3_1_3) ? $init_index_citation_3_1_3 : ""; ?>" type="text"></td>
+            <td><input id="local_18" name = "year_citation_3_1_3" value = "<?php echo isset($init_year_citation_3_1_3) ? $init_year_citation_3_1_3 : ""; ?>" type="text"></td>
             <td><input id="local_result_3" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input id="local_19" type="text"></td>
-            <td><input id="local_20" type="text"></td>
-            <td><input id="local_21" type="text"></td>
-            <td><input id="local_22" type="text"></td>
-            <td><input id="local_23" type="text"></td>
-            <td><input id="local_24" type="text"></td>
+            <td><input id="local_19" name = "title_3_1_4" value = "<?php echo isset($init_title_3_1_4) ? $init_title_3_1_4 : ""; ?>" type="text"></td>
+            <td><input id="local_20" name = "datepub_3_1_4" value = "<?php echo isset($init_datepub_3_1_4) ? $init_datepub_3_1_4 : ""; ?>" type="date"></td>
+            <td><input id="local_21" name = "name_3_1_4" value = "<?php echo isset($init_name_3_1_4) ? $init_name_3_1_4 : ""; ?>" type="text"></td>
+            <td><input id="local_22" name = "no_citation_3_1_4" value = "<?php echo isset($init_no_citation_3_1_4) ? $init_no_citation_3_1_4 : ""; ?>" type="text"></td>
+            <td><input id="local_23" name = "index_citation_3_1_4" value = "<?php echo isset($init_index_citation_3_1_4) ? $init_index_citation_3_1_4 : ""; ?>" type="text"></td>
+            <td><input id="local_24" name = "year_citation_3_1_4" value = "<?php echo isset($init_year_citation_3_1_4) ? $init_year_citation_3_1_4 : ""; ?>" type="text"></td>
             <td><input id="local_result_4" readonly type="text"></td>
         </tr>
 
@@ -586,7 +1108,7 @@ if (isset($_POST['submit_btn'])) {
         </tr>
     </table>
 
-    <h2 class="page_title">3.1 International Authors</h2>
+    <h2 class="page_title">3.2 International Authors</h2>
     <table>
 
         <tr class="row__des">
@@ -602,45 +1124,47 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="international_1" type="text"></td>
-            <td><input id="international_2" type="text"></td>
-            <td><input id="international_3" type="text"></td>
-            <td><input id="international_4" type="text"></td>
-            <td><input id="international_5" type="text"></td>
-            <td><input id="international_6" type="text"></td>
+            <td><input id="international_1" name = "title_3_2_1" value = "<?php echo isset($init_title_3_2_1) ? $init_title_3_2_1 : ""; ?>" type="text"></td>
+            <td><input id="international_2" name = "datepub_3_2_1" value = "<?php echo isset($init_datepub_3_2_1) ? $init_datepub_3_2_1 : ""; ?>" type="date"></td>
+            <td><input id="international_3" name = "name_3_2_1" value = "<?php echo isset($init_name_3_2_1) ? $init_name_3_2_1 : ""; ?>" type="text"></td>
+            <td><input id="international_4" name = "no_citation_3_2_1" value = "<?php echo isset($init_no_citation_3_2_1) ? $init_no_citation_3_2_1 : ""; ?>" type="text"></td>
+            <td><input id="international_5" name = "index_citation_3_2_1" value = "<?php echo isset($init_index_citation_3_2_1) ? $init_index_citation_3_2_1 : ""; ?>" type="text"></td>
+            <td><input id="international_6" name = "year_citation_3_2_1" value = "<?php echo isset($init_year_citation_3_2_1) ? $init_year_citation_3_2_1 : ""; ?>" type="text"></td>
             <td><input id="international_result_1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input id="international_7" type="text"></td>
-            <td><input id="international_8" type="text"></td>
-            <td><input id="international_9" type="text"></td>
-            <td><input id="international_10" type="text"></td>
-            <td><input id="international_11" type="text"></td>
-            <td><input id="international_12" type="text"></td>
+            <td><input id="international_7" name = "title_3_2_2" value = "<?php echo isset($init_title_3_2_2) ? $init_title_3_2_2 : ""; ?>" type="text"></td>
+            <td><input id="international_8" name = "datepub_3_2_2" value = "<?php echo isset($init_datepub_3_2_2) ? $init_datepub_3_2_2 : ""; ?>" type="date"></td>
+            <td><input id="international_9" name = "name_3_2_2" value = "<?php echo isset($init_name_3_2_2) ? $init_name_3_2_2 : ""; ?>" type="text"></td>
+            <td><input id="international_10" name = "no_citation_3_2_2" value = "<?php echo isset($init_no_citation_3_2_2) ? $init_no_citation_3_2_2 : ""; ?>" type="text"></td>
+            <td><input id="international_11" name = "index_citation_3_2_2" value = "<?php echo isset($init_index_citation_3_2_2) ? $init_index_citation_3_2_2 : ""; ?>" type="text"></td>
+            <td><input id="international_12" name = "year_citation_3_2_2" value = "<?php echo isset($init_year_citation_3_2_2) ? $init_year_citation_3_2_2 : ""; ?>" type="text"></td>
+
             <td><input id="international_result_2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="international_13" type="text"></td>
-            <td><input id="international_14" type="text"></td>
-            <td><input id="international_15" type="text"></td>
-            <td><input id="international_16" type="text"></td>
-            <td><input id="international_17" type="text"></td>
-            <td><input id="international_18" type="text"></td>
+            <td><input id="international_13" name = "title_3_2_3" value = "<?php echo isset($init_title_3_2_3) ? $init_title_3_2_3 : ""; ?>" type="text"></td>
+            <td><input id="international_14" name = "datepub_3_2_3" value = "<?php echo isset($init_datepub_3_2_3) ? $init_datepub_3_2_3 : ""; ?>" type="date"></td>
+            <td><input id="international_15" name = "name_3_2_3" value = "<?php echo isset($init_name_3_2_3) ? $init_name_3_2_3 : ""; ?>" type="text"></td>
+            <td><input id="international_16" name = "no_citation_3_2_3" value = "<?php echo isset($init_no_citation_3_2_3) ? $init_no_citation_3_2_3 : ""; ?>" type="text"></td>
+            <td><input id="international_17" name = "index_citation_3_2_3" value = "<?php echo isset($init_index_citation_3_2_3) ? $init_index_citation_3_2_3 : ""; ?>" type="text"></td>
+            <td><input id="international_18" name = "year_citation_3_2_3" value = "<?php echo isset($init_year_citation_3_2_3) ? $init_year_citation_3_2_3 : ""; ?>" type="text"></td>
+
             <td><input id="international_result_3" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input id="international_19" type="text"></td>
-            <td><input id="international_20" type="text"></td>
-            <td><input id="international_21" type="text"></td>
-            <td><input id="international_22" type="text"></td>
-            <td><input id="international_23" type="text"></td>
-            <td><input id="international_24" type="text"></td>
+            <td><input id="international_19" name = "title_3_2_4" value = "<?php echo isset($init_title_3_2_4) ? $init_title_3_2_4 : ""; ?>" type="text"></td>
+            <td><input id="international_20" name = "datepub_3_2_4" value = "<?php echo isset($init_datepub_3_2_4) ? $init_datepub_3_2_4 : ""; ?>" type="date"></td>
+            <td><input id="international_21" name = "name_3_2_4" value = "<?php echo isset($init_name_3_2_4) ? $init_name_3_2_4 : ""; ?>" type="text"></td>
+            <td><input id="international_22" name = "no_citation_3_2_4" value = "<?php echo isset($init_no_citation_3_2_4) ? $init_no_citation_3_2_4 : ""; ?>" type="text"></td>
+            <td><input id="international_23" name = "index_citation_3_2_4" value = "<?php echo isset($init_index_citation_3_2_4) ? $init_index_citation_3_2_4 : ""; ?>" type="text"></td>
+            <td><input id="international_24" name = "year_citation_3_2_4" value = "<?php echo isset($init_year_citation_3_2_4) ? $init_year_citation_3_2_4 : ""; ?>" type="text"></td>
             <td><input id="international_result_4" readonly type="text"></td>
         </tr>
 

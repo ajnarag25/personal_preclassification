@@ -4,9 +4,139 @@ session_start();
 if(!isset($_SESSION['user'])){
   header('location: login.php');
 }
+$id = $_SESSION['user']['user_id'];
+
+$query1_b = "SELECT * FROM form1_b WHERE user_id = $id";
+$result1_b = $conn->query($query1_b);
+while ($row = mysqli_fetch_array($result1_b)) {
+    $init_titleB_1_1_1 = $row['titleB_1_1_1'];
+    $init_titleB_1_1_2 = $row['titleB_1_1_2'];
+    $init_titleB_1_1_3 = $row['titleB_1_1_3'];
+    $init_typeB_1_1_1 = $row['typeB_1_1_1'];
+    $init_typeB_1_1_2 = $row['typeB_1_1_2'];
+    $init_typeB_1_1_3 = $row['typeB_1_1_3'];
+    $init_revB_1_1_1 = $row['revB_1_1_1'];
+    $init_revB_1_1_2 = $row['revB_1_1_2'];
+    $init_revB_1_1_3 = $row['revB_1_1_3'];
+    $init_pubB_1_1_1 = $row['pubB_1_1_1'];
+    $init_pubB_1_1_2 = $row['pubB_1_1_2'];
+    $init_pubB_1_1_3 = $row['pubB_1_1_3'];
+    $init_datepubB_1_1_1 = $row['datepubB_1_1_1'];
+    $init_datepubB_1_1_2 = $row['datepubB_1_1_2'];
+    $init_datepubB_1_1_3 = $row['datepubB_1_1_3'];
+    $init_dateappB_1_1_1 = $row['dateappB_1_1_1'];
+    $init_dateappB_1_1_2 = $row['dateappB_1_1_2'];
+    $init_dateappB_1_1_3 = $row['dateappB_1_1_3'];
+    $init_titleB_1_2_1 = $row['titleB_1_2_1'];
+    $init_titleB_1_2_2 = $row['titleB_1_2_2'];
+    $init_titleB_1_2_3 = $row['titleB_1_2_3'];
+    $init_typeB_1_2_1 = $row['typeB_1_2_1'];
+    $init_typeB_1_2_2 = $row['typeB_1_2_2'];
+    $init_typeB_1_2_3 = $row['typeB_1_2_3'];
+    $init_revB_1_2_1 = $row['revB_1_2_1'];
+    $init_revB_1_2_2 = $row['revB_1_2_2'];
+    $init_revB_1_2_3 = $row['revB_1_2_3'];
+    $init_pubB_1_2_1 = $row['pubB_1_2_1'];
+    $init_pubB_1_2_2 = $row['pubB_1_2_2'];
+    $init_pubB_1_2_3 = $row['pubB_1_2_3'];
+    $init_datepubB_1_2_1 = $row['datepubB_1_2_1'];
+    $init_datepubB_1_2_2 = $row['datepubB_1_2_2'];
+    $init_datepubB_1_2_3 = $row['datepubB_1_2_3'];
+    $init_dateappB_1_2_1 = $row['dateappB_1_2_1'];
+    $init_dateappB_1_2_2 = $row['dateappB_1_2_2'];
+    $init_dateappB_1_2_3 = $row['dateappB_1_2_3'];
+    $init_contribB_1_2_1 = $row['contribB_1_2_1'];
+    $init_contribB_1_2_2 = $row['contribB_1_2_2'];
+    $init_contribB_1_2_3 = $row['contribB_1_2_3'];
+    $init_name2_1 = $row['name2_1'];
+    $init_name2_2 = $row['name2_2'];
+    $init_name2_3 = $row['name2_3'];
+    $init_type2_1 = $row['type2_1'];
+    $init_type2_2 = $row['type2_2'];
+    $init_type2_3 = $row['type2_3'];
+    $init_board2_1 = $row['board2_1'];
+    $init_board2_2 = $row['board2_2'];
+    $init_board2_3 = $row['board2_3'];
+    $init_acad2_1 = $row['acad2_1'];
+    $init_acad2_2 = $row['acad2_2'];
+    $init_acad2_3 = $row['acad2_3'];
+    $init_role2_1 = $row['role2_1'];
+    $init_role2_2 = $row['role2_2'];
+    $init_role2_3 = $row['role2_3'];
+}
+
+
+$query1_c = "SELECT * FROM form1_c WHERE user_id = $id";
+$result1_c = $conn->query($query1_c);
+
+while ($row1 = mysqli_fetch_array($result1_c)) {
+    $init_adv19_1 = $row1['adv19_1'];
+    $init_adv19_2 = $row1['adv19_2'];
+    $init_adv19_3 = $row1['adv19_3'];
+    $init_adv19_4 = $row1['adv19_4'];
+
+    $init_adv20_1 = $row1['adv20_1'];
+    $init_adv20_2 = $row1['adv20_2'];
+    $init_adv20_3 = $row1['adv20_3'];
+    $init_adv20_4 = $row1['adv20_4'];
+
+    $init_adv21_1 = $row1['adv21_1'];
+    $init_adv21_2 = $row1['adv21_2'];
+    $init_adv21_3 = $row1['adv21_3'];
+    $init_adv21_4 = $row1['adv21_4'];
+
+    $init_adv22_1 = $row1['adv22_1'];
+    $init_adv22_2 = $row1['adv22_2'];
+    $init_adv22_3 = $row1['adv22_3'];
+    $init_adv22_4 = $row1['adv22_4'];
+
+    $init_pan19_1 = $row1['pan19_1'];
+    $init_pan19_2 = $row1['pan19_2'];
+    $init_pan19_3 = $row1['pan19_3'];
+    $init_pan19_4 = $row1['pan19_4'];
+
+    $init_pan20_1 = $row1['pan20_1'];
+    $init_pan20_2 = $row1['pan20_2'];
+    $init_pan20_3 = $row1['pan20_3'];
+    $init_pan20_4 = $row1['pan20_4'];
+
+    $init_pan21_1 = $row1['pan21_1'];
+    $init_pan21_2 = $row1['pan21_2'];
+    $init_pan21_3 = $row1['pan21_3'];
+    $init_pan21_4 = $row1['pan21_4'];
+
+    $init_pan22_1 = $row1['pan22_1'];
+    $init_pan22_2 = $row1['pan22_2'];
+    $init_pan22_3 = $row1['pan22_3'];
+    $init_pan22_4 = $row1['pan22_4'];
+
+    $init_acad2_1 = $row1['acad2_1'];
+    $init_acad2_2 = $row1['acad2_2'];
+    $init_acad2_3 = $row1['acad2_3'];
+    $init_acad2_4 = $row1['acad2_4'];
+
+    $init_spon2_1 = $row1['spon2_1'];
+    $init_spon2_2 = $row1['spon2_2'];
+    $init_spon2_3 = $row1['spon2_3'];
+    $init_spon2_4 = $row1['spon2_4'];
+
+    $init_award2_1 = $row1['award2_1'];
+    $init_award2_2 = $row1['award2_2'];
+    $init_award2_3 = $row1['award2_3'];
+    $init_award2_4 = $row1['award2_4'];
+
+    $init_dateaward2_1 = $row1['dateaward2_1'];
+    $init_dateaward2_2 = $row1['dateaward2_2'];
+    $init_dateaward2_3 = $row1['dateaward2_3'];
+    $init_dateaward2_4 = $row1['dateaward2_4'];
+
+}
+
+
+
 
 if (isset($_POST['Submit_btn'])) {
-    $id = $_SESSION['user']['user_id'];
+    
     $sole_author = $_POST['sole_author'];
     $co_author = $_POST['co_author'];
     $acad_prog = $_POST['acad_prog'];
@@ -33,6 +163,124 @@ if (isset($_POST['Submit_btn'])) {
         </script>
         <?php
     } else {
+        $titleB_1_1_1 = $_POST['titleB_1_1_1'];
+        $titleB_1_1_2 = $_POST['titleB_1_1_2'];
+        $titleB_1_1_3 = $_POST['titleB_1_1_3'];
+        $typeB_1_1_1 = $_POST['typeB_1_1_1'];
+        $typeB_1_1_2 = $_POST['typeB_1_1_2'];
+        $typeB_1_1_3 = $_POST['typeB_1_1_3'];
+        $revB_1_1_1 = $_POST['revB_1_1_1'];
+        $revB_1_1_2 = $_POST['revB_1_1_2'];
+        $revB_1_1_3 = $_POST['revB_1_1_3'];
+        $pubB_1_1_1 = $_POST['pubB_1_1_1'];
+        $pubB_1_1_2 = $_POST['pubB_1_1_2'];
+        $pubB_1_1_3 = $_POST['pubB_1_1_3'];
+        $datepubB_1_1_1 = $_POST['datepubB_1_1_1'];
+        $datepubB_1_1_2 = $_POST['datepubB_1_1_2'];
+        $datepubB_1_1_3 = $_POST['datepubB_1_1_3'];
+        $dateappB_1_1_1 = $_POST['dateappB_1_1_1'];
+        $dateappB_1_1_2 = $_POST['dateappB_1_1_2'];
+        $dateappB_1_1_3 = $_POST['dateappB_1_1_3'];
+        $titleB_1_2_1 = $_POST['titleB_1_2_1'];
+        $titleB_1_2_2 = $_POST['titleB_1_2_2'];
+        $titleB_1_2_3 = $_POST['titleB_1_2_3'];
+        $typeB_1_2_1 = $_POST['typeB_1_2_1'];
+        $typeB_1_2_2 = $_POST['typeB_1_2_2'];
+        $typeB_1_2_3 = $_POST['typeB_1_2_3'];
+        $revB_1_2_1 = $_POST['revB_1_2_1'];
+        $revB_1_2_2 = $_POST['revB_1_2_2'];
+        $revB_1_2_3 = $_POST['revB_1_2_3'];
+        $pubB_1_2_1 = $_POST['pubB_1_2_1'];
+        $pubB_1_2_2 = $_POST['pubB_1_2_2'];
+        $pubB_1_2_3 = $_POST['pubB_1_2_3'];
+        $datepubB_1_2_1 = $_POST['datepubB_1_2_1'];
+        $datepubB_1_2_2 = $_POST['datepubB_1_2_2'];
+        $datepubB_1_2_3 = $_POST['datepubB_1_2_3'];
+        $dateappB_1_2_1 = $_POST['dateappB_1_2_1'];
+        $dateappB_1_2_2 = $_POST['dateappB_1_2_2'];
+        $dateappB_1_2_3 = $_POST['dateappB_1_2_3'];
+        $contribB_1_2_1 = $_POST['contribB_1_2_1'];
+        $contribB_1_2_2 = $_POST['contribB_1_2_2'];
+        $contribB_1_2_3 = $_POST['contribB_1_2_3'];
+        $name2_1 = $_POST['name2_1'];
+        $name2_2 = $_POST['name2_2'];
+        $name2_3 = $_POST['name2_3'];
+        $type2_1 = $_POST['type2_1'];
+        $type2_2 = $_POST['type2_2'];
+        $type2_3 = $_POST['type2_3'];
+        $board2_1 = $_POST['board2_1'];
+        $board2_2 = $_POST['board2_2'];
+        $board2_3 = $_POST['board2_3'];
+        $acad2_1 = $_POST['acad2_1'];
+        $acad2_2 = $_POST['acad2_2'];
+        $acad2_3 = $_POST['acad2_3'];
+        $role2_1 = $_POST['role2_1'];
+        $role2_2 = $_POST['role2_2'];
+        $role2_3 = $_POST['role2_3'];
+        
+
+
+        $adv19_1 = $_POST['adv19_1'];
+        $adv19_2 = $_POST['adv19_2'];
+        $adv19_3 = $_POST['adv19_3'];
+        $adv19_4 = $_POST['adv19_4'];
+
+        $adv20_1 = $_POST['adv20_1'];
+        $adv20_2 = $_POST['adv20_2'];
+        $adv20_3 = $_POST['adv20_3'];
+        $adv20_4 = $_POST['adv20_4'];
+
+        $adv21_1 = $_POST['adv21_1'];
+        $adv21_2 = $_POST['adv21_2'];
+        $adv21_3 = $_POST['adv21_3'];
+        $adv21_4 = $_POST['adv21_4'];
+
+        $adv22_1 = $_POST['adv22_1'];
+        $adv22_2 = $_POST['adv22_2'];
+        $adv22_3 = $_POST['adv22_3'];
+        $adv22_4 = $_POST['adv22_4'];
+
+        $pan19_1 = $_POST['pan19_1'];
+        $pan19_2 = $_POST['pan19_2'];
+        $pan19_3 = $_POST['pan19_3'];
+        $pan19_4 = $_POST['pan19_4'];
+
+        $pan20_1 = $_POST['pan20_1'];
+        $pan20_2 = $_POST['pan20_2'];
+        $pan20_3 = $_POST['pan20_3'];
+        $pan20_4 = $_POST['pan20_4'];
+
+        $pan21_1 = $_POST['pan21_1'];
+        $pan21_2 = $_POST['pan21_2'];
+        $pan21_3 = $_POST['pan21_3'];
+        $pan21_4 = $_POST['pan21_4'];
+
+        $pan22_1 = $_POST['pan22_1'];
+        $pan22_2 = $_POST['pan22_2'];
+        $pan22_3 = $_POST['pan22_3'];
+        $pan22_4 = $_POST['pan22_4'];
+
+        $acad2_1 = $_POST['acad2_1'];
+        $acad2_2 = $_POST['acad2_2'];
+        $acad2_3 = $_POST['acad2_3'];
+        $acad2_4 = $_POST['acad2_4'];
+
+        $spon2_1 = $_POST['spon2_1'];
+        $spon2_2 = $_POST['spon2_2'];
+        $spon2_3 = $_POST['spon2_3'];
+        $spon2_4 = $_POST['spon2_4'];
+
+        $award2_1 = $_POST['award2_1'];
+        $award2_2 = $_POST['award2_2'];
+        $award2_3 = $_POST['award2_3'];
+        $award2_4 = $_POST['award2_4'];
+
+        $dateaward2_1 = $_POST['dateaward2_1'];
+        $dateaward2_2 = $_POST['dateaward2_2'];
+        $dateaward2_3 = $_POST['dateaward2_3'];
+        $dateaward2_4 = $_POST['dateaward2_4'];
+
+
         $conn->query("UPDATE kra_1 SET Crit_B_sole_autho = '$sole_author', 
                  Crit_B_co_autho = '$co_author', 
                  Crit_B_academe = '$acad_prog', 
@@ -47,6 +295,193 @@ if (isset($_POST['Submit_btn'])) {
                  Total_kra_1 =  Crit_A_total + Crit_B_total + Crit_C_total,
                  Total_kra_1_allowed = IF(Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed > 100, 100, Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed)
              WHERE id = $id") or die($conn->error);
+
+
+
+        $conn->query("INSERT INTO form1_b (
+            titleB_1_1_1, titleB_1_1_2, titleB_1_1_3, 
+            typeB_1_1_1, typeB_1_1_2, typeB_1_1_3, 
+            revB_1_1_1, revB_1_1_2, revB_1_1_3, 
+            pubB_1_1_1, pubB_1_1_2, pubB_1_1_3, 
+            datepubB_1_1_1, datepubB_1_1_2, datepubB_1_1_3, 
+            dateappB_1_1_1, dateappB_1_1_2, dateappB_1_1_3, 
+            titleB_1_2_1, titleB_1_2_2, titleB_1_2_3, 
+            typeB_1_2_1, typeB_1_2_2, typeB_1_2_3, 
+            revB_1_2_1, revB_1_2_2, revB_1_2_3, 
+            pubB_1_2_1, pubB_1_2_2, pubB_1_2_3, 
+            datepubB_1_2_1, datepubB_1_2_2, datepubB_1_2_3, 
+            dateappB_1_2_1, dateappB_1_2_2, dateappB_1_2_3, 
+            contribB_1_2_1, contribB_1_2_2, contribB_1_2_3, 
+            name2_1, name2_2, name2_3, 
+            type2_1, type2_2, type2_3, 
+            board2_1, board2_2, board2_3, 
+            acad2_1, acad2_2, acad2_3, 
+            role2_1, role2_2, role2_3, 
+            user_id)
+        VALUES (
+        
+            '$titleB_1_1_1', '$titleB_1_1_2', '$titleB_1_1_3', 
+            '$typeB_1_1_1', '$typeB_1_1_2', '$typeB_1_1_3', 
+            '$revB_1_1_1', '$revB_1_1_2', '$revB_1_1_3', 
+            '$pubB_1_1_1', '$pubB_1_1_2', '$pubB_1_1_3', 
+            '$datepubB_1_1_1', '$datepubB_1_1_2', '$datepubB_1_1_3', 
+            '$dateappB_1_1_1', '$dateappB_1_1_2', '$dateappB_1_1_3', 
+            '$titleB_1_2_1', '$titleB_1_2_2', '$titleB_1_2_3', 
+            '$typeB_1_2_1', '$typeB_1_2_2', '$typeB_1_2_3', 
+            '$revB_1_2_1', '$revB_1_2_2', '$revB_1_2_3', 
+            '$pubB_1_2_1', '$pubB_1_2_2', '$pubB_1_2_3', 
+            '$datepubB_1_2_1', '$datepubB_1_2_2', '$datepubB_1_2_3', 
+            '$dateappB_1_2_1', '$dateappB_1_2_2', '$dateappB_1_2_3', 
+            '$contribB_1_2_1', '$contribB_1_2_2', '$contribB_1_2_3', 
+            '$name2_1', '$name2_2', '$name2_3', 
+            '$type2_1', '$type2_2', '$type2_3', 
+            '$board2_1', '$board2_2', '$board2_3', 
+            '$acad2_1', '$acad2_2', '$acad2_3', 
+            '$role2_1', '$role2_2', '$role2_3', 
+            $id)
+        ON DUPLICATE KEY UPDATE
+            titleB_1_1_1 = VALUES(titleB_1_1_1),
+            titleB_1_1_2 = VALUES(titleB_1_1_2),
+            titleB_1_1_3 = VALUES(titleB_1_1_3),
+            typeB_1_1_1 = VALUES(typeB_1_1_1),
+            typeB_1_1_2 = VALUES(typeB_1_1_2),
+            typeB_1_1_3 = VALUES(typeB_1_1_3),
+            revB_1_1_1 = VALUES(revB_1_1_1),
+            revB_1_1_2 = VALUES(revB_1_1_2),
+            revB_1_1_3 = VALUES(revB_1_1_3),
+            pubB_1_1_1 = VALUES(pubB_1_1_1),
+            pubB_1_1_2 = VALUES(pubB_1_1_2),
+            pubB_1_1_3 = VALUES(pubB_1_1_3),
+            datepubB_1_1_1 = VALUES(datepubB_1_1_1),
+            datepubB_1_1_2 = VALUES(datepubB_1_1_2),
+            datepubB_1_1_3 = VALUES(datepubB_1_1_3),
+            dateappB_1_1_1 = VALUES(dateappB_1_1_1),
+            dateappB_1_1_2 = VALUES(dateappB_1_1_2),
+            dateappB_1_1_3 = VALUES(dateappB_1_1_3),
+            titleB_1_2_1 = VALUES(titleB_1_2_1),
+            titleB_1_2_2 = VALUES(titleB_1_2_2),
+            titleB_1_2_3 = VALUES(titleB_1_2_3),
+            typeB_1_2_1 = VALUES(typeB_1_2_1),
+            typeB_1_2_2 = VALUES(typeB_1_2_2),
+            typeB_1_2_3 = VALUES(typeB_1_2_3),
+            revB_1_2_1 = VALUES(revB_1_2_1),
+            revB_1_2_2 = VALUES(revB_1_2_2),
+            revB_1_2_3 = VALUES(revB_1_2_3),
+            pubB_1_2_1 = VALUES(pubB_1_2_1),
+            pubB_1_2_2 = VALUES(pubB_1_2_2),
+            pubB_1_2_3 = VALUES(pubB_1_2_3),
+            datepubB_1_2_1 = VALUES(datepubB_1_2_1),
+            datepubB_1_2_2 = VALUES(datepubB_1_2_2),
+            datepubB_1_2_3 = VALUES(datepubB_1_2_3),
+            dateappB_1_2_1 = VALUES(dateappB_1_2_1),
+            dateappB_1_2_2 = VALUES(dateappB_1_2_2),
+            dateappB_1_2_3 = VALUES(dateappB_1_2_3),
+            contribB_1_2_1 = VALUES(contribB_1_2_1),
+            contribB_1_2_2 = VALUES(contribB_1_2_2),
+            contribB_1_2_3 = VALUES(contribB_1_2_3),
+            name2_1 = VALUES(name2_1),
+            name2_2 = VALUES(name2_2),
+            name2_3 = VALUES(name2_3),
+            type2_1 = VALUES(type2_1),
+            type2_2 = VALUES(type2_2),
+            type2_3 = VALUES(type2_3),
+            board2_1 = VALUES(board2_1),
+            board2_2 = VALUES(board2_2),
+            board2_3 = VALUES(board2_3),
+            acad2_1 = VALUES(acad2_1),
+            acad2_2 = VALUES(acad2_2),
+            acad2_3 = VALUES(acad2_3),
+            role2_1 = VALUES(role2_1),
+            role2_2 = VALUES(role2_2),
+            role2_3 = VALUES(role2_3);"
+        ) or die($conn->error);
+        
+
+
+
+        $conn->query("INSERT INTO form1_c (
+            adv19_1, adv19_2, adv19_3, adv19_4, 
+            adv20_1, adv20_2, adv20_3, adv20_4, 
+            adv21_1, adv21_2, adv21_3, adv21_4, 
+            adv22_1, adv22_2, adv22_3, adv22_4, 
+            pan19_1, pan19_2, pan19_3, pan19_4, 
+            pan20_1, pan20_2, pan20_3, pan20_4, 
+            pan21_1, pan21_2, pan21_3, pan21_4, 
+            pan22_1, pan22_2, pan22_3, pan22_4, 
+            acad2_1, acad2_2, acad2_3, acad2_4, 
+            spon2_1, spon2_2, spon2_3, spon2_4, 
+            award2_1, award2_2, award2_3, award2_4, 
+            dateaward2_1, dateaward2_2, dateaward2_3, dateaward2_4, user_id)
+
+        VALUES (
+            '$adv19_1', '$adv19_2', '$adv19_3', '$adv19_4', 
+            '$adv20_1', '$adv20_2', '$adv20_3', '$adv20_4', 
+            '$adv21_1', '$adv21_2', '$adv21_3', '$adv21_4', 
+            '$adv22_1', '$adv22_2', '$adv22_3', '$adv22_4', 
+            '$pan19_1', '$pan19_2', '$pan19_3', '$pan19_4', 
+            '$pan20_1', '$pan20_2', '$pan20_3', '$pan20_4', 
+            '$pan21_1', '$pan21_2', '$pan21_3', '$pan21_4', 
+            '$pan22_1', '$pan22_2', '$pan22_3', '$pan22_4', 
+            '$acad2_1', '$acad2_2', '$acad2_3', '$acad2_4', 
+            '$spon2_1', '$spon2_2', '$spon2_3', '$spon2_4', 
+            '$award2_1', '$award2_2', '$award2_3', '$award2_4', 
+            '$dateaward2_1', '$dateaward2_2', '$dateaward2_3', '$dateaward2_4',
+            $id)
+
+        ON DUPLICATE KEY UPDATE
+            adv19_1 = VALUES(adv19_1),
+            adv19_2 = VALUES(adv19_2),
+            adv19_3 = VALUES(adv19_3),
+            adv19_4 = VALUES(adv19_4),
+            adv20_1 = VALUES(adv20_1),
+            adv20_2 = VALUES(adv20_2),
+            adv20_3 = VALUES(adv20_3),
+            adv20_4 = VALUES(adv20_4),
+            adv21_1 = VALUES(adv21_1),
+            adv21_2 = VALUES(adv21_2),
+            adv21_3 = VALUES(adv21_3),
+            adv21_4 = VALUES(adv21_4),
+            adv22_1 = VALUES(adv22_1),
+            adv22_2 = VALUES(adv22_2),
+            adv22_3 = VALUES(adv22_3),
+            adv22_4 = VALUES(adv22_4),
+            pan19_1 = VALUES(pan19_1),
+            pan19_2 = VALUES(pan19_2),
+            pan19_3 = VALUES(pan19_3),
+            pan19_4 = VALUES(pan19_4),
+            pan20_1 = VALUES(pan20_1),
+            pan20_2 = VALUES(pan20_2),
+            pan20_3 = VALUES(pan20_3),
+            pan20_4 = VALUES(pan20_4),
+            pan21_1 = VALUES(pan21_1),
+            pan21_2 = VALUES(pan21_2),
+            pan21_3 = VALUES(pan21_3),
+            pan21_4 = VALUES(pan21_4),
+            pan22_1 = VALUES(pan22_1),
+            pan22_2 = VALUES(pan22_2),
+            pan22_3 = VALUES(pan22_3),
+            pan22_4 = VALUES(pan22_4),
+            acad2_1 = VALUES(acad2_1),
+            acad2_2 = VALUES(acad2_2),
+            acad2_3 = VALUES(acad2_3),
+            acad2_4 = VALUES(acad2_4),
+            spon2_1 = VALUES(spon2_1),
+            spon2_2 = VALUES(spon2_2),
+            spon2_3 = VALUES(spon2_3),
+            spon2_4 = VALUES(spon2_4),
+            award2_1 = VALUES(award2_1),
+            award2_2 = VALUES(award2_2),
+            award2_3 = VALUES(award2_3),
+            award2_4 = VALUES(award2_4),
+            dateaward2_1 = VALUES(dateaward2_1),
+            dateaward2_2 = VALUES(dateaward2_2),
+            dateaward2_3 = VALUES(dateaward2_3),
+            dateaward2_4 = VALUES(dateaward2_4)
+            ") or die($conn->error);
+
+
+
+
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -188,10 +623,12 @@ if (isset($_POST['Submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input type="text"></td>
+            <td><input name = "titleB_1_1_1" value = "<?php echo isset($init_titleB_1_1_1) ? $init_titleB_1_1_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="type__IM__SA__1">
-                    <option value="None">Select Option</option>
+                <select name="typeB_1_1_1" id="type__IM__SA__1">
+                    <option value = "<?php echo isset($init_typeB_1_1_1) ? $init_typeB_1_1_1 : "None"; ?>">
+                        <?php echo isset($init_typeB_1_1_1) ? $init_typeB_1_1_1 : "Select Option"; ?>
+                    </option>
                     <option value="Textbook">Textbook</option>
                     <option value="Textbook Chapter">Textbook Chapter</option>
                     <option value="Manual/Module/Workbook">Manual/Module/Workbook</option>
@@ -199,19 +636,22 @@ if (isset($_POST['Submit_btn'])) {
                     <option value="Testing Material">Testing Material</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="date"></td>
+            <td><input value = "<?php echo isset($init_revB_1_1_1) ? $init_revB_1_1_1 : ""; ?>" name = "revB_1_1_1" type="text"></td>
+            <td><input value = "<?php echo isset($init_pubB_1_1_1) ? $init_pubB_1_1_1 : ""; ?>" name = "pubB_1_1_1" type="text"></td>
+            <td><input value = "<?php echo isset($init_datepubB_1_1_1) ? $init_datepubB_1_1_1 : ""; ?>" name = "datepubB_1_1_1" type="date"></td>
+            <td><input value = "<?php echo isset($init_dateappB_1_1_1) ? $init_dateappB_1_1_1 : ""; ?>" name = "dateappB_1_1_1" type="date"></td>
             <td><input id="SA-FS__1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input type="text"></td>
+            <td><input name = "titleB_1_1_2" value = "<?php echo isset($init_titleB_1_1_2) ? $init_titleB_1_1_2 : ""; ?>" type="text"></td>
+
             <td>
-                <select name="" id="type__IM__SA__2">
-                    <option value="None">Select Option</option>
+            <select name="typeB_1_1_2" id="type__IM__SA__2">
+                    <option value = "<?php echo isset($init_typeB_1_1_2) ? $init_typeB_1_1_2 : "None"; ?>">
+                        <?php echo isset($init_typeB_1_1_2) ? $init_typeB_1_1_2 : "Select Option"; ?>
+                    </option>
                     <option value="Textbook">Textbook</option>
                     <option value="Textbook Chapter">Textbook Chapter</option>
                     <option value="Manual/Module/Workbook">Manual/Module/Workbook</option>
@@ -219,20 +659,23 @@ if (isset($_POST['Submit_btn'])) {
                     <option value="Testing Material">Testing Material</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="date"></td>
+
+            <td><input value = "<?php echo isset($init_revB_1_1_2) ? $init_revB_1_1_2 : ""; ?>" name = "revB_1_1_2" type="text"></td>
+            <td><input value = "<?php echo isset($init_pubB_1_1_2) ? $init_pubB_1_1_2 : ""; ?>" name = "pubB_1_1_2" type="text"></td>
+            <td><input value = "<?php echo isset($init_datepubB_1_1_2) ? $init_datepubB_1_1_2 : ""; ?>" name = "datepubB_1_1_2" type="date"></td>
+            <td><input value = "<?php echo isset($init_dateappB_1_1_2) ? $init_dateappB_1_1_2 : ""; ?>" name = "dateappB_1_1_2" type="date"></td>
             <td><input id="SA-FS__2" readonly type="text"></td>
         </tr>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input type="text"></td>
+            <td><input name = "titleB_1_1_3" value = "<?php echo isset($init_titleB_1_1_3) ? $init_titleB_1_1_3 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="type__IM__SA__3">
-                    <option value="None">Select Option</option>
+                <select name="typeB_1_1_3" id="type__IM__SA__3">
+                    <option value = "<?php echo isset($init_typeB_1_1_3) ? $init_typeB_1_1_3 : "None"; ?>">
+                        <?php echo isset($init_typeB_1_1_3) ? $init_typeB_1_1_3 : "Select Option"; ?>
+                    </option>
                     <option value="Textbook">Textbook</option>
                     <option value="Textbook Chapter">Textbook Chapter</option>
                     <option value="Manual/Module/Workbook">Manual/Module/Workbook</option>
@@ -240,10 +683,10 @@ if (isset($_POST['Submit_btn'])) {
                     <option value="Testing Material">Testing Material</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="date"></td>
+            <td><input value = "<?php echo isset($init_revB_1_1_3) ? $init_revB_1_1_3 : ""; ?>" name = "revB_1_1_3" type="text"></td>
+            <td><input value = "<?php echo isset($init_pubB_1_1_3) ? $init_pubB_1_1_3 : ""; ?>" name = "pubB_1_1_3" type="text"></td>
+            <td><input value = "<?php echo isset($init_datepubB_1_1_3) ? $init_datepubB_1_1_3 : ""; ?>" name = "datepubB_1_1_3" type="date"></td>
+            <td><input value = "<?php echo isset($init_dateappB_1_1_3) ? $init_dateappB_1_1_3 : ""; ?>" name = "dateappB_1_1_3" type="date"></td>
             <td><input id="SA-FS__3" readonly type="text"></td>
         </tr>
 
@@ -281,10 +724,12 @@ if (isset($_POST['Submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input type="text"></td>
+            <td><input name = "titleB_1_2_1" value = "<?php echo isset($init_titleB_1_2_1) ? $init_titleB_1_2_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="type__IM__CA__1">
-                    <option value="None">Select Option</option>
+                <select name="typeB_1_2_1" id="type__IM__CA__1">
+                <option value = "<?php echo isset($init_typeB_1_2_1) ? $init_typeB_1_2_1 : "None"; ?>">
+                        <?php echo isset($init_typeB_1_2_1) ? $init_typeB_1_2_1 : "Select Option"; ?>
+                    </option>
                     <option value="Textbook">Textbook</option>
                     <option value="Textbook Chapter">Textbook Chapter</option>
                     <option value="Manual/Module/Workbook">Manual/Module/Workbook</option>
@@ -292,41 +737,45 @@ if (isset($_POST['Submit_btn'])) {
                     <option value="Testing Material">Testing Material</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="date"></td>
-            <td><input id="CA__cont__1" type="text"></td>
+            <td><input value = "<?php echo isset($init_revB_1_2_1) ? $init_revB_1_2_1 : ""; ?>" name = "revB_1_2_1" type="text"></td>
+            <td><input value = "<?php echo isset($init_pubB_1_2_1) ? $init_pubB_1_2_1 : ""; ?>" name = "pubB_1_2_1" type="text"></td>
+            <td><input value = "<?php echo isset($init_datepubB_1_2_1) ? $init_datepubB_1_2_1 : ""; ?>" name = "datepubB_1_2_1" type="date"></td>
+            <td><input value = "<?php echo isset($init_dateappB_1_2_1) ? $init_dateappB_1_2_1 : ""; ?>" name = "dateappB_1_2_1" type="date"></td>
+            <td><input value = "<?php echo isset($init_contribB_1_2_1) ? $init_contribB_1_2_1 : ""; ?>" name = "contribB_1_2_1" id="CA__cont__1" type="text"></td>
             <td><input id="CA-FS__1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input type="text"></td>
+            <td><input name = "titleB_1_2_2" value = "<?php echo isset($init_titleB_1_2_2) ? $init_titleB_1_2_2 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="type__IM__CA__2">
-                    <option value="None">Select Option</option>
+            <select name="typeB_1_2_2" id="type__IM__CA__2">
+                    <option value = "<?php echo isset($init_typeB_1_2_2) ? $init_typeB_1_2_2 : "None"; ?>">
+                        <?php echo isset($init_typeB_1_2_2) ? $init_typeB_1_2_2 : "Select Option"; ?>
+                    </option>
                     <option value="Textbook">Textbook</option>
                     <option value="Textbook Chapter">Textbook Chapter</option>
                     <option value="Manual/Module/Workbook">Manual/Module/Workbook</option>
                     <option value="MultiMedia Teaching Material">MultiMedia Teaching Material</option>
                     <option value="Testing Material">Testing Material</option>
-                </select>
+            </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="date"></td>
-            <td><input id="CA__cont__2" type="text"></td>
+            <td><input value = "<?php echo isset($init_revB_1_2_2) ? $init_revB_1_2_2 : ""; ?>" name = "revB_1_2_2" type="text"></td>
+            <td><input value = "<?php echo isset($init_pubB_1_2_2) ? $init_pubB_1_2_2 : ""; ?>" name = "pubB_1_2_2" type="text"></td>
+            <td><input value = "<?php echo isset($init_datepubB_1_2_2) ? $init_datepubB_1_2_2 : ""; ?>" name = "datepubB_1_2_2" type="date"></td>
+            <td><input value = "<?php echo isset($init_dateappB_1_2_2) ? $init_dateappB_1_2_2 : ""; ?>" name = "dateappB_1_2_2" type="date"></td>
+            <td><input value = "<?php echo isset($init_contribB_1_2_2) ? $init_contribB_1_2_2 : ""; ?>" name = "contribB_1_2_2" id="CA__cont__2" type="text"></td>
             <td><input id="CA-FS__2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input type="text"></td>
+            <td><input name = "titleB_1_2_3" value = "<?php echo isset($init_titleB_1_2_3) ? $init_titleB_1_2_3 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="type__IM__CA__3">
-                    <option value="None">Select Option</option>
+                <select name="typeB_1_2_3" id="type__IM__CA__3">
+                    <option value = "<?php echo isset($init_typeB_1_2_3) ? $init_typeB_1_2_3 : "None"; ?>">
+                        <?php echo isset($init_typeB_1_2_3) ? $init_typeB_1_2_3 : "Select Option"; ?>
+                    </option>
                     <option value="Textbook">Textbook</option>
                     <option value="Textbook Chapter">Textbook Chapter</option>
                     <option value="Manual/Module/Workbook">Manual/Module/Workbook</option>
@@ -334,11 +783,11 @@ if (isset($_POST['Submit_btn'])) {
                     <option value="Testing Material">Testing Material</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="date"></td>
-            <td><input id="CA__cont__3" type="text"></td>
+            <td><input value = "<?php echo isset($init_revB_1_2_3) ? $init_revB_1_2_3 : ""; ?>" name = "revB_1_2_3" type="text"></td>
+            <td><input value = "<?php echo isset($init_pubB_1_2_3) ? $init_pubB_1_2_3 : ""; ?>" name = "pubB_1_2_3" type="text"></td>
+            <td><input value = "<?php echo isset($init_datepubB_1_2_3) ? $init_datepubB_1_2_3 : ""; ?>" name = "datepubB_1_2_3" type="date"></td>
+            <td><input value = "<?php echo isset($init_dateappB_1_2_3) ? $init_dateappB_1_2_3 : ""; ?>" name = "dateappB_1_2_3" type="date"></td>
+            <td><input value = "<?php echo isset($init_contribB_1_2_3) ? $init_contribB_1_2_3 : ""; ?>" name = "contribB_1_2_3" id="CA__cont__3" type="text"></td>
             <td><input id="CA-FS__3" readonly type="text"></td>
         </tr>
         <tr>
@@ -378,25 +827,33 @@ if (isset($_POST['Submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input type="text"></td>
+            <td><input name = "name2_1" value = "<?php echo isset($init_name2_1) ? $init_name2_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">New Program</option>
-                    <option value="">Revised Program</option>
+                <select name="type2_1" id="">
+                    <option value = "<?php echo isset($init_type2_1) ? $init_type2_1 : "None"; ?>">
+                        <?php echo isset($init_type2_1) ? $init_type2_1 : "Select Option"; ?>
+                    </option>
+                    <option value="New Program">New Program</option>
+                    <option value="Revised Program">Revised Program</option>
                 </select>
             </td>
-            <td><input type="text"></td>
+            <td><input name = "board2_1" value = "<?php echo isset($init_board2_1) ? $init_board2_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">2019-2020</option>
-                    <option value="">2020-2021</option>
-                    <option value="">2021-2022</option>
-                    <option value="">2022-2023</option>
+                <select name="acad2_1" id="">
+                    <option value = "<?php echo isset($init_acad2_1) ? $init_acad2_1 : "None"; ?>">
+                        <?php echo isset($init_acad2_1) ? $init_acad2_1 : "Select Option"; ?>
+                    </option>
+                    <option value="2019-2020">2019-2020</option>
+                    <option value="2020-2021">2020-2021</option>
+                    <option value="2021-2022">2021-2022</option>
+                    <option value="2022-2023">2022-2023</option>
                 </select>
             </td>
             <td>
-                <select name="" id="select__role__1">
-                    <option value="none">Select Option</option>
+                <select name="role2_1" id="select__role__1">
+                    <option value = "<?php echo isset($init_role2_1) ? $init_role2_1 : "none"; ?>">
+                        <?php echo isset($init_role2_1) ? $init_role2_1 : "Select Option"; ?>
+                    </option>
                     <option value="Lead">Lead</option>
                     <option value="Contributor">Contributor</option>
                 </select>
@@ -406,25 +863,33 @@ if (isset($_POST['Submit_btn'])) {
 
         <tr>
             <td>2</td>
-            <td><input type="text"></td>
+            <td><input name = "name2_2" value = "<?php echo isset($init_name2_2) ? $init_name2_2 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">New Program</option>
-                    <option value="">Revised Program</option>
+                <select name="type2_2" id="">
+                    <option value = "<?php echo isset($init_type2_2) ? $init_type2_2 : "None"; ?>">
+                        <?php echo isset($init_type2_2) ? $init_type2_2 : "Select Option"; ?>
+                    </option>
+                    <option value="New Program">New Program</option>
+                    <option value="Revised Program">Revised Program</option>
                 </select>
             </td>
-            <td><input type="text"></td>
+            <td><input name = "board2_2" value = "<?php echo isset($init_board2_2) ? $init_board2_2 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">2019-2020</option>
-                    <option value="">2020-2021</option>
-                    <option value="">2021-2022</option>
-                    <option value="">2022-2023</option>
+                <select name="acad2_2" id="">
+                    <option value = "<?php echo isset($init_acad2_2) ? $init_acad2_2 : "None"; ?>">
+                        <?php echo isset($init_acad2_2) ? $init_acad2_2 : "Select Option"; ?>
+                    </option>
+                    <option value="2019-2020">2019-2020</option>
+                    <option value="2020-2021">2020-2021</option>
+                    <option value="2021-2022">2021-2022</option>
+                    <option value="2022-2023">2022-2023</option>
                 </select>
             </td>
             <td>
-                <select name="" id="select__role__2">
-                    <option value="none">Select Option</option>
+                <select name="role2_2" id="select__role__2">
+                    <option value = "<?php echo isset($init_role2_2) ? $init_role2_2 : "none"; ?>">
+                        <?php echo isset($init_role2_2) ? $init_role2_2 : "Select Option"; ?>
+                    </option>
                     <option value="Lead">Lead</option>
                     <option value="Contributor">Contributor</option>
                 </select>
@@ -434,25 +899,33 @@ if (isset($_POST['Submit_btn'])) {
 
         <tr>
             <td>3</td>
-            <td><input type="text"></td>
+            <td><input name = "name2_3" value = "<?php echo isset($init_name2_3) ? $init_name2_3 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">New Program</option>
-                    <option value="">Revised Program</option>
+            <select name="type2_3" id="">
+                    <option value = "<?php echo isset($init_type2_3) ? $init_type2_3 : "None"; ?>">
+                        <?php echo isset($init_type2_3) ? $init_type2_3 : "Select Option"; ?>
+                    </option>
+                    <option value="New Program">New Program</option>
+                    <option value="Revised Program">Revised Program</option>
                 </select>
             </td>
-            <td><input type="text"></td>
+            <td><input name = "board2_3" value = "<?php echo isset($init_board2_3) ? $init_board2_3 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="">
-                    <option value="">2019-2020</option>
-                    <option value="">2020-2021</option>
-                    <option value="">2021-2022</option>
-                    <option value="">2022-2023</option>
+                <select name="acad2_3" id="">
+                    <option value = "<?php echo isset($init_acad2_3) ? $init_acad2_3 : "None"; ?>">
+                        <?php echo isset($init_acad2_3) ? $init_acad2_3 : "Select Option"; ?>
+                    </option>
+                    <option value="2019-2020">2019-2020</option>
+                    <option value="2020-2021">2020-2021</option>
+                    <option value="2021-2022">2021-2022</option>
+                    <option value="2022-2023">2022-2023</option>
                 </select>
             </td>
             <td>
-                <select name="" id="select__role__3">
-                    <option value="none">Select Option</option>
+                <select name="role2_3" id="select__role__3">
+                    <option value = "<?php echo isset($init_role2_3) ? $init_role2_3 : "none"; ?>">
+                        <?php echo isset($init_role2_3) ? $init_role2_3 : "Select Option"; ?>
+                    </option>
                     <option value="Lead">Lead</option>
                     <option value="Contributor">Contributor</option>
                 </select>
@@ -497,40 +970,43 @@ if (isset($_POST['Submit_btn'])) {
         <tr>
             <td>1</td>
             <td>SPECIAL/CAPSTONE PROJECT</td>
-            <td><input type="text" id="SCP__AY1__1"></td>
-            <td><input type="text" id="SCP__AY2__2"></td>
-            <td><input type="text" id="SCP__AY3__3"></td>
-            <td><input type="text" id="SCP__AY4__4"></td>
+            
+            <td><input name = "adv19_1" value = "<?php echo isset($init_adv19_1) ? $init_adv19_1 : ""; ?>"  id="SCP__AY1__1" type="text"></td>
+            <td><input name = "adv20_1" value = "<?php echo isset($init_adv20_1) ? $init_adv20_1 : ""; ?>"  id="SCP__AY2__2" type="text"></td>
+            <td><input name = "adv21_1" value = "<?php echo isset($init_adv21_1) ? $init_adv21_1 : ""; ?>"  id="SCP__AY3__3" type="text"></td>
+            <td><input name = "adv22_1" value = "<?php echo isset($init_adv22_1) ? $init_adv22_1 : ""; ?>"  id="SCP__AY4__4" type="text"></td>
+
             <td><input type="text" readonly id="SCP_res"></td>
         </tr>
 
         <tr>
             <td>2</td>
             <td>UNDERGRADUATE THESIS</td>
-            <td><input type="text" id="UG1"></td>
-            <td><input type="text" id="UG2"></td>
-            <td><input type="text" id="UG3"></td>
-            <td><input type="text" id="UG4"></td>
+            <td><input name = "adv19_2" value = "<?php echo isset($init_adv19_2) ? $init_adv19_2 : ""; ?>"  id="UG1" type="text"></td>
+            <td><input name = "adv20_2" value = "<?php echo isset($init_adv20_2) ? $init_adv20_2 : ""; ?>"  id="UG2" type="text"></td>
+            <td><input name = "adv21_2" value = "<?php echo isset($init_adv21_2) ? $init_adv21_2 : ""; ?>"  id="UG3" type="text"></td>
+            <td><input name = "adv22_2" value = "<?php echo isset($init_adv22_2) ? $init_adv22_2 : ""; ?>"  id="UG4" type="text"></td>
             <td><input type="text" readonly id="UG_res"></td>
         </tr>
 
         <tr>
             <td>3</td>
             <td>MASTER'S THESIS</td>
-            <td><input type="text" name="" id="MT1"></td>
-            <td><input type="text" name="" id="MT2"></td>
-            <td><input type="text" name="" id="MT3"></td>
-            <td><input type="text" name="" id="MT4"></td>
+            <td><input name = "adv19_3" value = "<?php echo isset($init_adv19_3) ? $init_adv19_3 : ""; ?>"  id="MT1" type="text"></td>
+            <td><input name = "adv20_3" value = "<?php echo isset($init_adv20_3) ? $init_adv20_3 : ""; ?>"  id="MT2" type="text"></td>
+            <td><input name = "adv21_3" value = "<?php echo isset($init_adv21_3) ? $init_adv21_3 : ""; ?>"  id="MT3" type="text"></td>
+            <td><input name = "adv22_3" value = "<?php echo isset($init_adv22_3) ? $init_adv22_3 : ""; ?>"  id="MT4" type="text"></td>
             <td><input type="text" id="MT_res" readonly></td>
         </tr>
 
         <tr>
             <td>4</td>
             <td>DISSERTATION</td>
-            <td><input type="text" name="" id="DT1"></td>
-            <td><input type="text" name="" id="DT2"></td>
-            <td><input type="text" name="" id="DT3"></td>
-            <td><input type="text" name="" id="DT4"></td>
+            <td><input name = "adv19_4" value = "<?php echo isset($init_adv19_4) ? $init_adv19_4 : ""; ?>"  id="DT1" type="text"></td>
+            <td><input name = "adv20_4" value = "<?php echo isset($init_adv20_4) ? $init_adv20_4 : ""; ?>"  id="DT2" type="text"></td>
+            <td><input name = "adv21_4" value = "<?php echo isset($init_adv21_4) ? $init_adv21_4 : ""; ?>"  id="DT3" type="text"></td>
+            <td><input name = "adv22_4" value = "<?php echo isset($init_adv22_4) ? $init_adv22_4 : ""; ?>"  id="DT4" type="text"></td>
+            
             <td><input type="text" id="DT_res" readonly></td>
         </tr>
 
@@ -566,40 +1042,41 @@ if (isset($_POST['Submit_btn'])) {
         <tr>
             <td>1</td>
             <td>SPECIAL/CAPSTONE PROJECT</td>
-            <td><input type="text" id="SCP_21"></td>
-            <td><input type="text" id="SCP_22"></td>
-            <td><input type="text" id="SCP_23"></td>
-            <td><input type="text" id="SCP_24"></td>
+            <td><input name = "pan19_1" value = "<?php echo isset($init_pan19_1) ? $init_pan19_1 : ""; ?>"type="text"  id="SCP_21" ></td>
+            <td><input name = "pan20_1" value = "<?php echo isset($init_pan20_1) ? $init_pan20_1 : ""; ?>"type="text"  id="SCP_22" ></td>
+            <td><input name = "pan21_1" value = "<?php echo isset($init_pan21_1) ? $init_pan21_1 : ""; ?>"type="text"  id="SCP_23" ></td>
+            <td><input name = "pan22_1" value = "<?php echo isset($init_pan22_1) ? $init_pan22_1 : ""; ?>"type="text"  id="SCP_24" ></td>
             <td><input readonly type="text" id="SCP2__res"></td>
         </tr>
 
         <tr>
             <td>2</td>
             <td>UNDERGRADUATE THESIS</td>
-            <td><input type="text" id="UT2_1"></td>
-            <td><input type="text" id="UT2_2"></td>
-            <td><input type="text" id="UT2_3"></td>
-            <td><input type="text" id="UT2_4"></td>
+            <td><input name = "pan19_2" value = "<?php echo isset($init_pan19_2) ? $init_pan19_2 : ""; ?>" type="text" id="UT2_1" ></td>
+            <td><input name = "pan20_2" value = "<?php echo isset($init_pan20_2) ? $init_pan20_2 : ""; ?>" type="text" id="UT2_2" ></td>
+            <td><input name = "pan21_2" value = "<?php echo isset($init_pan21_2) ? $init_pan21_2 : ""; ?>" type="text" id="UT2_3" ></td>
+            <td><input name = "pan22_2" value = "<?php echo isset($init_pan22_2) ? $init_pan22_2 : ""; ?>" type="text" id="UT2_4" ></td>
             <td><input readonly type="text" id="UT2__res"></td>
         </tr>
 
         <tr>
             <td>3</td>
             <td>MASTER'S THESIS</td>
-            <td><input reuired type="text" id="MT2_1"></td>
-            <td><input type="text" id="MT2_2"></td>
-            <td><input type="text" id="MT2_3"></td>
-            <td><input type="text" id="MT2_4"></td>
+            <td><input name = "pan19_3" value = "<?php echo isset($init_pan19_3) ? $init_pan19_3 : ""; ?>" type="text" id="MT2_1" ></td>
+            <td><input name = "pan20_3" value = "<?php echo isset($init_pan20_3) ? $init_pan20_3 : ""; ?>" type="text" id="MT2_2" ></td>
+            <td><input name = "pan21_3" value = "<?php echo isset($init_pan21_3) ? $init_pan21_3 : ""; ?>" type="text" id="MT2_3" ></td>
+            <td><input name = "pan22_3" value = "<?php echo isset($init_pan22_3) ? $init_pan22_3 : ""; ?>" type="text" id="MT2_4" ></td>
+
             <td><input readonly type="text" id="MT2__res"></td>
         </tr>
 
         <tr>
             <td>4</td>
             <td>DISSERTATION</td>
-            <td><input type="text" id="DIS_1"></td>
-            <td><input type="text" id="DIS_2"></td>
-            <td><input type="text" id="DIS_3"></td>
-            <td><input type="text" id="DIS_4"></td>
+            <td><input name = "pan19_4" value = "<?php echo isset($init_pan19_4) ? $init_pan19_4 : ""; ?>"  id="DIS_1" type="text"></td>
+            <td><input name = "pan20_4" value = "<?php echo isset($init_pan20_4) ? $init_pan20_4 : ""; ?>"  id="DIS_2" type="text"></td>
+            <td><input name = "pan21_4" value = "<?php echo isset($init_pan21_4) ? $init_pan21_4 : ""; ?>"  id="DIS_3" type="text"></td>
+            <td><input name = "pan22_4" value = "<?php echo isset($init_pan22_4) ? $init_pan22_4 : ""; ?>"  id="DIS_4" type="text"></td>
             <td><input readonly type="text" id="DIS__res"></td>
         </tr>
 
@@ -634,36 +1111,36 @@ if (isset($_POST['Submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input type="text" id="ment_inp"></td>
-            <td><input type="text" id="ment_inp1"></td>
-            <td><input type="text" id="ment_inp2"></td>
-            <td><input type="date" id="ment_inp3"></td>
+            <td><input name = "acad2_1" value = "<?php echo isset($init_acad2_1) ? $init_acad2_1 : ""; ?>"  id="ment_inp" type="text"></td>
+            <td><input name = "spon2_1" value = "<?php echo isset($init_spon2_1) ? $init_spon2_1 : ""; ?>"  id="ment_inp1" type="text"></td>
+            <td><input name = "award2_1" value = "<?php echo isset($init_award2_1) ? $init_award2_1 : ""; ?>"  id="ment_inp2" type="text"></td>
+            <td><input name = "dateaward2_1" value = "<?php echo isset($init_dateaward2_1) ? $init_dateaward2_1 : ""; ?>"  id="ment_inp3" type="date"></td>
             <td><input type="text" id="Mentor_scr1" readonly></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input type="text" id="ment_inp4"></td>
-            <td><input type="text" id="ment_inp5"></td>
-            <td><input type="text" id="ment_inp6"></td>
-            <td><input type="date" id="ment_inp7"></td>
+            <td><input name = "acad2_2" value = "<?php echo isset($init_acad2_2) ? $init_acad2_2 : ""; ?>"  id="ment_inp4" type="text"></td>
+            <td><input name = "spon2_2" value = "<?php echo isset($init_spon2_2) ? $init_spon2_2 : ""; ?>"  id="ment_inp5" type="text"></td>
+            <td><input name = "award2_2" value = "<?php echo isset($init_award2_2) ? $init_award2_2 : ""; ?>"  id="ment_inp6" type="text"></td>
+            <td><input name = "dateaward2_2" value = "<?php echo isset($init_dateaward2_2) ? $init_dateaward2_2 : ""; ?>"  id="ment_inp7" type="date"></td>
             <td><input type="text" id="Mentor_scr2" readonly></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input type="text" id="ment_inp8"></td>
-            <td><input type="text" id="ment_inp9"></td>
-            <td><input type="text" id="ment_inp10"></td>
-            <td><input type="date" id="ment_inp11"></td>
+            <td><input name = "acad2_3" value = "<?php echo isset($init_acad2_3) ? $init_acad2_3 : ""; ?>"  id="ment_inp8" type="text"></td>
+            <td><input name = "spon2_3" value = "<?php echo isset($init_spon2_3) ? $init_spon2_3 : ""; ?>"  id="ment_inp9" type="text"></td>
+            <td><input name = "award2_3" value = "<?php echo isset($init_award2_3) ? $init_award2_3 : ""; ?>"  id="ment_inp10" type="text"></td>
+            <td><input name = "dateaward2_3" value = "<?php echo isset($init_dateaward2_3) ? $init_dateaward2_3 : ""; ?>"  id="ment_inp11" type="date"></td>
             <td><input type="text" id="Mentor_scr3" readonly></td>
         </tr>
         <tr>
             <td>4</td>
-            <td><input type="text" id="ment_inp12"></td>
-            <td><input type="text" id="ment_inp13"></td>
-            <td><input type="text" id="ment_inp14"></td>
-            <td><input type="date" id="ment_inp15"></td>
+            <td><input name = "acad2_4" value = "<?php echo isset($init_acad2_4) ? $init_acad2_4 : ""; ?>"  id="ment_inp12" type="text"></td>
+            <td><input name = "spon2_4" value = "<?php echo isset($init_spon2_4) ? $init_spon2_4 : ""; ?>"  id="ment_inp13" type="text"></td>
+            <td><input name = "award2_4" value = "<?php echo isset($init_award2_4) ? $init_award2_4 : ""; ?>"  id="ment_inp14" type="text"></td>
+            <td><input name = "dateaward2_4" value = "<?php echo isset($init_dateaward2_4) ? $init_dateaward2_4 : ""; ?>"  id="ment_inp15" type="date"></td>
             <td><input type="text" id="Mentor_scr4" readonly></td>
         </tr>
         <tr>

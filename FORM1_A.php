@@ -5,10 +5,64 @@ if(!isset($_SESSION['user'])){
   header('location: login.php');
 }
 
+
+$id = $_SESSION['user']['user_id'];
+$query1_a = "SELECT * FROM form1_a WHERE user_id = $id";
+$result1_a = $conn->query($query1_a);
+while ($row = mysqli_fetch_array($result1_a)) {
+    $init_A1_1 = $row['A1_1']; 
+    $init_A1_2 = $row['A1_2']; 
+    $init_A2_1 = $row['A2_1']; 
+    $init_A2_2 = $row['A2_2']; 
+    $init_A3_1 = $row['A3_1']; 
+    $init_A3_2 = $row['A3_2']; 
+    $init_A4_1 = $row['A4_1']; 
+    $init_A4_2 = $row['A4_2']; 
+    $init_B1_1 = $row['B1_1']; 
+    $init_B1_2 = $row['B1_2']; 
+    $init_B2_1 = $row['B2_1']; 
+    $init_B2_2 = $row['B2_2']; 
+    $init_B3_1 = $row['B3_1']; 
+    $init_B3_2 = $row['B3_2'];
+    $init_B4_1 = $row['B4_1']; 
+    $init_B4_2 = $row['B4_2']; 
+}
+
+$query_compute = "SELECT `Crit_A_student_eval`, `Crit_A_supervisor_eval`, `Crit_A_total`, `Crit_A_total_allowed` FROM kra_1 WHERE id = $id";
+$result_compute = $conn->query($query_compute);
+
+
+while ($row_res = mysqli_fetch_array($result_compute)) {
+
+  $init_Crit_A_student_eval = $row_res['Crit_A_student_eval'];
+  $init_Crit_A_supervisor_eval = $row_res['Crit_A_supervisor_eval'];
+  $init_Crit_A_total = $row_res['Crit_A_total'];
+  $init_Crit_A_total_allowed = $row_res['Crit_A_total_allowed'];
+
+}
+
 if(isset($_POST['submit_btn'])){
+
     $student = $_POST['student_eval'];
     $faculty = $_POST['faculty_eval'];
-    $id = $_SESSION['user']['user_id'];
+    
+    $A1_1 = $_POST['A1_1']; 
+    $A1_2 = $_POST['A1_2']; 
+    $A2_1 = $_POST['A2_1']; 
+    $A2_2 = $_POST['A2_2']; 
+    $A3_1 = $_POST['A3_1']; 
+    $A3_2 = $_POST['A3_2']; 
+    $A4_1 = $_POST['A4_1']; 
+    $A4_2 = $_POST['A4_2']; 
+    $B1_1 = $_POST['B1_1']; 
+    $B1_2 = $_POST['B1_2']; 
+    $B2_1 = $_POST['B2_1']; 
+    $B2_2 = $_POST['B2_2']; 
+    $B3_1 = $_POST['B3_1']; 
+    $B3_2 = $_POST['B3_2'];
+    $B4_1 = $_POST['B4_1']; 
+    $B4_2 = $_POST['B4_2']; 
+    
     if ($student == "" AND $faculty == ""){
         ?>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -36,6 +90,28 @@ if(isset($_POST['submit_btn'])){
                  Total_kra_1 = Crit_A_total + Crit_B_total + Crit_C_total,
                  Total_kra_1_allowed = IF(Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed > 100, 100, Crit_A_total_allowed + Crit_B_total_allowed + Crit_C_total_allowed)
              WHERE id = $id") or die($conn->error);
+
+      $conn->query("INSERT INTO form1_a (A1_1, A1_2, A2_1, A2_2, A3_1, A3_2, A4_1, A4_2, B1_1, B1_2, B2_1, B2_2, B3_1, B3_2, B4_1, B4_2, user_id)
+                VALUES ('$A1_1', '$A1_2', '$A2_1', '$A2_2', '$A3_1', '$A3_2', '$A4_1','$A4_2', '$B1_1', '$B1_2', '$B2_1', '$B2_2', '$B3_1', '$B3_2', '$B4_1', '$B4_2', $id)
+                ON DUPLICATE KEY UPDATE
+                    A1_1 = VALUES(A1_1),
+                    A1_2 = VALUES(A1_2),
+                    A2_1 = VALUES(A2_1),
+                    A2_2 = VALUES(A2_2),
+                    A3_1 = VALUES(A3_1),
+                    A3_2 = VALUES(A3_2),
+                    A4_1 = VALUES(A4_1),
+                    A4_2 = VALUES(A4_2),
+                    B1_1 = VALUES(B1_1),
+                    B1_2 = VALUES(B1_2),
+                    B2_1 = VALUES(B2_1),
+                    B2_2 = VALUES(B2_2),
+                    B3_1 = VALUES(B3_1),
+                    B3_2 = VALUES(B3_2),
+                    B4_1 = VALUES(B4_1),
+                    B4_2 = VALUES(B4_2);"
+                    )  or die($conn->error);
+
       ?>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -182,26 +258,30 @@ td{
           <td>1st Semester</td>
           <td>2nd Semester</td>
         </tr>
-        <tr>  
+
+
+        <tr> 
           <td>AY 2019-2020</td>
-          <td> <input type="number" id="A1-1"  min="0" max="100"></td>
-          <td> <input type="number" id="A1-2"  min="0" max="100"></td>
+          <td><input type="number" value="<?php echo isset($init_A1_1) ? $init_A1_1 : ''; ?>" name="A1_1" id="A1-1" min="0" max="100"></td>
+          <td><input type="number" value="<?php echo isset($init_A1_2) ? $init_A1_2 : ''; ?>" name="A1_2" id="A1-2" min="0" max="100"></td>
         </tr>
         <tr>
-          <td>AY 2020-2021</td>
-          <td><input type="number" id="A2-1"  min="0" max="100"></td>
-          <td><input type="number" id="A2-2"  min="0" max="100"></td>
+        <td>AY 2020-2021</td>
+        <td><input type="number" value="<?php echo isset($init_A2_1) ? $init_A2_1 : ''; ?>" name="A2_1" id="A2-1" min="0" max="100"></td>
+        <td><input type="number" value="<?php echo isset($init_A2_2) ? $init_A2_2 : ''; ?>" name="A2_2" id="A2-2" min="0" max="100"></td>
         </tr>
         <tr>
-          <td>AY 2021-2022</td>
-          <td><input type="number" id="A3-1"  min="0" max="100"></td>
-          <td><input type="number" id="A3-2"  min="0" max="100"></td>
+            <td>AY 2021-2022</td>
+            <td><input type="number" value="<?php echo isset($init_A3_1) ? $init_A3_1 : ''; ?>" name="A3_1" id="A3-1" min="0" max="100"></td>
+            <td><input type="number" value="<?php echo isset($init_A3_2) ? $init_A3_2 : ''; ?>" name="A3_2" id="A3-2" min="0" max="100"></td>
         </tr>
         <tr>
-          <td>AY 2022-2023</td>
-          <td><input type="number" id="A4-1"  min="0" max="100"></td>
-          <td><input type="number" id="A4-2"  min="0" max="100"></td>
+            <td>AY 2022-2023</td>
+            <td><input type="number" value="<?php echo isset($init_A4_1) ? $init_A4_1 : ''; ?>" name="A4_1" id="A4-1" min="0" max="100"></td>
+            <td><input type="number" value="<?php echo isset($init_A4_2) ? $init_A4_2 : ''; ?>" name="A4_2" id="A4-2" min="0" max="100"></td>
         </tr>
+
+
         <tr class="row__des">
           <td colspan="2">OVERALL AVERAGE RATING</td>
           <td><input id="OAR__stud" type="number" disabled></td>
@@ -210,6 +290,9 @@ td{
           <td colspan="2">FACULTY SCORE</td>
           <td><input id="FS__stud" name="student_eval" type="number" readonly></td>
         </tr>
+
+      
+
         <tr>
           <td> <button type="button" onclick="calcu_student()">Calculate</button></td>
           <td> <button type="button" onclick="reset1()">Reset</button></td>
@@ -232,25 +315,25 @@ td{
         <td>2nd Semester</td>
       </tr>
       <tr>
-        <td>AY 2019-2020</td>
-        <td><input type="number" id="B1-1"  min="0" max="100"></td>
-        <td><input type="number" id="B1-2"  min="0" max="100"></td>
-      </tr>
-      <tr>
-        <td>AY 2020-2021</td>
-        <td><input type="number" id="B2-1"  min="0" max="100"></td>
-        <td><input type="number" id="B2-2"  min="0" max="100"></td>
-      </tr>
-      <tr>
-        <td>AY 2021-2022</td>
-        <td><input type="number" id="B3-1"  min="0" max="100"></td>
-        <td><input type="number" id="B3-2"  min="0" max="100"></td>
-      </tr>
-      <tr>
-        <td>AY 2022-2023</td>
-        <td><input type="number" id="B4-1"  min="0" max="100"></td>
-        <td><input type="number" id="B4-2"  min="0" max="100"></td>
-      </tr>
+            <td>AY 2019-2020</td>
+            <td><input type="number" value="<?php echo isset($init_B1_1) ? $init_B1_1 : ''; ?>" name="B1_1" id="B1-1" min="0" max="100"></td>
+            <td><input type="number" value="<?php echo isset($init_B1_2) ? $init_B1_2 : ''; ?>" name="B1_2" id="B1-2" min="0" max="100"></td>
+        </tr>
+        <tr>
+            <td>AY 2020-2021</td>
+            <td><input type="number" value="<?php echo isset($init_B2_1) ? $init_B2_1 : ''; ?>" name="B2_1" id="B2-1" min="0" max="100"></td>
+            <td><input type="number" value="<?php echo isset($init_B2_2) ? $init_B2_2 : ''; ?>" name="B2_2" id="B2-2" min="0" max="100"></td>
+        </tr>
+        <tr>
+            <td>AY 2021-2022</td>
+            <td><input type="number" value="<?php echo isset($init_B3_1) ? $init_B3_1 : ''; ?>" name="B3_1" id="B3-1" min="0" max="100"></td>
+            <td><input type="number" value="<?php echo isset($init_B3_2) ? $init_B3_2 : ''; ?>" name="B3_2" id="B3-2" min="0" max="100"></td>
+        </tr>
+        <tr>
+            <td>AY 2022-2023</td>
+            <td><input type="number" value="<?php echo isset($init_B4_1) ? $init_B4_1 : ''; ?>" name="B4_1" id="B4-1" min="0" max="100"></td>
+            <td><input type="number" value="<?php echo isset($init_B4_2) ? $init_B4_2 : ''; ?>" name="B4_2" id="B4-2" min="0" max="100"></td>
+        </tr>
       <tr class="row__des">
         <td colspan="2">OVERALL AVERAGE RATING</td>
         <td><input id="OAS__fac" type="number" disabled></td>
