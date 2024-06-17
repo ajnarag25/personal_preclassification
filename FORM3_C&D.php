@@ -218,7 +218,7 @@ if (isset($_POST['Submit_btn'])) {
                     <td>Number of semesters to be deducted from the divisor</td>
                     <td>
                         <select name = "numc" id="semesters">
-                        <option value = "<?php echo isset($numc) ? $numc : "None"; ?>">
+                            <option value = "<?php echo isset($numc) ? $numc : "None"; ?>">
                                 <?php echo isset($numc) ? $numc : "Select Option"; ?>
                             </option>
                             <option value="0">0</option>
@@ -304,7 +304,10 @@ if (isset($_POST['Submit_btn'])) {
 
         <tr>
             <td>
-                <select name="" id="AM1">
+                <select name = "desig" id="AM1">
+                    <option value = "<?php echo isset($desig) ? $desig : "None"; ?>">
+                        <?php echo isset($desig) ? $desig : "Select Option"; ?>
+                    </option>
                     <option value="none">Select Option</option>
                     <option value="President">President</option>
                     <option value="Vice_president">Vice-President</option>
@@ -326,7 +329,7 @@ if (isset($_POST['Submit_btn'])) {
                     <option value="Department_member">Department-level Committee Member</option>
                 </select>
             </td>
-            <td><input id="AM2" type="date"></td>
+            <td><input name = "epdate" value = "<?php echo isset($epdate) ? $epdate : ""; ?>"  id="AM2" type="date"></td>
             <td><input id="AM_res" name="score_admin" type="text" readonly></td>
         </tr>
         <!--    <tr>-->
