@@ -749,23 +749,18 @@
                                                 <td class="text-center">1 sub-rank</td>	
                                                 <td>Qualified for Auto. 1-Sub Rank (for PhD)?</td>
                                                 <td>
-                                                    <?php 
-                                                        if($row_rank['1subrank'] == 'YES'){
-                                                            ?>
-                                                        <select id="1subrank" class="form-select" name="1subrank" id="" required>
-                                                            <option value="<?php echo $row_rank['1subrank'] ?>" selected><?php echo $row_rank['1subrank'] ?></option>
-                                                            <option value="NO">NO</option>
-                                                        </select>
-                                                        <?php
-                                                        }else{
-                                                            ?>
-                                                            <select id="1subrank" class="form-select" name="1subrank" id="" required>
-                                                                <option value="<?php echo $row_rank['1subrank'] ?>" selected><?php echo $row_rank['1subrank'] ?></option>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <input class="form-control" type="text" value="<?php echo $row_rank['1subrank'] ?>" readonly>
+                                                        </div>
+                                                        <div class="col">
+                                                            <select class="form-select w-100" name="1subrank" id="1subrank" required> 
+                                                                <option value="" selected disabled>--Select--</option>
                                                                 <option value="YES">YES</option>
+                                                                <option value="NO">NO</option>
                                                             </select>
-                                                        <?php
-                                                        }
-                                                    ?>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -773,27 +768,35 @@
                                                 <td class="text-center">2 sub-rank</td>
                                                 <td>Base Rank</td>
                                                 <td>
-                                                <select class="form-select" name="2subrank" id="incrementRank">
-                                                    <option value="" selected disabled>--Select--</option>
-                                                    <option value="Instructor I">Instructor I</option>
-                                                    <option value="Instructor II">Instructor II</option>
-                                                    <option value="Instructor III">Instructor III</option>
-                                                    <option value="Assistant Professor I">Assistant Professor I</option>
-                                                    <option value="Assistant Professor II">Assistant Professor II</option>
-                                                    <option value="Assistant Professor III">Assistant Professor III</option>
-                                                    <option value="Assistant Professor IV">Assistant Professor IV</option>
-                                                    <option value="Associate Professor I">Associate Professor I</option>
-                                                    <option value="Associate Professor II">Associate Professor II</option>
-                                                    <option value="Associate Professor III">Associate Professor III</option>
-                                                    <option value="Associate Professor IV">Associate Professor IV</option>
-                                                    <option value="Associate Professor V">Associate Professor V</option>
-                                                    <option value="Professor I">Professor I</option>
-                                                    <option value="Professor II">Professor II</option>
-                                                    <option value="Professor III">Professor III</option>
-                                                    <option value="Professor IV">Professor IV</option>
-                                                    <option value="Professor V">Professor V</option>
-                                                    <option value="Professor VI">Professor VI</option>
-                                                </select>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <input class="form-control" type="text" value="<?php echo $row_rank['2subrank'] ?>" readonly>
+                                                        </div>
+                                                        <div class="col">
+                                                            <select class="form-select" name="2subrank" id="incrementRank" required>
+                                                                <option value="" selected disabled>--Select--</option>
+                                                                <option value="Instructor I">Instructor I</option>
+                                                                <option value="Instructor II">Instructor II</option>
+                                                                <option value="Instructor III">Instructor III</option>
+                                                                <option value="Assistant Professor I">Assistant Professor I</option>
+                                                                <option value="Assistant Professor II">Assistant Professor II</option>
+                                                                <option value="Assistant Professor III">Assistant Professor III</option>
+                                                                <option value="Assistant Professor IV">Assistant Professor IV</option>
+                                                                <option value="Associate Professor I">Associate Professor I</option>
+                                                                <option value="Associate Professor II">Associate Professor II</option>
+                                                                <option value="Associate Professor III">Associate Professor III</option>
+                                                                <option value="Associate Professor IV">Associate Professor IV</option>
+                                                                <option value="Associate Professor V">Associate Professor V</option>
+                                                                <option value="Professor I">Professor I</option>
+                                                                <option value="Professor II">Professor II</option>
+                                                                <option value="Professor III">Professor III</option>
+                                                                <option value="Professor IV">Professor IV</option>
+                                                                <option value="Professor V">Professor V</option>
+                                                                <option value="Professor VI">Professor VI</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                              
                                                     <!-- <input class="form-control" type="text" name="2subrank" value="<?php echo $row_rank['2subrank'] ?>" id="incrementRank" readonly> -->
                                                 </td>
                                             </tr>
@@ -821,17 +824,20 @@
                                                     $check_scoreboard = $inst_total + $asst_total + $assoc_total + $prof_total + $univ_total;
                                                     $scoreboard =  $check_scoreboard / 5;
                                                     
-                                                    if($scoreboard <= 16.66666666666667){
+                                                    if ($scoreboard <= 50) {
                                                         $scores = 1;
-                                                    }elseif($scoreboard <= 33.33333333333334){
+                                                    } elseif ($scoreboard <= 60) {
                                                         $scores = 2;
-                                                    }elseif($scoreboard <= 50.00000000000001){
+                                                    } elseif ($scoreboard <= 70) {
                                                         $scores = 3;
-                                                    }elseif($scoreboard <= 66.66666666666668){
+                                                    } elseif ($scoreboard <= 80) {
                                                         $scores = 4;
-                                                    }elseif($scoreboard <= 83.33333333333335){
+                                                    } elseif ($scoreboard <= 90) {
                                                         $scores = 5;
-                                                    }else{
+                                                    } elseif ($scoreboard <= 100) {
+                                                        $scores = 6;
+                                                    } else {
+                                                        // Handle any case where the scoreboard might be above 100 if necessary
                                                         $scores = 6;
                                                     }
 
@@ -853,23 +859,18 @@
                                                 <td></td>	
                                                 <td>Qualified for Auto. 1-Sub Rank (for Awards)?</td>
                                                 <td>
-                                                    <?php 
-                                                        if($row_rank['7subrank'] == 'YES'){
-                                                            ?>
-                                                            <select id="2subrank" class="form-select" name="7subrank" required>
-                                                                <option value="<?php echo $row_rank['7subrank'] ?>" selected><?php echo $row_rank['7subrank'] ?></option>
+                                                   <div class="row">
+                                                        <div class="col">
+                                                            <input class="form-control" type="text" value="<?php echo $row_rank['7subrank']; ?>" readonly>
+                                                        </div>
+                                                        <div class="col">
+                                                            <select class="form-select" name="7subrank" id="2subrank" required>
+                                                                <option value="" selected disabled>--Select--</option>
+                                                                <option value="YES">YES</option>
                                                                 <option value="NO">NO</option>
                                                             </select>
-                                                        <?php
-                                                        }else{
-                                                            ?>
-                                                            <select id="2subrank" class="form-select" name="7subrank" required>
-                                                                <option value="<?php echo $row_rank['7subrank'] ?>" selected><?php echo $row_rank['7subrank'] ?></option>
-                                                                <option value="YES">YES</option>
-                                                            </select>
-                                                        <?php
-                                                        }
-                                                    ?>
+                                                        </div>
+                                                   </div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -904,7 +905,27 @@
                                             <td class="text-center">2 sub-rank</td>
                                             <td>Base Rank</td>
                                             <td>
-                                                <input class="form-control" type="text" name="2subrank" id="incrementRank" readonly>
+                                            <select class="form-select" name="2subrank" id="incrementRank" required>
+                                                    <option value="" selected disabled>--Select--</option>
+                                                    <option value="Instructor I">Instructor I</option>
+                                                    <option value="Instructor II">Instructor II</option>
+                                                    <option value="Instructor III">Instructor III</option>
+                                                    <option value="Assistant Professor I">Assistant Professor I</option>
+                                                    <option value="Assistant Professor II">Assistant Professor II</option>
+                                                    <option value="Assistant Professor III">Assistant Professor III</option>
+                                                    <option value="Assistant Professor IV">Assistant Professor IV</option>
+                                                    <option value="Associate Professor I">Associate Professor I</option>
+                                                    <option value="Associate Professor II">Associate Professor II</option>
+                                                    <option value="Associate Professor III">Associate Professor III</option>
+                                                    <option value="Associate Professor IV">Associate Professor IV</option>
+                                                    <option value="Associate Professor V">Associate Professor V</option>
+                                                    <option value="Professor I">Professor I</option>
+                                                    <option value="Professor II">Professor II</option>
+                                                    <option value="Professor III">Professor III</option>
+                                                    <option value="Professor IV">Professor IV</option>
+                                                    <option value="Professor V">Professor V</option>
+                                                    <option value="Professor VI">Professor VI</option>
+                                                </select>
                                             </td>
                                         </tr>
                                         <tr>
@@ -931,17 +952,20 @@
                                                 $check_scoreboard = $inst_total + $asst_total + $assoc_total + $prof_total + $univ_total;
                                                 $scoreboard =  $check_scoreboard / 5;
                                                 
-                                                if($scoreboard <= 16.66666666666667){
+                                                if ($scoreboard <= 50) {
                                                     $scores = 1;
-                                                }elseif($scoreboard <= 33.33333333333334){
+                                                } elseif ($scoreboard <= 60) {
                                                     $scores = 2;
-                                                }elseif($scoreboard <= 50.00000000000001){
+                                                } elseif ($scoreboard <= 70) {
                                                     $scores = 3;
-                                                }elseif($scoreboard <= 66.66666666666668){
+                                                } elseif ($scoreboard <= 80) {
                                                     $scores = 4;
-                                                }elseif($scoreboard <= 83.33333333333335){
+                                                } elseif ($scoreboard <= 90) {
                                                     $scores = 5;
-                                                }else{
+                                                } elseif ($scoreboard <= 100) {
+                                                    $scores = 6;
+                                                } else {
+                                                    // Handle any case where the scoreboard might be above 100 if necessary
                                                     $scores = 6;
                                                 }
 

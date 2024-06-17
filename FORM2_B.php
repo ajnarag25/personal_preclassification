@@ -5,8 +5,233 @@ if(!isset($_SESSION['user'])){
   header('location: login.php');
 }
 
+$id = $_SESSION['user']['user_id'];
+
+$query2_b = "SELECT * FROM form2_b WHERE user_id = $id";
+$result2_b = $conn->query($query2_b);
+
+
+
+while ($row = mysqli_fetch_array($result2_b)) {
+    $init_ipsole_name_1 = $row['ipsole_name_1'];
+    $init_ipsole_name_2 = $row['ipsole_name_2'];
+    $init_ipsole_name_3 = $row['ipsole_name_3'];
+    $init_ipsole_name_4 = $row['ipsole_name_4'];
+    $init_ipsole_appdate_1 = $row['ipsole_appdate_1'];
+    $init_ipsole_appdate_2 = $row['ipsole_appdate_2'];
+    $init_ipsole_appdate_3 = $row['ipsole_appdate_3'];
+    $init_ipsole_appdate_4 = $row['ipsole_appdate_4'];
+    $init_ipsole_patapp_1 = $row['ipsole_patapp_1'];
+    $init_ipsole_patapp_2 = $row['ipsole_patapp_2'];
+    $init_ipsole_patapp_3 = $row['ipsole_patapp_3'];
+    $init_ipsole_patapp_4 = $row['ipsole_patapp_4'];
+    $init_ipsole_acceptdate_1 = $row['ipsole_acceptdate_1'];
+    $init_ipsole_acceptdate_2 = $row['ipsole_acceptdate_2'];
+    $init_ipsole_acceptdate_3 = $row['ipsole_acceptdate_3'];
+    $init_ipsole_acceptdate_4 = $row['ipsole_acceptdate_4'];
+    $init_ipmul_name_1 = $row['ipmul_name_1'];
+    $init_ipmul_name_2 = $row['ipmul_name_2'];
+    $init_ipmul_name_3 = $row['ipmul_name_3'];
+    $init_ipmul_name_4 = $row['ipmul_name_4'];
+    $init_ipmul_appdate_1 = $row['ipmul_appdate_1'];
+    $init_ipmul_appdate_2 = $row['ipmul_appdate_2'];
+    $init_ipmul_appdate_3 = $row['ipmul_appdate_3'];
+    $init_ipmul_appdate_4 = $row['ipmul_appdate_4'];
+    $init_ipmul_patapp_1 = $row['ipmul_patapp_1'];
+    $init_ipmul_patapp_2 = $row['ipmul_patapp_2'];
+    $init_ipmul_patapp_3 = $row['ipmul_patapp_3'];
+    $init_ipmul_patapp_4 = $row['ipmul_patapp_4'];
+    $init_ipmul_acceptdate_1 = $row['ipmul_acceptdate_1'];
+    $init_ipmul_acceptdate_2 = $row['ipmul_acceptdate_2'];
+    $init_ipmul_acceptdate_3 = $row['ipmul_acceptdate_3'];
+    $init_ipmul_acceptdate_4 = $row['ipmul_acceptdate_4'];
+    $init_ipmul_contrib_1 = $row['ipmul_contrib_1'];
+    $init_ipmul_contrib_2 = $row['ipmul_contrib_2'];
+    $init_ipmul_contrib_3 = $row['ipmul_contrib_3'];
+    $init_ipmul_contrib_4 = $row['ipmul_contrib_4'];
+    $init_umidsole_name_1 = $row['umidsole_name_1'];
+    $init_umidsole_name_2 = $row['umidsole_name_2'];
+    $init_umidsole_name_3 = $row['umidsole_name_3'];
+    $init_umidsole_name_4 = $row['umidsole_name_4'];
+    $init_umidsole_appdate_1 = $row['umidsole_appdate_1'];
+    $init_umidsole_appdate_2 = $row['umidsole_appdate_2'];
+    $init_umidsole_appdate_3 = $row['umidsole_appdate_3'];
+    $init_umidsole_appdate_4 = $row['umidsole_appdate_4'];
+    $init_umidsole_patapp_1 = $row['umidsole_patapp_1'];
+    $init_umidsole_patapp_2 = $row['umidsole_patapp_2'];
+    $init_umidsole_patapp_3 = $row['umidsole_patapp_3'];
+    $init_umidsole_patapp_4 = $row['umidsole_patapp_4'];
+    $init_umidsole_acceptdate_1 = $row['umidsole_acceptdate_1'];
+    $init_umidsole_acceptdate_2 = $row['umidsole_acceptdate_2'];
+    $init_umidsole_acceptdate_3 = $row['umidsole_acceptdate_3'];
+    $init_umidsole_acceptdate_4 = $row['umidsole_acceptdate_4'];
+    $init_umidmul_name_1 = $row['umidmul_name_1'];
+    $init_umidmul_name_2 = $row['umidmul_name_2'];
+    $init_umidmul_name_3 = $row['umidmul_name_3'];
+    $init_umidmul_name_4 = $row['umidmul_name_4'];
+    $init_umidmul_appdate_1 = $row['umidmul_appdate_1'];
+    $init_umidmul_appdate_2 = $row['umidmul_appdate_2'];
+    $init_umidmul_appdate_3 = $row['umidmul_appdate_3'];
+    $init_umidmul_appdate_4 = $row['umidmul_appdate_4'];
+    $init_umidmul_patapp_1 = $row['umidmul_patapp_1'];
+    $init_umidmul_patapp_2 = $row['umidmul_patapp_2'];
+    $init_umidmul_patapp_3 = $row['umidmul_patapp_3'];
+    $init_umidmul_patapp_4 = $row['umidmul_patapp_4'];
+    $init_umidmul_acceptdate_1 = $row['umidmul_acceptdate_1'];
+    $init_umidmul_acceptdate_2 = $row['umidmul_acceptdate_2'];
+    $init_umidmul_acceptdate_3 = $row['umidmul_acceptdate_3'];
+    $init_umidmul_acceptdate_4 = $row['umidmul_acceptdate_4'];
+    $init_umidmul_contrib_1 = $row['umidmul_contrib_1'];
+    $init_umidmul_contrib_2 = $row['umidmul_contrib_2'];
+    $init_umidmul_contrib_3 = $row['umidmul_contrib_3'];
+    $init_umidmul_contrib_4 = $row['umidmul_contrib_4'];
+    $init_cpplocal_name_1 = $row['cpplocal_name_1'];
+    $init_cpplocal_name_2 = $row['cpplocal_name_2'];
+    $init_cpplocal_name_3 = $row['cpplocal_name_3'];
+    $init_cpplocal_name_4 = $row['cpplocal_name_4'];
+    $init_cpplocal_type_1 = $row['cpplocal_type_1'];
+    $init_cpplocal_type_2 = $row['cpplocal_type_2'];
+    $init_cpplocal_type_3 = $row['cpplocal_type_3'];
+    $init_cpplocal_type_4 = $row['cpplocal_type_4'];
+    $init_cpplocal_patentdate_1 = $row['cpplocal_patentdate_1'];
+    $init_cpplocal_patentdate_2 = $row['cpplocal_patentdate_2'];
+    $init_cpplocal_patentdate_3 = $row['cpplocal_patentdate_3'];
+    $init_cpplocal_patentdate_4 = $row['cpplocal_patentdate_4'];
+    $init_cpplocal_proddate_1 = $row['cpplocal_proddate_1'];
+    $init_cpplocal_proddate_2 = $row['cpplocal_proddate_2'];
+    $init_cpplocal_proddate_3 = $row['cpplocal_proddate_3'];
+    $init_cpplocal_proddate_4 = $row['cpplocal_proddate_4'];
+    $init_cpplocal_area_1 = $row['cpplocal_area_1'];
+    $init_cpplocal_area_2 = $row['cpplocal_area_2'];
+    $init_cpplocal_area_3 = $row['cpplocal_area_3'];
+    $init_cpplocal_area_4 = $row['cpplocal_area_4'];
+    $init_cppinter_name_1 = $row['cppinter_name_1'];
+    $init_cppinter_name_2 = $row['cppinter_name_2'];
+    $init_cppinter_name_3 = $row['cppinter_name_3'];
+    $init_cppinter_name_4 = $row['cppinter_name_4'];
+    $init_cppinter_type_1 = $row['cppinter_type_1'];
+    $init_cppinter_type_2 = $row['cppinter_type_2'];
+    $init_cppinter_type_3 = $row['cppinter_type_3'];
+    $init_cppinter_type_4 = $row['cppinter_type_4'];
+    $init_cppinter_patentdate_1 = $row['cppinter_patentdate_1'];
+    $init_cppinter_patentdate_2 = $row['cppinter_patentdate_2'];
+    $init_cppinter_patentdate_3 = $row['cppinter_patentdate_3'];
+    $init_cppinter_patentdate_4 = $row['cppinter_patentdate_4'];
+    $init_cppinter_proddate_1 = $row['cppinter_proddate_1'];
+    $init_cppinter_proddate_2 = $row['cppinter_proddate_2'];
+    $init_cppinter_proddate_3 = $row['cppinter_proddate_3'];
+    $init_cppinter_proddate_4 = $row['cppinter_proddate_4'];
+    $init_cppinter_area_1 = $row['cppinter_area_1'];
+    $init_cppinter_area_2 = $row['cppinter_area_2'];
+    $init_cppinter_area_3 = $row['cppinter_area_3'];
+    $init_cppinter_area_4 = $row['cppinter_area_4'];
+    $init_nspsole_name_1 = $row['nspsole_name_1'];
+    $init_nspsole_name_2 = $row['nspsole_name_2'];
+    $init_nspsole_name_3 = $row['nspsole_name_3'];
+    $init_nspsole_name_4 = $row['nspsole_name_4'];
+    $init_nspsole_copydate_1 = $row['nspsole_copydate_1'];
+    $init_nspsole_copydate_2 = $row['nspsole_copydate_2'];
+    $init_nspsole_copydate_3 = $row['nspsole_copydate_3'];
+    $init_nspsole_copydate_4 = $row['nspsole_copydate_4'];
+    $init_nspsole_utildate_1 = $row['nspsole_utildate_1'];
+    $init_nspsole_utildate_2 = $row['nspsole_utildate_2'];
+    $init_nspsole_utildate_3 = $row['nspsole_utildate_3'];
+    $init_nspsole_utildate_4 = $row['nspsole_utildate_4'];
+    $init_nspsole_endusername_1 = $row['nspsole_endusername_1'];
+    $init_nspsole_endusername_2 = $row['nspsole_endusername_2'];
+    $init_nspsole_endusername_3 = $row['nspsole_endusername_3'];
+    $init_nspsole_endusername_4 = $row['nspsole_endusername_4'];
+    $init_nspmul_name_1 = $row['nspmul_name_1'];
+    $init_nspmul_name_2 = $row['nspmul_name_2'];
+    $init_nspmul_name_3 = $row['nspmul_name_3'];
+    $init_nspmul_name_4 = $row['nspmul_name_4'];
+    $init_nspmul_copydate_1 = $row['nspmul_copydate_1'];
+    $init_nspmul_copydate_2 = $row['nspmul_copydate_2'];
+    $init_nspmul_copydate_3 = $row['nspmul_copydate_3'];
+    $init_nspmul_copydate_4 = $row['nspmul_copydate_4'];
+    $init_nspmul_utildate_1 = $row['nspmul_utildate_1'];
+    $init_nspmul_utildate_2 = $row['nspmul_utildate_2'];
+    $init_nspmul_utildate_3 = $row['nspmul_utildate_3'];
+    $init_nspmul_utildate_4 = $row['nspmul_utildate_4'];
+    $init_nspmul_endusername_1 = $row['nspmul_endusername_1'];
+    $init_nspmul_endusername_2 = $row['nspmul_endusername_2'];
+    $init_nspmul_endusername_3 = $row['nspmul_endusername_3'];
+    $init_nspmul_endusername_4 = $row['nspmul_endusername_4'];
+    $init_nspmul_contrib_1 = $row['nspmul_contrib_1'];
+    $init_nspmul_contrib_2 = $row['nspmul_contrib_2'];
+    $init_nspmul_contrib_3 = $row['nspmul_contrib_3'];
+    $init_nspmul_contrib_4 = $row['nspmul_contrib_4'];
+    $init_uspsole_name_1 = $row['uspsole_name_1'];
+    $init_uspsole_name_2 = $row['uspsole_name_2'];
+    $init_uspsole_name_3 = $row['uspsole_name_3'];
+    $init_uspsole_name_4 = $row['uspsole_name_4'];
+    $init_uspsole_copydate_1 = $row['uspsole_copydate_1'];
+    $init_uspsole_copydate_2 = $row['uspsole_copydate_2'];
+    $init_uspsole_copydate_3 = $row['uspsole_copydate_3'];
+    $init_uspsole_copydate_4 = $row['uspsole_copydate_4'];
+    $init_uspsole_utildate_1 = $row['uspsole_utildate_1'];
+    $init_uspsole_utildate_2 = $row['uspsole_utildate_2'];
+    $init_uspsole_utildate_3 = $row['uspsole_utildate_3'];
+    $init_uspsole_utildate_4 = $row['uspsole_utildate_4'];
+    $init_uspsole_contrib_1 = $row['uspsole_contrib_1'];
+    $init_uspsole_contrib_2 = $row['uspsole_contrib_2'];
+    $init_uspsole_contrib_3 = $row['uspsole_contrib_3'];
+    $init_uspsole_contrib_4 = $row['uspsole_contrib_4'];
+    $init_uspsole_specfeat_1 = $row['uspsole_specfeat_1'];
+    $init_uspsole_specfeat_2 = $row['uspsole_specfeat_2'];
+    $init_uspsole_specfeat_3 = $row['uspsole_specfeat_3'];
+    $init_uspsole_specfeat_4 = $row['uspsole_specfeat_4'];
+    $init_uspsole_endusername_1 = $row['uspsole_endusername_1'];
+    $init_uspsole_endusername_2 = $row['uspsole_endusername_2'];
+    $init_uspsole_endusername_3 = $row['uspsole_endusername_3'];
+    $init_uspsole_endusername_4 = $row['uspsole_endusername_4'];
+    $init_npvsole_name_1 = $row['npvsole_name_1'];
+    $init_npvsole_name_2 = $row['npvsole_name_2'];
+    $init_npvsole_name_3 = $row['npvsole_name_3'];
+    $init_npvsole_name_4 = $row['npvsole_name_4'];
+    $init_npvsole_type_1 = $row['npvsole_type_1'];
+    $init_npvsole_type_2 = $row['npvsole_type_2'];
+    $init_npvsole_type_3 = $row['npvsole_type_3'];
+    $init_npvsole_type_4 = $row['npvsole_type_4'];
+    $init_npvsole_datecom_1 = $row['npvsole_datecom_1'];
+    $init_npvsole_datecom_2 = $row['npvsole_datecom_2'];
+    $init_npvsole_datecom_3 = $row['npvsole_datecom_3'];
+    $init_npvsole_datecom_4 = $row['npvsole_datecom_4'];
+    $init_npvsole_datereg_1 = $row['npvsole_datereg_1'];
+    $init_npvsole_datereg_2 = $row['npvsole_datereg_2'];
+    $init_npvsole_datereg_3 = $row['npvsole_datereg_3'];
+    $init_npvsole_datereg_4 = $row['npvsole_datereg_4'];
+    $init_npvsole_dateprop_1 = $row['npvsole_dateprop_1'];
+    $init_npvsole_dateprop_2 = $row['npvsole_dateprop_2'];
+    $init_npvsole_dateprop_3 = $row['npvsole_dateprop_3'];
+    $init_npvsole_dateprop_4 = $row['npvsole_dateprop_4'];
+    $init_npvmul_name_1 = $row['npvmul_name_1'];
+    $init_npvmul_name_2 = $row['npvmul_name_2'];
+    $init_npvmul_name_3 = $row['npvmul_name_3'];
+    $init_npvmul_name_4 = $row['npvmul_name_4'];
+    $init_npvmul_type_1 = $row['npvmul_type_1'];
+    $init_npvmul_type_2 = $row['npvmul_type_2'];
+    $init_npvmul_type_3 = $row['npvmul_type_3'];
+    $init_npvmul_type_4 = $row['npvmul_type_4'];
+    $init_npvmul_datecom_1 = $row['npvmul_datecom_1'];
+    $init_npvmul_datecom_2 = $row['npvmul_datecom_2'];
+    $init_npvmul_datecom_3 = $row['npvmul_datecom_3'];
+    $init_npvmul_datecom_4 = $row['npvmul_datecom_4'];
+    $init_npvmul_datereg_1 = $row['npvmul_datereg_1'];
+    $init_npvmul_datereg_2 = $row['npvmul_datereg_2'];
+    $init_npvmul_datereg_3 = $row['npvmul_datereg_3'];
+    $init_npvmul_datereg_4 = $row['npvmul_datereg_4'];
+    $init_npvmul_dateprop_1 = $row['npvmul_dateprop_1'];
+    $init_npvmul_dateprop_2 = $row['npvmul_dateprop_2'];
+    $init_npvmul_dateprop_3 = $row['npvmul_dateprop_3'];
+    $init_npvmul_dateprop_4 = $row['npvmul_dateprop_4'];
+    $init_npvmul_contrib_1 = $row['npvmul_contrib_1'];
+    $init_npvmul_contrib_2 = $row['npvmul_contrib_2'];
+    $init_npvmul_contrib_3 = $row['npvmul_contrib_3'];
+    $init_npvmul_contrib_4 = $row['npvmul_contrib_4'];
+}
+
 if (isset($_POST['submit_btn'])) {
-    $id = $_SESSION['user']['user_id'];
     $scoreIP_SI = $_POST['SI_FS'];
     $scoreIP_MI = $_POST['IP_MI'];
     $scoreUMID_SI = $_POST['UMID_SI'];
@@ -40,6 +265,610 @@ if (isset($_POST['submit_btn'])) {
         </script>
         <?php
     } else {
+
+        $ipsole_name_1 = $_POST['ipsole_name_1'];
+        $ipsole_name_2 = $_POST['ipsole_name_2'];
+        $ipsole_name_3 = $_POST['ipsole_name_3'];
+        $ipsole_name_4 = $_POST['ipsole_name_4'];
+
+        $ipsole_appdate_1 = $_POST['ipsole_appdate_1'];
+        $ipsole_appdate_2 = $_POST['ipsole_appdate_2'];
+        $ipsole_appdate_3 = $_POST['ipsole_appdate_3'];
+        $ipsole_appdate_4 = $_POST['ipsole_appdate_4'];
+
+        $ipsole_patapp_1 = $_POST['ipsole_patapp_1'];
+        $ipsole_patapp_2 = $_POST['ipsole_patapp_2'];
+        $ipsole_patapp_3 = $_POST['ipsole_patapp_3'];
+        $ipsole_patapp_4 = $_POST['ipsole_patapp_4'];
+
+        $ipsole_acceptdate_1 = $_POST['ipsole_acceptdate_1'];
+        $ipsole_acceptdate_2 = $_POST['ipsole_acceptdate_2'];
+        $ipsole_acceptdate_3 = $_POST['ipsole_acceptdate_3'];
+        $ipsole_acceptdate_4 = $_POST['ipsole_acceptdate_4'];
+
+        $ipmul_name_1 = $_POST['ipmul_name_1'];
+        $ipmul_name_2 = $_POST['ipmul_name_2'];
+        $ipmul_name_3 = $_POST['ipmul_name_3'];
+        $ipmul_name_4 = $_POST['ipmul_name_4'];
+
+        $ipmul_appdate_1 = $_POST['ipmul_appdate_1'];
+        $ipmul_appdate_2 = $_POST['ipmul_appdate_2'];
+        $ipmul_appdate_3 = $_POST['ipmul_appdate_3'];
+        $ipmul_appdate_4 = $_POST['ipmul_appdate_4'];
+
+        $ipmul_patapp_1 = $_POST['ipmul_patapp_1'];
+        $ipmul_patapp_2 = $_POST['ipmul_patapp_2'];
+        $ipmul_patapp_3 = $_POST['ipmul_patapp_3'];
+        $ipmul_patapp_4 = $_POST['ipmul_patapp_4'];
+
+        $ipmul_acceptdate_1 = $_POST['ipmul_acceptdate_1'];
+        $ipmul_acceptdate_2 = $_POST['ipmul_acceptdate_2'];
+        $ipmul_acceptdate_3 = $_POST['ipmul_acceptdate_3'];
+        $ipmul_acceptdate_4 = $_POST['ipmul_acceptdate_4'];
+
+        $ipmul_contrib_1 = $_POST['ipmul_contrib_1'];
+        $ipmul_contrib_2 = $_POST['ipmul_contrib_2'];
+        $ipmul_contrib_3 = $_POST['ipmul_contrib_3'];
+        $ipmul_contrib_4 = $_POST['ipmul_contrib_4'];
+
+        $umidsole_name_1 = $_POST['umidsole_name_1'];
+        $umidsole_name_2 = $_POST['umidsole_name_2'];
+        $umidsole_name_3 = $_POST['umidsole_name_3'];
+        $umidsole_name_4 = $_POST['umidsole_name_4'];
+
+        $umidsole_appdate_1 = $_POST['umidsole_appdate_1'];
+        $umidsole_appdate_2 = $_POST['umidsole_appdate_2'];
+        $umidsole_appdate_3 = $_POST['umidsole_appdate_3'];
+        $umidsole_appdate_4 = $_POST['umidsole_appdate_4'];
+
+        $umidsole_patapp_1 = $_POST['umidsole_patapp_1'];
+        $umidsole_patapp_2 = $_POST['umidsole_patapp_2'];
+        $umidsole_patapp_3 = $_POST['umidsole_patapp_3'];
+        $umidsole_patapp_4 = $_POST['umidsole_patapp_4'];
+
+        $umidsole_acceptdate_1 = $_POST['umidsole_acceptdate_1'];
+        $umidsole_acceptdate_2 = $_POST['umidsole_acceptdate_2'];
+        $umidsole_acceptdate_3 = $_POST['umidsole_acceptdate_3'];
+        $umidsole_acceptdate_4 = $_POST['umidsole_acceptdate_4'];
+
+        $umidmul_name_1 = $_POST['umidmul_name_1'];
+        $umidmul_name_2 = $_POST['umidmul_name_2'];
+        $umidmul_name_3 = $_POST['umidmul_name_3'];
+        $umidmul_name_4 = $_POST['umidmul_name_4'];
+
+        $umidmul_appdate_1 = $_POST['umidmul_appdate_1'];
+        $umidmul_appdate_2 = $_POST['umidmul_appdate_2'];
+        $umidmul_appdate_3 = $_POST['umidmul_appdate_3'];
+        $umidmul_appdate_4 = $_POST['umidmul_appdate_4'];
+
+        $umidmul_patapp_1 = $_POST['umidmul_patapp_1'];
+        $umidmul_patapp_2 = $_POST['umidmul_patapp_2'];
+        $umidmul_patapp_3 = $_POST['umidmul_patapp_3'];
+        $umidmul_patapp_4 = $_POST['umidmul_patapp_4'];
+
+        $umidmul_acceptdate_1 = $_POST['umidmul_acceptdate_1'];
+        $umidmul_acceptdate_2 = $_POST['umidmul_acceptdate_2'];
+        $umidmul_acceptdate_3 = $_POST['umidmul_acceptdate_3'];
+        $umidmul_acceptdate_4 = $_POST['umidmul_acceptdate_4'];
+
+        $umidmul_contrib_1 = $_POST['umidmul_contrib_1'];
+        $umidmul_contrib_2 = $_POST['umidmul_contrib_2'];
+        $umidmul_contrib_3 = $_POST['umidmul_contrib_3'];
+        $umidmul_contrib_4 = $_POST['umidmul_contrib_4'];
+
+        $cpplocal_name_1 = $_POST['cpplocal_name_1'];
+        $cpplocal_name_2 = $_POST['cpplocal_name_2'];
+        $cpplocal_name_3 = $_POST['cpplocal_name_3'];
+        $cpplocal_name_4 = $_POST['cpplocal_name_4'];
+
+        $cpplocal_type_1 = $_POST['cpplocal_type_1'];
+        $cpplocal_type_2 = $_POST['cpplocal_type_2'];
+        $cpplocal_type_3 = $_POST['cpplocal_type_3'];
+        $cpplocal_type_4 = $_POST['cpplocal_type_4'];
+
+        $cpplocal_patentdate_1 = $_POST['cpplocal_patentdate_1'];
+        $cpplocal_patentdate_2 = $_POST['cpplocal_patentdate_2'];
+        $cpplocal_patentdate_3 = $_POST['cpplocal_patentdate_3'];
+        $cpplocal_patentdate_4 = $_POST['cpplocal_patentdate_4'];
+
+        $cpplocal_proddate_1 = $_POST['cpplocal_proddate_1'];
+        $cpplocal_proddate_2 = $_POST['cpplocal_proddate_2'];
+        $cpplocal_proddate_3 = $_POST['cpplocal_proddate_3'];
+        $cpplocal_proddate_4 = $_POST['cpplocal_proddate_4'];
+
+        $cpplocal_area_1 = $_POST['cpplocal_area_1'];
+        $cpplocal_area_2 = $_POST['cpplocal_area_2'];
+        $cpplocal_area_3 = $_POST['cpplocal_area_3'];
+        $cpplocal_area_4 = $_POST['cpplocal_area_4'];
+
+        $cppinter_name_1 = $_POST['cppinter_name_1'];
+        $cppinter_name_2 = $_POST['cppinter_name_2'];
+        $cppinter_name_3 = $_POST['cppinter_name_3'];
+        $cppinter_name_4 = $_POST['cppinter_name_4'];
+
+        $cppinter_type_1 = $_POST['cppinter_type_1'];
+        $cppinter_type_2 = $_POST['cppinter_type_2'];
+        $cppinter_type_3 = $_POST['cppinter_type_3'];
+        $cppinter_type_4 = $_POST['cppinter_type_4'];
+
+        $cppinter_patentdate_1 = $_POST['cppinter_patentdate_1'];
+        $cppinter_patentdate_2 = $_POST['cppinter_patentdate_2'];
+        $cppinter_patentdate_3 = $_POST['cppinter_patentdate_3'];
+        $cppinter_patentdate_4 = $_POST['cppinter_patentdate_4'];
+
+        $cppinter_proddate_1 = $_POST['cppinter_proddate_1'];
+        $cppinter_proddate_2 = $_POST['cppinter_proddate_2'];
+        $cppinter_proddate_3 = $_POST['cppinter_proddate_3'];
+        $cppinter_proddate_4 = $_POST['cppinter_proddate_4'];
+
+        $cppinter_area_1 = $_POST['cppinter_area_1'];
+        $cppinter_area_2 = $_POST['cppinter_area_2'];
+        $cppinter_area_3 = $_POST['cppinter_area_3'];
+        $cppinter_area_4 = $_POST['cppinter_area_4'];
+        
+
+        $nspsole_name_1 = $_POST['nspsole_name_1'];
+        $nspsole_name_2 = $_POST['nspsole_name_2'];
+        $nspsole_name_3 = $_POST['nspsole_name_3'];
+        $nspsole_name_4 = $_POST['nspsole_name_4'];
+
+        $nspsole_copydate_1 = $_POST['nspsole_copydate_1'];
+        $nspsole_copydate_2 = $_POST['nspsole_copydate_2'];
+        $nspsole_copydate_3 = $_POST['nspsole_copydate_3'];
+        $nspsole_copydate_4 = $_POST['nspsole_copydate_4'];
+
+        $nspsole_utildate_1 = $_POST['nspsole_utildate_1'];
+        $nspsole_utildate_2 = $_POST['nspsole_utildate_2'];
+        $nspsole_utildate_3 = $_POST['nspsole_utildate_3'];
+        $nspsole_utildate_4 = $_POST['nspsole_utildate_4'];
+
+        $nspsole_endusername_1 = $_POST['nspsole_endusername_1'];
+        $nspsole_endusername_2 = $_POST['nspsole_endusername_2'];
+        $nspsole_endusername_3 = $_POST['nspsole_endusername_3'];
+        $nspsole_endusername_4 = $_POST['nspsole_endusername_4'];
+
+        $nspmul_name_1 = $_POST['nspmul_name_1'];
+        $nspmul_name_2 = $_POST['nspmul_name_2'];
+        $nspmul_name_3 = $_POST['nspmul_name_3'];
+        $nspmul_name_4 = $_POST['nspmul_name_4'];
+
+        $nspmul_copydate_1 = $_POST['nspmul_copydate_1'];
+        $nspmul_copydate_2 = $_POST['nspmul_copydate_2'];
+        $nspmul_copydate_3 = $_POST['nspmul_copydate_3'];
+        $nspmul_copydate_4 = $_POST['nspmul_copydate_4'];
+
+        $nspmul_utildate_1 = $_POST['nspmul_utildate_1'];
+        $nspmul_utildate_2 = $_POST['nspmul_utildate_2'];
+        $nspmul_utildate_3 = $_POST['nspmul_utildate_3'];
+        $nspmul_utildate_4 = $_POST['nspmul_utildate_4'];
+
+        $nspmul_endusername_1 = $_POST['nspmul_endusername_1'];
+        $nspmul_endusername_2 = $_POST['nspmul_endusername_2'];
+        $nspmul_endusername_3 = $_POST['nspmul_endusername_3'];
+        $nspmul_endusername_4 = $_POST['nspmul_endusername_4'];
+
+        $nspmul_contrib_1 = $_POST['nspmul_contrib_1'];
+        $nspmul_contrib_2 = $_POST['nspmul_contrib_2'];
+        $nspmul_contrib_3 = $_POST['nspmul_contrib_3'];
+        $nspmul_contrib_4 = $_POST['nspmul_contrib_4'];
+
+        $uspsole_name_1 = $_POST['uspsole_name_1'];
+        $uspsole_name_2 = $_POST['uspsole_name_2'];
+        $uspsole_name_3 = $_POST['uspsole_name_3'];
+        $uspsole_name_4 = $_POST['uspsole_name_4'];
+
+        $uspsole_copydate_1 = $_POST['uspsole_copydate_1'];
+        $uspsole_copydate_2 = $_POST['uspsole_copydate_2'];
+        $uspsole_copydate_3 = $_POST['uspsole_copydate_3'];
+        $uspsole_copydate_4 = $_POST['uspsole_copydate_4'];
+
+        $uspsole_utildate_1 = $_POST['uspsole_utildate_1'];
+        $uspsole_utildate_2 = $_POST['uspsole_utildate_2'];
+        $uspsole_utildate_3 = $_POST['uspsole_utildate_3'];
+        $uspsole_utildate_4 = $_POST['uspsole_utildate_4'];
+
+        $uspsole_contrib_1 = $_POST['uspsole_contrib_1'];
+        $uspsole_contrib_2 = $_POST['uspsole_contrib_2'];
+        $uspsole_contrib_3 = $_POST['uspsole_contrib_3'];
+        $uspsole_contrib_4 = $_POST['uspsole_contrib_4'];
+
+        $uspsole_specfeat_1 = $_POST['uspsole_specfeat_1'];
+        $uspsole_specfeat_2 = $_POST['uspsole_specfeat_2'];
+        $uspsole_specfeat_3 = $_POST['uspsole_specfeat_3'];
+        $uspsole_specfeat_4 = $_POST['uspsole_specfeat_4'];
+
+        $uspsole_endusername_1 = $_POST['uspsole_endusername_1'];
+        $uspsole_endusername_2 = $_POST['uspsole_endusername_2'];
+        $uspsole_endusername_3 = $_POST['uspsole_endusername_3'];
+        $uspsole_endusername_4 = $_POST['uspsole_endusername_4'];
+
+        $npvsole_name_1 = $_POST['npvsole_name_1'];
+        $npvsole_name_2 = $_POST['npvsole_name_2'];
+        $npvsole_name_3 = $_POST['npvsole_name_3'];
+        $npvsole_name_4 = $_POST['npvsole_name_4'];
+
+        $npvsole_type_1 = $_POST['npvsole_type_1'];
+        $npvsole_type_2 = $_POST['npvsole_type_2'];
+        $npvsole_type_3 = $_POST['npvsole_type_3'];
+        $npvsole_type_4 = $_POST['npvsole_type_4'];
+
+        $npvsole_datecom_1 = $_POST['npvsole_datecom_1'];
+        $npvsole_datecom_2 = $_POST['npvsole_datecom_2'];
+        $npvsole_datecom_3 = $_POST['npvsole_datecom_3'];
+        $npvsole_datecom_4 = $_POST['npvsole_datecom_4'];
+
+        $npvsole_datereg_1 = $_POST['npvsole_datereg_1'];
+        $npvsole_datereg_2 = $_POST['npvsole_datereg_2'];
+        $npvsole_datereg_3 = $_POST['npvsole_datereg_3'];
+        $npvsole_datereg_4 = $_POST['npvsole_datereg_4'];
+
+        $npvsole_dateprop_1 = $_POST['npvsole_dateprop_1'];
+        $npvsole_dateprop_2 = $_POST['npvsole_dateprop_2'];
+        $npvsole_dateprop_3 = $_POST['npvsole_dateprop_3'];
+        $npvsole_dateprop_4 = $_POST['npvsole_dateprop_4'];
+
+        $npvmul_name_1 = $_POST['npvmul_name_1'];
+        $npvmul_name_2 = $_POST['npvmul_name_2'];
+        $npvmul_name_3 = $_POST['npvmul_name_3'];
+        $npvmul_name_4 = $_POST['npvmul_name_4'];
+
+        $npvmul_type_1 = $_POST['npvmul_type_1'];
+        $npvmul_type_2 = $_POST['npvmul_type_2'];
+        $npvmul_type_3 = $_POST['npvmul_type_3'];
+        $npvmul_type_4 = $_POST['npvmul_type_4'];
+
+        $npvmul_datecom_1 = $_POST['npvmul_datecom_1'];
+        $npvmul_datecom_2 = $_POST['npvmul_datecom_2'];
+        $npvmul_datecom_3 = $_POST['npvmul_datecom_3'];
+        $npvmul_datecom_4 = $_POST['npvmul_datecom_4'];
+
+        $npvmul_datereg_1 = $_POST['npvmul_datereg_1'];
+        $npvmul_datereg_2 = $_POST['npvmul_datereg_2'];
+        $npvmul_datereg_3 = $_POST['npvmul_datereg_3'];
+        $npvmul_datereg_4 = $_POST['npvmul_datereg_4'];
+
+        $npvmul_dateprop_1 = $_POST['npvmul_dateprop_1'];
+        $npvmul_dateprop_2 = $_POST['npvmul_dateprop_2'];
+        $npvmul_dateprop_3 = $_POST['npvmul_dateprop_3'];
+        $npvmul_dateprop_4 = $_POST['npvmul_dateprop_4'];
+
+        $npvmul_contrib_1 = $_POST['npvmul_contrib_1'];
+        $npvmul_contrib_2 = $_POST['npvmul_contrib_2'];
+        $npvmul_contrib_3 = $_POST['npvmul_contrib_3'];
+        $npvmul_contrib_4 = $_POST['npvmul_contrib_4'];
+
+        $conn->query("INSERT INTO form2_b (
+            ipsole_name_1, ipsole_name_2, ipsole_name_3, ipsole_name_4,
+             ipsole_appdate_1, ipsole_appdate_2, ipsole_appdate_3, ipsole_appdate_4, 
+             ipsole_patapp_1, ipsole_patapp_2, ipsole_patapp_3, ipsole_patapp_4, 
+             ipsole_acceptdate_1, ipsole_acceptdate_2, ipsole_acceptdate_3, ipsole_acceptdate_4, 
+             ipmul_name_1, ipmul_name_2, ipmul_name_3, ipmul_name_4, 
+             ipmul_appdate_1, ipmul_appdate_2, ipmul_appdate_3, ipmul_appdate_4, 
+             ipmul_patapp_1, ipmul_patapp_2, ipmul_patapp_3, ipmul_patapp_4, 
+             ipmul_acceptdate_1, ipmul_acceptdate_2, ipmul_acceptdate_3, ipmul_acceptdate_4, 
+             ipmul_contrib_1, ipmul_contrib_2, ipmul_contrib_3, ipmul_contrib_4, 
+             umidsole_name_1, umidsole_name_2, umidsole_name_3, umidsole_name_4, 
+             umidsole_appdate_1, umidsole_appdate_2, umidsole_appdate_3, umidsole_appdate_4, 
+             umidsole_patapp_1, umidsole_patapp_2, umidsole_patapp_3, umidsole_patapp_4, 
+             umidsole_acceptdate_1, umidsole_acceptdate_2, umidsole_acceptdate_3, umidsole_acceptdate_4, 
+             umidmul_name_1, umidmul_name_2, umidmul_name_3, umidmul_name_4, 
+             umidmul_appdate_1, umidmul_appdate_2, umidmul_appdate_3, umidmul_appdate_4, 
+             umidmul_patapp_1, umidmul_patapp_2, umidmul_patapp_3, umidmul_patapp_4, 
+             umidmul_acceptdate_1, umidmul_acceptdate_2, umidmul_acceptdate_3, umidmul_acceptdate_4, 
+             umidmul_contrib_1, umidmul_contrib_2, umidmul_contrib_3, umidmul_contrib_4, 
+             cpplocal_name_1, cpplocal_name_2, cpplocal_name_3, cpplocal_name_4, 
+             cpplocal_type_1, cpplocal_type_2, cpplocal_type_3, cpplocal_type_4, 
+             cpplocal_patentdate_1, cpplocal_patentdate_2, cpplocal_patentdate_3, cpplocal_patentdate_4, 
+             cpplocal_proddate_1, cpplocal_proddate_2, cpplocal_proddate_3, cpplocal_proddate_4, 
+             cpplocal_area_1, cpplocal_area_2, cpplocal_area_3, cpplocal_area_4, 
+             cppinter_name_1, cppinter_name_2, cppinter_name_3, cppinter_name_4, 
+             cppinter_type_1, cppinter_type_2, cppinter_type_3, cppinter_type_4, 
+             cppinter_patentdate_1, cppinter_patentdate_2, cppinter_patentdate_3, cppinter_patentdate_4, 
+             cppinter_proddate_1, cppinter_proddate_2, cppinter_proddate_3, cppinter_proddate_4, 
+             cppinter_area_1, cppinter_area_2, cppinter_area_3, cppinter_area_4,
+              nspsole_name_1, nspsole_name_2, nspsole_name_3, nspsole_name_4, 
+              nspsole_copydate_1, nspsole_copydate_2, nspsole_copydate_3, nspsole_copydate_4, 
+              nspsole_utildate_1, nspsole_utildate_2, nspsole_utildate_3, nspsole_utildate_4, 
+              nspsole_endusername_1, nspsole_endusername_2, nspsole_endusername_3, nspsole_endusername_4, 
+              nspmul_name_1, nspmul_name_2, nspmul_name_3, nspmul_name_4, 
+              nspmul_copydate_1, nspmul_copydate_2, nspmul_copydate_3, nspmul_copydate_4,
+               nspmul_utildate_1, nspmul_utildate_2, nspmul_utildate_3, nspmul_utildate_4, 
+               nspmul_endusername_1, nspmul_endusername_2, nspmul_endusername_3, nspmul_endusername_4, 
+               nspmul_contrib_1, nspmul_contrib_2, nspmul_contrib_3, nspmul_contrib_4, 
+               uspsole_name_1, uspsole_name_2, uspsole_name_3, uspsole_name_4, 
+               uspsole_copydate_1, uspsole_copydate_2, uspsole_copydate_3, uspsole_copydate_4, 
+               uspsole_utildate_1, uspsole_utildate_2, uspsole_utildate_3, uspsole_utildate_4, 
+               uspsole_contrib_1, uspsole_contrib_2, uspsole_contrib_3, uspsole_contrib_4, 
+               uspsole_specfeat_1, uspsole_specfeat_2, uspsole_specfeat_3, uspsole_specfeat_4, 
+               uspsole_endusername_1, uspsole_endusername_2, uspsole_endusername_3, uspsole_endusername_4, 
+               npvsole_name_1, npvsole_name_2, npvsole_name_3, npvsole_name_4, npvsole_type_1, 
+               npvsole_type_2, npvsole_type_3, npvsole_type_4, npvsole_datecom_1, npvsole_datecom_2,
+              npvsole_datecom_3, npvsole_datecom_4, npvsole_datereg_1, npvsole_datereg_2, 
+                npvsole_datereg_3, npvsole_datereg_4, npvsole_dateprop_1, npvsole_dateprop_2, 
+                npvsole_dateprop_3, npvsole_dateprop_4, npvmul_name_1, npvmul_name_2, npvmul_name_3, 
+                npvmul_name_4, npvmul_type_1, npvmul_type_2, npvmul_type_3, npvmul_type_4,
+                npvmul_datecom_1, npvmul_datecom_2, npvmul_datecom_3, npvmul_datecom_4,
+                npvmul_datereg_1, npvmul_datereg_2, npvmul_datereg_3, npvmul_datereg_4, npvmul_dateprop_1, 
+                npvmul_dateprop_2, npvmul_dateprop_3, npvmul_dateprop_4, npvmul_contrib_1, npvmul_contrib_2, 
+                npvmul_contrib_3, npvmul_contrib_4,user_id)
+        VALUES (
+            '$ipsole_name_1', '$ipsole_name_2', '$ipsole_name_3', '$ipsole_name_4',
+            '$ipsole_appdate_1', '$ipsole_appdate_2', '$ipsole_appdate_3', '$ipsole_appdate_4',
+            '$ipsole_patapp_1', '$ipsole_patapp_2', '$ipsole_patapp_3', '$ipsole_patapp_4',
+            '$ipsole_acceptdate_1', '$ipsole_acceptdate_2', '$ipsole_acceptdate_3', '$ipsole_acceptdate_4',
+            '$ipmul_name_1', '$ipmul_name_2', '$ipmul_name_3', '$ipmul_name_4',
+            '$ipmul_appdate_1', '$ipmul_appdate_2', '$ipmul_appdate_3', '$ipmul_appdate_4',
+            '$ipmul_patapp_1', '$ipmul_patapp_2', '$ipmul_patapp_3', '$ipmul_patapp_4',
+            '$ipmul_acceptdate_1', '$ipmul_acceptdate_2', '$ipmul_acceptdate_3', '$ipmul_acceptdate_4',
+            '$ipmul_contrib_1', '$ipmul_contrib_2', '$ipmul_contrib_3', '$ipmul_contrib_4',
+            '$umidsole_name_1', '$umidsole_name_2', '$umidsole_name_3', '$umidsole_name_4',
+            '$umidsole_appdate_1', '$umidsole_appdate_2', '$umidsole_appdate_3', '$umidsole_appdate_4',
+            '$umidsole_patapp_1', '$umidsole_patapp_2', '$umidsole_patapp_3', '$umidsole_patapp_4',
+            '$umidsole_acceptdate_1', '$umidsole_acceptdate_2', '$umidsole_acceptdate_3', '$umidsole_acceptdate_4',
+            '$umidmul_name_1', '$umidmul_name_2', '$umidmul_name_3', '$umidmul_name_4',
+            '$umidmul_appdate_1', '$umidmul_appdate_2', '$umidmul_appdate_3', '$umidmul_appdate_4',
+            '$umidmul_patapp_1', '$umidmul_patapp_2', '$umidmul_patapp_3', '$umidmul_patapp_4',
+            '$umidmul_acceptdate_1', '$umidmul_acceptdate_2', '$umidmul_acceptdate_3', '$umidmul_acceptdate_4',
+            '$umidmul_contrib_1', '$umidmul_contrib_2', '$umidmul_contrib_3', '$umidmul_contrib_4',
+            '$cpplocal_name_1', '$cpplocal_name_2', '$cpplocal_name_3', '$cpplocal_name_4',
+            '$cpplocal_type_1', '$cpplocal_type_2', '$cpplocal_type_3', '$cpplocal_type_4',
+            '$cpplocal_patentdate_1', '$cpplocal_patentdate_2', '$cpplocal_patentdate_3', '$cpplocal_patentdate_4',
+            '$cpplocal_proddate_1', '$cpplocal_proddate_2', '$cpplocal_proddate_3', '$cpplocal_proddate_4',
+            '$cpplocal_area_1', '$cpplocal_area_2', '$cpplocal_area_3', '$cpplocal_area_4',
+            '$cppinter_name_1', '$cppinter_name_2', '$cppinter_name_3', '$cppinter_name_4',
+            '$cppinter_type_1', '$cppinter_type_2', '$cppinter_type_3', '$cppinter_type_4',
+            '$cppinter_patentdate_1', '$cppinter_patentdate_2', '$cppinter_patentdate_3', '$cppinter_patentdate_4',
+            '$cppinter_proddate_1', '$cppinter_proddate_2', '$cppinter_proddate_3', '$cppinter_proddate_4',
+            '$cppinter_area_1', '$cppinter_area_2', '$cppinter_area_3', '$cppinter_area_4',
+            '$nspsole_name_1', '$nspsole_name_2', '$nspsole_name_3', '$nspsole_name_4',
+            '$nspsole_copydate_1', '$nspsole_copydate_2', '$nspsole_copydate_3', '$nspsole_copydate_4',
+            '$nspsole_utildate_1', '$nspsole_utildate_2', '$nspsole_utildate_3', '$nspsole_utildate_4',
+            '$nspsole_endusername_1', '$nspsole_endusername_2', '$nspsole_endusername_3', '$nspsole_endusername_4',
+            '$nspmul_name_1', '$nspmul_name_2', '$nspmul_name_3', '$nspmul_name_4',
+            '$nspmul_copydate_1', '$nspmul_copydate_2', '$nspmul_copydate_3', '$nspmul_copydate_4',
+            '$nspmul_utildate_1', '$nspmul_utildate_2', '$nspmul_utildate_3', '$nspmul_utildate_4',
+            '$nspmul_endusername_1', '$nspmul_endusername_2', '$nspmul_endusername_3', '$nspmul_endusername_4',
+            '$nspmul_contrib_1', '$nspmul_contrib_2', '$nspmul_contrib_3', '$nspmul_contrib_4',
+            '$uspsole_name_1', '$uspsole_name_2', '$uspsole_name_3', '$uspsole_name_4',
+            '$uspsole_copydate_1', '$uspsole_copydate_2', '$uspsole_copydate_3', '$uspsole_copydate_4',
+            '$uspsole_utildate_1', '$uspsole_utildate_2', '$uspsole_utildate_3', '$uspsole_utildate_4',
+            '$uspsole_contrib_1', '$uspsole_contrib_2', '$uspsole_contrib_3', '$uspsole_contrib_4',
+            '$uspsole_specfeat_1', '$uspsole_specfeat_2', '$uspsole_specfeat_3', '$uspsole_specfeat_4',
+            '$uspsole_endusername_1', '$uspsole_endusername_2', '$uspsole_endusername_3', '$uspsole_endusername_4',
+            '$npvsole_name_1', '$npvsole_name_2', '$npvsole_name_3', '$npvsole_name_4',
+            '$npvsole_type_1', '$npvsole_type_2', '$npvsole_type_3', '$npvsole_type_4',
+            '$npvsole_datecom_1', '$npvsole_datecom_2', '$npvsole_datecom_3', '$npvsole_datecom_4',
+            '$npvsole_datereg_1', '$npvsole_datereg_2', '$npvsole_datereg_3', '$npvsole_datereg_4',
+            '$npvsole_dateprop_1', '$npvsole_dateprop_2', '$npvsole_dateprop_3', '$npvsole_dateprop_4',
+            '$npvmul_name_1', '$npvmul_name_2', '$npvmul_name_3', '$npvmul_name_4',
+            '$npvmul_type_1', '$npvmul_type_2', '$npvmul_type_3', '$npvmul_type_4',
+            '$npvmul_datecom_1', '$npvmul_datecom_2', '$npvmul_datecom_3', '$npvmul_datecom_4',
+            '$npvmul_datereg_1', '$npvmul_datereg_2', '$npvmul_datereg_3', '$npvmul_datereg_4',
+            '$npvmul_dateprop_1', '$npvmul_dateprop_2', '$npvmul_dateprop_3', '$npvmul_dateprop_4',
+            '$npvmul_contrib_1', '$npvmul_contrib_2', '$npvmul_contrib_3', '$npvmul_contrib_4',
+            $id)
+        ON DUPLICATE KEY UPDATE
+
+            ipsole_name_1 = VALUES(ipsole_name_1),
+            ipsole_name_2 = VALUES(ipsole_name_2),
+            ipsole_name_3 = VALUES(ipsole_name_3),
+            ipsole_name_4 = VALUES(ipsole_name_4),
+            ipsole_appdate_1 = VALUES(ipsole_appdate_1),
+            ipsole_appdate_2 = VALUES(ipsole_appdate_2),
+            ipsole_appdate_3 = VALUES(ipsole_appdate_3),
+            ipsole_appdate_4 = VALUES(ipsole_appdate_4),
+            ipsole_patapp_1 = VALUES(ipsole_patapp_1),
+            ipsole_patapp_2 = VALUES(ipsole_patapp_2),
+            ipsole_patapp_3 = VALUES(ipsole_patapp_3),
+            ipsole_patapp_4 = VALUES(ipsole_patapp_4),
+            ipsole_acceptdate_1 = VALUES(ipsole_acceptdate_1),
+            ipsole_acceptdate_2 = VALUES(ipsole_acceptdate_2),
+            ipsole_acceptdate_3 = VALUES(ipsole_acceptdate_3),
+            ipsole_acceptdate_4 = VALUES(ipsole_acceptdate_4),
+            ipmul_name_1 = VALUES(ipmul_name_1),
+            ipmul_name_2 = VALUES(ipmul_name_2),
+            ipmul_name_3 = VALUES(ipmul_name_3),
+            ipmul_name_4 = VALUES(ipmul_name_4),
+            ipmul_appdate_1 = VALUES(ipmul_appdate_1),
+            ipmul_appdate_2 = VALUES(ipmul_appdate_2),
+            ipmul_appdate_3 = VALUES(ipmul_appdate_3),
+            ipmul_appdate_4 = VALUES(ipmul_appdate_4),
+            ipmul_patapp_1 = VALUES(ipmul_patapp_1),
+            ipmul_patapp_2 = VALUES(ipmul_patapp_2),
+            ipmul_patapp_3 = VALUES(ipmul_patapp_3),
+            ipmul_patapp_4 = VALUES(ipmul_patapp_4),
+            ipmul_acceptdate_1 = VALUES(ipmul_acceptdate_1),
+            ipmul_acceptdate_2 = VALUES(ipmul_acceptdate_2),
+            ipmul_acceptdate_3 = VALUES(ipmul_acceptdate_3),
+            ipmul_acceptdate_4 = VALUES(ipmul_acceptdate_4),
+            ipmul_contrib_1 = VALUES(ipmul_contrib_1),
+            ipmul_contrib_2 = VALUES(ipmul_contrib_2),
+            ipmul_contrib_3 = VALUES(ipmul_contrib_3),
+            ipmul_contrib_4 = VALUES(ipmul_contrib_4),
+            umidsole_name_1 = VALUES(umidsole_name_1),
+            umidsole_name_2 = VALUES(umidsole_name_2),
+            umidsole_name_3 = VALUES(umidsole_name_3),
+            umidsole_name_4 = VALUES(umidsole_name_4),
+            umidsole_appdate_1 = VALUES(umidsole_appdate_1),
+            umidsole_appdate_2 = VALUES(umidsole_appdate_2),
+            umidsole_appdate_3 = VALUES(umidsole_appdate_3),
+            umidsole_appdate_4 = VALUES(umidsole_appdate_4),
+            umidsole_patapp_1 = VALUES(umidsole_patapp_1),
+            umidsole_patapp_2 = VALUES(umidsole_patapp_2),
+            umidsole_patapp_3 = VALUES(umidsole_patapp_3),
+            umidsole_patapp_4 = VALUES(umidsole_patapp_4),
+            umidsole_acceptdate_1 = VALUES(umidsole_acceptdate_1),
+            umidsole_acceptdate_2 = VALUES(umidsole_acceptdate_2),
+            umidsole_acceptdate_3 = VALUES(umidsole_acceptdate_3),
+            umidsole_acceptdate_4 = VALUES(umidsole_acceptdate_4),
+            umidmul_name_1 = VALUES(umidmul_name_1),
+            umidmul_name_2 = VALUES(umidmul_name_2),
+            umidmul_name_3 = VALUES(umidmul_name_3),
+            umidmul_name_4 = VALUES(umidmul_name_4),
+            umidmul_appdate_1 = VALUES(umidmul_appdate_1),
+            umidmul_appdate_2 = VALUES(umidmul_appdate_2),
+            umidmul_appdate_3 = VALUES(umidmul_appdate_3),
+            umidmul_appdate_4 = VALUES(umidmul_appdate_4),
+            umidmul_patapp_1 = VALUES(umidmul_patapp_1),
+            umidmul_patapp_2 = VALUES(umidmul_patapp_2),
+            umidmul_patapp_3 = VALUES(umidmul_patapp_3),
+            umidmul_patapp_4 = VALUES(umidmul_patapp_4),
+            umidmul_acceptdate_1 = VALUES(umidmul_acceptdate_1),
+            umidmul_acceptdate_2 = VALUES(umidmul_acceptdate_2),
+            umidmul_acceptdate_3 = VALUES(umidmul_acceptdate_3),
+            umidmul_acceptdate_4 = VALUES(umidmul_acceptdate_4),
+            umidmul_contrib_1 = VALUES(umidmul_contrib_1),
+            umidmul_contrib_2 = VALUES(umidmul_contrib_2),
+            umidmul_contrib_3 = VALUES(umidmul_contrib_3),
+            umidmul_contrib_4 = VALUES(umidmul_contrib_4),
+            cpplocal_name_1 = VALUES(cpplocal_name_1),
+            cpplocal_name_2 = VALUES(cpplocal_name_2),
+            cpplocal_name_3 = VALUES(cpplocal_name_3),
+            cpplocal_name_4 = VALUES(cpplocal_name_4),
+            cpplocal_type_1 = VALUES(cpplocal_type_1),
+            cpplocal_type_2 = VALUES(cpplocal_type_2),
+            cpplocal_type_3 = VALUES(cpplocal_type_3),
+            cpplocal_type_4 = VALUES(cpplocal_type_4),
+            cpplocal_patentdate_1 = VALUES(cpplocal_patentdate_1),
+            cpplocal_patentdate_2 = VALUES(cpplocal_patentdate_2),
+            cpplocal_patentdate_3 = VALUES(cpplocal_patentdate_3),
+            cpplocal_patentdate_4 = VALUES(cpplocal_patentdate_4),
+            cpplocal_proddate_1 = VALUES(cpplocal_proddate_1),
+            cpplocal_proddate_2 = VALUES(cpplocal_proddate_2),
+            cpplocal_proddate_3 = VALUES(cpplocal_proddate_3),
+            cpplocal_proddate_4 = VALUES(cpplocal_proddate_4),
+            cpplocal_area_1 = VALUES(cpplocal_area_1),
+            cpplocal_area_2 = VALUES(cpplocal_area_2),
+            cpplocal_area_3 = VALUES(cpplocal_area_3),
+            cpplocal_area_4 = VALUES(cpplocal_area_4),
+            cppinter_name_1 = VALUES(cppinter_name_1),
+            cppinter_name_2 = VALUES(cppinter_name_2),
+            cppinter_name_3 = VALUES(cppinter_name_3),
+            cppinter_name_4 = VALUES(cppinter_name_4),
+            cppinter_type_1 = VALUES(cppinter_type_1),
+            cppinter_type_2 = VALUES(cppinter_type_2),
+            cppinter_type_3 = VALUES(cppinter_type_3),
+            cppinter_type_4 = VALUES(cppinter_type_4),
+            cppinter_patentdate_1 = VALUES(cppinter_patentdate_1),
+            cppinter_patentdate_2 = VALUES(cppinter_patentdate_2),
+            cppinter_patentdate_3 = VALUES(cppinter_patentdate_3),
+            cppinter_patentdate_4 = VALUES(cppinter_patentdate_4),
+            cppinter_proddate_1 = VALUES(cppinter_proddate_1),
+            cppinter_proddate_2 = VALUES(cppinter_proddate_2),
+            cppinter_proddate_3 = VALUES(cppinter_proddate_3),
+            cppinter_proddate_4 = VALUES(cppinter_proddate_4),
+            cppinter_area_1 = VALUES(cppinter_area_1),
+            cppinter_area_2 = VALUES(cppinter_area_2),
+            cppinter_area_3 = VALUES(cppinter_area_3),
+            cppinter_area_4 = VALUES(cppinter_area_4),
+            nspsole_name_1 = VALUES(nspsole_name_1),
+            nspsole_name_2 = VALUES(nspsole_name_2),
+            nspsole_name_3 = VALUES(nspsole_name_3),
+            nspsole_name_4 = VALUES(nspsole_name_4),
+            nspsole_copydate_1 = VALUES(nspsole_copydate_1),
+            nspsole_copydate_2 = VALUES(nspsole_copydate_2),
+            nspsole_copydate_3 = VALUES(nspsole_copydate_3),
+            nspsole_copydate_4 = VALUES(nspsole_copydate_4),
+            nspsole_utildate_1 = VALUES(nspsole_utildate_1),
+            nspsole_utildate_2 = VALUES(nspsole_utildate_2),
+            nspsole_utildate_3 = VALUES(nspsole_utildate_3),
+            nspsole_utildate_4 = VALUES(nspsole_utildate_4),
+            nspsole_endusername_1 = VALUES(nspsole_endusername_1),
+            nspsole_endusername_2 = VALUES(nspsole_endusername_2),
+            nspsole_endusername_3 = VALUES(nspsole_endusername_3)
+            nspsole_endusername_4 = VALUES(nspsole_endusername_4),
+            nspmul_name_1 = VALUES(nspmul_name_1),
+            nspmul_name_2 = VALUES(nspmul_name_2),
+            nspmul_name_3 = VALUES(nspmul_name_3),
+            nspmul_name_4 = VALUES(nspmul_name_4),
+            nspmul_copydate_1 = VALUES(nspmul_copydate_1),
+            nspmul_copydate_2 = VALUES(nspmul_copydate_2),
+            nspmul_copydate_3 = VALUES(nspmul_copydate_3),
+            nspmul_copydate_4 = VALUES(nspmul_copydate_4),
+            nspmul_utildate_1 = VALUES(nspmul_utildate_1),
+            nspmul_utildate_2 = VALUES(nspmul_utildate_2),
+            nspmul_utildate_3 = VALUES(nspmul_utildate_3),
+            nspmul_utildate_4 = VALUES(nspmul_utildate_4),
+            nspmul_endusername_1 = VALUES(nspmul_endusername_1),
+            nspmul_endusername_2 = VALUES(nspmul_endusername_2),
+            nspmul_endusername_3 = VALUES(nspmul_endusername_3),
+            nspmul_endusername_4 = VALUES(nspmul_endusername_4),
+            nspmul_contrib_1 = VALUES(nspmul_contrib_1),
+            nspmul_contrib_2 = VALUES(nspmul_contrib_2),
+            nspmul_contrib_3 = VALUES(nspmul_contrib_3),
+            nspmul_contrib_4 = VALUES(nspmul_contrib_4),
+            uspsole_name_1 = VALUES(uspsole_name_1),
+            uspsole_name_2 = VALUES(uspsole_name_2),
+            uspsole_name_3 = VALUES(uspsole_name_3),
+            uspsole_name_4 = VALUES(uspsole_name_4),
+            uspsole_copydate_1 = VALUES(uspsole_copydate_1),
+            uspsole_copydate_2 = VALUES(uspsole_copydate_2),
+            uspsole_copydate_3 = VALUES(uspsole_copydate_3),
+            uspsole_copydate_4 = VALUES(uspsole_copydate_4),
+            uspsole_utildate_1 = VALUES(uspsole_utildate_1),
+            uspsole_utildate_2 = VALUES(uspsole_utildate_2),
+            uspsole_utildate_3 = VALUES(uspsole_utildate_3),
+            uspsole_utildate_4 = VALUES(uspsole_utildate_4),
+            uspsole_contrib_1 = VALUES(uspsole_contrib_1),
+            uspsole_contrib_2 = VALUES(uspsole_contrib_2),
+            uspsole_contrib_3 = VALUES(uspsole_contrib_3),
+            uspsole_contrib_4 = VALUES(uspsole_contrib_4),
+            uspsole_specfeat_1 = VALUES(uspsole_specfeat_1),
+            uspsole_specfeat_2 = VALUES(uspsole_specfeat_2),
+            uspsole_specfeat_3 = VALUES(uspsole_specfeat_3),
+            uspsole_specfeat_4 = VALUES(uspsole_specfeat_4),
+            uspsole_endusername_1 = VALUES(uspsole_endusername_1),
+            uspsole_endusername_2 = VALUES(uspsole_endusername_2),
+            uspsole_endusername_3 = VALUES(uspsole_endusername_3),
+            uspsole_endusername_4 = VALUES(uspsole_endusername_4),
+            npvsole_name_1 = VALUES(npvsole_name_1),
+            npvsole_name_2 = VALUES(npvsole_name_2),
+            npvsole_name_3 = VALUES(npvsole_name_3),
+            npvsole_name_4 = VALUES(npvsole_name_4),
+            npvsole_type_1 = VALUES(npvsole_type_1),
+            npvsole_type_2 = VALUES(npvsole_type_2),
+            npvsole_type_3 = VALUES(npvsole_type_3),
+            npvsole_type_4 = VALUES(npvsole_type_4),
+            npvsole_datecom_1 = VALUES(npvsole_datecom_1),
+            npvsole_datecom_2 = VALUES(npvsole_datecom_2),
+            npvsole_datecom_3 = VALUES(npvsole_datecom_3),
+            npvsole_datecom_4 = VALUES(npvsole_datecom_4),
+            npvsole_datereg_1 = VALUES(npvsole_datereg_1),
+            npvsole_datereg_2 = VALUES(npvsole_datereg_2),
+            npvsole_datereg_3 = VALUES(npvsole_datereg_3),
+            npvsole_datereg_4 = VALUES(npvsole_datereg_4),
+            npvsole_dateprop_1 = VALUES(npvsole_dateprop_1),
+            npvsole_dateprop_2 = VALUES(npvsole_dateprop_2),
+            npvsole_dateprop_3 = VALUES(npvsole_dateprop_3),
+            npvsole_dateprop_4 = VALUES(npvsole_dateprop_4),
+            npvmul_name_1 = VALUES(npvmul_name_1),
+            npvmul_name_2 = VALUES(npvmul_name_2),
+            npvmul_name_3 = VALUES(npvmul_name_3),
+            npvmul_name_4 = VALUES(npvmul_name_4),
+            npvmul_type_1 = VALUES(npvmul_type_1),
+            npvmul_type_2 = VALUES(npvmul_type_2),
+            npvmul_type_3 = VALUES(npvmul_type_3),
+            npvmul_type_4 = VALUES(npvmul_type_4),
+            npvmul_datecom_1 = VALUES(npvmul_datecom_1),
+            npvmul_datecom_2 = VALUES(npvmul_datecom_2),
+            npvmul_datecom_3 = VALUES(npvmul_datecom_3),
+            npvmul_datecom_4 = VALUES(npvmul_datecom_4),
+            npvmul_datereg_1 = VALUES(npvmul_datereg_1),
+            npvmul_datereg_2 = VALUES(npvmul_datereg_2),
+            npvmul_datereg_3 = VALUES(npvmul_datereg_3),
+            npvmul_datereg_4 = VALUES(npvmul_datereg_4),
+            npvmul_dateprop_1 = VALUES(npvmul_dateprop_1),
+            npvmul_dateprop_2 = VALUES(npvmul_dateprop_2),
+            npvmul_dateprop_3 = VALUES(npvmul_dateprop_3),
+            npvmul_dateprop_4 = VALUES(npvmul_dateprop_4),
+            npvmul_contrib_1 = VALUES(npvmul_contrib_1),
+            npvmul_contrib_2 = VALUES(npvmul_contrib_2),
+            npvmul_contrib_3 = VALUES(npvmul_contrib_3),
+            npvmul_contrib_4 = VALUES(npvmul_contrib_4);
+            "
+        ) or die($conn->error);
+        
+
         $conn->query(
                 "UPDATE kra_2 SET 
                  Crit_B_PI_SI = '$scoreIP_SI', 
@@ -199,65 +1028,73 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "ipsole_name_1" value = "<?php echo isset($init_ipsole_name_1) ? $init_ipsole_name_1 : ""; ?>" type="text"></td>
+            <td><input name = "ipsole_appdate_1" value = "<?php echo isset($init_ipsole_appdate_1) ? $init_ipsole_appdate_1 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="SI_PTA__1">
-                    <option value="none">Select option</option>
+                <select name="ipsole_patapp_1" id="SI_PTA__1">
+                    <option value = "<?php echo isset($init_ipsole_patapp_1) ? $init_ipsole_patapp_1 : "None"; ?>">
+                        <?php echo isset($init_ipsole_patapp_1) ? $init_ipsole_patapp_1 : "Select Option"; ?>
+                    </option>
                     <option value="Accepted">Accepted</option>
                     <option value="Published">Published</option>
                     <option value="Granted">Granted</option>
                 </select>
             </td>
-            <td><input type="text"></td>
+            <td><input name = "ipsole_acceptdate_1" value = "<?php echo isset($init_ipsole_acceptdate_1) ? $init_ipsole_acceptdate_1 : ""; ?>" type="date"></td>
             <td><input id="SA__res1" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "ipsole_name_2" value = "<?php echo isset($init_ipsole_name_2) ? $init_ipsole_name_2 : ""; ?>" type="text"></td>
+            <td><input name = "ipsole_appdate_2" value = "<?php echo isset($init_ipsole_appdate_2) ? $init_ipsole_appdate_2 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="SI_PTA__2">
-                    <option value="none">Select option</option>
+                <select name="ipsole_patapp_2" id="SI_PTA__2">
+                    <option value = "<?php echo isset($init_ipsole_patapp_2) ? $init_ipsole_patapp_2 : "None"; ?>">
+                        <?php echo isset($init_ipsole_patapp_2) ? $init_ipsole_patapp_2 : "Select Option"; ?>
+                    </option>
                     <option value="Accepted">Accepted</option>
                     <option value="Published">Published</option>
                     <option value="Granted">Granted</option>
                 </select>
             </td>
-            <td><input type="text"></td>
+            <td><input name = "ipsole_acceptdate_2" value = "<?php echo isset($init_ipsole_acceptdate_2) ? $init_ipsole_acceptdate_2 : ""; ?>" type="date"></td>
             <td><input id="SA__res2" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "ipsole_name_3" value = "<?php echo isset($init_ipsole_name_3) ? $init_ipsole_name_3 : ""; ?>" type="text"></td>
+            <td><input name = "ipsole_appdate_3" value = "<?php echo isset($init_ipsole_appdate_3) ? $init_ipsole_appdate_3 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="SI_PTA__3">
-                    <option value="none">Select option</option>
+                <select name="ipsole_patapp_3" id="SI_PTA__3">
+                    <option value = "<?php echo isset($init_ipsole_patapp_3) ? $init_ipsole_patapp_3 : "None"; ?>">
+                        <?php echo isset($init_ipsole_patapp_3) ? $init_ipsole_patapp_3 : "Select Option"; ?>
+                    </option>
                     <option value="Accepted">Accepted</option>
                     <option value="Published">Published</option>
                     <option value="Granted">Granted</option>
                 </select>
             </td>
-            <td><input type="text"></td>
+            <td><input name = "ipsole_acceptdate_3" value = "<?php echo isset($init_ipsole_acceptdate_3) ? $init_ipsole_acceptdate_3 : ""; ?>" type="date"></td>
             <td><input id="SA__res3" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "ipsole_name_4" value = "<?php echo isset($init_ipsole_name_4) ? $init_ipsole_name_4 : ""; ?>" type="text"></td>
+            <td><input name = "ipsole_appdate_4" value = "<?php echo isset($init_ipsole_appdate_4) ? $init_ipsole_appdate_4 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="SI_PTA__4">
-                    <option value="none">Select option</option>
+                <select name="ipsole_patapp_4" id="SI_PTA__4">
+                    <option value = "<?php echo isset($init_ipsole_patapp_4) ? $init_ipsole_patapp_4 : "None"; ?>">
+                        <?php echo isset($init_ipsole_patapp_4) ? $init_ipsole_patapp_4 : "Select Option"; ?>
+                    </option>
                     <option value="Accepted">Accepted</option>
                     <option value="Published">Published</option>
                     <option value="Granted">Granted</option>
                 </select>
             </td>
-            <td><input type="text"></td>
+            <td><input name = "ipsole_acceptdate_4" value = "<?php echo isset($init_ipsole_acceptdate_4) ? $init_ipsole_acceptdate_4 : ""; ?>" type="date"></td>
             <td><input id="SA__res4" readonly type="text" value="0"></td>
         </tr>
 
@@ -292,69 +1129,77 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "ipmul_name_1" value = "<?php echo isset($init_ipmul_name_1) ? $init_ipmul_name_1 : ""; ?>" type="text"></td>
+            <td><input name = "ipmul_appdate_1" value = "<?php echo isset($init_ipmul_appdate_1) ? $init_ipmul_appdate_1 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="MI_PTA__1">
-                    <option value="None">Select option</option>
+                <select name="ipmul_patapp_1" id="MI_PTA__1">
+                    <option value = "<?php echo isset($init_ipmul_patapp_1) ? $init_ipmul_patapp_1 : "None"; ?>">
+                        <?php echo isset($init_ipmul_patapp_1) ? $init_ipmul_patapp_1 : "Select Option"; ?>
+                    </option>
                     <option value="Accepted">Accepted</option>
                     <option value="Published">Published</option>
                     <option value="Granted">Granted</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text" id="MI_I_1"></td>
+            <td><input name = "ipmul_acceptdate_1" value = "<?php echo isset($init_ipmul_acceptdate_1) ? $init_ipmul_acceptdate_1 : ""; ?>" type="date"></td>
+            <td><input type="text" name = "ipmul_contrib_1" value = "<?php echo isset($init_ipmul_contrib_1) ? $init_ipmul_contrib_1 : ""; ?>" id="MI_I_1"></td>
             <td><input id="MI__res1" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "ipmul_name_2" value = "<?php echo isset($init_ipmul_name_2) ? $init_ipmul_name_2 : ""; ?>" type="text"></td>
+            <td><input name = "ipmul_appdate_2" value = "<?php echo isset($init_ipmul_appdate_2) ? $init_ipmul_appdate_2 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="MI_PTA__2">
-                    <option value="None">Select option</option>
+                <select name="ipmul_patapp_2" id="MI_PTA__2">
+                    <option value = "<?php echo isset($init_ipmul_patapp_2) ? $init_ipmul_patapp_2 : "None"; ?>">
+                        <?php echo isset($init_ipmul_patapp_2) ? $init_ipmul_patapp_2 : "Select Option"; ?>
+                    </option>
                     <option value="Accepted">Accepted</option>
                     <option value="Published">Published</option>
                     <option value="Granted">Granted</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text" id="MI_I_2"></td>
+            <td><input name = "ipmul_acceptdate_2" value = "<?php echo isset($init_ipmul_acceptdate_2) ? $init_ipmul_acceptdate_2 : ""; ?>" type="date"></td>
+            <td><input type="text" name = "ipmul_contrib_2" value = "<?php echo isset($init_ipmul_contrib_2) ? $init_ipmul_contrib_2 : ""; ?>" id="MI_I_2"></td>
             <td><input id="MI__res2" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "ipmul_name_3" value = "<?php echo isset($init_ipmul_name_3) ? $init_ipmul_name_3 : ""; ?>" type="text"></td>
+            <td><input name = "ipmul_appdate_3" value = "<?php echo isset($init_ipmul_appdate_3) ? $init_ipmul_appdate_3 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="MI_PTA__3">
-                    <option value="None">Select option</option>
+                <select name="ipmul_patapp_3" id="MI_PTA__3">
+                    <option value = "<?php echo isset($init_ipmul_patapp_3) ? $init_ipmul_patapp_3 : "None"; ?>">
+                        <?php echo isset($init_ipmul_patapp_3) ? $init_ipmul_patapp_3 : "Select Option"; ?>
+                    </option>
                     <option value="Accepted">Accepted</option>
                     <option value="Published">Published</option>
                     <option value="Granted">Granted</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text" id="MI_I_3"></td>
+            <td><input name = "ipmul_acceptdate_3" value = "<?php echo isset($init_ipmul_acceptdate_3) ? $init_ipmul_acceptdate_3 : ""; ?>" type="date"></td>
+            <td><input type="text" name = "ipmul_contrib_3" value = "<?php echo isset($init_ipmul_contrib_3) ? $init_ipmul_contrib_3 : ""; ?>" id="MI_I_3"></td>
             <td><input id="MI__res3" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "ipmul_name_4" value = "<?php echo isset($init_ipmul_name_4) ? $init_ipmul_name_4 : ""; ?>" type="text"></td>
+            <td><input name = "ipmul_appdate_4" value = "<?php echo isset($init_ipmul_appdate_4) ? $init_ipmul_appdate_4 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="MI_PTA__4">
-                    <option value="None">Select option</option>
+                <select name="ipmul_patapp_4" id="MI_PTA__4">
+                    <option value = "<?php echo isset($init_ipmul_patapp_4) ? $init_ipmul_patapp_4 : "None"; ?>">
+                        <?php echo isset($init_ipmul_patapp_4) ? $init_ipmul_patapp_4 : "Select Option"; ?>
+                    </option>
                     <option value="Accepted">Accepted</option>
                     <option value="Published">Published</option>
                     <option value="Granted">Granted</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text" id="MI_I_4"></td>
+            <td><input name = "ipmul_acceptdate_4" value = "<?php echo isset($init_ipmul_acceptdate_4) ? $init_ipmul_acceptdate_4 : ""; ?>" type="date"></td>
+            <td><input type="text" name = "ipmul_contrib_4" value = "<?php echo isset($init_ipmul_contrib_4) ? $init_ipmul_contrib_4 : ""; ?>" id="MI_I_4"></td>
             <td><input id="MI__res4" readonly type="text" value="0"></td>
         </tr>
 
@@ -389,61 +1234,69 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "umidsole_name_1" value = "<?php echo isset($init_umidsole_name_1) ? $init_umidsole_name_1 : ""; ?>" type="text"></td>
+            <td><input name = "umidsole_appdate_1" value = "<?php echo isset($init_umidsole_appdate_1) ? $init_umidsole_appdate_1 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="UMID_SI__1">
-                    <option value="none">Select option</option>
+            <select name="umidsole_patapp_1" id="UMID_SI__1">
+                    <option value = "<?php echo isset($init_umidsole_patapp_1) ? $init_umidsole_patapp_1 : "None"; ?>">
+                        <?php echo isset($init_umidsole_patapp_1) ? $init_umidsole_patapp_1 : "Select Option"; ?>
+                    </option>
                     <option value="Utility">Utility Model</option>
                     <option value="Industrial">Industrial Design</option>
                 </select>
             </td>
-            <td><input type="text"></td>
+            <td><input name = "umidsole_acceptdate_1" value = "<?php echo isset($init_umidsole_acceptdate_1) ? $init_umidsole_acceptdate_1 : ""; ?>" type="date"></td>
             <td><input id="UMID_SI_FS_1" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "umidsole_name_2" value = "<?php echo isset($init_umidsole_name_2) ? $init_umidsole_name_2 : ""; ?>" type="text"></td>
+            <td><input name = "umidsole_appdate_2" value = "<?php echo isset($init_umidsole_appdate_2) ? $init_umidsole_name_2 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="UMID_SI__2">
-                    <option value="none">Select option</option>
+            <select name="umidsole_appdate_2" id="UMID_SI__2">
+                    <option value = "<?php echo isset($init_umidsole_patapp_2) ? $init_umidsole_patapp_2 : "None"; ?>">
+                        <?php echo isset($init_umidsole_patapp_2) ? $init_umidsole_patapp_2 : "Select Option"; ?>
+                    </option>
                     <option value="Utility">Utility Model</option>
                     <option value="Industrial">Industrial Design</option>
                 </select>
             </td>
-            <td><input type="text"></td>
+            <td><input name = "umidsole_acceptdate_2" value = "<?php echo isset($init_umidsole_acceptdate_2) ? $init_umidsole_acceptdate_2 : ""; ?>" type="date"></td>
             <td><input id="UMID_SI_FS_2" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "umidsole_name_3" value = "<?php echo isset($init_umidsole_name_3) ? $init_umidsole_name_3 : ""; ?>" type="text"></td>
+            <td><input name = "umidsole_appdate_3" value = "<?php echo isset($init_umidsole_appdate_3) ? $init_umidsole_appdate_3 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="UMID_SI__3">
-                    <option value="none">Select option</option>
+            <select name="umidsole_appdate_3" id="UMID_SI__3">
+                    <option value = "<?php echo isset($init_umidsole_patapp_3) ? $init_umidsole_patapp_3 : "None"; ?>">
+                        <?php echo isset($init_umidsole_patapp_3) ? $init_umidsole_patapp_3 : "Select Option"; ?>
+                    </option>
                     <option value="Utility">Utility Model</option>
                     <option value="Industrial">Industrial Design</option>
                 </select>
             </td>
-            <td><input type="text"></td>
+            <td><input name = "umidsole_acceptdate_3" value = "<?php echo isset($init_umidsole_acceptdate_3) ? $init_umidsole_acceptdate_3 : ""; ?>" type="date"></td>
             <td><input id="UMID_SI_FS_3" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "umidsole_name_4" value = "<?php echo isset($init_umidsole_name_4) ? $init_umidsole_name_4 : ""; ?>" type="text"></td>
+            <td><input name = "umidsole_appdate_4" value = "<?php echo isset($init_umidsole_appdate_4) ? $init_umidsole_appdate_4 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="UMID_SI__4">
-                    <option value="none">Select option</option>
+                <select name="umidsole_appdate_4" id="UMID_SI__4">
+                    <option value = "<?php echo isset($init_umidsole_patapp_4) ? $init_umidsole_patapp_4 : "None"; ?>">
+                        <?php echo isset($init_umidsole_patapp_4) ? $init_umidsole_patapp_4 : "Select Option"; ?>
+                    </option>
                     <option value="Utility">Utility Model</option>
                     <option value="Industrial">Industrial Design</option>
                 </select>
             </td>
-            <td><input type="text"></td>
+            <td><input name = "umidsole_acceptdate_4" value = "<?php echo isset($init_umidsole_acceptdate_4) ? $init_umidsole_acceptdate_4 : ""; ?>" type="date"></td>
             <td><input id="UMID_SI_FS_4" readonly type="text" value="0"></td>
         </tr>
 
@@ -479,66 +1332,74 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "umidmul_name_1" value = "<?php echo isset($init_umidmul_name_1) ? $init_umidmul_name_1 : ""; ?>" type="text"></td>
+            <td><input name = "umidmul_appdate_1" value = "<?php echo isset($init_umidmul_appdate_1) ? $init_umidmul_appdate_1 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="UMID_MI__1">
-                    <option value="none">Select option</option>
+                <select name="umidmul_patapp_1" id="UMID_MI__1">
+                <option value = "<?php echo isset($init_umidmul_patapp_1) ? $init_umidmul_patapp_1 : "None"; ?>">
+                        <?php echo isset($init_umidmul_patapp_1) ? $init_umidmul_patapp_1 : "Select Option"; ?>
+                    </option>
                     <option value="Utility">Utility Model</option>
                     <option value="Industrial">Industrial Design</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text" id="UMID_MI_CONTRIBUTION1"></td>
+            <td><input name = "umidmul_acceptdate_1" value = "<?php echo isset($init_umidmul_acceptdate_1) ? $init_umidmul_acceptdate_1 : ""; ?>" type="date"></td>
+            <td><input name = "umidmul_contrib_1" value = "<?php echo isset($init_umidmul_contrib_1) ? $init_umidmul_contrib_1 : ""; ?>" type="text" id="UMID_MI_CONTRIBUTION1"></td>
             <td><input id="UMID_MI_FS_1" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "umidmul_name_2" value = "<?php echo isset($init_umidmul_name_2) ? $init_umidmul_name_2 : ""; ?>" type="text"></td>
+            <td><input name = "umidmul_appdate_2" value = "<?php echo isset($init_umidmul_appdate_2) ? $init_umidmul_appdate_2 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="UMID_MI__2">
-                    <option value="none">Select option</option>
+                <select name="umidmul_patapp_2" id="UMID_MI__2">
+                <option value = "<?php echo isset($init_umidmul_patapp_2) ? $init_umidmul_patapp_2 : "None"; ?>">
+                        <?php echo isset($init_umidmul_patapp_2) ? $init_umidmul_patapp_2 : "Select Option"; ?>
+                    </option>
                     <option value="Utility">Utility Model</option>
                     <option value="Industrial">Industrial Design</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text" id="UMID_MI_CONTRIBUTION2"></td>
+            <td><input name = "umidmul_acceptdate_2" value = "<?php echo isset($init_umidmul_acceptdate_2) ? $init_umidmul_acceptdate_2 : ""; ?>" type="date"></td>
+            <td><input name = "umidmul_contrib_2" value = "<?php echo isset($init_umidmul_contrib_2) ? $init_umidmul_contrib_2 : ""; ?>" type="text" id="UMID_MI_CONTRIBUTION2"></td>
             <td><input id="UMID_MI_FS_2" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "umidmul_name_3" value = "<?php echo isset($init_umidmul_name_3) ? $init_umidmul_name_3 : ""; ?>" type="text"></td>
+            <td><input name = "umidmul_appdate_3" value = "<?php echo isset($init_umidmul_appdate_3) ? $init_umidmul_appdate_3 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="UMID_MI__3">
-                    <option value="none">Select option</option>
+                <select name="umidmul_patapp_3" id="UMID_MI__3">
+                <option value = "<?php echo isset($init_umidmul_patapp_3) ? $init_umidmul_patapp_3 : "None"; ?>">
+                        <?php echo isset($init_umidmul_patapp_3) ? $init_umidmul_patapp_3 : "Select Option"; ?>
+                    </option>
                     <option value="Utility">Utility Model</option>
                     <option value="Industrial">Industrial Design</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text" id="UMID_MI_CONTRIBUTION3"></td>
+            <td><input name = "umidmul_acceptdate_3" value = "<?php echo isset($init_umidmul_acceptdate_3) ? $init_umidmul_acceptdate_3 : ""; ?>" type="date"></td>
+            <td><input name = "umidmul_contrib_3" value = "<?php echo isset($init_umidmul_contrib_3) ? $init_umidmul_contrib_3 : ""; ?>" type="text" id="UMID_MI_CONTRIBUTION3"></td>
             <td><input id="UMID_MI_FS_3" readonly type="text" value="0"></td>
         </tr>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
+            <td><input name = "umidmul_name_4" value = "<?php echo isset($init_umidmul_name_4) ? $init_umidmul_name_4 : ""; ?>" type="text"></td>
+            <td><input name = "umidmul_appdate_4" value = "<?php echo isset($init_umidmul_appdate_4) ? $init_umidmul_appdate_4 : ""; ?>" type="date"></td>
             <td>
-                <select name="" id="UMID_MI__4">
-                    <option value="none">Select option</option>
+                <select name="umidmul_patapp_4" id="UMID_MI__4">
+                <option value = "<?php echo isset($init_umidmul_patapp_4) ? $init_umidmul_patapp_4 : "None"; ?>">
+                        <?php echo isset($init_umidmul_patapp_4) ? $init_umidmul_patapp_4 : "Select Option"; ?>
+                    </option>
                     <option value="Utility">Utility Model</option>
                     <option value="Industrial">Industrial Design</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text" id="UMID_MI_CONTRIBUTION4"></td>
+            <td><input name = "umidmul_acceptdate_4" value = "<?php echo isset($init_umidmul_acceptdate_4) ? $init_umidmul_acceptdate_4 : ""; ?>" type="date"></td>
+            <td><input name = "umidmul_contrib_4" value = "<?php echo isset($init_umidmul_contrib_4) ? $init_umidmul_contrib_4 : ""; ?>" type="text" id="UMID_MI_CONTRIBUTION4"></td>
             <td><input id="UMID_MI_FS_4" readonly type="text" value="0"></td>
         </tr>
         <tr>
@@ -567,41 +1428,45 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="CPP1" type="text"></td>
-            <td><input id="CPP2" type="text"></td>
-            <td><input id="CPP3" type="date"></td>
-            <td><input id="CPP4" type="date"></td>
-            <td><input id="CPP5" type="text"></td>
+            <td><input  id="CPP1" name = "cpplocal_name_1" value = "<?php echo isset($init_cpplocal_name_1) ? $init_cpplocal_name_1 : ""; ?>" type="text"></td>
+
+            <td><input id="CPP2" name = "cpplocal_type_1" value = "<?php echo isset($init_cpplocal_type_1) ? $init_cpplocal_type_1 : ""; ?>" type="text"></td>
+
+            <td><input id="CPP3" name = "cpplocal_patentdate_1" value = "<?php echo isset($init_cpplocal_patentdate_1) ? $init_cpplocal_patentdate_1 : ""; ?>" type="date"></td>
+            <td><input id="CPP4" name = "cpplocal_proddate_1" value = "<?php echo isset($init_cpplocal_proddate_1) ? $init_cpplocal_proddate_1 : ""; ?>" type="date"></td>
+            <td><input id="CPP5" name = "cpplocal_area_1" value = "<?php echo isset($init_cpplocal_area_1) ? $init_cpplocal_area_1 : ""; ?>" type="text"></td>
             <td><input id="CPP_res1" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input id="CPP6" type="text"></td>
-            <td><input id="CPP7" type="text"></td>
-            <td><input id="CPP8" type="date"></td>
-            <td><input id="CPP9" type="date"></td>
-            <td><input id="CPP10" type="text"></td>
+            <td><input  id="CPP6" name = "cpplocal_name_2" value = "<?php echo isset($init_cpplocal_name_2) ? $init_cpplocal_name_2 : ""; ?>" type="text"></td>
+
+            <td><input id="CPP7" name = "cpplocal_type_2" value = "<?php echo isset($init_cpplocal_type_2) ? $init_cpplocal_type_2 : ""; ?>" type="text"></td>
+
+            <td><input id="CPP8" name = "cpplocal_patentdate_2" value = "<?php echo isset($init_cpplocal_patentdate_2) ? $init_cpplocal_patentdate_2 : ""; ?>" type="date"></td>
+            <td><input id="CPP9" name = "cpplocal_proddate_2" value = "<?php echo isset($init_cpplocal_proddate_2) ? $init_cpplocal_proddate_2 : ""; ?>" type="date"></td>
+            <td><input id="CPP10" name = "cpplocal_area_2" value = "<?php echo isset($init_cpplocal_area_2) ? $init_cpplocal_area_2 : ""; ?>" type="text"></td>
             <td><input id="CPP_res2" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="CPP11" type="text"></td>
-            <td><input id="CPP12" type="text"></td>
-            <td><input id="CPP13" type="date"></td>
-            <td><input id="CPP14" type="date"></td>
-            <td><input id="CPP15" type="text"></td>
+            <td><input  id="CPP11" name = "cpplocal_name_3" value = "<?php echo isset($init_cpplocal_name_3) ? $init_cpplocal_name_3 : ""; ?>" type="text"></td>
+            <td><input id="CPP12" name = "cpplocal_type_3" value = "<?php echo isset($init_cpplocal_type_3) ? $init_cpplocal_type_3 : ""; ?>" type="text"></td>
+            <td><input id="CPP13" name = "cpplocal_patentdate_3" value = "<?php echo isset($init_cpplocal_patentdate_3) ? $init_cpplocal_patentdate_3 : ""; ?>" type="date"></td>
+            <td><input id="CPP14" name = "cpplocal_proddate_3" value = "<?php echo isset($init_cpplocal_proddate_3) ? $init_cpplocal_proddate_3 : ""; ?>" type="date"></td>
+            <td><input id="CPP15" name = "cpplocal_area_3" value = "<?php echo isset($init_cpplocal_area_3) ? $init_cpplocal_area_3 : ""; ?>" type="text"></td>
             <td><input id="CPP_res3" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input id="CPP16" type="text"></td>
-            <td><input id="CPP17" type="text"></td>
-            <td><input id="CPP18" type="date"></td>
-            <td><input id="CPP19" type="date"></td>
-            <td><input id="CPP20" type="text"></td>
+            <td><input  id="CPP16" name = "cpplocal_name_4" value = "<?php echo isset($init_cpplocal_name_4) ? $init_cpplocal_name_4 : ""; ?>" type="text"></td>
+            <td><input id="CPP17" name = "cpplocal_type_4" value = "<?php echo isset($init_cpplocal_type_4) ? $init_cpplocal_type_4 : ""; ?>" type="text"></td>
+            <td><input id="CPP18" name = "cpplocal_patentdate_4" value = "<?php echo isset($init_cpplocal_patentdate_4) ? $init_cpplocal_patentdate_4 : ""; ?>" type="date"></td>
+            <td><input id="CPP19" name = "cpplocal_proddate_4" value = "<?php echo isset($init_cpplocal_proddate_4) ? $init_cpplocal_proddate_4 : ""; ?>" type="date"></td>
+            <td><input id="CPP20" name = "cpplocal_area_4" value = "<?php echo isset($init_cpplocal_area_4) ? $init_cpplocal_area_4 : ""; ?>" type="text"></td>
             <td><input id="CPP_res4" readonly type="text" value="0"></td>
         </tr>
 
@@ -629,41 +1494,41 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="CPP_i1" type="text"></td>
-            <td><input id="CPP_i2" type="text"></td>
-            <td><input id="CPP_i3" type="date"></td>
-            <td><input id="CPP_i4" type="date"></td>
-            <td><input id="CPP_i5" type="text"></td>
+            <td><input  id="CPP_i1" name = "cppinter_name_1" value = "<?php echo isset($init_cppinter_name_1) ? $init_cppinter_name_1 : ""; ?>" type="text"></td>
+            <td><input id="CPP_i2" name = "cppinter_type_1" value = "<?php echo isset($init_cppinter_type_1) ? $init_cppinter_type_1 : ""; ?>" type="text"></td>
+            <td><input id="CPP_i3" name = "cppinter_patentdate_1" value = "<?php echo isset($init_cppinter_patentdate_1) ? $init_cppinter_patentdate_1 : ""; ?>" type="date"></td>
+            <td><input id="CPP_i4" name = "cppinter_proddate_1" value = "<?php echo isset($init_cppinter_proddate_1) ? $init_cppinter_proddate_1 : ""; ?>" type="date"></td>
+            <td><input id="CPP_i5"  name = "cppinter_area_1" value = "<?php echo isset($init_cppinter_area_1) ? $init_cppinter_area_1 : ""; ?>" type="text"></td>
             <td><input id="CPP_res_i1" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input id="CPP_i6" type="text"></td>
-            <td><input id="CPP_i7" type="text"></td>
-            <td><input id="CPP_i8" type="date"></td>
-            <td><input id="CPP_i9" type="date"></td>
-            <td><input id="CPP_i10" type="text"></td>
+            <td><input  id="CPP_i6" name = "cppinter_name_2" value = "<?php echo isset($init_cppinter_name_2) ? $init_cppinter_name_2 : ""; ?>" type="text"></td>
+            <td><input id="CPP_i7" name = "cppinter_type_2" value = "<?php echo isset($init_cppinter_type_2) ? $init_cppinter_type_2 : ""; ?>" type="text"></td>
+            <td><input id="CPP_i8" name = "cppinter_patentdate_2" value = "<?php echo isset($init_cppinter_patentdate_2) ? $init_cppinter_patentdate_2 : ""; ?>" type="date"></td>
+            <td><input id="CPP_i9" name = "cppinter_proddate_2" value = "<?php echo isset($init_cppinter_proddate_2) ? $init_cppinter_proddate_2 : ""; ?>" type="date"></td>
+            <td><input id="CPP_i10"  name = "cppinter_area_2" value = "<?php echo isset($init_cppinter_area_2) ? $init_cppinter_area_2 : ""; ?>" type="text"></td>
             <td><input id="CPP_res_i2" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="CPP_i11" type="text"></td>
-            <td><input id="CPP_i12" type="text"></td>
-            <td><input id="CPP_i13" type="date"></td>
-            <td><input id="CPP_i14" type="date"></td>
-            <td><input id="CPP_i15" type="text"></td>
+            <td><input  id="CPP_i11" name = "cppinter_name_3" value = "<?php echo isset($init_cppinter_name_3) ? $init_cppinter_name_3 : ""; ?>" type="text"></td>
+            <td><input id="CPP_i12" name = "cppinter_type_3" value = "<?php echo isset($init_cppinter_type_3) ? $init_cppinter_type_3 : ""; ?>" type="text"></td>
+            <td><input id="CPP_i13" name = "cppinter_patentdate_3" value = "<?php echo isset($init_cppinter_patentdate_3) ? $init_cppinter_patentdate_3 : ""; ?>" type="date"></td>
+            <td><input id="CPP_i14" name = "cppinter_proddate_3" value = "<?php echo isset($init_cppinter_proddate_3) ? $init_cppinter_proddate_3 : ""; ?>" type="date"></td>
+            <td><input id="CPP_i15"  name = "cppinter_area_3" value = "<?php echo isset($init_cppinter_area_3) ? $init_cppinter_area_3 : ""; ?>" type="text"></td>
             <td><input id="CPP_res_i3" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input id="CPP_i16" type="text"></td>
-            <td><input id="CPP_i17" type="text"></td>
-            <td><input id="CPP_i18" type="date"></td>
-            <td><input id="CPP_i19" type="date"></td>
-            <td><input id="CPP_i20" type="text"></td>
+            <td><input  id="CPP_i16" name = "cppinter_name_4" value = "<?php echo isset($init_cppinter_name_4) ? $init_cppinter_name_4 : ""; ?>" type="text"></td>
+            <td><input id="CPP_i17" name = "cppinter_type_4" value = "<?php echo isset($init_cppinter_type_4) ? $init_cppinter_type_4 : ""; ?>" type="text"></td>
+            <td><input id="CPP_i18" name = "cppinter_patentdate_4" value = "<?php echo isset($init_cppinter_patentdate_4) ? $init_cppinter_patentdate_4 : ""; ?>" type="date"></td>
+            <td><input id="CPP_i19" name = "cppinter_proddate_4" value = "<?php echo isset($init_cppinter_proddate_4) ? $init_cppinter_proddate_4 : ""; ?>" type="date"></td>
+            <td><input id="CPP_i20"  name = "cppinter_area_4" value = "<?php echo isset($init_cppinter_area_4) ? $init_cppinter_area_4 : ""; ?>" type="text"></td>
             <td><input id="CPP_res_i4" readonly type="text" value="0"></td>
         </tr>
 
@@ -694,36 +1559,36 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="NSP_SD-1" type="text"></td>
-            <td><input id="NSP_SD-2" type="date"></td>
-            <td><input id="NSP_SD-3" type="date"></td>
-            <td><input id="NSP_SD-4" type="text"></td>
+            <td><input  id="NSP_SD-1" name = "nspsole_name_1" value = "<?php echo isset($init_nspsole_name_1) ? $init_nspsole_name_1 : ""; ?>" type="text"></td>
+            <td><input id="NSP_SD-2" name = "nspsole_copydate_1" value = "<?php echo isset($init_nspsole_copydate_1) ? $init_nspsole_copydate_1 : ""; ?>" type="date"></td>
+            <td><input id="NSP_SD-3" name = "nspsole_utildate_1" value = "<?php echo isset($init_nspsole_utildate_1) ? $init_nspsole_utildate_1 : ""; ?>" type="date"></td>
+            <td><input id="NSP_SD-4" name = "nspsole_endusername_1" value = "<?php echo isset($init_nspsole_endusername_1) ? $init_nspsole_endusername_1 : ""; ?>" type="text"></td>
             <td><input id="NSP_SD_res1" readonly type="text" value="0"></td>
         </tr>
         <tr>
             <td>2</td>
-            <td><input id="NSP_SD-5" type="text"></td>
-            <td><input id="NSP_SD-6" type="date"></td>
-            <td><input id="NSP_SD-7" type="date"></td>
-            <td><input id="NSP_SD-8" type="text"></td>
+            <td><input  id="NSP_SD-5" name = "nspsole_name_2" value = "<?php echo isset($init_nspsole_name_2) ? $init_nspsole_name_2 : ""; ?>" type="text"></td>
+            <td><input id="NSP_SD-6" name = "nspsole_copydate_2" value = "<?php echo isset($init_nspsole_copydate_2) ? $init_nspsole_copydate_2 : ""; ?>" type="date"></td>
+            <td><input id="NSP_SD-7" name = "nspsole_utildate_2" value = "<?php echo isset($init_nspsole_utildate_2) ? $init_nspsole_utildate_2 : ""; ?>" type="date"></td>
+            <td><input id="NSP_SD-8" name = "nspsole_endusername_2" value = "<?php echo isset($init_nspsole_endusername_2) ? $init_nspsole_endusername_2 : ""; ?>" type="text"></td>
             <td><input id="NSP_SD_res2" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="NSP_SD-9" type="text"></td>
-            <td><input id="NSP_SD-10" type="date"></td>
-            <td><input id="NSP_SD-11" type="date"></td>
-            <td><input id="NSP_SD-12" type="text"></td>
+            <td><input  id="NSP_SD-9" name = "nspsole_name_3" value = "<?php echo isset($init_nspsole_name_3) ? $init_nspsole_name_3 : ""; ?>" type="text"></td>
+            <td><input id="NSP_SD-10" name = "nspsole_copydate_3" value = "<?php echo isset($init_nspsole_copydate_3) ? $init_nspsole_copydate_3 : ""; ?>" type="date"></td>
+            <td><input id="NSP_SD-11" name = "nspsole_utildate_3" value = "<?php echo isset($init_nspsole_utildate_3) ? $init_nspsole_utildate_3 : ""; ?>" type="date"></td>
+            <td><input id="NSP_SD-12" name = "nspsole_endusername_3" value = "<?php echo isset($init_nspsole_endusername_3) ? $init_nspsole_endusername_3 : ""; ?>" type="text"></td>
             <td><input id="NSP_SD_res3" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input id="NSP_SD-13" type="text"></td>
-            <td><input id="NSP_SD-14" type="date"></td>
-            <td><input id="NSP_SD-15" type="date"></td>
-            <td><input id="NSP_SD-16" type="text"></td>
+            <td><input  id="NSP_SD-13" name = "nspsole_name_4" value = "<?php echo isset($init_nspsole_name_4) ? $init_nspsole_name_4 : ""; ?>" type="text"></td>
+            <td><input id="NSP_SD-14" name = "nspsole_copydate_4" value = "<?php echo isset($init_nspsole_copydate_4) ? $init_nspsole_copydate_4 : ""; ?>" type="date"></td>
+            <td><input id="NSP_SD-15" name = "nspsole_utildate_4" value = "<?php echo isset($init_nspsole_utildate_4) ? $init_nspsole_utildate_4 : ""; ?>" type="date"></td>
+            <td><input id="NSP_SD-16" name = "nspsole_endusername_4" value = "<?php echo isset($init_nspsole_endusername_4) ? $init_nspsole_endusername_4 : ""; ?>" type="text"></td>
             <td><input id="NSP_SD_res4" readonly type="text" value="0"></td>
         </tr>
 
@@ -749,45 +1614,44 @@ if (isset($_POST['submit_btn'])) {
             <td>Name of End User/s</td>
             <td>Contribution</td>
             <td>Faculty Score</td>
-
         </tr>
 
         <tr>
             <td>1</td>
-            <td><input id="NSP_MD-1" type="text"></td>
-            <td><input id="NSP_MD-2" type="date"></td>
-            <td><input id="NSP_MD-3" type="date"></td>
-            <td><input id="NSP_MD-4" type="text"></td>
-            <td><input id="NSP_contribution_1" type="text"></td>
+            <td><input  id="NSP_MD-1" name = "nspmul_name_1" value = "<?php echo isset($init_nspmul_name_1) ? $init_nspmul_name_1 : ""; ?>" type="text"></td>
+            <td><input id="NSP_MD-2" name = "nspmul_copydate_1" value = "<?php echo isset($init_nspmul_copydate_1) ? $init_nspmul_copydate_1 : ""; ?>" type="date"></td>
+            <td><input id="NSP_MD-3" name = "nspmul_utildate_1" value = "<?php echo isset($init_nspmul_utildate_1) ? $init_nspmul_utildate_1 : ""; ?>" type="date"></td>
+            <td><input id="NSP_MD-4" name = "nspmul_endusername_1" value = "<?php echo isset($init_nspmul_endusername_1) ? $init_nspmul_endusername_1 : ""; ?>" type="text"></td>
+            <td><input id="NSP_contribution_1" name = "nspmul_contrib_1" value = "<?php echo isset($init_nspmul_contrib_1) ? $init_nspmul_nspmul_contrib_1 : ""; ?>" type="text"></td>
             <td><input id="NSP_MD_res1" readonly type="text" value="0"></td>
         </tr>
         <tr>
             <td>2</td>
-            <td><input id="NSP_MD-5" type="text"></td>
-            <td><input id="NSP_MD-6" type="date"></td>
-            <td><input id="NSP_MD-7" type="date"></td>
-            <td><input id="NSP_MD-8" type="text"></td>
-            <td><input id="NSP_contribution_2" type="text"></td>
+            <td><input  id="NSP_MD-5" name = "nspmul_name_2" value = "<?php echo isset($init_nspmul_name_2) ? $init_nspmul_name_2 : ""; ?>" type="text"></td>
+            <td><input id="NSP_MD-6" name = "nspmul_copydate_2" value = "<?php echo isset($init_nspmul_copydate_2) ? $init_nspmul_copydate_2 : ""; ?>" type="date"></td>
+            <td><input id="NSP_MD-7" name = "nspmul_utildate_2" value = "<?php echo isset($init_nspmul_utildate_2) ? $init_nspmul_utildate_2 : ""; ?>" type="date"></td>
+            <td><input id="NSP_MD-8" name = "nspmul_endusername_2" value = "<?php echo isset($init_nspmul_endusername_2) ? $init_nspmul_endusername_2 : ""; ?>" type="text"></td>
+            <td><input id="NSP_contribution_2" name = "nspmul_contrib_2" value = "<?php echo isset($init_nspmul_contrib_2) ? $init_nspmul_nspmul_contrib_2 : ""; ?>" type="text"></td>
             <td><input id="NSP_MD_res2" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="NSP_MD-9" type="text"></td>
-            <td><input id="NSP_MD-10" type="date"></td>
-            <td><input id="NSP_MD-11" type="date"></td>
-            <td><input id="NSP_MD-12" type="text"></td>
-            <td><input id="NSP_contribution_3" type="text"></td>
+            <td><input  id="NSP_MD-9" name = "nspmul_name_3" value = "<?php echo isset($init_nspmul_name_3) ? $init_nspmul_name_3 : ""; ?>" type="text"></td>
+            <td><input id="NSP_MD-10" name = "nspmul_copydate_3" value = "<?php echo isset($init_nspmul_copydate_3) ? $init_nspmul_copydate_3 : ""; ?>" type="date"></td>
+            <td><input id="NSP_MD-11" name = "nspmul_utildate_3" value = "<?php echo isset($init_nspmul_utildate_3) ? $init_nspmul_utildate_3 : ""; ?>" type="date"></td>
+            <td><input id="NSP_MD-12" name = "nspmul_endusername_3" value = "<?php echo isset($init_nspmul_endusername_3) ? $init_nspmul_endusername_3 : ""; ?>" type="text"></td>
+            <td><input id="NSP_contribution_3" name = "nspmul_contrib_3" value = "<?php echo isset($init_nspmul_contrib_3) ? $init_nspmul_contrib_3 : ""; ?>" type="text"></td>
             <td><input id="NSP_MD_res3" readonly type="text" value="0"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input id="NSP_MD-13" type="text"></td>
-            <td><input id="NSP_MD-14" type="date"></td>
-            <td><input id="NSP_MD-15" type="date"></td>
-            <td><input id="NSP_MD-16" type="text"></td>
-            <td><input id="NSP_contribution_4" type="text"></td>
+            <td><input  id="NSP_MD-13" name = "nspmul_name_4" value = "<?php echo isset($init_nspmul_name_4) ? $init_nspmul_name_4 : ""; ?>" type="text"></td>
+            <td><input id="NSP_MD-14" name = "nspmul_copydate_4" value = "<?php echo isset($init_nspmul_copydate_4) ? $init_nspmul_copydate_4 : ""; ?>" type="date"></td>
+            <td><input id="NSP_MD-15" name = "nspmul_utildate_4" value = "<?php echo isset($init_nspmul_utildate_4) ? $init_nspmul_utildate_4 : ""; ?>" type="date"></td>
+            <td><input id="NSP_MD-16" name = "nspmul_endusername_4" value = "<?php echo isset($init_nspmul_endusername_4) ? $init_nspmul_endusername_4 : ""; ?>" type="text"></td>
+            <td><input id="NSP_contribution_4" name = "nspmul_contrib_4" value = "<?php echo isset($init_nspmul_contrib_4) ? $init_nspmul_contrib_4 : ""; ?>" type="text"></td>
             <td><input id="NSP_MD_res4" readonly type="text" value="0"></td>
         </tr>
 
@@ -819,69 +1683,77 @@ if (isset($_POST['submit_btn'])) {
         </tr>
         <tr>
             <td>1</td>
-            <td><input id="" type="text"></td>
-            <td><input type="date" name="" id=""></td>
-            <td><input type="date" name="" id=""></td>
-            <td>
-                <select name="" id="USP_cont_1">
-                    <option value="none">Select Option</option>
+            <td><input  name = "uspsole_name_1" value = "<?php echo isset($init_uspsole_name_1) ? $init_uspsole_name_1 : ""; ?>" type="text"></td>
+            <td><input name = "uspsole_copydate_1" value = "<?php echo isset($init_uspsole_copydate_1) ? $init_uspsole_copydate_1 : ""; ?>" type="date" name="" id=""></td>
+            <td><input name = "uspsole_utildate_1" value = "<?php echo isset($init_uspsole_utildate_1) ? $init_uspsole_utildate_1 : ""; ?>" type="date" name="" id=""></td>
+            <td><select name="uspsole_contrib_1" id="USP_cont_1">
+                    <option value = "<?php echo isset($init_uspsole_contrib_1) ? $init_uspsole_contrib_1 : "None"; ?>">
+                        <?php echo isset($init_uspsole_contrib_1) ? $init_uspsole_contrib_1 : "Select Option"; ?>
+                    </option>
+
                     <option value="Sole">Sole Developer</option>
                     <option value="Co-developer">Co-developer</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
+            <td><input  name = "uspsole_specfeat_1" value = "<?php echo isset($init_uspsole_specfeat_1) ? $init_uspsole_specfeat_1 : ""; ?>" type="text"></td>
+            <td><input  name = "uspsole_endusername_1" value = "<?php echo isset($init_uspsole_endusername_1) ? $init_uspsole_endusername_1 : ""; ?>" type="text"></td>
             <td><input readonly type="number" name="" id="USP_fs1" value="0"></td>
             <td></td>
         </tr>
         <tr>
             <td>2</td>
-            <td><input type="text"></td>
-            <td><input type="date"></td>
-            <td><input type="date"></td>
-            <td>
-                <select name="" id="USP_cont_2">
-                    <option value="none">Select Option</option>
+            <td><input  name = "uspsole_name_2" value = "<?php echo isset($init_uspsole_name_2) ? $init_uspsole_name_2 : ""; ?>" type="text"></td>
+            <td><input name = "uspsole_copydate_2" value = "<?php echo isset($init_uspsole_copydate_2) ? $init_uspsole_copydate_2 : ""; ?>" type="date" name="" id=""></td>
+            <td><input name = "uspsole_utildate_2" value = "<?php echo isset($init_uspsole_utildate_2) ? $init_uspsole_utildate_2 : ""; ?>" type="date" name="" id=""></td>
+            <td><select name="uspsole_contrib_2" id="USP_cont_2">
+                    <option value = "<?php echo isset($init_uspsole_contrib_2) ? $init_uspsole_contrib_2 : "None"; ?>">
+                        <?php echo isset($init_uspsole_contrib_2) ? $init_uspsole_contrib_2 : "Select Option"; ?>
+                    </option>
+
                     <option value="Sole">Sole Developer</option>
                     <option value="Co-developer">Co-developer</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
+            <td><input  name = "uspsole_specfeat_2" value = "<?php echo isset($init_uspsole_specfeat_2) ? $init_uspsole_specfeat_2 : ""; ?>" type="text"></td>
+            <td><input  name = "uspsole_endusername_2" value = "<?php echo isset($init_uspsole_endusername_2) ? $init_uspsole_endusername_2 : ""; ?>" type="text"></td>
             <td><input readonly type="number" name="" id="USP_fs2" value="0"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input type="text"></td>
-            <td><input type="date" name="" id=""></td>
-            <td><input type="date" name="" id=""></td>
-            <td>
-                <select name="" id="USP_cont_3">
-                    <option value="none">Select Option</option>
+            <td><input  name = "uspsole_name_3" value = "<?php echo isset($init_uspsole_name_3) ? $init_uspsole_name_3 : ""; ?>" type="text"></td>
+            <td><input name = "uspsole_copydate_3" value = "<?php echo isset($init_uspsole_copydate_3) ? $init_uspsole_copydate_3 : ""; ?>" type="date" name="" id=""></td>
+            <td><input name = "uspsole_utildate_3" value = "<?php echo isset($init_uspsole_utildate_3) ? $init_uspsole_utildate_3 : ""; ?>" type="date" name="" id=""></td>
+            <td><select name="uspsole_contrib_3" id="USP_cont_3">
+                    <option value = "<?php echo isset($init_uspsole_contrib_3) ? $init_uspsole_contrib_3 : "None"; ?>">
+                        <?php echo isset($init_uspsole_contrib_3) ? $init_uspsole_contrib_3 : "Select Option"; ?>
+                    </option>
+
                     <option value="Sole">Sole Developer</option>
                     <option value="Co-developer">Co-developer</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
+            <td><input  name = "uspsole_specfeat_3" value = "<?php echo isset($init_uspsole_specfeat_3) ? $init_uspsole_specfeat_3 : ""; ?>" type="text"></td>
+            <td><input  name = "uspsole_endusername_3" value = "<?php echo isset($init_uspsole_endusername_3) ? $init_uspsole_endusername_3 : ""; ?>" type="text"></td>
             <td><input readonly type="number" name="" id="USP_fs3" value="0"></td>
         </tr>
 
         <tr>
             <td>4</td>
-            <td><input type="text"></td>
-            <td><input type="date" name="" id=""></td>
-            <td><input type="date" name="" id=""></td>
-            <td>
-                <select name="" id="USP_cont_4">
-                    <option value="none">Select Option</option>
+            <td><input  name = "uspsole_name_4" value = "<?php echo isset($init_uspsole_name_4) ? $init_uspsole_name_4 : ""; ?>" type="text"></td>
+            <td><input name = "uspsole_copydate_4" value = "<?php echo isset($init_uspsole_copydate_4) ? $init_uspsole_copydate_4 : ""; ?>" type="date" name="" id=""></td>
+            <td><input name = "uspsole_utildate_4" value = "<?php echo isset($init_uspsole_utildate_4) ? $init_uspsole_utildate_4 : ""; ?>" type="date" name="" id=""></td>
+            <td><select name="uspsole_contrib_4" id="USP_cont_4">
+                    <option value = "<?php echo isset($init_uspsole_contrib_4) ? $init_uspsole_contrib_4 : "None"; ?>">
+                        <?php echo isset($init_uspsole_contrib_4) ? $init_uspsole_contrib_4 : "Select Option"; ?>
+                    </option>
+
                     <option value="Sole">Sole Developer</option>
                     <option value="Co-developer">Co-developer</option>
                 </select>
             </td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
+            <td><input  name = "uspsole_specfeat_4" value = "<?php echo isset($init_uspsole_specfeat_4) ? $init_uspsole_specfeat_3 : ""; ?>" type="text"></td>
+            <td><input  name = "uspsole_endusername_4" value = "<?php echo isset($init_uspsole_endusername_4) ? $init_uspsole_endusername_4 : ""; ?>" type="text"></td>
             <td><input readonly type="number" name="" id="USP_fs4" value="0"></td>
         </tr>
         <tr>
@@ -913,30 +1785,30 @@ if (isset($_POST['submit_btn'])) {
         </tr>
         <tr>
             <td>1</td>
-            <td><input id="SCDP_1" type="text"></td>
-            <td><input id="SCDP_2" type="text" name="" id=""></td>
-            <td><input id="SCDP_3" type="date" name="" id=""></td>
-            <td><input id="SCDP_4" type="date" name="" id=""></td>
-            <td><input id="SCDP_5" type="date"></td>
+            <td><input id="SCDP_1" name = "npvsole_name_1" value = "<?php echo isset($init_npvsole_name_1) ? $init_npvsole_name_1 : ""; ?>" type="text"></td>
+            <td><input id="SCDP_2"name = "npvsole_type_1" value = "<?php echo isset($init_npvsole_type_1) ? $init_npvsole_type_1 : ""; ?>" type="text"></td>
+            <td><input id="SCDP_3"name = "npvsole_datecom_1" value = "<?php echo isset($init_npvsole_datecom_1) ? $init_npvsole_datecom_1 : ""; ?>" type="date"></td>
+            <td><input id="SCDP_4"name = "npvsole_datereg_1" value = "<?php echo isset($init_npvsole_datereg_1) ? $init_npvsole_datereg_1 : ""; ?>" type="date"></td>
+            <td><input id="SCDP_5"name = "npvsole_dateprop_1" value = "<?php echo isset($init_npvsole_dateprop_1) ? $init_npvsole_dateprop_1 : ""; ?>" type="date"></td>
             <td><input readonly type="number" name="" id="SCDPres_1" value="0"></td>
         </tr>
         <tr>
             <td>2</td>
-            <td><input id="SCDP_6" type="text"></td>
-            <td><input id="SCDP_7" type="text" name="" id=""></td>
-            <td><input id="SCDP_8" type="date" name="" id=""></td>
-            <td><input id="SCDP_9" type="date" name="" id=""></td>
-            <td><input id="SCDP_10" type="date"></td>
+            <td><input id="SCDP_6" name = "npvsole_name_2" value = "<?php echo isset($init_npvsole_name_2) ? $init_npvsole_name_2 : ""; ?>" type="text"></td>
+            <td><input id="SCDP_7"name = "npvsole_type_2" value = "<?php echo isset($init_npvsole_type_2) ? $init_npvsole_type_2 : ""; ?>" type="text"></td>
+            <td><input id="SCDP_8"name = "npvsole_datecom_2" value = "<?php echo isset($init_npvsole_datecom_2) ? $init_npvsole_datecom_2 : ""; ?>" type="date"></td>
+            <td><input id="SCDP_9"name = "npvsole_datereg_2" value = "<?php echo isset($init_npvsole_datereg_2) ? $init_npvsole_datereg_2 : ""; ?>" type="date"></td>
+            <td><input id="SCDP_10"name = "npvsole_dateprop_2" value = "<?php echo isset($init_npvsole_dateprop_2) ? $init_npvsole_dateprop_2 : ""; ?>" type="date"></td>
             <td><input readonly type="number" name="" id="SCDPres_2" value="0"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="SCDP_11" type="text"></td>
-            <td><input id="SCDP_12" type="text" name="" id=""></td>
-            <td><input id="SCDP_13" type="date" name="" id=""></td>
-            <td><input id="SCDP_14" type="date" name="" id=""></td>
-            <td><input id="SCDP_15" type="date"></td>
+            <td><input id="SCDP_11" name = "npvsole_name_3" value = "<?php echo isset($init_npvsole_name_3) ? $init_npvsole_name_3 : ""; ?>" type="text"></td>
+            <td><input id="SCDP_12"name = "npvsole_type_3" value = "<?php echo isset($init_npvsole_type_3) ? $init_npvsole_type_3 : ""; ?>" type="text"></td>
+            <td><input id="SCDP_13"name = "npvsole_datecom_3" value = "<?php echo isset($init_npvsole_datecom_3) ? $init_npvsole_datecom_3 : ""; ?>" type="date"></td>
+            <td><input id="SCDP_14"name = "npvsole_datereg_3" value = "<?php echo isset($init_npvsole_datereg_3) ? $init_npvsole_datereg_3 : ""; ?>" type="date"></td>
+            <td><input id="SCDP_15"name = "npvsole_dateprop_3" value = "<?php echo isset($init_npvsole_dateprop_3) ? $init_npvsole_dateprop_3 : ""; ?>" type="date"></td>
             <td><input readonly type="number" name="" id="SCDPres_3" value="0"></td>
         </tr>
 
@@ -970,33 +1842,33 @@ if (isset($_POST['submit_btn'])) {
         </tr>
         <tr>
             <td>1</td>
-            <td><input type="text"></td>
-            <td><input type="text" name="" id="WMD_1"></td>
-            <td><input type="date" name="" id="WMD_2"></td>
-            <td><input type="date" name="" id="WMD_3"></td>
-            <td><input type="date" id="WMD_4"></td>
-            <td><input type="text" id="WMD_5"></td>
+            <td><input name = "npvmul_name_1" value = "<?php echo isset($init_npvmul_name_1) ? $init_npvmul_name_1 : ""; ?>" type="text"></td>
+            <td><input name = "npvmul_type_1" value = "<?php echo isset($init_npvmul_type_1) ? $init_npvmul_type_1 : ""; ?>" type="text" id="WMD_1"></td>
+            <td><input name = "npvmul_datecom_1" value = "<?php echo isset($init_npvmul_datecom_1) ? $init_npvmul_datecom_1 : ""; ?>" type="date" id="WMD_2"></td>
+            <td><input name = "npvmul_datereg_1" value = "<?php echo isset($init_npvmul_datereg_1) ? $init_npvmul_datereg_1 : ""; ?>" type="date" id="WMD_3"></td>
+            <td><input name = "npvmul_dateprop_1" value = "<?php echo isset($init_npvmul_dateprop_1) ? $init_npvmul_dateprop_1 : ""; ?>" type="date" id="WMD_4"></td>
+            <td><input name = "npvmul_contrib_1" value = "<?php echo isset($init_npvmul_contrib_1) ? $init_npvmul_contrib_1 : ""; ?>" type="text" id="WMD_5"></td>
             <td><input readonly type="number" name="" id="WMD_res1" value="0"></td>
         </tr>
         <tr>
             <td>2</td>
-            <td><input type="text"></td>
-            <td><input type="text" name="" id="WMD_6"></td>
-            <td><input type="date" name="" id="WMD_7"></td>
-            <td><input type="date" name="" id="WMD_8"></td>
-            <td><input type="date" id="WMD_9"></td>
-            <td><input type="text" id="WMD_10"></td>
+            <td><input name = "npvmul_name_2" value = "<?php echo isset($init_npvmul_name_2) ? $init_npvmul_name_2 : ""; ?>" type="text"></td>
+            <td><input name = "npvmul_type_2" value = "<?php echo isset($init_npvmul_type_2) ? $init_npvmul_type_2 : ""; ?>" type="text" id="WMD_6"></td>
+            <td><input name = "npvmul_datecom_2" value = "<?php echo isset($init_npvmul_datecom_2) ? $init_npvmul_datecom_2 : ""; ?>" type="date" id="WMD_7"></td>
+            <td><input name = "npvmul_datereg_2" value = "<?php echo isset($init_npvmul_datereg_2) ? $init_npvmul_datereg_2 : ""; ?>" type="date" id="WMD_8"></td>
+            <td><input name = "npvmul_dateprop_2" value = "<?php echo isset($init_npvmul_dateprop_2) ? $init_npvmul_dateprop_2 : ""; ?>" type="date" id="WMD_9"></td>
+            <td><input name = "npvmul_contrib_2" value = "<?php echo isset($init_npvmul_contrib_2) ? $init_npvmul_contrib_2 : ""; ?>" type="text" id="WMD_10"></td>
             <td><input readonly type="number" name="" id="WMD_res2" value="0"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input type="text"></td>
-            <td><input type="text" name="" id="WMD_11"></td>
-            <td><input type="date" name="" id="WMD_12"></td>
-            <td><input type="date" name="" id="WMD_13"></td>
-            <td><input type="date" id="WMD_14"></td>
-            <td><input type="text" id="WMD_15"></td>
+            <td><input name = "npvmul_name_3" value = "<?php echo isset($init_npvmul_name_3) ? $init_npvmul_name_3 : ""; ?>" type="text"></td>
+            <td><input name = "npvmul_type_3" value = "<?php echo isset($init_npvmul_type_3) ? $init_npvmul_type_3 : ""; ?>" type="text" id="WMD_11"></td>
+            <td><input name = "npvmul_datecom_3" value = "<?php echo isset($init_npvmul_datecom_3) ? $init_npvmul_datecom_3 : ""; ?>" type="date" id="WMD_12"></td>
+            <td><input name = "npvmul_datereg_3" value = "<?php echo isset($init_npvmul_datereg_3) ? $init_npvmul_datereg_3 : ""; ?>" type="date" id="WMD_13"></td>
+            <td><input name = "npvmul_dateprop_3" value = "<?php echo isset($init_npvmul_dateprop_3) ? $init_npvmul_dateprop_3 : ""; ?>" type="date" id="WMD_14"></td>
+            <td><input name = "npvmul_contrib_3" value = "<?php echo isset($init_npvmul_contrib_3) ? $init_npvmul_contrib_3 : ""; ?>" type="text" id="WMD_15"></td>
             <td><input readonly type="number" name="" id="WMD_res3" value="0"></td>
         </tr>
 

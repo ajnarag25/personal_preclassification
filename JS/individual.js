@@ -19,14 +19,9 @@ const ranks = [
     "Professor VI"
 ];
 
+document.getElementById('1subrank').addEventListener('change', function() {
+    const selectedValue = this.value;
 
-document.getElementById('incrementRank').addEventListener('change', function() {
-    const incrementRank = document.getElementById('incrementRank');
-    const incrementRank2 = document.getElementById('incrementRank2');
-    const incrementRank3 = document.getElementById('incrementRank3');
-    const displayVal = document.getElementById('displayVal');
-    const checkScore = document.getElementById('checkScores').value;
-    
     const ranks = [
         'Instructor I', 'Instructor II', 'Instructor III',
         'Assistant Professor I', 'Assistant Professor II', 'Assistant Professor III', 'Assistant Professor IV',
@@ -34,21 +29,30 @@ document.getElementById('incrementRank').addEventListener('change', function() {
         'Professor I', 'Professor II', 'Professor III', 'Professor IV', 'Professor V', 'Professor VI'
     ];
 
-    const currentRank = incrementRank.value;
-    const rankIndex = ranks.indexOf(currentRank);
+    document.getElementById('incrementRank').addEventListener('change', function() {
+        const incrementRank = document.getElementById('incrementRank');
+        const incrementRank2 = document.getElementById('incrementRank2');
+        const incrementRank3 = document.getElementById('incrementRank3');
+        const displayVal = document.getElementById('displayVal');
+        const checkScore = document.getElementById('checkScores').value;
 
-    if (rankIndex >= 0 && rankIndex < ranks.length - 1 && currentRank !== '') {
-        incrementRank2.value = ranks[rankIndex + 1];
-        let nextRankIndex = rankIndex + 1 + parseInt(checkScore);
-        nextRankIndex = Math.min(nextRankIndex, ranks.length - 1); // Ensure index is within bounds
-        incrementRank3.value = ranks[nextRankIndex] || '';
-        displayVal.value = '1';
-    } else {
-        incrementRank2.value = 'Instructor I';
-        let nextRankIndex = 0 + parseInt(checkScore);
-        incrementRank3.value = ranks[nextRankIndex] || '';
-        displayVal.value = '0';
-    }
+        const currentRank = incrementRank.value;
+        const rankIndex = ranks.indexOf(currentRank);
+
+        if (selectedValue === 'YES' && rankIndex >= 0 && rankIndex < ranks.length - 1 && currentRank !== '') {
+            incrementRank2.value = ranks[rankIndex + 1];
+            let nextRankIndex = rankIndex + 1 + parseInt(checkScore);
+            nextRankIndex = Math.min(nextRankIndex, ranks.length - 1); // Ensure index is within bounds
+            incrementRank3.value = ranks[nextRankIndex] || '';
+            displayVal.value = '1';
+        } else {
+            incrementRank2.value = incrementRank.value;
+            let nextRankIndex = rankIndex + parseInt(checkScore);
+            nextRankIndex = Math.min(nextRankIndex, ranks.length - 1); // Ensure index is within bounds
+            incrementRank3.value = ranks[nextRankIndex] || '';
+            displayVal.value = '0';
+        }
+    });
 });
 
 document.getElementById('2subrank').addEventListener('change', function() {
@@ -73,5 +77,4 @@ document.getElementById('2subrank').addEventListener('change', function() {
 
     incrementRank4.value = nextRank || '';
 });
-
 
