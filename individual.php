@@ -905,7 +905,7 @@
                                             <td class="text-center">2 sub-rank</td>
                                             <td>Base Rank</td>
                                             <td>
-                                            <select class="form-select" name="2subrank" id="incrementRank" required>
+                                            <select class="form-select" name="2subrank" id="incrementRank">
                                                     <option value="" selected disabled>--Select--</option>
                                                     <option value="Instructor I">Instructor I</option>
                                                     <option value="Instructor II">Instructor II</option>
