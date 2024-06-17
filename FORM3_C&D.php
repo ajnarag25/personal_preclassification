@@ -4,9 +4,29 @@ session_start();
 if(!isset($_SESSION['user'])){
   header('location: login.php');
 }
+$id = $_SESSION['user']['user_id'];
+$query3_cd = "SELECT * FROM form3_cd WHERE user_id = $id";
+$result3_cd = $conn->query($query3_cd);
+
+
+
+while ($row = mysqli_fetch_array($result3_cd)) {
+    $numc = $row['numc'];
+    $reason = $row['reason'];
+    $ep1_19 = $row['ep1_19'];
+    $ep2_19 = $row['ep2_19'];
+    $ep1_20 = $row['ep1_20'];
+    $ep2_20 = $row['ep2_20'];
+    $ep1_21 = $row['ep1_21'];
+    $ep2_21 = $row['ep2_21'];
+    $ep1_22 = $row['ep1_22'];
+    $ep2_22 = $row['ep2_22'];
+    $desig = $row['desig'];
+    $epdate = $row['epdate'];
+}
+
 
 if (isset($_POST['Submit_btn'])) {
-    $id = $_SESSION['user']['user_id'];
     $scoreStudent = $_POST['score_student'];
     $scoreAdmin = $_POST['score_admin'];
     if ($scoreStudent == "" AND $scoreAdmin == "") {
@@ -28,6 +48,40 @@ if (isset($_POST['Submit_btn'])) {
         </script>
         <?php
     } else {
+        $numc = $_POST['numc'];
+        $reason = $_POST['reason'];
+        $ep1_19 = $_POST['ep1_19'];
+        $ep2_19 = $_POST['ep2_19'];
+        $ep1_20 = $_POST['ep1_20'];
+        $ep2_20 = $_POST['ep2_20'];
+        $ep1_21 = $_POST['ep1_21'];
+        $ep2_21 = $_POST['ep2_21'];
+        $ep1_22 = $_POST['ep1_22'];
+        $ep2_22 = $_POST['ep2_22'];
+        $desig = $_POST['desig'];
+        $epdate = $_POST['epdate'];
+
+
+        $conn->query("INSERT INTO form3_cd (
+            numc, reason, ep1_19, ep2_19, ep1_20, ep2_20, ep1_21, ep2_21,ep1_22, ep2_22, desig, epdate,user_id)
+          VALUES ('$numc', '$reason', '$ep1_19', '$ep2_19', '$ep1_20', '$ep2_20', '$ep1_21', '$ep2_21','$ep1_22', '$ep2_22', '$desig', '$epdate',$id)
+          ON DUPLICATE KEY UPDATE
+            numc = VALUES(numc),
+            reason = VALUES(reason),
+            ep1_19 = VALUES(ep1_19),
+            ep2_19 = VALUES(ep2_19),
+            ep1_20 = VALUES(ep1_20),
+            ep2_20 = VALUES(ep2_20),
+            ep1_21 = VALUES(ep1_21),
+            ep2_21 = VALUES(ep2_21),
+            ep1_22 = VALUES(ep1_22),
+            ep2_22 = VALUES(ep2_22),
+            desig = VALUES(desig),
+            epdate = VALUES(epdate)
+            "
+          ) or die($conn->error);
+
+
         $conn->query(
             "UPDATE kra_3 SET 
                  Crit_C_1 = '$scoreStudent',
@@ -163,7 +217,10 @@ if (isset($_POST['Submit_btn'])) {
                 <tr>
                     <td>Number of semesters to be deducted from the divisor</td>
                     <td>
-                        <select id="semesters">
+                        <select name = "numc" id="semesters">
+                        <option value = "<?php echo isset($numc) ? $numc : "None"; ?>">
+                                <?php echo isset($numc) ? $numc : "Select Option"; ?>
+                            </option>
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -179,8 +236,10 @@ if (isset($_POST['Submit_btn'])) {
                 <tr>
                     <td>Reason for deducting the divisor</td>
                     <td>
-                        <select id="reason">
-                            <option value="none">Select Option</option>
+                        <select name = "reason" id="reason">
+                            <option value = "<?php echo isset($reason) ? $reason : "none"; ?>">
+                                <?php echo isset($reason) ? $reason : "Select Option"; ?>
+                            </option>
                             <option value="not_applicable">Not Applicable</option>
                             <option value="study_leave">On Approved Study Leave</option>
                             <option value="sabbatical_leave">On Approved Sabbatical Leave</option>
@@ -198,23 +257,23 @@ if (isset($_POST['Submit_btn'])) {
                 </tr>
                 <tr>
                     <td>AY 2019-2020</td>
-                    <td><input type="number" id="A1-1"  min="0" max="100"></td>
-                    <td><input type="number" id="A1-2"  min="0" max="100"></td>
+                    <td><input type="number" name = "ep1_19" value = "<?php echo isset($ep1_19) ? $ep1_19 : ""; ?>" id="A1-1"  min="0" max="100"></td>
+                    <td><input type="number" name = "ep2_19" value = "<?php echo isset($ep2_19) ? $ep2_19 : ""; ?>" id="A1-2"  min="0" max="100"></td>
                 </tr>
                 <tr>
                     <td>AY 2020-2021</td>
-                    <td><input type="number" id="A2-1"  min="0" max="100"></td>
-                    <td><input type="number" id="A2-2"  min="0" max="100"></td>
+                    <td><input type="number" name = "ep1_20" value = "<?php echo isset($ep1_20) ? $ep1_20 : ""; ?>" id="A2-1"  min="0" max="100"></td>
+                    <td><input type="number" name = "ep2_20" value = "<?php echo isset($ep1_20) ? $ep1_20 : ""; ?>" id="A2-2"  min="0" max="100"></td>
                 </tr>
                 <tr>
                     <td>AY 2021-2022</td>
-                    <td><input type="number" id="A3-1"  min="0" max="100"></td>
-                    <td><input type="number" id="A3-2"  min="0" max="100"></td>
+                    <td><input type="number" name = "ep1_21" value = "<?php echo isset($ep1_21) ? $ep1_21 : ""; ?>" id="A3-1"  min="0" max="100"></td>
+                    <td><input type="number" name = "ep2_21" value = "<?php echo isset($ep2_21) ? $ep2_21 : ""; ?>" id="A3-2"  min="0" max="100"></td>
                 </tr>
                 <tr>
                     <td>AY 2022-2023</td>
-                    <td><input type="number" id="A4-1"  min="0" max="100"></td>
-                    <td><input type="number" id="A4-2"  min="0" max="100"></td>
+                    <td><input type="number" name = "ep1_22" value = "<?php echo isset($ep1_22) ? $ep1_22 : ""; ?>"  id="A4-1"  min="0" max="100"></td>
+                    <td><input type="number" name = "ep2_22" value = "<?php echo isset($ep2_22) ? $ep2_22 : ""; ?>" id="A4-2"  min="0" max="100"></td>
                 </tr>
                 <tr>
                     <td colspan="1">Faculty Score:</td>

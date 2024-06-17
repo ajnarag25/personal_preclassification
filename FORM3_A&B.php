@@ -6,8 +6,161 @@ if(!isset($_SESSION['user'])){
   header('location: login.php');
 }
 
+$id = $_SESSION['user']['user_id'];
+$query3_ab = "SELECT * FROM form3_ab WHERE user_id = $id";
+$result3_ab = $conn->query($query3_ab);
+
+
+while ($row = mysqli_fetch_array($result3_ab)) {
+    $nameA_1_1 = $row['nameA_1_1'];
+    $nameA_1_2 = $row['nameA_1_2'];
+    $nameA_1_3 = $row['nameA_1_3'];
+    $natureA_1_1 = $row['natureA_1_1'];
+    $natureA_1_2 = $row['natureA_1_2'];
+    $natureA_1_3 = $row['natureA_1_3'];
+    $facultyA_1_1 = $row['facultyA_1_1'];
+    $facultyA_1_2 = $row['facultyA_1_2'];
+    $facultyA_1_3 = $row['facultyA_1_3'];
+    $moastartA_1_1 = $row['moastartA_1_1'];
+    $moastartA_1_2 = $row['moastartA_1_2'];
+    $moastartA_1_3 = $row['moastartA_1_3'];
+    $moaendA_1_1 = $row['moaendA_1_1'];
+    $moaendA_1_2 = $row['moaendA_1_2'];
+    $moaendA_1_3 = $row['moaendA_1_3'];
+    $actA_1_1 = $row['actA_1_1'];
+    $actA_1_2 = $row['actA_1_2'];
+    $actA_1_3 = $row['actA_1_3'];
+    $dateactA_1_1 = $row['dateactA_1_1'];
+    $dateactA_1_2 = $row['dateactA_1_2'];
+    $dateactA_1_3 = $row['dateactA_1_3'];
+    $nameA_2_1 = $row['nameA_2_1'];
+    $nameA_2_2 = $row['nameA_2_2'];
+    $nameA_2_3 = $row['nameA_2_3'];
+    $roleA_2_1 = $row['roleA_2_1'];
+    $roleA_2_2 = $row['roleA_2_2'];
+    $roleA_2_3 = $row['roleA_2_3'];
+    $coverA_2_1 = $row['coverA_2_1'];
+    $coverA_2_2 = $row['coverA_2_2'];
+    $coverA_2_3 = $row['coverA_2_3'];
+    $totalA_2_1 = $row['totalA_2_1'];
+    $totalA_2_2 = $row['totalA_2_2'];
+    $totalA_2_3 = $row['totalA_2_3'];
+    $nameB_1_1_1 = $row['nameB_1_1_1'];
+    $nameB_1_1_2 = $row['nameB_1_1_2'];
+    $nameB_1_1_3 = $row['nameB_1_1_3'];
+    $dateappstartB_1_1_1 = $row['dateappstartB_1_1_1'];
+    $dateappstartB_1_1_2 = $row['dateappstartB_1_1_2'];
+    $dateappstartB_1_1_3 = $row['dateappstartB_1_1_3'];
+    $dateappendB_1_1_1 = $row['dateappendB_1_1_1'];
+    $dateappendB_1_1_2 = $row['dateappendB_1_1_2'];
+    $dateappendB_1_1_3 = $row['dateappendB_1_1_3'];
+    $qaB_1_1_1 = $row['qaB_1_1_1'];
+    $qaB_1_1_2 = $row['qaB_1_1_2'];
+    $qaB_1_1_3 = $row['qaB_1_1_3'];
+    $scopeB_1_1_1 = $row['scopeB_1_1_1'];
+    $scopeB_1_1_2 = $row['scopeB_1_1_2'];
+    $scopeB_1_1_3 = $row['scopeB_1_1_3'];
+    $nodepB_1_1_1 = $row['nodepB_1_1_1'];
+    $nodepB_1_1_2 = $row['nodepB_1_1_2'];
+    $nodepB_1_1_3 = $row['nodepB_1_1_3'];
+    $titleB_1_2_1 = $row['titleB_1_2_1'];
+    $titleB_1_2_2 = $row['titleB_1_2_2'];
+    $titleB_1_2_3 = $row['titleB_1_2_3'];
+    $titleB_1_2_4 = $row['titleB_1_2_4'];
+    $orgB_1_2_1 = $row['orgB_1_2_1'];
+    $orgB_1_2_2 = $row['orgB_1_2_2'];
+    $orgB_1_2_3 = $row['orgB_1_2_3'];
+    $orgB_1_2_4 = $row['orgB_1_2_4'];
+    $evdateB_1_2_1 = $row['evdateB_1_2_1'];
+    $evdateB_1_2_2 = $row['evdateB_1_2_2'];
+    $evdateB_1_2_3 = $row['evdateB_1_2_3'];
+    $evdateB_1_2_4 = $row['evdateB_1_2_4'];
+    $natureB_1_2_1 = $row['natureB_1_2_1'];
+    $natureB_1_2_2 = $row['natureB_1_2_2'];
+    $natureB_1_2_3 = $row['natureB_1_2_3'];
+    $natureB_1_2_4 = $row['natureB_1_2_4'];
+    $venueB_1_2_1 = $row['venueB_1_2_1'];
+    $venueB_1_2_2 = $row['venueB_1_2_2'];
+    $venueB_1_2_3 = $row['venueB_1_2_3'];
+    $venueB_1_2_4 = $row['venueB_1_2_4'];
+    $titleB_1_3_1 = $row['titleB_1_3_1'];
+    $titleB_1_3_2 = $row['titleB_1_3_2'];
+    $titleB_1_3_3 = $row['titleB_1_3_3'];
+    $nameB_1_3_1 = $row['nameB_1_3_1'];
+    $nameB_1_3_2 = $row['nameB_1_3_2'];
+    $nameB_1_3_3 = $row['nameB_1_3_3'];
+    $perstartB_1_3_1 = $row['perstartB_1_3_1'];
+    $perstartB_1_3_2 = $row['perstartB_1_3_2'];
+    $perstartB_1_3_3 = $row['perstartB_1_3_3'];
+    $perendB_1_3_1 = $row['perendB_1_3_1'];
+    $perendB_1_3_2 = $row['perendB_1_3_2'];
+    $perendB_1_3_3 = $row['perendB_1_3_3'];
+    $scope_1_3_1 = $row['scope_1_3_1'];
+    $scope_1_3_2 = $row['scope_1_3_2'];
+    $scope_1_3_3 = $row['scope_1_3_3'];
+    $role_1_3_1 = $row['role_1_3_1'];
+    $role_1_3_2 = $row['role_1_3_2'];
+    $role_1_3_3 = $row['role_1_3_3'];
+    $nameB_1_4_1 = $row['nameB_1_4_1'];
+    $nameB_1_4_2 = $row['nameB_1_4_2'];
+    $nameB_1_4_3 = $row['nameB_1_4_3'];
+    $nameB_1_4_4 = $row['nameB_1_4_4'];
+    $titleB_1_4_1 = $row['titleB_1_4_1'];
+    $titleB_1_4_2 = $row['titleB_1_4_2'];
+    $titleB_1_4_3 = $row['titleB_1_4_3'];
+    $titleB_1_4_4 = $row['titleB_1_4_4'];
+    $perengB_1_4_1 = $row['perengB_1_4_1'];
+    $perengB_1_4_2 = $row['perengB_1_4_2'];
+    $perengB_1_4_3 = $row['perengB_1_4_3'];
+    $perengB_1_4_4 = $row['perengB_1_4_4'];
+    $noengB_1_4_1 = $row['noengB_1_4_1'];
+    $noengB_1_4_2 = $row['noengB_1_4_2'];
+    $noengB_1_4_3 = $row['noengB_1_4_3'];
+    $noengB_1_4_4 = $row['noengB_1_4_4'];
+    $titleB_1_5_1 = $row['titleB_1_5_1'];
+    $titleB_1_5_2 = $row['titleB_1_5_2'];
+    $titleB_1_5_3 = $row['titleB_1_5_3'];
+    $typeB_1_5_1 = $row['typeB_1_5_1'];
+    $typeB_1_5_2 = $row['typeB_1_5_2'];
+    $typeB_1_5_3 = $row['typeB_1_5_3'];
+    $orgB_1_5_1 = $row['orgB_1_5_1'];
+    $orgB_1_5_2 = $row['orgB_1_5_2'];
+    $orgB_1_5_3 = $row['orgB_1_5_3'];
+    $perengstartB_1_5_1 = $row['perengstartB_1_5_1'];
+    $perengstartB_1_5_2 = $row['perengstartB_1_5_2'];
+    $perengstartB_1_5_3 = $row['perengstartB_1_5_3'];
+    $perengendB_1_5_1 = $row['perengendB_1_5_1'];
+    $perengendB_1_5_2 = $row['perengendB_1_5_2'];
+    $perengendB_1_5_3 = $row['perengendB_1_5_3'];
+    $scopeB_1_5_1 = $row['scopeB_1_5_1'];
+    $scopeB_1_5_2 = $row['scopeB_1_5_2'];
+    $scopeB_1_5_3 = $row['scopeB_1_5_3'];
+    $nohoursB_1_5_1 = $row['nohoursB_1_5_1'];
+    $nohoursB_1_5_2 = $row['nohoursB_1_5_2'];
+    $nohoursB_1_5_3 = $row['nohoursB_1_5_3'];
+    $nceaB_2_1_1 = $row['nceaB_2_1_1'];
+    $nceaB_2_1_2 = $row['nceaB_2_1_2'];
+    $nceaB_2_1_3 = $row['nceaB_2_1_3'];
+    $nceaB_2_1_4 = $row['nceaB_2_1_4'];
+    $ncB_2_1_1 = $row['ncB_2_1_1'];
+    $ncB_2_1_2 = $row['ncB_2_1_2'];
+    $ncB_2_1_3 = $row['ncB_2_1_3'];
+    $ncB_2_1_4 = $row['ncB_2_1_4'];
+    $nobeneB_2_1_1 = $row['nobeneB_2_1_1'];
+    $nobeneB_2_1_2 = $row['nobeneB_2_1_2'];
+    $nobeneB_2_1_3 = $row['nobeneB_2_1_3'];
+    $nobeneB_2_1_4 = $row['nobeneB_2_1_4'];
+    $roleB_2_1_1 = $row['roleB_2_1_1'];
+    $roleB_2_1_2 = $row['roleB_2_1_2'];
+    $roleB_2_1_3 = $row['roleB_2_1_3'];
+    $roleB_2_1_4 = $row['roleB_2_1_4'];
+    $dateactB_2_1_1 = $row['dateactB_2_1_1'];
+    $dateactB_2_1_2 = $row['dateactB_2_1_2'];
+    $dateactB_2_1_3 = $row['dateactB_2_1_3'];
+    $dateactB_2_1_4 = $row['dateactB_2_1_4'];
+}
 if (isset($_POST['submit_btn'])) {
-    $id = $_SESSION['user']['user_id'];
+    
     $scoreFTE = $_POST['FTE_final_res'];
     $scoreTIG = $_POST['TIG_finale_res'];
     $scoreSIA = $_POST['SIA_result_total'];
@@ -49,6 +202,310 @@ if (isset($_POST['submit_btn'])) {
         </script>
         <?php
     } else {
+
+        $nameA_1_1 = $_POST['nameA_1_1'];
+        $nameA_1_2 = $_POST['nameA_1_2'];
+        $nameA_1_3 = $_POST['nameA_1_3'];
+        $natureA_1_1 = $_POST['natureA_1_1'];
+        $natureA_1_2 = $_POST['natureA_1_2'];
+        $natureA_1_3 = $_POST['natureA_1_3'];
+        $facultyA_1_1 = $_POST['facultyA_1_1'];
+        $facultyA_1_2 = $_POST['facultyA_1_2'];
+        $facultyA_1_3 = $_POST['facultyA_1_3'];
+        $moastartA_1_1 = $_POST['moastartA_1_1'];
+        $moastartA_1_2 = $_POST['moastartA_1_2'];
+        $moastartA_1_3 = $_POST['moastartA_1_3'];
+        $moaendA_1_1 = $_POST['moaendA_1_1'];
+        $moaendA_1_2 = $_POST['moaendA_1_2'];
+        $moaendA_1_3 = $_POST['moaendA_1_3'];
+        $actA_1_1 = $_POST['actA_1_1'];
+        $actA_1_2 = $_POST['actA_1_2'];
+        $actA_1_3 = $_POST['actA_1_3'];
+        $dateactA_1_1 = $_POST['dateactA_1_1'];
+        $dateactA_1_2 = $_POST['dateactA_1_2'];
+        $dateactA_1_3 = $_POST['dateactA_1_3'];
+        $nameA_2_1 = $_POST['nameA_2_1'];
+        $nameA_2_2 = $_POST['nameA_2_2'];
+        $nameA_2_3 = $_POST['nameA_2_3'];
+        $roleA_2_1 = $_POST['roleA_2_1'];
+        $roleA_2_2 = $_POST['roleA_2_2'];
+        $roleA_2_3 = $_POST['roleA_2_3'];
+        $coverA_2_1 = $_POST['coverA_2_1'];
+        $coverA_2_2 = $_POST['coverA_2_2'];
+        $coverA_2_3 = $_POST['coverA_2_3'];
+        $totalA_2_1 = $_POST['totalA_2_1'];
+        $totalA_2_2 = $_POST['totalA_2_2'];
+        $totalA_2_3 = $_POST['totalA_2_3'];
+        $nameB_1_1_1 = $_POST['nameB_1_1_1'];
+        $nameB_1_1_2 = $_POST['nameB_1_1_2'];
+        $nameB_1_1_3 = $_POST['nameB_1_1_3'];
+        $dateappstartB_1_1_1 = $_POST['dateappstartB_1_1_1'];
+        $dateappstartB_1_1_2 = $_POST['dateappstartB_1_1_2'];
+        $dateappstartB_1_1_3 = $_POST['dateappstartB_1_1_3'];
+        $dateappendB_1_1_1 = $_POST['dateappendB_1_1_1'];
+        $dateappendB_1_1_2 = $_POST['dateappendB_1_1_2'];
+        $dateappendB_1_1_3 = $_POST['dateappendB_1_1_3'];
+        $qaB_1_1_1 = $_POST['qaB_1_1_1'];
+        $qaB_1_1_2 = $_POST['qaB_1_1_2'];
+        $qaB_1_1_3 = $_POST['qaB_1_1_3'];
+        $scopeB_1_1_1 = $_POST['scopeB_1_1_1'];
+        $scopeB_1_1_2 = $_POST['scopeB_1_1_2'];
+        $scopeB_1_1_3 = $_POST['scopeB_1_1_3'];
+        $nodepB_1_1_1 = $_POST['nodepB_1_1_1'];
+        $nodepB_1_1_2 = $_POST['nodepB_1_1_2'];
+        $nodepB_1_1_3 = $_POST['nodepB_1_1_3'];
+        $titleB_1_2_1 = $_POST['titleB_1_2_1'];
+        $titleB_1_2_2 = $_POST['titleB_1_2_2'];
+        $titleB_1_2_3 = $_POST['titleB_1_2_3'];
+        $titleB_1_2_4 = $_POST['titleB_1_2_4'];
+        $orgB_1_2_1 = $_POST['orgB_1_2_1'];
+        $orgB_1_2_2 = $_POST['orgB_1_2_2'];
+        $orgB_1_2_3 = $_POST['orgB_1_2_3'];
+        $orgB_1_2_4 = $_POST['orgB_1_2_4'];
+        $evdateB_1_2_1 = $_POST['evdateB_1_2_1'];
+        $evdateB_1_2_2 = $_POST['evdateB_1_2_2'];
+        $evdateB_1_2_3 = $_POST['evdateB_1_2_3'];
+        $evdateB_1_2_4 = $_POST['evdateB_1_2_4'];
+        $natureB_1_2_1 = $_POST['natureB_1_2_1'];
+        $natureB_1_2_2 = $_POST['natureB_1_2_2'];
+        $natureB_1_2_3 = $_POST['natureB_1_2_3'];
+        $natureB_1_2_4 = $_POST['natureB_1_2_4'];
+        $venueB_1_2_1 = $_POST['venueB_1_2_1'];
+        $venueB_1_2_2 = $_POST['venueB_1_2_2'];
+        $venueB_1_2_3 = $_POST['venueB_1_2_3'];
+        $venueB_1_2_4 = $_POST['venueB_1_2_4'];
+        $titleB_1_3_1 = $_POST['titleB_1_3_1'];
+        $titleB_1_3_2 = $_POST['titleB_1_3_2'];
+        $titleB_1_3_3 = $_POST['titleB_1_3_3'];
+        $nameB_1_3_1 = $_POST['nameB_1_3_1'];
+        $nameB_1_3_2 = $_POST['nameB_1_3_2'];
+        $nameB_1_3_3 = $_POST['nameB_1_3_3'];
+        $perstartB_1_3_1 = $_POST['perstartB_1_3_1'];
+        $perstartB_1_3_2 = $_POST['perstartB_1_3_2'];
+        $perstartB_1_3_3 = $_POST['perstartB_1_3_3'];
+        $perendB_1_3_1 = $_POST['perendB_1_3_1'];
+        $perendB_1_3_2 = $_POST['perendB_1_3_2'];
+        $perendB_1_3_3 = $_POST['perendB_1_3_3'];
+        $scope_1_3_1 = $_POST['scope_1_3_1'];
+        $scope_1_3_2 = $_POST['scope_1_3_2'];
+        $scope_1_3_3 = $_POST['scope_1_3_3'];
+        $role_1_3_1 = $_POST['role_1_3_1'];
+        $role_1_3_2 = $_POST['role_1_3_2'];
+        $role_1_3_3 = $_POST['role_1_3_3'];
+        $nameB_1_4_1 = $_POST['nameB_1_4_1'];
+        $nameB_1_4_2 = $_POST['nameB_1_4_2'];
+        $nameB_1_4_3 = $_POST['nameB_1_4_3'];
+        $nameB_1_4_4 = $_POST['nameB_1_4_4'];
+        $titleB_1_4_1 = $_POST['titleB_1_4_1'];
+        $titleB_1_4_2 = $_POST['titleB_1_4_2'];
+        $titleB_1_4_3 = $_POST['titleB_1_4_3'];
+        $titleB_1_4_4 = $_POST['titleB_1_4_4'];
+        $perengB_1_4_1 = $_POST['perengB_1_4_1'];
+        $perengB_1_4_2 = $_POST['perengB_1_4_2'];
+        $perengB_1_4_3 = $_POST['perengB_1_4_3'];
+        $perengB_1_4_4 = $_POST['perengB_1_4_4'];
+        $noengB_1_4_1 = $_POST['noengB_1_4_1'];
+        $noengB_1_4_2 = $_POST['noengB_1_4_2'];
+        $noengB_1_4_3 = $_POST['noengB_1_4_3'];
+        $noengB_1_4_4 = $_POST['noengB_1_4_4'];
+        $titleB_1_5_1 = $_POST['titleB_1_5_1'];
+        $titleB_1_5_2 = $_POST['titleB_1_5_2'];
+        $titleB_1_5_3 = $_POST['titleB_1_5_3'];
+        $typeB_1_5_1 = $_POST['typeB_1_5_1'];
+        $typeB_1_5_2 = $_POST['typeB_1_5_2'];
+        $typeB_1_5_3 = $_POST['typeB_1_5_3'];
+        $orgB_1_5_1 = $_POST['orgB_1_5_1'];
+        $orgB_1_5_2 = $_POST['orgB_1_5_2'];
+        $orgB_1_5_3 = $_POST['orgB_1_5_3'];
+        $perengstartB_1_5_1 = $_POST['perengstartB_1_5_1'];
+        $perengstartB_1_5_2 = $_POST['perengstartB_1_5_2'];
+        $perengstartB_1_5_3 = $_POST['perengstartB_1_5_3'];
+        $perengendB_1_5_1 = $_POST['perengendB_1_5_1'];
+        $perengendB_1_5_2 = $_POST['perengendB_1_5_2'];
+        $perengendB_1_5_3 = $_POST['perengendB_1_5_3'];
+        $scopeB_1_5_1 = $_POST['scopeB_1_5_1'];
+        $scopeB_1_5_2 = $_POST['scopeB_1_5_2'];
+        $scopeB_1_5_3 = $_POST['scopeB_1_5_3'];
+        $nohoursB_1_5_1 = $_POST['nohoursB_1_5_1'];
+        $nohoursB_1_5_2 = $_POST['nohoursB_1_5_2'];
+        $nohoursB_1_5_3 = $_POST['nohoursB_1_5_3'];
+        $nceaB_2_1_1 = $_POST['nceaB_2_1_1'];
+        $nceaB_2_1_2 = $_POST['nceaB_2_1_2'];
+        $nceaB_2_1_3 = $_POST['nceaB_2_1_3'];
+        $nceaB_2_1_4 = $_POST['nceaB_2_1_4'];
+        $ncB_2_1_1 = $_POST['ncB_2_1_1'];
+        $ncB_2_1_2 = $_POST['ncB_2_1_2'];
+        $ncB_2_1_3 = $_POST['ncB_2_1_3'];
+        $ncB_2_1_4 = $_POST['ncB_2_1_4'];
+        $nobeneB_2_1_1 = $_POST['nobeneB_2_1_1'];
+        $nobeneB_2_1_2 = $_POST['nobeneB_2_1_2'];
+        $nobeneB_2_1_3 = $_POST['nobeneB_2_1_3'];
+        $nobeneB_2_1_4 = $_POST['nobeneB_2_1_4'];
+        $roleB_2_1_1 = $_POST['roleB_2_1_1'];
+        $roleB_2_1_2 = $_POST['roleB_2_1_2'];
+        $roleB_2_1_3 = $_POST['roleB_2_1_3'];
+        $roleB_2_1_4 = $_POST['roleB_2_1_4'];
+        $dateactB_2_1_1 = $_POST['dateactB_2_1_1'];
+        $dateactB_2_1_2 = $_POST['dateactB_2_1_2'];
+        $dateactB_2_1_3 = $_POST['dateactB_2_1_3'];
+        $dateactB_2_1_4 = $_POST['dateactB_2_1_4'];
+        
+
+        $conn->query("INSERT INTO form3_ab (
+            nameA_1_1, nameA_1_2, nameA_1_3, natureA_1_1, natureA_1_2, natureA_1_3, facultyA_1_1, facultyA_1_2, facultyA_1_3, moastartA_1_1, moastartA_1_2, moastartA_1_3, moaendA_1_1, moaendA_1_2, moaendA_1_3, actA_1_1, actA_1_2, actA_1_3, dateactA_1_1, dateactA_1_2, dateactA_1_3, nameA_2_1, nameA_2_2, nameA_2_3, roleA_2_1, roleA_2_2, roleA_2_3, coverA_2_1, coverA_2_2, coverA_2_3, totalA_2_1, totalA_2_2, totalA_2_3, nameB_1_1_1, nameB_1_1_2, nameB_1_1_3, dateappstartB_1_1_1, dateappstartB_1_1_2, dateappstartB_1_1_3, dateappendB_1_1_1, dateappendB_1_1_2, dateappendB_1_1_3, qaB_1_1_1, qaB_1_1_2, qaB_1_1_3, scopeB_1_1_1, scopeB_1_1_2, scopeB_1_1_3, nodepB_1_1_1, nodepB_1_1_2, nodepB_1_1_3, titleB_1_2_1, titleB_1_2_2, titleB_1_2_3, titleB_1_2_4, orgB_1_2_1, orgB_1_2_2, orgB_1_2_3, orgB_1_2_4, evdateB_1_2_1, evdateB_1_2_2, evdateB_1_2_3,evdateB_1_2_4, natureB_1_2_1, natureB_1_2_2, natureB_1_2_3,natureB_1_2_4, venueB_1_2_1, venueB_1_2_2, venueB_1_2_3,venueB_1_2_4, titleB_1_3_1, titleB_1_3_2, titleB_1_3_3, nameB_1_3_1, nameB_1_3_2, nameB_1_3_3, perstartB_1_3_1, perstartB_1_3_2, perstartB_1_3_3, perendB_1_3_1, perendB_1_3_2, perendB_1_3_3, scope_1_3_1, scope_1_3_2, scope_1_3_3, role_1_3_1, role_1_3_2, role_1_3_3, nameB_1_4_1, nameB_1_4_2, nameB_1_4_3,nameB_1_4_4, titleB_1_4_1, titleB_1_4_2, titleB_1_4_3,titleB_1_4_4, perengB_1_4_1, perengB_1_4_2, perengB_1_4_3,perengB_1_4_4, noengB_1_4_1, noengB_1_4_2, noengB_1_4_3,noengB_1_4_4, titleB_1_5_1, titleB_1_5_2, titleB_1_5_3, typeB_1_5_1, typeB_1_5_2, typeB_1_5_3, orgB_1_5_1, orgB_1_5_2, orgB_1_5_3, perengstartB_1_5_1, perengstartB_1_5_2, perengstartB_1_5_3, perengendB_1_5_1, perengendB_1_5_2, perengendB_1_5_3, scopeB_1_5_1, scopeB_1_5_2, scopeB_1_5_3, nohoursB_1_5_1, nohoursB_1_5_2, nohoursB_1_5_3, nceaB_2_1_1, nceaB_2_1_2, nceaB_2_1_3,nceaB_2_1_4, ncB_2_1_1, ncB_2_1_2, ncB_2_1_3,ncB_2_1_4, nobeneB_2_1_1, nobeneB_2_1_2, nobeneB_2_1_3,nobeneB_2_1_4, roleB_2_1_1, roleB_2_1_2, roleB_2_1_3,roleB_2_1_4, dateactB_2_1_1, dateactB_2_1_2, dateactB_2_1_3,dateactB_2_1_4,
+              user_id)
+          VALUES ('$nameA_1_1', '$nameA_1_2', '$nameA_1_3', '$natureA_1_1', '$natureA_1_2', '$natureA_1_3', '$facultyA_1_1', '$facultyA_1_2', '$facultyA_1_3', '$moastartA_1_1', '$moastartA_1_2', '$moastartA_1_3', '$moaendA_1_1', '$moaendA_1_2', '$moaendA_1_3', '$actA_1_1', '$actA_1_2', '$actA_1_3', '$dateactA_1_1', '$dateactA_1_2', '$dateactA_1_3', '$nameA_2_1', '$nameA_2_2', '$nameA_2_3', '$roleA_2_1', '$roleA_2_2', '$roleA_2_3', '$coverA_2_1', '$coverA_2_2', '$coverA_2_3', '$totalA_2_1', '$totalA_2_2', '$totalA_2_3', '$nameB_1_1_1', '$nameB_1_1_2', '$nameB_1_1_3', '$dateappstartB_1_1_1', '$dateappstartB_1_1_2', '$dateappstartB_1_1_3', '$dateappendB_1_1_1', '$dateappendB_1_1_2', '$dateappendB_1_1_3', '$qaB_1_1_1', '$qaB_1_1_2', '$qaB_1_1_3', '$scopeB_1_1_1', '$scopeB_1_1_2', '$scopeB_1_1_3', '$nodepB_1_1_1', '$nodepB_1_1_2', '$nodepB_1_1_3', '$titleB_1_2_1', '$titleB_1_2_2', '$titleB_1_2_3','$titleB_1_2_4', '$orgB_1_2_1', '$orgB_1_2_2', '$orgB_1_2_3','$orgB_1_2_4', '$evdateB_1_2_1', '$evdateB_1_2_2', '$evdateB_1_2_3', '$evdateB_1_2_4', '$natureB_1_2_1', '$natureB_1_2_2', '$natureB_1_2_3', '$natureB_1_2_4', '$venueB_1_2_1', '$venueB_1_2_2', '$venueB_1_2_3','$venueB_1_2_4', '$titleB_1_3_1', '$titleB_1_3_2', '$titleB_1_3_3', '$nameB_1_3_1', '$nameB_1_3_2', '$nameB_1_3_3', '$perstartB_1_3_1', '$perstartB_1_3_2', '$perstartB_1_3_3', '$perendB_1_3_1', '$perendB_1_3_2', '$perendB_1_3_3', '$scope_1_3_1', '$scope_1_3_2', '$scope_1_3_3', '$role_1_3_1', '$role_1_3_2', '$role_1_3_3', '$nameB_1_4_1', '$nameB_1_4_2', '$nameB_1_4_3', '$nameB_1_4_4', '$titleB_1_4_1', '$titleB_1_4_2', '$titleB_1_4_3', '$titleB_1_4_4', '$perengB_1_4_1', '$perengB_1_4_2', '$perengB_1_4_3','$perengB_1_4_4', '$noengB_1_4_1', '$noengB_1_4_2', '$noengB_1_4_3','$noengB_1_4_4', '$titleB_1_5_1', '$titleB_1_5_2', '$titleB_1_5_3', '$typeB_1_5_1', '$typeB_1_5_2', '$typeB_1_5_3', '$orgB_1_5_1', '$orgB_1_5_2', '$orgB_1_5_3', '$perengstartB_1_5_1', '$perengstartB_1_5_2', '$perengstartB_1_5_3', '$perengendB_1_5_1', '$perengendB_1_5_2', '$perengendB_1_5_3', '$scopeB_1_5_1', '$scopeB_1_5_2', '$scopeB_1_5_3', '$nohoursB_1_5_1', '$nohoursB_1_5_2', '$nohoursB_1_5_3', '$nceaB_2_1_1', '$nceaB_2_1_2', '$nceaB_2_1_3','$nceaB_2_1_4', '$ncB_2_1_1', '$ncB_2_1_2', '$ncB_2_1_3','$ncB_2_1_4', '$nobeneB_2_1_1', '$nobeneB_2_1_2', '$nobeneB_2_1_3','$nobeneB_2_1_4', '$roleB_2_1_1', '$roleB_2_1_2', '$roleB_2_1_3','$roleB_2_1_4', '$dateactB_2_1_1', '$dateactB_2_1_2', '$dateactB_2_1_3','$dateactB_2_1_4',
+          $id)
+          ON DUPLICATE KEY UPDATE
+            nameA_1_1 = VALUES(nameA_1_1),
+            nameA_1_2 = VALUES(nameA_1_2),
+            nameA_1_3 = VALUES(nameA_1_3),
+            natureA_1_1 = VALUES(natureA_1_1),
+            natureA_1_2 = VALUES(natureA_1_2),
+            natureA_1_3 = VALUES(natureA_1_3),
+            facultyA_1_1 = VALUES(facultyA_1_1),
+            facultyA_1_2 = VALUES(facultyA_1_2),
+            facultyA_1_3 = VALUES(facultyA_1_3),
+            moastartA_1_1 = VALUES(moastartA_1_1),
+            moastartA_1_2 = VALUES(moastartA_1_2),
+            moastartA_1_3 = VALUES(moastartA_1_3),
+            moaendA_1_1 = VALUES(moaendA_1_1),
+            moaendA_1_2 = VALUES(moaendA_1_2),
+            moaendA_1_3 = VALUES(moaendA_1_3),
+            actA_1_1 = VALUES(actA_1_1),
+            actA_1_2 = VALUES(actA_1_2),
+            actA_1_3 = VALUES(actA_1_3),
+            dateactA_1_1 = VALUES(dateactA_1_1),
+            dateactA_1_2 = VALUES(dateactA_1_2),
+            dateactA_1_3 = VALUES(dateactA_1_3),
+            nameA_2_1 = VALUES(nameA_2_1),
+            nameA_2_2 = VALUES(nameA_2_2),
+            nameA_2_3 = VALUES(nameA_2_3),
+            roleA_2_1 = VALUES(roleA_2_1),
+            roleA_2_2 = VALUES(roleA_2_2),
+            roleA_2_3 = VALUES(roleA_2_3),
+            coverA_2_1 = VALUES(coverA_2_1),
+            coverA_2_2 = VALUES(coverA_2_2),
+            coverA_2_3 = VALUES(coverA_2_3),
+            totalA_2_1 = VALUES(totalA_2_1),
+            totalA_2_2 = VALUES(totalA_2_2),
+            totalA_2_3 = VALUES(totalA_2_3),
+            nameB_1_1_1 = VALUES(nameB_1_1_1),
+            nameB_1_1_2 = VALUES(nameB_1_1_2),
+            nameB_1_1_3 = VALUES(nameB_1_1_3),
+            dateappstartB_1_1_1 = VALUES(dateappstartB_1_1_1),
+            dateappstartB_1_1_2 = VALUES(dateappstartB_1_1_2),
+            dateappstartB_1_1_3 = VALUES(dateappstartB_1_1_3),
+            dateappendB_1_1_1 = VALUES(dateappendB_1_1_1),
+            dateappendB_1_1_2 = VALUES(dateappendB_1_1_2),
+            dateappendB_1_1_3 = VALUES(dateappendB_1_1_3),
+            qaB_1_1_1 = VALUES(qaB_1_1_1),
+            qaB_1_1_2 = VALUES(qaB_1_1_2),
+            qaB_1_1_3 = VALUES(qaB_1_1_3),
+            scopeB_1_1_1 = VALUES(scopeB_1_1_1),
+            scopeB_1_1_2 = VALUES(scopeB_1_1_2),
+            scopeB_1_1_3 = VALUES(scopeB_1_1_3),
+            nodepB_1_1_1 = VALUES(nodepB_1_1_1),
+            nodepB_1_1_2 = VALUES(nodepB_1_1_2),
+            nodepB_1_1_3 = VALUES(nodepB_1_1_3),
+            titleB_1_2_1 = VALUES(titleB_1_2_1),
+            titleB_1_2_2 = VALUES(titleB_1_2_2),
+            titleB_1_2_3 = VALUES(titleB_1_2_3),
+            titleB_1_2_4 = VALUES(titleB_1_2_4),
+            orgB_1_2_1 = VALUES(orgB_1_2_1),
+            orgB_1_2_2 = VALUES(orgB_1_2_2),
+            orgB_1_2_3 = VALUES(orgB_1_2_3),
+            orgB_1_2_4 = VALUES(orgB_1_2_4),
+            evdateB_1_2_1 = VALUES(evdateB_1_2_1),
+            evdateB_1_2_2 = VALUES(evdateB_1_2_2),
+            evdateB_1_2_3 = VALUES(evdateB_1_2_3),
+            evdateB_1_2_4 = VALUES(evdateB_1_2_4),
+            natureB_1_2_1 = VALUES(natureB_1_2_1),
+            natureB_1_2_2 = VALUES(natureB_1_2_2),
+            natureB_1_2_3 = VALUES(natureB_1_2_3),
+            natureB_1_2_4 = VALUES(natureB_1_2_4),
+            venueB_1_2_1 = VALUES(venueB_1_2_1),
+            venueB_1_2_2 = VALUES(venueB_1_2_2),
+            venueB_1_2_3 = VALUES(venueB_1_2_3),
+            venueB_1_2_4 = VALUES(venueB_1_2_4),
+            titleB_1_3_1 = VALUES(titleB_1_3_1),
+            titleB_1_3_2 = VALUES(titleB_1_3_2),
+            titleB_1_3_3 = VALUES(titleB_1_3_3),
+            nameB_1_3_1 = VALUES(nameB_1_3_1),
+            nameB_1_3_2 = VALUES(nameB_1_3_2),
+            nameB_1_3_3 = VALUES(nameB_1_3_3),
+            perstartB_1_3_1 = VALUES(perstartB_1_3_1),
+            perstartB_1_3_2 = VALUES(perstartB_1_3_2),
+            perstartB_1_3_3 = VALUES(perstartB_1_3_3),
+            perendB_1_3_1 = VALUES(perendB_1_3_1),
+            perendB_1_3_2 = VALUES(perendB_1_3_2),
+            perendB_1_3_3 = VALUES(perendB_1_3_3),
+            scope_1_3_1 = VALUES(scope_1_3_1),
+            scope_1_3_2 = VALUES(scope_1_3_2),
+            scope_1_3_3 = VALUES(scope_1_3_3),
+            role_1_3_1 = VALUES(role_1_3_1),
+            role_1_3_2 = VALUES(role_1_3_2),
+            role_1_3_3 = VALUES(role_1_3_3),
+            nameB_1_4_1 = VALUES(nameB_1_4_1),
+            nameB_1_4_2 = VALUES(nameB_1_4_2),
+            nameB_1_4_3 = VALUES(nameB_1_4_3),
+            nameB_1_4_4 = VALUES(nameB_1_4_4),
+            titleB_1_4_1 = VALUES(titleB_1_4_1),
+            titleB_1_4_2 = VALUES(titleB_1_4_2),
+            titleB_1_4_3 = VALUES(titleB_1_4_3),
+            titleB_1_4_4 = VALUES(titleB_1_4_4),
+            perengB_1_4_1 = VALUES(perengB_1_4_1),
+            perengB_1_4_2 = VALUES(perengB_1_4_2),
+            perengB_1_4_3 = VALUES(perengB_1_4_3),
+            perengB_1_4_4 = VALUES(perengB_1_4_4),
+            noengB_1_4_1 = VALUES(noengB_1_4_1),
+            noengB_1_4_2 = VALUES(noengB_1_4_2),
+            noengB_1_4_3 = VALUES(noengB_1_4_3),
+            noengB_1_4_4 = VALUES(noengB_1_4_4),
+            titleB_1_5_1 = VALUES(titleB_1_5_1),
+            titleB_1_5_2 = VALUES(titleB_1_5_2),
+            titleB_1_5_3 = VALUES(titleB_1_5_3),
+            typeB_1_5_1 = VALUES(typeB_1_5_1),
+            typeB_1_5_2 = VALUES(typeB_1_5_2),
+            typeB_1_5_3 = VALUES(typeB_1_5_3),
+            orgB_1_5_1 = VALUES(orgB_1_5_1),
+            orgB_1_5_2 = VALUES(orgB_1_5_2),
+            orgB_1_5_3 = VALUES(orgB_1_5_3),
+            perengstartB_1_5_1 = VALUES(perengstartB_1_5_1),
+            perengstartB_1_5_2 = VALUES(perengstartB_1_5_2),
+            perengstartB_1_5_3 = VALUES(perengstartB_1_5_3),
+            perengendB_1_5_1 = VALUES(perengendB_1_5_1),
+            perengendB_1_5_2 = VALUES(perengendB_1_5_2),
+            perengendB_1_5_3 = VALUES(perengendB_1_5_3),
+            scopeB_1_5_1 = VALUES(scopeB_1_5_1),
+            scopeB_1_5_2 = VALUES(scopeB_1_5_2),
+            scopeB_1_5_3 = VALUES(scopeB_1_5_3),
+            nohoursB_1_5_1 = VALUES(nohoursB_1_5_1),
+            nohoursB_1_5_2 = VALUES(nohoursB_1_5_2),
+            nohoursB_1_5_3 = VALUES(nohoursB_1_5_3),
+            nceaB_2_1_1 = VALUES(nceaB_2_1_1),
+            nceaB_2_1_2 = VALUES(nceaB_2_1_2),
+            nceaB_2_1_3 = VALUES(nceaB_2_1_3),
+            nceaB_2_1_4 = VALUES(nceaB_2_1_4),
+            ncB_2_1_1 = VALUES(ncB_2_1_1),
+            ncB_2_1_2 = VALUES(ncB_2_1_2),
+            ncB_2_1_3 = VALUES(ncB_2_1_3),
+            ncB_2_1_4 = VALUES(ncB_2_1_4),
+            nobeneB_2_1_1 = VALUES(nobeneB_2_1_1),
+            nobeneB_2_1_2 = VALUES(nobeneB_2_1_2),
+            nobeneB_2_1_3 = VALUES(nobeneB_2_1_3),
+            nobeneB_2_1_4 = VALUES(nobeneB_2_1_4),
+            roleB_2_1_1 = VALUES(roleB_2_1_1),
+            roleB_2_1_2 = VALUES(roleB_2_1_2),
+            roleB_2_1_3 = VALUES(roleB_2_1_3),
+            roleB_2_1_4 = VALUES(roleB_2_1_4),
+            dateactB_2_1_1 = VALUES(dateactB_2_1_1),
+            dateactB_2_1_2 = VALUES(dateactB_2_1_2),
+            dateactB_2_1_3 = VALUES(dateactB_2_1_3),
+            dateactB_2_1_4 = VALUES(dateactB_2_1_4);
+            "
+          ) or die($conn->error);
+
         $conn->query(
             "UPDATE kra_3 SET 
                  Crit_A_LNAP = '$scoreFTE',
@@ -210,53 +667,59 @@ if (isset($_POST['submit_btn'])) {
         </tr>
 
         <tr>
-            <td><input id="FTE1" type="text"></td>
-            <td><input id="FTE2" type="text"></td>
+            <td><input id="FTE1" name = "nameA_1_1" value = "<?php echo isset($nameA_1_1) ? $nameA_1_1 : ""; ?>" type="text"></td>
+            <td><input id="FTE2" name = "natureA_1_1" value = "<?php echo isset($natureA_1_1) ? $natureA_1_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="FTE3">
-                    <option value="none">Select Option</option>
+                <select name="facultyA_1_1" id="FTE3">
+                    <option value = "<?php echo isset($facultyA_1_1) ? $facultyA_1_1 : "None"; ?>">
+                        <?php echo isset($facultyA_1_1) ? $facultyA_1_1 : "Select Option"; ?>
+                    </option>
                     <option value="lead">Lead Coordinator</option>
                     <option value="assis">Assistant Coordinator</option>
                 </select>
             </td>
-            <td><input id="FTE4" type="date"></td>
-            <td><input id="FTE5" type="date"></td>
-            <td><input id="FTE6" type="text"></td>
-            <td><input id="FTE7" type="date"></td>
+            <td><input id="FTE4" name = "moastartA_1_1" value = "<?php echo isset($moastartA_1_1) ? $moastartA_1_1 : ""; ?>" type="date"></td>
+            <td><input id="FTE5" name = "moaendA_1_1" value = "<?php echo isset($moaendA_1_1) ? $moaendA_1_1 : ""; ?>" type="date"></td>
+            <td><input id="FTE6" name = "actA_1_1" value = "<?php echo isset($actA_1_1) ? $actA_1_1 : ""; ?>" type="text"></td>
+            <td><input id="FTE7" name = "dateactA_1_1" value = "<?php echo isset($dateactA_1_1) ? $dateactA_1_1 : ""; ?>" type="date"></td>
             <td><input id="FTE_res1" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="FTE21" type="text"></td>
-            <td><input id="FTE22" type="text"></td>
+            <td><input id="FTE21" name = "nameA_1_2" value = "<?php echo isset($nameA_1_2) ? $nameA_1_2 : ""; ?>" type="text"></td>
+            <td><input id="FTE22" name = "natureA_1_2" value = "<?php echo isset($natureA_1_2) ? $natureA_1_2 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="FTE23">
-                    <option value="none">Select Option</option>
+                <select name="facultyA_1_2" id="FTE23">
+                    <option value = "<?php echo isset($facultyA_1_2) ? $facultyA_1_2 : "None"; ?>">
+                        <?php echo isset($facultyA_1_2) ? $facultyA_1_2 : "Select Option"; ?>
+                    </option>
                     <option value="lead">Lead Coordinator</option>
                     <option value="assis">Assistant Coordinator</option>
                 </select>
             </td>
-            <td><input id="FTE24" type="date"></td>
-            <td><input id="FTE25" type="date"></td>
-            <td><input id="FTE26" type="text"></td>
-            <td><input id="FTE27" type="date"></td>
+            <td><input id="FTE24" name = "moastartA_1_2" value = "<?php echo isset($moastartA_1_2) ? $moastartA_1_2 : ""; ?>" type="date"></td>
+            <td><input id="FTE25" name = "moaendA_1_2" value = "<?php echo isset($moaendA_1_2) ? $moaendA_1_2 : ""; ?>" type="date"></td>
+            <td><input id="FTE26" name = "actA_1_2" value = "<?php echo isset($actA_1_2) ? $actA_1_2 : ""; ?>" type="text"></td>
+            <td><input id="FTE27" name = "dateactA_1_2" value = "<?php echo isset($dateactA_1_2) ? $dateactA_1_2 : ""; ?>" type="date"></td>
             <td><input id="FTE_res2" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="FTE31" type="text"></td>
-            <td><input id="FTE32" type="text"></td>
+            <td><input id="FTE31" name = "nameA_1_3" value = "<?php echo isset($nameA_1_3) ? $nameA_1_3 : ""; ?>" type="text"></td>
+            <td><input id="FTE32" name = "natureA_1_3" value = "<?php echo isset($natureA_1_3) ? $natureA_1_3 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="FTE33">
-                    <option value="none">Select Option</option>
+                <select name="facultyA_1_3" id="FTE33">
+                    <option value = "<?php echo isset($facultyA_1_3) ? $facultyA_1_3 : "None"; ?>">
+                        <?php echo isset($facultyA_1_3) ? $facultyA_1_3 : "Select Option"; ?>
+                    </option>
                     <option value="lead">Lead Coordinator</option>
                     <option value="assis">Assistant Coordinator</option>
                 </select>
             </td>
-            <td><input id="FTE34" type="date"></td>
-            <td><input id="FTE35" type="date"></td>
-            <td><input id="FTE36" type="text"></td>
-            <td><input id="FTE37" type="date"></td>
+            <td><input id="FTE34" name = "moastartA_1_3" value = "<?php echo isset($moastartA_1_3) ? $moastartA_1_3 : ""; ?>" type="date"></td>
+            <td><input id="FTE35" name = "moaendA_1_3" value = "<?php echo isset($actA_1_3) ? $moaendA_1_3 : ""; ?>" type="date"></td>
+            <td><input id="FTE36" name = "actA_1_3" value = "<?php echo isset($actA_1_3) ? $actA_1_3 : ""; ?>" type="text"></td>
+            <td><input id="FTE37" name = "dateactA_1_3" value = "<?php echo isset($dateactA_1_3) ? $dateactA_1_3 : ""; ?>" type="date"></td>
             <td><input id="FTE_res3" readonly type="text"></td>
         </tr>
 
@@ -288,44 +751,50 @@ if (isset($_POST['submit_btn'])) {
         </tr>
 
         <tr>
-            <td><input id="TIG4" type="text"></td>
+            <td><input id="TIG4" name = "nameA_2_1" value = "<?php echo isset($nameA_2_1) ? $nameA_2_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="TIG1">
-                    <option value="none">Select Option</option>
+                <select name = "roleA_2_1" id="TIG1">
+                    <option value = "<?php echo isset($roleA_2_1) ? $roleA_2_1 : "None"; ?>">
+                        <?php echo isset($roleA_2_1) ? $roleA_2_1 : "Select Option"; ?>
+                    </option>
                     <option value="lead">Lead Coordinator</option>
                     <option value="co-cont">Co-contributor</option>
                 </select>
             </td>
-            <td><input id="TIG2" type="date"></td>
-            <td><input id="TIG3" type="text"></td>
+            <td><input id="TIG2" name = "coverA_2_1" value = "<?php echo isset($coverA_2_1) ? $coverA_2_1 : ""; ?>" type="date"></td>
+            <td><input id="TIG3" name = "totalA_2_1" value = "<?php echo isset($totalA_2_1) ? $totalA_2_1 : ""; ?>" type="text"></td>
             <td><input id="TIG_res1" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="TIG24" type="text"></td>
+        <td><input id="TIG24" name = "nameA_2_2" value = "<?php echo isset($nameA_2_2) ? $nameA_2_2 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="TIG21">
-                    <option value="none">Select Option</option>
+                <select name = "roleA_2_2" id="TIG21">
+                    <option value = "<?php echo isset($roleA_2_2) ? $roleA_2_2 : "None"; ?>">
+                        <?php echo isset($roleA_2_2) ? $roleA_2_2 : "Select Option"; ?>
+                    </option>
                     <option value="lead">Lead Coordinator</option>
                     <option value="co-cont">Co-contributor</option>
                 </select>
             </td>
-            <td><input id="TIG22" type="date"></td>
-            <td><input id="TIG23" type="text"></td>
+            <td><input id="TIG22" name = "coverA_2_2" value = "<?php echo isset($coverA_2_2) ? $coverA_2_2 : ""; ?>" type="date"></td>
+            <td><input id="TIG23" name = "totalA_2_2" value = "<?php echo isset($totalA_2_2) ? $totalA_2_2 : ""; ?>" type="text"></td>
             <td><input id="TIG_res2" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="TIG34" type="text"></td>
+        <td><input id="TIG34" name = "nameA_2_3" value = "<?php echo isset($nameA_2_3) ? $nameA_2_3 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="TIG31">
-                    <option value="none">Select Option</option>
+                <select name = "roleA_2_3" id="TIG31">
+                    <option value = "<?php echo isset($roleA_2_3) ? $roleA_2_3 : "None"; ?>">
+                        <?php echo isset($roleA_2_3) ? $roleA_2_3 : "Select Option"; ?>
+                    </option>
                     <option value="lead">Lead Coordinator</option>
                     <option value="co-cont">Co-contributor</option>
                 </select>
             </td>
-            <td><input id="TIG32" type="date"></td>
-            <td><input id="TIG33" type="text"></td>
+            <td><input id="TIG32" name = "coverA_2_3" value = "<?php echo isset($coverA_2_3) ? $coverA_2_3 : ""; ?>" type="date"></td>
+            <td><input id="TIG33" name = "totalA_2_3" value = "<?php echo isset($totalA_2_3) ? $totalA_2_3 : ""; ?>" type="text"></td>
             <td><input id="TIG_res3" readonly type="text"></td>
         </tr>
 
@@ -366,50 +835,56 @@ if (isset($_POST['submit_btn'])) {
         </tr>
 
         <tr>
-            <td><input id="SIA_1" type="text"></td>
-            <td><input id="SIA_2" type="date"></td>
-            <td><input id="SIA_3" type="date"></td>
-            <td><input id="SIA_4" type="text"></td>
+            <td><input id="SIA_1"  name = "nameB_1_1_1" value = "<?php echo isset($nameB_1_1_1) ? $nameB_1_1_1 : ""; ?>" type="text"></td>
+            <td><input id="SIA_2" name = "dateappstartB_1_1_1" value = "<?php echo isset($dateappstartB_1_1_1) ? $dateappstartB_1_1_1 : ""; ?>" type="date"></td>
+            <td><input id="SIA_3" name = "dateappendB_1_1_1" value = "<?php echo isset($dateappendB_1_1_1) ? $dateappendB_1_1_1 : ""; ?>" type="date"></td>
+            <td><input id="SIA_4" name = "qaB_1_1_1" value = "<?php echo isset($qaB_1_1_1) ? $qaB_1_1_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="SIA_5">
-                    <option value="none">Select Option</option>
+                <select name="scopeB_1_1_1" id="SIA_5">
+                    <option value = "<?php echo isset($scopeB_1_1_1) ? $scopeB_1_1_1 : "None"; ?>">
+                        <?php echo isset($scopeB_1_1_1) ? $scopeB_1_1_1 : "Select Option"; ?>
+                    </option>
                     <option value="local">Local</option>
                     <option value="int">International</option>
                 </select>
             </td>
-            <td><input id="SIA_6" type="text"></td>
+            <td><input id="SIA_6" name = "nodepB_1_1_1" value = "<?php echo isset($nodepB_1_1_1) ? $nodepB_1_1_1 : ""; ?>" type="text"></td>
             <td><input id="SIA_result_1" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="SIA_7" type="text"></td>
-            <td><input id="SIA_8" type="date"></td>
-            <td><input id="SIA_9" type="date"></td>
-            <td><input id="SIA_10" type="text"></td>
+        <td><input id="SIA_7"  name = "nameB_1_1_2" value = "<?php echo isset($nameB_1_1_2) ? $nameB_1_1_2 : ""; ?>" type="text"></td>
+            <td><input id="SIA_8" name = "dateappstartB_1_1_2" value = "<?php echo isset($dateappstartB_1_1_2) ? $dateappstartB_1_1_2 : ""; ?>" type="date"></td>
+            <td><input id="SIA_9" name = "dateappendB_1_1_2" value = "<?php echo isset($dateappendB_1_1_2) ? $dateappendB_1_1_2 : ""; ?>" type="date"></td>
+            <td><input id="SIA_10" name = "qaB_1_1_2" value = "<?php echo isset($qaB_1_1_2) ? $qaB_1_1_2 : ""; ?>" type="text"></td>
             <td>
-                <select id="SIA_11" name="">
-                    <option value="none">Select Option</option>
+                <select name="scopeB_1_1_2" id="SIA_11">
+                    <option value = "<?php echo isset($scopeB_1_1_2) ? $scopeB_1_1_2 : "None"; ?>">
+                        <?php echo isset($scopeB_1_1_2) ? $scopeB_1_1_2 : "Select Option"; ?>
+                    </option>
                     <option value="local">Local</option>
                     <option value="int">International</option>
                 </select>
             </td>
-            <td><input id="SIA_12" type="text"></td>
+            <td><input id="SIA_12" name = "nodepB_1_1_2" value = "<?php echo isset($nodepB_1_1_2) ? $nodepB_1_1_2 : ""; ?>" type="text"></td>
             <td><input id="SIA_result_2" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="SIA_13" type="text"></td>
-            <td><input id="SIA_14" type="date"></td>
-            <td><input id="SIA_15" type="date"></td>
-            <td><input id="SIA_16" type="text"></td>
+        <td><input id="SIA_13" name = "nameB_1_1_3" value = "<?php echo isset($nameB_1_1_3) ? $nameB_1_1_3 : ""; ?>" type="text"></td>
+            <td><input id="SIA_14" name = "dateappstartB_1_1_3" value = "<?php echo isset($dateappstartB_1_1_3) ? $dateappstartB_1_1_3 : ""; ?>" type="date"></td>
+            <td><input id="SIA_15" name = "dateappendB_1_1_3" value = "<?php echo isset($dateappendB_1_1_3) ? $dateappendB_1_1_3 : ""; ?>" type="date"></td>
+            <td><input id="SIA_16" name = "qaB_1_1_3" value = "<?php echo isset($qaB_1_1_3) ? $qaB_1_1_3 : ""; ?>" type="text"></td>
             <td>
-                <select id="SIA_17" name="">
-                    <option value="none">Select Option</option>
+                <select name="scopeB_1_1_3" id="SIA_17">
+                    <option value = "<?php echo isset($scopeB_1_1_3) ? $scopeB_1_1_3 : "None"; ?>">
+                        <?php echo isset($scopeB_1_1_3) ? $scopeB_1_1_3 : "Select Option"; ?>
+                    </option>
                     <option value="local">Local</option>
                     <option value="int">International</option>
                 </select>
             </td>
-            <td><input id="SIA_18" type="text"></td>
+            <td><input id="SIA_18" name = "nodepB_1_1_3" value = "<?php echo isset($nodepB_1_1_3) ? $nodepB_1_1_3 : ""; ?>" type="text"></td>
             <td><input id="SIA_result_3" readonly type="text"></td>
         </tr>
 
@@ -440,58 +915,70 @@ if (isset($_POST['submit_btn'])) {
         </tr>
 
         <tr>
-            <td><input id="SAJ_1" type="text"></td>
-            <td><input id="SAJ_2" type="text"></td>
-            <td><input id="SAJ_3" type="date"></td>
-            <td><select id="SAJ_selection_1">
-                    <option value="none">Select option</option>
+            <td><input id="SAJ_1" name = "titleB_1_2_1" value = "<?php echo isset($titleB_1_2_1) ? $titleB_1_2_1 : ""; ?>" type="text"></td>
+            <td><input id="SAJ_2" name = "orgB_1_2_1" value = "<?php echo isset($orgB_1_2_1) ? $orgB_1_2_1 : ""; ?>" type="text"></td>
+            <td><input id="SAJ_3" name = "evdateB_1_2_1" value = "<?php echo isset($evdateB_1_2_1) ? $evdateB_1_2_1 : ""; ?>" type="date"></td>
+            <td>
+                <select id="SAJ_selection_1" name = "natureB_1_2_1">
+                    <option value = "<?php echo isset($natureB_1_2_1) ? $natureB_1_2_1 : "None"; ?>">
+                        <?php echo isset($natureB_1_2_1) ? $natureB_1_2_1 : "Select Option"; ?>
+                    </option>
                     <option value="academic">Academic Competition</option>
                     <option value="research">Research Award</option>
                 </select>
             </td>
-            <td><input id="SAJ_5" type="text"></td>
+            <td><input id="SAJ_5" name = "venueB_1_2_1" value = "<?php echo isset($venueB_1_2_1) ? $venueB_1_2_1 : ""; ?>" type="text"></td>
             <td><input id="SAJ_result_1" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="SAJ_6" type="text"></td>
-            <td><input id="SAJ_7" type="text"></td>
-            <td><input id="SAJ_8" type="date"></td>
-            <td><select id="SAJ_selection_2">
-                    <option value="none">Select option</option>
+        <td><input id="SAJ_6" name = "titleB_1_2_2" value = "<?php echo isset($titleB_1_2_2) ? $titleB_1_2_2 : ""; ?>" type="text"></td>
+            <td><input id="SAJ_7" name = "orgB_1_2_2" value = "<?php echo isset($orgB_1_2_2) ? $orgB_1_2_2 : ""; ?>" type="text"></td>
+            <td><input id="SAJ_8" name = "evdateB_1_2_2" value = "<?php echo isset($evdateB_1_2_2) ? $evdateB_1_2_2 : ""; ?>" type="date"></td>
+            <td>
+                <select id="SAJ_selection_2" name = "natureB_1_2_2">
+                    <option value = "<?php echo isset($natureB_1_2_2) ? $natureB_1_2_2 : "None"; ?>">
+                        <?php echo isset($natureB_1_2_2) ? $natureB_1_2_2 : "Select Option"; ?>
+                    </option>
                     <option value="academic">Academic Competition</option>
                     <option value="research">Research Award</option>
                 </select>
             </td>
-            <td><input id="SAJ_10" type="text"></td>
+            <td><input id="SAJ_10" name = "venueB_1_2_2" value = "<?php echo isset($venueB_1_2_2) ? $venueB_1_2_2 : ""; ?>" type="text"></td>
             <td><input id="SAJ_result_2" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="SAJ_11" type="text"></td>
-            <td><input id="SAJ_12" type="text"></td>
-            <td><input id="SAJ_13" type="date"></td>
-            <td><select id="SAJ_selection_3">
-                    <option value="none">Select option</option>
+        <td><input id="SAJ_11" name = "titleB_1_2_3" value = "<?php echo isset($titleB_1_2_3) ? $titleB_1_2_3 : ""; ?>" type="text"></td>
+            <td><input id="SAJ_12" name = "orgB_1_2_3" value = "<?php echo isset($orgB_1_2_3) ? $orgB_1_2_3 : ""; ?>" type="text"></td>
+            <td><input id="SAJ_13" name = "evdateB_1_2_3" value = "<?php echo isset($evdateB_1_2_3) ? $evdateB_1_2_3 : ""; ?>" type="date"></td>
+            <td>
+                <select id="SAJ_selection_3" name = "natureB_1_2_3">
+                    <option value = "<?php echo isset($natureB_1_2_3) ? $natureB_1_2_3 : "None"; ?>">
+                        <?php echo isset($natureB_1_2_3) ? $natureB_1_2_3 : "Select Option"; ?>
+                    </option>
                     <option value="academic">Academic Competition</option>
                     <option value="research">Research Award</option>
                 </select>
             </td>
-            <td><input id="SAJ_15" type="text"></td>
+            <td><input id="SAJ_15" name = "venueB_1_2_3" value = "<?php echo isset($venueB_1_2_3) ? $venueB_1_2_3 : ""; ?>" type="text"></td>
             <td><input id="SAJ_result_3" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="SAJ_16" type="text"></td>
-            <td><input id="SAJ_17" type="text"></td>
-            <td><input id="SAJ_18" type="date"></td>
-            <td><select id="SAJ_selection_4">
-                    <option value="none">Select option</option>
+        <td><input id="SAJ_16" name = "titleB_1_2_4" value = "<?php echo isset($titleB_1_2_4) ? $titleB_1_2_4 : ""; ?>" type="text"></td>
+            <td><input id="SAJ_17" name = "orgB_1_2_4" value = "<?php echo isset($orgB_1_2_4) ? $orgB_1_2_4 : ""; ?>" type="text"></td>
+            <td><input id="SAJ_18" name = "evdateB_1_2_4" value = "<?php echo isset($evdateB_1_2_4) ? $evdateB_1_2_4 : ""; ?>" type="date"></td>
+            <td>
+                <select id="SAJ_selection_4" name = "natureB_1_2_4">
+                    <option value = "<?php echo isset($natureB_1_2_4) ? $natureB_1_2_4 : "None"; ?>">
+                        <?php echo isset($natureB_1_2_4) ? $natureB_1_2_4 : "Select Option"; ?>
+                    </option>
                     <option value="academic">Academic Competition</option>
                     <option value="research">Research Award</option>
                 </select>
             </td>
-            <td><input id="SAJ_20" type="text"></td>
+            <td><input id="SAJ_20" name = "venueB_1_2_4" value = "<?php echo isset($venueB_1_2_4) ? $venueB_1_2_4 : ""; ?>" type="text"></td>
             <td><input id="SAJ_result_4" readonly type="text"></td>
         </tr>
 
@@ -526,50 +1013,56 @@ if (isset($_POST['submit_btn'])) {
         </tr>
 
         <tr>
-            <td><input id="SAASC_1" type="text"></td>
-            <td><input id="SAASC_2" type="text"></td>
-            <td><input id="SAASC_3" type="text"></td>
-            <td><input id="SAASC_4" type="text"></td>
+            <td><input id="SAASC_1" name = "titleB_1_3_1" value = "<?php echo isset($titleB_1_3_1) ? $titleB_1_3_1 : ""; ?>" type="text"></td>
+            <td><input id="SAASC_2" name = "nameB_1_3_1" value = "<?php echo isset($nameB_1_3_1) ? $nameB_1_3_1 : ""; ?>" type="text"></td>
+            <td><input id="SAASC_3" name = "perstartB_1_3_1" value = "<?php echo isset($perstartB_1_3_1) ? $perstartB_1_3_1 : ""; ?>" type="text"></td>
+            <td><input id="SAASC_4" name = "perendB_1_3_1" value = "<?php echo isset($perendB_1_3_1) ? $perendB_1_3_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="SAASC_5">
-                    <option value="none">Select Option</option>
+                <select name="scope_1_3_1" id="SAASC_5">
+                    <option value = "<?php echo isset($scope_1_3_1) ? $scope_1_3_1 : "None"; ?>">
+                        <?php echo isset($scope_1_3_1) ? $scope_1_3_1 : "Select Option"; ?>
+                    </option>
                     <option value="local">Local</option>
                     <option value="international">International</option>
                 </select>
             </td>
-            <td><input id="SAASC_6" type="text"></td>
+            <td><input id="SAASC_6" name = "role_1_3_1" value = "<?php echo isset($role_1_3_1) ? $role_1_3_1 : ""; ?>" type="text"></td>
             <td><input id="SAASC_result_1" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="SAASC_7" type="text"></td>
-            <td><input id="SAASC_8" type="text"></td>
-            <td><input id="SAASC_9" type="text"></td>
-            <td><input id="SAASC_10" type="text"></td>
+        <td><input id="SAASC_7" name = "titleB_1_3_2" value = "<?php echo isset($titleB_1_3_2) ? $titleB_1_3_2 : ""; ?>" type="text"></td>
+            <td><input id="SAASC_8" name = "nameB_1_3_2" value = "<?php echo isset($nameB_1_3_2) ? $nameB_1_3_2 : ""; ?>" type="text"></td>
+            <td><input id="SAASC_9" name = "perstartB_1_3_2" value = "<?php echo isset($perstartB_1_3_2) ? $perstartB_1_3_2 : ""; ?>" type="text"></td>
+            <td><input id="SAASC_10" name = "perendB_1_3_2" value = "<?php echo isset($perendB_1_3_2) ? $perendB_1_3_2 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="SAASC_11">
-                    <option value="none">Select Option</option>
+                <select name="scope_1_3_2" id="SAASC_11">
+                    <option value = "<?php echo isset($scope_1_3_2) ? $scope_1_3_2 : "None"; ?>">
+                        <?php echo isset($scope_1_3_2) ? $scope_1_3_2 : "Select Option"; ?>
+                    </option>
                     <option value="local">Local</option>
                     <option value="international">International</option>
                 </select>
             </td>
-            <td><input id="SAASC_12" type="text"></td>
+            <td><input id="SAASC_12" name = "role_1_3_2" value = "<?php echo isset($role_1_3_2) ? $role_1_3_2 : ""; ?>" type="text"></td>
             <td><input id="SAASC_result_2" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="SAASC_13" type="text"></td>
-            <td><input id="SAASC_14" type="text"></td>
-            <td><input id="SAASC_15" type="text"></td>
-            <td><input id="SAASC_16" type="text"></td>
+        <td><input id="SAASC_13" name = "titleB_1_3_3" value = "<?php echo isset($titleB_1_3_3) ? $titleB_1_3_3 : ""; ?>" type="text"></td>
+            <td><input id="SAASC_14" name = "nameB_1_3_3" value = "<?php echo isset($nameB_1_3_3) ? $nameB_1_3_3 : ""; ?>" type="text"></td>
+            <td><input id="SAASC_15" name = "perstartB_1_3_3" value = "<?php echo isset($perstartB_1_3_3) ? $perstartB_1_3_3 : ""; ?>" type="text"></td>
+            <td><input id="SAASC_16" name = "perendB_1_3_3" value = "<?php echo isset($perendB_1_3_3) ? $perendB_1_3_3 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="SAASC_17">
-                    <option value="none">Select Option</option>
+                <select name="scope_1_3_3" id="SAASC_17">
+                    <option value = "<?php echo isset($scope_1_3_3) ? $scope_1_3_3 : "None"; ?>">
+                        <?php echo isset($scope_1_3_3) ? $scope_1_3_3 : "Select Option"; ?>
+                    </option>
                     <option value="local">Local</option>
                     <option value="international">International</option>
                 </select>
             </td>
-            <td><input id="SAASC_18" type="text"></td>
+            <td><input id="SAASC_18" name = "role_1_3_3" value = "<?php echo isset($role_1_3_3) ? $role_1_3_3 : ""; ?>" type="text"></td>
             <td><input id="SAASC_result_3" readonly type="text"></td>
         </tr>
         <tr>
@@ -599,37 +1092,37 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>Writer of occasional newspaper column</td>
-            <td><input id="STM_1" type="text"></td>
-            <td><input id="STM_2" type="text"></td>
-            <td><input id="STM_3" type="text"></td>
-            <td><input id="STM_4" type="text"></td>
+            <td><input id="STM_1" name = "nameB_1_4_1" value = "<?php echo isset($nameB_1_4_1) ? $nameB_1_4_1 : ""; ?>" type="text"></td>
+            <td><input id="STM_2" name = "titleB_1_4_1" value = "<?php echo isset($titleB_1_4_1) ? $titleB_1_4_1 : ""; ?>" type="text"></td>
+            <td><input id="STM_3" name = "perengB_1_4_1" value = "<?php echo isset($perengB_1_4_1) ? $titleB_1_4_1 : ""; ?>" type="text"></td>
+            <td><input id="STM_4" name = "noengB_1_4_1" value = "<?php echo isset($noengB_1_4_1) ? $noengB_1_4_1 : ""; ?>" type="text"></td>
             <td><input id="STM_total_1" name="STM_1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>Writer of regular newspaper column</td>
-            <td><input id="STM_5" type="text"></td>
-            <td><input id="STM_6" type="text"></td>
-            <td><input id="STM_7" type="text"></td>
-            <td><input id="STM_8" type="text"></td>
+            <td><input id="STM_5" name = "nameB_1_4_2" value = "<?php echo isset($nameB_1_4_2) ? $nameB_1_4_2 : ""; ?>" type="text"></td>
+            <td><input id="STM_6" name = "titleB_1_4_2" value = "<?php echo isset($titleB_1_4_2) ? $titleB_1_4_2 : ""; ?>" type="text"></td>
+            <td><input id="STM_7" name = "perengB_1_4_2" value = "<?php echo isset($perengB_1_4_2) ? $perengB_1_4_2 : ""; ?>" type="text"></td>
+            <td><input id="STM_8" name = "noengB_1_4_2" value = "<?php echo isset($noengB_1_4_2) ? $noengB_1_4_2 : ""; ?>" type="text"></td>
             <td><input id="STM_total_2" name="STM_2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>Host of TV/Radio Program</td>
-            <td><input id="STM_9" type="text"></td>
-            <td><input id="STM_10" type="text"></td>
-            <td><input id="STM_11" type="text"></td>
-            <td><input id="STM_12" type="text"></td>
+            <td><input id="STM_9" name = "nameB_1_4_3" value = "<?php echo isset($nameB_1_4_3) ? $nameB_1_4_3 : ""; ?>" type="text"></td>
+            <td><input id="STM_10" name = "titleB_1_4_3" value = "<?php echo isset($titleB_1_4_3) ? $titleB_1_4_3 : ""; ?>" type="text"></td>
+            <td><input id="STM_11" name = "perengB_1_4_3" value = "<?php echo isset($perengB_1_4_3) ? $perengB_1_4_3 : ""; ?>" type="text"></td>
+            <td><input id="STM_12" name = "noengB_1_4_3" value = "<?php echo isset($noengB_1_4_3) ? $noengB_1_4_3 : ""; ?>" type="text"></td>
             <td><input id="STM_total_3" name="STM_3" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>Guesting as technical expert for TV or radio program/print media/online media</td>
-            <td><input id="STM_13" type="text"></td>
-            <td><input id="STM_14" type="text"></td>
-            <td><input id="STM_15" type="text"></td>
-            <td><input id="STM_16" type="text"></td>
+            <td><input id="STM_13" name = "nameB_1_4_4" value = "<?php echo isset($nameB_1_4_4) ? $nameB_1_4_4 : ""; ?>" type="text"></td>
+            <td><input id="STM_14" name = "titleB_1_4_4" value = "<?php echo isset($titleB_1_4_4) ? $titleB_1_4_4 : ""; ?>" type="text"></td>
+            <td><input id="STM_15" name = "perengB_1_4_4" value = "<?php echo isset($perengB_1_4_4) ? $perengB_1_4_4 : ""; ?>" type="text"></td>
+            <td><input id="STM_16" name = "noengB_1_4_4" value = "<?php echo isset($noengB_1_4_4) ? $noengB_1_4_4 : ""; ?>" type="text"></td>
             <td><input id="STM_total_4" name="STM_4" readonly type="text"></td>
         </tr>
 
@@ -665,53 +1158,59 @@ if (isset($_POST['submit_btn'])) {
         </tr>
 
         <tr>
-            <td><input id="FOEH_1" type="text"></td>
-            <td><input id="FOEH_2" type="text"></td>
-            <td><input id="FOEH_3" type="text"></td>
-            <td><input id="FOEH_4" type="date" name=""></td>
-            <td><input id="FOEH_5" type="date" name=""></td>
+            <td><input id="FOEH_1" name = "titleB_1_5_1" value = "<?php echo isset($titleB_1_5_1) ? $titleB_1_5_1 : ""; ?>" type="text"></td>
+            <td><input id="FOEH_2" name = "typeB_1_5_1" value = "<?php echo isset($typeB_1_5_1) ? $typeB_1_5_1 : ""; ?>" type="text"></td>
+            <td><input id="FOEH_3" name = "orgB_1_5_1" value = "<?php echo isset($orgB_1_5_1) ? $orgB_1_5_1 : ""; ?>" type="text"></td>
+            <td><input id="FOEH_4" name = "perengstartB_1_5_1" value = "<?php echo isset($perengstartB_1_5_1) ? $perengstartB_1_5_1 : ""; ?>" type="date" name=""></td>
+            <td><input id="FOEH_5" name = "perengendB_1_5_1" value = "<?php echo isset($perengendB_1_5_1) ? $perengendB_1_5_1 : ""; ?>" type="date" name=""></td>
             <td>
-                <select id="FOEH_6" name="">
-                    <option value="none">Select Option</option>
+                <select id="FOEH_6" name="scopeB_1_5_1">
+                    <option value = "<?php echo isset($scopeB_1_5_1) ? $scopeB_1_5_1 : "None"; ?>">
+                        <?php echo isset($scopeB_1_5_1) ? $scopeB_1_5_1 : "Select Option"; ?>
+                    </option>
                     <option value="local">Local</option>
                     <option value="international">International</option>
                 </select>
             </td>
-            <td><input id="FOEH_7" type="text"></td>
-            <td><input id="FOEH_result_1" readonly type="text"></td>
+            <td><input id="FOEH_7" name = "nohoursB_1_5_1" value = "<?php echo isset($nohoursB_1_5_1) ? $nohoursB_1_5_1 : ""; ?>" type="text"></td>
+            <td><input id="FOEH_result_1"  readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="FOEH_8" type="text"></td>
-            <td><input id="FOEH_9" type="text"></td>
-            <td><input id="FOEH_10" type="text"></td>
-            <td><input id="FOEH_11" type="date" name=""></td>
-            <td><input id="FOEH_12" type="date" name=""></td>
+        <td><input id="FOEH_8" name = "titleB_1_5_2" value = "<?php echo isset($titleB_1_5_2) ? $titleB_1_5_2 : ""; ?>" type="text"></td>
+            <td><input id="FOEH_9" name = "typeB_1_5_2" value = "<?php echo isset($typeB_1_5_2) ? $typeB_1_5_2 : ""; ?>" type="text"></td>
+            <td><input id="FOEH_10" name = "orgB_1_5_2" value = "<?php echo isset($orgB_1_5_2) ? $orgB_1_5_2 : ""; ?>" type="text"></td>
+            <td><input id="FOEH_11" name = "perengstartB_1_5_2" value = "<?php echo isset($perengstartB_1_5_2) ? $perengstartB_1_5_2 : ""; ?>" type="date" name=""></td>
+            <td><input id="FOEH_12" name = "perengendB_1_5_2" value = "<?php echo isset($perengendB_1_5_2) ? $perengendB_1_5_2 : ""; ?>" type="date" name=""></td>
             <td>
-                <select id="FOEH_13" name="">
-                    <option value="none">Select Option</option>
+                <select id="FOEH_13" name="scopeB_1_5_2">
+                    <option value = "<?php echo isset($scopeB_1_5_2) ? $scopeB_1_5_2 : "None"; ?>">
+                        <?php echo isset($scopeB_1_5_2) ? $scopeB_1_5_2 : "Select Option"; ?>
+                    </option>
                     <option value="local">Local</option>
                     <option value="international">International</option>
                 </select>
             </td>
-            <td><input id="FOEH_14" type="text"></td>
+            <td><input id="FOEH_14" name = "nohoursB_1_5_2" value = "<?php echo isset($nohoursB_1_5_2) ? $nohoursB_1_5_2 : ""; ?>" type="text"></td>
             <td><input id="FOEH_result_2" readonly type="text"></td>
         </tr>
 
         <tr>
-            <td><input id="FOEH_15" type="text"></td>
-            <td><input id="FOEH_16" type="text"></td>
-            <td><input id="FOEH_17" type="text"></td>
-            <td><input id="FOEH_18" type="date" name=""></td>
-            <td><input id="FOEH_19" type="date" name=""></td>
+        <td><input id="FOEH_15" name = "titleB_1_5_3" value = "<?php echo isset($titleB_1_5_3) ? $titleB_1_5_3 : ""; ?>" type="text"></td>
+            <td><input id="FOEH_16" name = "typeB_1_5_3" value = "<?php echo isset($typeB_1_5_3) ? $typeB_1_5_3 : ""; ?>" type="text"></td>
+            <td><input id="FOEH_17" name = "orgB_1_5_3" value = "<?php echo isset($orgB_1_5_3) ? $orgB_1_5_3 : ""; ?>" type="text"></td>
+            <td><input id="FOEH_18" name = "perengstartB_1_5_3" value = "<?php echo isset($perengstartB_1_5_3) ? $perengstartB_1_5_2 : ""; ?>" type="date" name=""></td>
+            <td><input id="FOEH_19" name = "perengendB_1_5_3" value = "<?php echo isset($perengendB_1_5_3) ? $perengendB_1_5_3 : ""; ?>" type="date" name=""></td>
             <td>
-                <select id="FOEH_20" name="">
-                    <option value="none">Select Option</option>
+                <select id="FOEH_20" name="scopeB_1_5_3">
+                    <option value = "<?php echo isset($scopeB_1_5_3) ? $scopeB_1_5_3 : "None"; ?>">
+                        <?php echo isset($scopeB_1_5_3) ? $scopeB_1_5_3 : "Select Option"; ?>
+                    </option>
                     <option value="local">Local</option>
                     <option value="international">International</option>
                 </select>
             </td>
-            <td><input id="FOEH_21" type="text"></td>
+            <td><input id="FOEH_21" name = "nohoursB_1_5_3" value = "<?php echo isset($nohoursB_1_5_3) ? $nohoursB_1_5_3 : ""; ?>" type="text"></td>
             <td><input id="FOEH_result_3" readonly type="text"></td>
         </tr>
 
@@ -730,7 +1229,7 @@ if (isset($_POST['submit_btn'])) {
     <h2 class="page_title">2. Institutional Social Responsibility</h2>
     <h2 class="page_title">2.1 For Every Service-oriented Project In The Community Participated, Including Advocacy
         Initiatives</h2>
-    <table>
+        <table>
         <tr class="row__des">
             <td>Name of Community Extension Activity</td>
             <td>Name of Community</td>
@@ -743,62 +1242,70 @@ if (isset($_POST['submit_btn'])) {
         </tr>
 
         <tr>
-            <td><input id="FESOP_1" type="text"></td>
-            <td><input id="FESOP_2" type="text"></td>
-            <td><input id="FESOP_3" type="text"></td>
+            <td><input id="FESOP_1" name = "nceaB_2_1_1" value = "<?php echo isset($nceaB_2_1_1) ? $nceaB_2_1_1 : ""; ?>" type="text"></td>
+            <td><input id="FESOP_2" name = "ncB_2_1_1" value = "<?php echo isset($ncB_2_1_1) ? $ncB_2_1_1 : ""; ?>" type="text"></td>
+            <td><input id="FESOP_3" name = "nobeneB_2_1_1" value = "<?php echo isset($nobeneB_2_1_1) ? $nobeneB_2_1_1 : ""; ?>" type="text"></td>
             <td>
-                <select id="FESOP_4" name="">
-                    <option value="none">Select Option</option>
+                <select id="FESOP_4" name="roleB_2_1_1">
+                    <option value = "<?php echo isset($roleB_2_1_1) ? $roleB_2_1_1 : "none"; ?>">
+                        <?php echo isset($roleB_2_1_1) ? $roleB_2_1_1 : "Select Option"; ?>
+                    </option>
                     <option value="head">Head</option>
                     <option value="participant">Participant</option>
                 </select>
             </td>
-            <td><input id="FESOP_5" type="text"></td>
+            <td><input id="FESOP_5" name = "dateactB_2_1_1" value = "<?php echo isset($dateactB_2_1_1) ? $dateactB_2_1_1 : ""; ?>" type="text"></td>
             <td><input id="FESOP_result_1" type="text" readonly></td>
         </tr>
 
         <tr>
-            <td><input id="FESOP_6" type="text"></td>
-            <td><input id="FESOP_7" type="text"></td>
-            <td><input id="FESOP_8" type="text"></td>
+        <td><input id="FESOP_6" name = "nceaB_2_1_2" value = "<?php echo isset($nceaB_2_1_2) ? $nceaB_2_1_2 : ""; ?>" type="text"></td>
+            <td><input id="FESOP_7" name = "ncB_2_1_2" value = "<?php echo isset($ncB_2_1_2) ? $ncB_2_1_2 : ""; ?>" type="text"></td>
+            <td><input id="FESOP_8" name = "nobeneB_2_1_2" value = "<?php echo isset($nobeneB_2_1_2) ? $nobeneB_2_1_2 : ""; ?>" type="text"></td>
             <td>
-                <select id="FESOP_9" name="">
-                    <option value="none">Select Option</option>
+                <select id="FESOP_9" name="roleB_2_1_2">
+                    <option value = "<?php echo isset($roleB_2_1_2) ? $roleB_2_1_2 : "none"; ?>">
+                        <?php echo isset($roleB_2_1_2) ? $roleB_2_1_2 : "Select Option"; ?>
+                    </option>
                     <option value="head">Head</option>
                     <option value="participant">Participant</option>
                 </select>
             </td>
-            <td><input id="FESOP_10" type="text"></td>
+            <td><input id="FESOP_10" name = "dateactB_2_1_2" value = "<?php echo isset($dateactB_2_1_2) ? $dateactB_2_1_2 : ""; ?>" type="text"></td>
             <td><input id="FESOP_result_2" type="text" readonly></td>
         </tr>
 
         <tr>
-            <td><input id="FESOP_11" type="text"></td>
-            <td><input id="FESOP_12" type="text"></td>
-            <td><input id="FESOP_13" type="text"></td>
+        <td><input id="FESOP_11" name = "nceaB_2_1_3" value = "<?php echo isset($nceaB_2_1_3) ? $nceaB_2_1_3 : ""; ?>" type="text"></td>
+            <td><input id="FESOP_12" name = "ncB_2_1_3" value = "<?php echo isset($ncB_2_1_3) ? $ncB_2_1_3 : ""; ?>" type="text"></td>
+            <td><input id="FESOP_13" name = "nobeneB_2_1_3" value = "<?php echo isset($nobeneB_2_1_3) ? $nobeneB_2_1_3 : ""; ?>" type="text"></td>
             <td>
-                <select id="FESOP_14" name="">
-                    <option value="none">Select Option</option>
+                <select id="FESOP_14" name="roleB_2_1_3">
+                    <option value = "<?php echo isset($roleB_2_1_3) ? $roleB_2_1_3 : "none"; ?>">
+                        <?php echo isset($roleB_2_1_3) ? $roleB_2_1_3 : "Select Option"; ?>
+                    </option>
                     <option value="head">Head</option>
                     <option value="participant">Participant</option>
                 </select>
             </td>
-            <td><input id="FESOP_15" type="text"></td>
+            <td><input id="FESOP_15" name = "dateactB_2_1_3" value = "<?php echo isset($dateactB_2_1_3) ? $dateactB_2_1_3 : ""; ?>" type="text"></td>
             <td><input id="FESOP_result_3" type="text" readonly></td>
         </tr>
 
         <tr>
-            <td><input id="FESOP_16" type="text"></td>
-            <td><input id="FESOP_17" type="text"></td>
-            <td><input id="FESOP_18" type="text"></td>
+        <td><input id="FESOP_16" name = "nceaB_2_1_4" value = "<?php echo isset($nceaB_2_1_4) ? $nceaB_2_1_4 : ""; ?>" type="text"></td>
+            <td><input id="FESOP_17" name = "ncB_2_1_4" value = "<?php echo isset($ncB_2_1_4) ? $ncB_2_1_4 : ""; ?>" type="text"></td>
+            <td><input id="FESOP_18" name = "nobeneB_2_1_4" value = "<?php echo isset($nobeneB_2_1_4) ? $nobeneB_2_1_4 : ""; ?>" type="text"></td>
             <td>
-                <select id="FESOP_19" name="">
-                    <option value="none">Select Option</option>
+                <select id="FESOP_19" name="roleB_2_1_4">
+                    <option value = "<?php echo isset($roleB_2_1_4) ? $roleB_2_1_4 : "none"; ?>">
+                        <?php echo isset($roleB_2_1_4) ? $roleB_2_1_4 : "Select Option"; ?>
+                    </option>
                     <option value="head">Head</option>
                     <option value="participant">Participant</option>
                 </select>
             </td>
-            <td><input id="FESOP_20" type="text"></td>
+            <td><input id="FESOP_20" name = "dateactB_2_1_4" value = "<?php echo isset($dateactB_2_1_4) ? $dateactB_2_1_4 : ""; ?>" type="text"></td>
             <td><input id="FESOP_result_4" type="text" readonly></td>
         </tr>
         <tr>
@@ -1340,7 +1847,7 @@ if (isset($_POST['submit_btn'])) {
         const FESOP_4 = document.getElementById('FESOP_4').value
         const FESOP_5 = document.getElementById('FESOP_5').value
         const FESOP_result_1 = document.getElementById('FESOP_result_1')
-
+        console.log(FESOP_1);
         if (FESOP_1 !== "" &&
             FESOP_2 !== "" &&
             FESOP_3 !== "" &&

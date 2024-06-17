@@ -4,9 +4,89 @@ session_start();
 if(!isset($_SESSION['user'])){
   header('location: login.php');
 }
+$id = $_SESSION['user']['user_id'];
 
+
+$query2_c = "SELECT * FROM form2_c WHERE user_id = $id";
+$result2_c = $conn->query($query2_c);
+
+
+while ($row = mysqli_fetch_array($result2_c)) {
+    $init_title_1_1_1 = $row['title_1_1_1'];
+    $init_title_1_1_2 = $row['title_1_1_2'];
+    $init_title_1_1_3 = $row['title_1_1_3'];
+    $init_type_1_1_1 = $row['type_1_1_1'];
+    $init_type_1_1_2 = $row['type_1_1_2'];
+    $init_type_1_1_3 = $row['type_1_1_3'];
+    $init_class_1_1_1 = $row['class_1_1_1'];
+    $init_class_1_1_2 = $row['class_1_1_2'];
+    $init_class_1_1_3 = $row['class_1_1_3'];
+    $init_copydate_1_1_1 = $row['copydate_1_1_1'];
+    $init_copydate_1_1_2 = $row['copydate_1_1_2'];
+    $init_copydate_1_1_3 = $row['copydate_1_1_3'];
+    $init_venue_1_1_1 = $row['venue_1_1_1'];
+    $init_venue_1_1_2 = $row['venue_1_1_2'];
+    $init_venue_1_1_3 = $row['venue_1_1_3'];
+    $init_org_1_1_1 = $row['org_1_1_1'];
+    $init_org_1_1_2 = $row['org_1_1_2'];
+    $init_org_1_1_3 = $row['org_1_1_3'];
+    $init_title_1_2_1 = $row['title_1_2_1'];
+    $init_title_1_2_2 = $row['title_1_2_2'];
+    $init_title_1_2_3 = $row['title_1_2_3'];
+    $init_type_1_2_1 = $row['type_1_2_1'];
+    $init_type_1_2_2 = $row['type_1_2_2'];
+    $init_type_1_2_3 = $row['type_1_2_3'];
+    $init_class_1_2_1 = $row['class_1_2_1'];
+    $init_class_1_2_2 = $row['class_1_2_2'];
+    $init_class_1_2_3 = $row['class_1_2_3'];
+    $init_exedate_1_2_1 = $row['exedate_1_2_1'];
+    $init_exedate_1_2_2 = $row['exedate_1_2_2'];
+    $init_exedate_1_2_3 = $row['exedate_1_2_3'];
+    $init_venue_1_2_1 = $row['venue_1_2_1'];
+    $init_venue_1_2_2 = $row['venue_1_2_2'];
+    $init_venue_1_2_3 = $row['venue_1_2_3'];
+    $init_org_1_2_1 = $row['org_1_2_1'];
+    $init_org_1_2_2 = $row['org_1_2_2'];
+    $init_org_1_2_3 = $row['org_1_2_3'];
+    $init_title_1_3_1 = $row['title_1_3_1'];
+    $init_title_1_3_2 = $row['title_1_3_2'];
+    $init_title_1_3_3 = $row['title_1_3_3'];
+    $init_class_1_3_1 = $row['class_1_3_1'];
+    $init_class_1_3_2 = $row['class_1_3_2'];
+    $init_class_1_3_3 = $row['class_1_3_3'];
+    $init_rev_1_3_1 = $row['rev_1_3_1'];
+    $init_rev_1_3_2 = $row['rev_1_3_2'];
+    $init_rev_1_3_3 = $row['rev_1_3_3'];
+    $init_exedate_1_3_1 = $row['exedate_1_3_1'];
+    $init_exedate_1_3_2 = $row['exedate_1_3_2'];
+    $init_exedate_1_3_3 = $row['exedate_1_3_3'];
+    $init_venue_1_3_1 = $row['venue_1_3_1'];
+    $init_venue_1_3_2 = $row['venue_1_3_2'];
+    $init_venue_1_3_3 = $row['venue_1_3_3'];
+    $init_org_1_3_1 = $row['org_1_3_1'];
+    $init_org_1_3_2 = $row['org_1_3_2'];
+    $init_org_1_3_3 = $row['org_1_3_3'];
+    $init_title_1_4_1 = $row['title_1_4_1'];
+    $init_title_1_4_2 = $row['title_1_4_2'];
+    $init_title_1_4_3 = $row['title_1_4_3'];
+    $init_type_1_4_1 = $row['type_1_4_1'];
+    $init_type_1_4_2 = $row['type_1_4_2'];
+    $init_type_1_4_3 = $row['type_1_4_3'];
+    $init_rev_1_4_1 = $row['rev_1_4_1'];
+    $init_rev_1_4_2 = $row['rev_1_4_2'];
+    $init_rev_1_4_3 = $row['rev_1_4_3'];
+    $init_copydate_1_4_1 = $row['copydate_1_4_1'];
+    $init_copydate_1_4_2 = $row['copydate_1_4_2'];
+    $init_copydate_1_4_3 = $row['copydate_1_4_3'];
+    $init_venue_1_4_1 = $row['venue_1_4_1'];
+    $init_venue_1_4_2 = $row['venue_1_4_2'];
+    $init_venue_1_4_3 = $row['venue_1_4_3'];
+    $init_org_1_4_1 = $row['org_1_4_1'];
+    $init_org_1_4_2 = $row['org_1_4_2'];
+    $init_org_1_4_3 = $row['org_1_4_3'];
+
+}
 if (isset($_POST['submit_btn'])) {
-    $id = $_SESSION['user']['user_id'];
     $scoreNCPA = $_POST['NCPA_Score'];
     $scoreExhibition = $_POST['Exhibition_Score'];
     $scoreJuried = $_POST['Juried_Score'];
@@ -30,6 +110,194 @@ if (isset($_POST['submit_btn'])) {
         </script>
         <?php
     } else {
+        $title_1_1_1 = $_POST['title_1_1_1'];
+        $title_1_1_2 = $_POST['title_1_1_2'];
+        $title_1_1_3 = $_POST['title_1_1_3'];
+        $type_1_1_1 = $_POST['type_1_1_1'];
+        $type_1_1_2 = $_POST['type_1_1_2'];
+        $type_1_1_3 = $_POST['type_1_1_3'];
+        $class_1_1_1 = $_POST['class_1_1_1'];
+        $class_1_1_2 = $_POST['class_1_1_2'];
+        $class_1_1_3 = $_POST['class_1_1_3'];
+        $copydate_1_1_1 = $_POST['copydate_1_1_1'];
+        $copydate_1_1_2 = $_POST['copydate_1_1_2'];
+        $copydate_1_1_3 = $_POST['copydate_1_1_3'];
+        $venue_1_1_1 = $_POST['venue_1_1_1'];
+        $venue_1_1_2 = $_POST['venue_1_1_2'];
+        $venue_1_1_3 = $_POST['venue_1_1_3'];
+        $org_1_1_1 = $_POST['org_1_1_1'];
+        $org_1_1_2 = $_POST['org_1_1_2'];
+        $org_1_1_3 = $_POST['org_1_1_3'];
+        $title_1_2_1 = $_POST['title_1_2_1'];
+        $title_1_2_2 = $_POST['title_1_2_2'];
+        $title_1_2_3 = $_POST['title_1_2_3'];
+        $type_1_2_1 = $_POST['type_1_2_1'];
+        $type_1_2_2 = $_POST['type_1_2_2'];
+        $type_1_2_3 = $_POST['type_1_2_3'];
+        $class_1_2_1 = $_POST['class_1_2_1'];
+        $class_1_2_2 = $_POST['class_1_2_2'];
+        $class_1_2_3 = $_POST['class_1_2_3'];
+        $exedate_1_2_1 = $_POST['exedate_1_2_1'];
+        $exedate_1_2_2 = $_POST['exedate_1_2_2'];
+        $exedate_1_2_3 = $_POST['exedate_1_2_3'];
+        $venue_1_2_1 = $_POST['venue_1_2_1'];
+        $venue_1_2_2 = $_POST['venue_1_2_2'];
+        $venue_1_2_3 = $_POST['venue_1_2_3'];
+        $org_1_2_1 = $_POST['org_1_2_1'];
+        $org_1_2_2 = $_POST['org_1_2_2'];
+        $org_1_2_3 = $_POST['org_1_2_3'];
+        $title_1_3_1 = $_POST['title_1_3_1'];
+        $title_1_3_2 = $_POST['title_1_3_2'];
+        $title_1_3_3 = $_POST['title_1_3_3'];
+        $class_1_3_1 = $_POST['class_1_3_1'];
+        $class_1_3_2 = $_POST['class_1_3_2'];
+        $class_1_3_3 = $_POST['class_1_3_3'];
+        $rev_1_3_1 = $_POST['rev_1_3_1'];
+        $rev_1_3_2 = $_POST['rev_1_3_2'];
+        $rev_1_3_3 = $_POST['rev_1_3_3'];
+        $exedate_1_3_1 = $_POST['exedate_1_3_1'];
+        $exedate_1_3_2 = $_POST['exedate_1_3_2'];
+        $exedate_1_3_3 = $_POST['exedate_1_3_3'];
+        $venue_1_3_1 = $_POST['venue_1_3_1'];
+        $venue_1_3_2 = $_POST['venue_1_3_2'];
+        $venue_1_3_3 = $_POST['venue_1_3_3'];
+        $org_1_3_1 = $_POST['org_1_3_1'];
+        $org_1_3_2 = $_POST['org_1_3_2'];
+        $org_1_3_3 = $_POST['org_1_3_3'];
+        $title_1_4_1 = $_POST['title_1_4_1'];
+        $title_1_4_2 = $_POST['title_1_4_2'];
+        $title_1_4_3 = $_POST['title_1_4_3'];
+        $type_1_4_1 = $_POST['type_1_4_1'];
+        $type_1_4_2 = $_POST['type_1_4_2'];
+        $type_1_4_3 = $_POST['type_1_4_3'];
+        $rev_1_4_1 = $_POST['rev_1_4_1'];
+        $rev_1_4_2 = $_POST['rev_1_4_2'];
+        $rev_1_4_3 = $_POST['rev_1_4_3'];
+        $copydate_1_4_1 = $_POST['copydate_1_4_1'];
+        $copydate_1_4_2 = $_POST['copydate_1_4_2'];
+        $copydate_1_4_3 = $_POST['copydate_1_4_3'];
+        $venue_1_4_1 = $_POST['venue_1_4_1'];
+        $venue_1_4_2 = $_POST['venue_1_4_2'];
+        $venue_1_4_3 = $_POST['venue_1_4_3'];
+        $org_1_4_1 = $_POST['org_1_4_1'];
+        $org_1_4_2 = $_POST['org_1_4_2'];
+        $org_1_4_3 = $_POST['org_1_4_3'];
+
+
+        $conn->query("INSERT INTO form2_c (
+          title_1_1_1, title_1_1_2, title_1_1_3,
+          type_1_1_1, type_1_1_2, type_1_1_3,
+          class_1_1_1, class_1_1_2, class_1_1_3, 
+          copydate_1_1_1, copydate_1_1_2, copydate_1_1_3, 
+          venue_1_1_1, venue_1_1_2, venue_1_1_3, 
+          org_1_1_1, org_1_1_2, org_1_1_3, 
+          title_1_2_1, title_1_2_2, title_1_2_3, type_1_2_1, 
+          type_1_2_2, type_1_2_3, class_1_2_1, class_1_2_2, 
+          class_1_2_3, exedate_1_2_1, exedate_1_2_2, exedate_1_2_3, 
+          venue_1_2_1, venue_1_2_2, venue_1_2_3, org_1_2_1, org_1_2_2, 
+          org_1_2_3, title_1_3_1, title_1_3_2, title_1_3_3, class_1_3_1, 
+          class_1_3_2, class_1_3_3, rev_1_3_1, rev_1_3_2, rev_1_3_3, 
+          exedate_1_3_1, exedate_1_3_2, exedate_1_3_3, venue_1_3_1, venue_1_3_2, 
+          venue_1_3_3, org_1_3_1, org_1_3_2, org_1_3_3, title_1_4_1, 
+          title_1_4_2, title_1_4_3, type_1_4_1, type_1_4_2, type_1_4_3, 
+          rev_1_4_1, rev_1_4_2, rev_1_4_3, copydate_1_4_1, copydate_1_4_2, 
+          copydate_1_4_3, venue_1_4_1, venue_1_4_2, venue_1_4_3, 
+          org_1_4_1, org_1_4_2, org_1_4_3,
+            user_id)
+        VALUES ('$title_1_1_1', '$title_1_1_2', '$title_1_1_3',
+        '$type_1_1_1', '$type_1_1_2', '$type_1_1_3',
+        '$class_1_1_1', '$class_1_1_2', '$class_1_1_3', 
+        '$copydate_1_1_1', '$copydate_1_1_2', '$copydate_1_1_3', 
+        '$venue_1_1_1', '$venue_1_1_2', '$venue_1_1_3', 
+        '$org_1_1_1', '$org_1_1_2', '$org_1_1_3', 
+        '$title_1_2_1', '$title_1_2_2', '$title_1_2_3', '$type_1_2_1', 
+        '$type_1_2_2', '$type_1_2_3', '$class_1_2_1', '$class_1_2_2', 
+        '$class_1_2_3', '$exedate_1_2_1', '$exedate_1_2_2', '$exedate_1_2_3', 
+        '$venue_1_2_1', '$venue_1_2_2', '$venue_1_2_3', '$org_1_2_1', '$org_1_2_2', 
+        '$org_1_2_3', '$title_1_3_1', '$title_1_3_2', '$title_1_3_3', '$class_1_3_1', 
+        '$class_1_3_2', '$class_1_3_3', '$rev_1_3_1', '$rev_1_3_2', '$rev_1_3_3', 
+        '$exedate_1_3_1', '$exedate_1_3_2', '$exedate_1_3_3', '$venue_1_3_1', '$venue_1_3_2', 
+        '$venue_1_3_3', '$org_1_3_1', '$org_1_3_2', '$org_1_3_3', '$title_1_4_1', 
+        '$title_1_4_2', '$title_1_4_3', '$type_1_4_1', '$type_1_4_2', '$type_1_4_3', 
+        '$rev_1_4_1', '$rev_1_4_2', '$rev_1_4_3', '$copydate_1_4_1', '$copydate_1_4_2', 
+        '$copydate_1_4_3', '$venue_1_4_1', '$venue_1_4_2', '$venue_1_4_3', 
+        '$org_1_4_1', '$org_1_4_2', '$org_1_4_3',
+        $id)
+        ON DUPLICATE KEY UPDATE
+            title_1_1_1 = VALUES(title_1_1_1),
+            title_1_1_2 = VALUES(title_1_1_2),
+            title_1_1_3 = VALUES(title_1_1_3),
+            type_1_1_1 = VALUES(type_1_1_1),
+            type_1_1_2 = VALUES(type_1_1_2),
+            type_1_1_3 = VALUES(type_1_1_3),
+            class_1_1_1 = VALUES(class_1_1_1),
+            class_1_1_2 = VALUES(class_1_1_2),
+            class_1_1_3 = VALUES(class_1_1_3),
+            copydate_1_1_1 = VALUES(copydate_1_1_1),
+            copydate_1_1_2 = VALUES(copydate_1_1_2),
+            copydate_1_1_3 = VALUES(copydate_1_1_3),
+            venue_1_1_1 = VALUES(venue_1_1_1),
+            venue_1_1_2 = VALUES(venue_1_1_2),
+            venue_1_1_3 = VALUES(venue_1_1_3),
+            org_1_1_1 = VALUES(org_1_1_1),
+            org_1_1_2 = VALUES(org_1_1_2),
+            org_1_1_3 = VALUES(org_1_1_3),
+            title_1_2_1 = VALUES(title_1_2_1),
+            title_1_2_2 = VALUES(title_1_2_2),
+            title_1_2_3 = VALUES(title_1_2_3),
+            type_1_2_1 = VALUES(type_1_2_1),
+            type_1_2_2 = VALUES(type_1_2_2),
+            type_1_2_3 = VALUES(type_1_2_3),
+            class_1_2_1 = VALUES(class_1_2_1),
+            class_1_2_2 = VALUES(class_1_2_2),
+            class_1_2_3 = VALUES(class_1_2_3),
+            exedate_1_2_1 = VALUES(exedate_1_2_1),
+            exedate_1_2_2 = VALUES(exedate_1_2_2),
+            exedate_1_2_3 = VALUES(exedate_1_2_3),
+            venue_1_2_1 = VALUES(venue_1_2_1),
+            venue_1_2_2 = VALUES(venue_1_2_2),
+            venue_1_2_3 = VALUES(venue_1_2_3),
+            org_1_2_1 = VALUES(org_1_2_1),
+            org_1_2_2 = VALUES(org_1_2_2),
+            org_1_2_3 = VALUES(org_1_2_3),
+            title_1_3_1 = VALUES(title_1_3_1),
+            title_1_3_2 = VALUES(title_1_3_2),
+            title_1_3_3 = VALUES(title_1_3_3),
+            class_1_3_1 = VALUES(class_1_3_1),
+            class_1_3_2 = VALUES(class_1_3_2),
+            class_1_3_3 = VALUES(class_1_3_3),
+            rev_1_3_1 = VALUES(rev_1_3_1),
+            rev_1_3_2 = VALUES(rev_1_3_2),
+            rev_1_3_3 = VALUES(rev_1_3_3),
+            exedate_1_3_1 = VALUES(exedate_1_3_1),
+            exedate_1_3_2 = VALUES(exedate_1_3_2),
+            exedate_1_3_3 = VALUES(exedate_1_3_3),
+            venue_1_3_1 = VALUES(venue_1_3_1),
+            venue_1_3_2 = VALUES(venue_1_3_2),
+            venue_1_3_3 = VALUES(venue_1_3_3),
+            org_1_3_1 = VALUES(org_1_3_1),
+            org_1_3_2 = VALUES(org_1_3_2),
+            org_1_3_3 = VALUES(org_1_3_3),
+            title_1_4_1 = VALUES(title_1_4_1),
+            title_1_4_2 = VALUES(title_1_4_2),
+            title_1_4_3 = VALUES(title_1_4_3),
+            type_1_4_1 = VALUES(type_1_4_1),
+            type_1_4_2 = VALUES(type_1_4_2),
+            type_1_4_3 = VALUES(type_1_4_3),
+            rev_1_4_1 = VALUES(rev_1_4_1),
+            rev_1_4_2 = VALUES(rev_1_4_2),
+            rev_1_4_3 = VALUES(rev_1_4_3),
+            copydate_1_4_1 = VALUES(copydate_1_4_1),
+            copydate_1_4_2 = VALUES(copydate_1_4_2),
+            copydate_1_4_3 = VALUES(copydate_1_4_3),
+            venue_1_4_1 = VALUES(venue_1_4_1),
+            venue_1_4_2 = VALUES(venue_1_4_2),
+            venue_1_4_3 = VALUES(venue_1_4_3),
+            org_1_4_1 = VALUES(org_1_4_1),
+            org_1_4_2 = VALUES(org_1_4_2),
+            org_1_4_3 = VALUES(org_1_4_3)
+            "
+        ) or die($conn->error);
         $conn->query(
             "UPDATE kra_2 SET 
                  Crit_C_PA = '$scoreNCPA',
@@ -172,76 +440,89 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="NCPA6" type="text"></td>
+            <td><input id="NCPA6" name = "title_1_1_1" value = "<?php echo isset($init_title_1_1_1) ? $init_title_1_1_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="NCPA1">
-                    <option value="none">Select option</option>
+                <select name="type_1_1_1" id="NCPA1">
+                    <option value = "<?php echo isset($init_type_1_1_1) ? $init_type_1_1_1 : "None"; ?>">
+                        <?php echo isset($init_type_1_1_1) ? $init_type_1_1_1 : "Select Option"; ?>
+                    </option>
                     <option value="Song">Song/Music</option>
                     <option value="Choreography">Choreography/Dance</option>
                     <option value="Others">Others</option>
                 </select>
             </td>
             <td>
-                <select name="" id="NCPA_2">
-                    <option value="none">Select option</option>
+            <select name="class_1_1_1" id="NCPA_2">
+                    <option value = "<?php echo isset($init_class_1_1_1) ? $init_class_1_1_1 : "None"; ?>">
+                        <?php echo isset($init_class_1_1_1) ? $init_class_1_1_1 : "Select Option"; ?>
+                    </option>
                     <option value="new">New Creation</option>
                     <option value="own">Own Work</option>
                     <option value="work">Work of Others</option>
                 </select>
             </td>
-            <td><input id="NCPA_3" type="date"></td>
-            <td><input id="NCPA_4" type="text"></td>
-            <td><input id="NCPA_5" type="text"></td>
+            <td><input name = "copydate_1_1_1" value = "<?php echo isset($init_copydate_1_1_1) ? $init_copydate_1_1_1 : ""; ?>" id="NCPA_3" type="date"></td>
+            <td><input name = "venue_1_1_1" value = "<?php echo isset($init_venue_1_1_1) ? $init_venue_1_1_1 : ""; ?>" id="NCPA_4" type="text"></td>
+            <td><input name = "org_1_1_1" value = "<?php echo isset($init_org_1_1_1) ? $init_org_1_1_1 : ""; ?>" id="NCPA_5" type="text"></td>
             <td><input id="NCPA_res1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input id="NCPA26" type="text"></td>
-            <td>
-                <select name="" id="NCPA1">
-                    <option value="none">Select option</option>
+            <td><input id="NCPA26" name = "title_1_1_2" value = "<?php echo isset($init_title_1_1_2) ? $init_title_1_1_2 : ""; ?>" type="text"></td>
+            <td><select name="type_1_1_2" id="NCPA1">
+                    <option value = "<?php echo isset($init_type_1_1_2) ? $init_type_1_1_2 : "None"; ?>">
+                        <?php echo isset($init_type_1_1_2) ? $init_type_1_1_2 : "Select Option"; ?>
+                    </option>
                     <option value="Song">Song/Music</option>
                     <option value="Choreography">Choreography/Dance</option>
                     <option value="Others">Others</option>
                 </select>
             </td>
             <td>
-                <select name="" id="NCPA_22">
-                    <option value="none">Select option</option>
+                <select name="class_1_1_2" id="NCPA_22">
+                    <option value = "<?php echo isset($init_class_1_1_2) ? $init_class_1_1_2 : "None"; ?>">
+                        <?php echo isset($init_class_1_1_2) ? $init_class_1_1_2 : "Select Option"; ?>
+                    </option>
                     <option value="new">New Creation</option>
                     <option value="own">Own Work</option>
                     <option value="work">Work of Others</option>
                 </select>
             </td>
-            <td><input id="NCPA_23" type="date"></td>
-            <td><input id="NCPA_24" type="text"></td>
-            <td><input id="NCPA_25" type="text"></td>
+            
+            <td><input name = "copydate_1_1_2" value = "<?php echo isset($init_copydate_1_1_2) ? $init_copydate_1_1_2 : ""; ?>" id="NCPA_23" type="date"></td>
+            <td><input name = "venue_1_1_2" value = "<?php echo isset($init_venue_1_1_2) ? $init_venue_1_1_2 : ""; ?>" id="NCPA_24" type="text"></td>
+            <td><input name = "org_1_1_2" value = "<?php echo isset($init_org_1_1_2) ? $init_org_1_1_2 : ""; ?>" id="NCPA_25" type="text"></td>
             <td><input id="NCPA_res2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="NCPA36" type="text"></td>
+            <td><input id="NCPA36" name = "title_1_1_3" value = "<?php echo isset($init_title_1_1_3) ? $init_title_1_1_3 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="NCPA31">
-                    <option value="none">Select option</option>
+                <select name="type_1_1_3" id="NCPA31">
+                    <option value = "<?php echo isset($init_type_1_1_3) ? $init_type_1_1_3 : "None"; ?>">
+                        <?php echo isset($init_type_1_1_3) ? $init_type_1_1_3 : "Select Option"; ?>
+                    </option>
                     <option value="Song">Song/Music</option>
                     <option value="Choreography">Choreography/Dance</option>
                     <option value="Others">Others</option>
                 </select>
             </td>
             <td>
-                <select name="" id="NCPA_32">
-                    <option value="none">Select option</option>
+            <select name="class_1_1_3" id="NCPA_32">
+                    <option value = "<?php echo isset($init_class_1_1_3) ? $init_class_1_1_3 : "None"; ?>">
+                        <?php echo isset($init_class_1_1_3) ? $init_class_1_1_3 : "Select Option"; ?>
+                    </option>
                     <option value="new">New Creation</option>
                     <option value="own">Own Work</option>
                     <option value="work">Work of Others</option>
                 </select>
             </td>
-            <td><input id="NCPA_33" type="date"></td>
-            <td><input id="NCPA_34" type="text"></td>
-            <td><input id="NCPA_35" type="text"></td>
+
+            <td><input name = "copydate_1_1_3" value = "<?php echo isset($init_copydate_1_1_3) ? $init_copydate_1_1_3 : ""; ?>" id="NCPA_33" type="date"></td>
+            <td><input name = "venue_1_1_3" value = "<?php echo isset($init_venue_1_1_3) ? $init_venue_1_1_3 : ""; ?>" id="NCPA_34" type="text"></td>
+            <td><input name = "org_1_1_3" value = "<?php echo isset($init_org_1_1_3) ? $init_org_1_1_3 : ""; ?>" id="NCPA_35" type="text"></td>
             <td><input id="NCPA_res3" readonly type="text"></td>
         </tr>
 
@@ -275,10 +556,12 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="EXB1" type="text"></td>
+            <td><input id="EXB1" name = "title_1_2_1" value = "<?php echo isset($init_title_1_2_1) ? $init_title_1_2_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="EXB2">
-                    <option value="none">Select option</option>
+            <select name="type_1_2_1" id="EXB2">
+                    <option value = "<?php echo isset($init_type_1_2_1) ? $init_type_1_2_1 : "None"; ?>">
+                        <?php echo isset($init_type_1_2_1) ? $init_type_1_2_1 : "Select Option"; ?>
+                    </option>
                     <option value="Film">Film/Short Film</option>
                     <option value="Painting">Painting/Drawing</option>
                     <option value="Architectural">Architectural Design</option>
@@ -289,26 +572,31 @@ if (isset($_POST['submit_btn'])) {
                 </select>
             </td>
             <td>
-                <select name="" id="EXB3">
-                    <option value="none">Select option</option>
+            <select name="class_1_2_1" id="EXB3">
+                    <option value = "<?php echo isset($init_class_1_2_1) ? $init_class_1_2_1 : "one"; ?>">
+                        <?php echo isset($init_class_1_2_1) ? $init_class_1_2_1 : "Select Option"; ?>
+                    </option>
                     <option value="Visual">Visual Arts</option>
                     <option value="Arhcitecture">Architecture</option>
                     <option value="Film">Film</option>
                     <option value="Multimedia">Multimedia</option>
                 </select>
             </td>
-            <td><input id="EXB4" type="date"></td>
-            <td><input id="EXB5" type="text"></td>
-            <td><input id="EXB6" type="text"></td>
+            <td><input name = "exedate_1_2_1" value = "<?php echo isset($init_exedate_1_2_1) ? $init_exedate_1_2_1 : ""; ?>" id="EXB4" type="date"></td>
+            
+            <td><input name = "venue_1_2_1" value = "<?php echo isset($init_venue_1_2_1) ? $init_venue_1_2_1 : ""; ?>" id="EXB5" type="text"></td>
+            <td><input name = "org_1_2_1" value = "<?php echo isset($init_org_1_2_1) ? $init_org_1_2_1 : ""; ?>" id="EXB6" type="text"></td>
             <td><input id="EXB_res1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input id="EXB21" type="text"></td>
+            <td><input id="EXB21" name = "title_1_2_2" value = "<?php echo isset($init_title_1_2_2) ? $init_title_1_2_2 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="EXB22">
-                    <option value="none">Select option</option>
+            <select name="type_1_2_2" id="EXB22">
+                    <option value = "<?php echo isset($init_type_1_2_2) ? $init_type_1_2_2 : "None"; ?>">
+                        <?php echo isset($init_type_1_2_2) ? $init_type_1_2_2 : "Select Option"; ?>
+                    </option>
                     <option value="Film">Film/Short Film</option>
                     <option value="Painting">Painting/Drawing</option>
                     <option value="Architectural">Architectural Design</option>
@@ -319,26 +607,31 @@ if (isset($_POST['submit_btn'])) {
                 </select>
             </td>
             <td>
-                <select name="" id="EXB23">
-                    <option value="none">Select option</option>
+            <select name="class_1_2_2" id="EXB23">
+                    <option value = "<?php echo isset($init_class_1_2_2) ? $init_class_1_2_2 : "one"; ?>">
+                        <?php echo isset($init_class_1_2_2) ? $init_class_1_2_2 : "Select Option"; ?>
+                    </option>
                     <option value="Visual">Visual Arts</option>
                     <option value="Arhcitecture">Architecture</option>
                     <option value="Film">Film</option>
                     <option value="Multimedia">Multimedia</option>
                 </select>
             </td>
-            <td><input id="EXB24" type="date"></td>
-            <td><input id="EXB25" type="text"></td>
-            <td><input id="EXB26" type="text"></td>
+            <td><input name = "exedate_1_2_2" value = "<?php echo isset($init_exedate_1_2_2) ? $init_exedate_1_2_2 : ""; ?>" id="EXB24" type="date"></td>
+            
+            <td><input name = "venue_1_2_2" value = "<?php echo isset($init_venue_1_2_2) ? $init_venue_1_2_2 : ""; ?>" id="EXB25" type="text"></td>
+            <td><input name = "org_1_2_2" value = "<?php echo isset($init_org_1_2_2) ? $init_org_1_2_2 : ""; ?>" id="EXB26" type="text"></td>
             <td><input id="EXB_res2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="EXB31" type="text"></td>
+            <td><input id="EXB31" name = "title_1_2_3" value = "<?php echo isset($init_title_1_2_3) ? $init_title_1_2_3 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="EXB32">
-                    <option value="none">Select option</option>
+            <select name="type_1_2_3" id="EXB32">
+                    <option value = "<?php echo isset($init_type_1_2_3) ? $init_type_1_2_3 : "None"; ?>">
+                        <?php echo isset($init_type_1_2_3) ? $init_type_1_2_3 : "Select Option"; ?>
+                    </option>
                     <option value="Film">Film/Short Film</option>
                     <option value="Painting">Painting/Drawing</option>
                     <option value="Architectural">Architectural Design</option>
@@ -349,17 +642,20 @@ if (isset($_POST['submit_btn'])) {
                 </select>
             </td>
             <td>
-                <select name="" id="EXB33">
-                    <option value="none">Select option</option>
+                <select name="class_1_2_3" id="EXB33">
+                    <option value = "<?php echo isset($init_class_1_2_3) ? $init_class_1_2_3 : "one"; ?>">
+                        <?php echo isset($init_class_1_2_3) ? $init_class_1_2_3 : "Select Option"; ?>
+                    </option>
                     <option value="Visual">Visual Arts</option>
                     <option value="Arhcitecture">Architecture</option>
                     <option value="Film">Film</option>
                     <option value="Multimedia">Multimedia</option>
                 </select>
             </td>
-            <td><input id="EXB34" type="date"></td>
-            <td><input id="EXB35" type="text"></td>
-            <td><input id="EXB36" type="text"></td>
+            <td><input name = "exedate_1_2_3" value = "<?php echo isset($init_exedate_1_2_3) ? $init_exedate_1_2_3 : ""; ?>" id="EXB34" type="date"></td>
+            
+            <td><input name = "venue_1_2_3" value = "<?php echo isset($init_venue_1_2_3) ? $init_venue_1_2_3 : ""; ?>" id="EXB35" type="text"></td>
+            <td><input name = "org_1_2_3" value = "<?php echo isset($init_org_1_2_3) ? $init_org_1_2_3 : ""; ?>" id="EXB36" type="text"></td>
             <td><input id="EXB_res3" readonly type="text"></td>
         </tr>
 
@@ -391,55 +687,61 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="JR1" type="text"></td>
+            <td><input id="JR1" name = "title_1_3_1" value = "<?php echo isset($init_title_1_3_1) ? $init_title_1_3_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="JR2">
-                    <option value="none">Select option</option>
+                <select name="class_1_3_1" id="JR2">
+                    <option value = "<?php echo isset($init_class_1_3_1) ? $init_class_1_3_1 : "one"; ?>">
+                        <?php echo isset($init_class_1_3_1) ? $init_class_1_3_1 : "Select Option"; ?>
+                    </option>
                     <option value="Architecture">Architecture</option>
                     <option value="Engineering">Engineering</option>
                     <option value="Industrial">Industrial Design</option>
                 </select>
             </td>
-            <td><input id="JR3" type="text"></td>
-            <td><input id="JR4" type="date"></td>
-            <td><input id="JR5" type="text"></td>
-            <td><input id="JR6" type="text"></td>
+            <td><input id="JR3" name = "rev_1_3_1" value = "<?php echo isset($init_rev_1_3_1) ? $init_rev_1_3_1 : ""; ?>" type="text"></td>
+            <td><input id="JR4" name = "exedate_1_3_1" value = "<?php echo isset($init_exedate_1_3_1) ? $init_exedate_1_3_1 : ""; ?>" type="text"></td>
+            <td><input id="JR5" name = "venue_1_3_1" value = "<?php echo isset($init_venue_1_3_1) ? $init_venue_1_3_1 : ""; ?>" type="text"></td>
+            <td><input id="JR6" name = "org_1_3_1" value = "<?php echo isset($init_org_1_3_1) ? $init_org_1_3_1 : ""; ?>" type="text"></td>
             <td><input id="JR_res1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input id="JR21" type="text"></td>
+            <td><input id="JR21" name = "title_1_3_2" value = "<?php echo isset($init_title_1_3_2) ? $init_title_1_3_2 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="JR22">
-                    <option value="none">Select option</option>
+                <select name="class_1_3_2" id="JR22">
+                    <option value = "<?php echo isset($init_class_1_3_2) ? $init_class_1_3_2 : "one"; ?>">
+                        <?php echo isset($init_class_1_3_2) ? $init_class_1_3_2 : "Select Option"; ?>
+                    </option>
                     <option value="Architecture">Architecture</option>
                     <option value="Engineering">Engineering</option>
                     <option value="Industrial">Industrial Design</option>
                 </select>
             </td>
-            <td><input id="JR23" type="text"></td>
-            <td><input id="JR24" type="date"></td>
-            <td><input id="JR25" type="text"></td>
-            <td><input id="JR26" type="text"></td>
+            <td><input id="JR23" name = "rev_1_3_2" value = "<?php echo isset($init_rev_1_3_2) ? $init_rev_1_3_2 : ""; ?>" type="text"></td>
+            <td><input id="JR24" name = "exedate_1_3_2" value = "<?php echo isset($init_exedate_1_3_2) ? $init_exedate_1_3_2 : ""; ?>" type="text"></td>
+            <td><input id="JR25" name = "venue_1_3_2" value = "<?php echo isset($init_venue_1_3_2) ? $init_venue_1_3_2 : ""; ?>" type="text"></td>
+            <td><input id="JR26" name = "org_1_3_2" value = "<?php echo isset($init_org_1_3_2) ? $init_org_1_3_2 : ""; ?>" type="text"></td>
             <td><input id="JR_res2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="JR31" type="text"></td>
+            <td><input id="JR31" name = "title_1_3_3" value = "<?php echo isset($init_title_1_3_3) ? $init_title_1_3_3 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="JR32">
-                    <option value="none">Select option</option>
+                <select name="class_1_3_3" id="JR32">
+                    <option value = "<?php echo isset($init_class_1_3_3) ? $init_class_1_3_3 : "one"; ?>">
+                        <?php echo isset($init_class_1_3_3) ? $init_class_1_3_3 : "Select Option"; ?>
+                    </option>
                     <option value="Architecture">Architecture</option>
                     <option value="Engineering">Engineering</option>
                     <option value="Industrial">Industrial Design</option>
                 </select>
             </td>
-            <td><input id="JR33" type="text"></td>
-            <td><input id="JR34" type="date"></td>
-            <td><input id="JR35" type="text"></td>
-            <td><input id="JR36" type="text"></td>
+            <td><input id="JR33" name = "rev_1_3_3" value = "<?php echo isset($init_rev_1_3_3) ? $init_rev_1_3_3 : ""; ?>" type="text"></td>
+            <td><input id="JR34" name = "exedate_1_3_3" value = "<?php echo isset($init_exedate_1_3_3) ? $init_exedate_1_3_3 : ""; ?>" type="text"></td>
+            <td><input id="JR35" name = "venue_1_3_3" value = "<?php echo isset($init_venue_1_3_3) ? $init_venue_1_3_3 : ""; ?>" type="text"></td>
+            <td><input id="JR36" name = "org_1_3_3" value = "<?php echo isset($init_org_1_3_3) ? $init_org_1_3_3 : ""; ?>" type="text"></td>
             <td><input id="JR_res3" readonly type="text"></td>
         </tr>
 
@@ -474,10 +776,12 @@ if (isset($_POST['submit_btn'])) {
 
         <tr>
             <td>1</td>
-            <td><input id="LIT1" type="text"></td>
+            <td><input id="LIT1" name = "title_1_4_1" value = "<?php echo isset($init_title_1_4_1) ? $init_title_1_4_1 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="LIT2">
-                    <option value="none">Select Option</option>
+                <select name="type_1_4_1" id="LIT2">
+                    <option value = "<?php echo isset($init_type_1_4_1) ? $init_type_1_4_1 : "one"; ?>">
+                        <?php echo isset($init_type_1_4_1) ? $init_type_1_4_1 : "Select Option"; ?>
+                    </option>
                     <option value="Novel">Novel</option>
                     <option value="Short">Short Story</option>
                     <option value="Essay">Essay</option>
@@ -485,19 +789,21 @@ if (isset($_POST['submit_btn'])) {
                     <option value="Others">Others</option>
                 </select>
             </td>
-            <td><input id="LIT3" type="text"></td>
-            <td><input id="LIT4" type="date"></td>
-            <td><input id="LIT5" type="text"></td>
-            <td><input id="LIT6" type="text"></td>
+            <td><input id="LIT3" name = "rev_1_4_1" value = "<?php echo isset($init_rev_1_4_1) ? $init_rev_1_4_1 : ""; ?>" type="text"></td>
+            <td><input id="LIT4" name = "copydate_1_4_1" value = "<?php echo isset($init_copydate_1_4_1) ? $init_copydate_1_4_1 : ""; ?>" type="date"></td>
+            <td><input id="LIT5" name = "venue_1_4_1" value = "<?php echo isset($init_venue_1_4_1) ? $init_venue_1_4_1 : ""; ?>" type="text"></td>
+            <td><input id="LIT6" name = "org_1_4_1" value = "<?php echo isset($init_org_1_4_1) ? $init_org_1_4_1 : ""; ?>" type="text"></td>
             <td><input id="Lit_res1" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>2</td>
-            <td><input id="LIT21" type="text"></td>
+            <td><input id="LIT21" name = "title_1_4_2" value = "<?php echo isset($init_title_1_4_2) ? $init_title_1_4_2 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="LIT22">
-                    <option value="none">Select Option</option>
+                <select name="type_1_4_2" id="LIT22">
+                    <option value = "<?php echo isset($init_type_1_4_2) ? $init_type_1_4_2 : "one"; ?>">
+                        <?php echo isset($init_type_1_4_2) ? $init_type_1_4_2 : "Select Option"; ?>
+                    </option>
                     <option value="Novel">Novel</option>
                     <option value="Short">Short Story</option>
                     <option value="Essay">Essay</option>
@@ -505,19 +811,21 @@ if (isset($_POST['submit_btn'])) {
                     <option value="Others">Others</option>
                 </select>
             </td>
-            <td><input id="LIT23" type="text"></td>
-            <td><input id="LIT24" type="date"></td>
-            <td><input id="LIT25" type="text"></td>
-            <td><input id="LIT26" type="text"></td>
+            <td><input id="LIT23" name = "rev_1_4_2" value = "<?php echo isset($init_rev_1_4_2) ? $init_rev_1_4_2 : ""; ?>" type="text"></td>
+            <td><input id="LIT24" name = "copydate_1_4_2" value = "<?php echo isset($init_copydate_1_4_2) ? $init_copydate_1_4_2 : ""; ?>" type="date"></td>
+            <td><input id="LIT25" name = "venue_1_4_2" value = "<?php echo isset($init_venue_1_4_2) ? $init_venue_1_4_2 : ""; ?>" type="text"></td>
+            <td><input id="LIT26" name = "org_1_4_2" value = "<?php echo isset($init_org_1_4_2) ? $init_org_1_4_2 : ""; ?>" type="text"></td>
             <td><input id="Lit_res2" readonly type="text"></td>
         </tr>
 
         <tr>
             <td>3</td>
-            <td><input id="LIT31" type="text"></td>
+            <td><input id="LIT31" name = "title_1_4_3" value = "<?php echo isset($init_title_1_4_3) ? $init_title_1_4_3 : ""; ?>" type="text"></td>
             <td>
-                <select name="" id="LIT32">
-                    <option value="none">Select Option</option>
+                <select name="type_1_4_3" id="LIT32">
+                    <option value = "<?php echo isset($init_type_1_4_3) ? $init_type_1_4_3 : "one"; ?>">
+                        <?php echo isset($init_type_1_4_3) ? $init_type_1_4_3 : "Select Option"; ?>
+                    </option>
                     <option value="Novel">Novel</option>
                     <option value="Short">Short Story</option>
                     <option value="Essay">Essay</option>
@@ -525,10 +833,10 @@ if (isset($_POST['submit_btn'])) {
                     <option value="Others">Others</option>
                 </select>
             </td>
-            <td><input id="LIT33" type="text"></td>
-            <td><input id="LIT34" type="date"></td>
-            <td><input id="LIT35" type="text"></td>
-            <td><input id="LIT36" type="text"></td>
+            <td><input id="LIT33" name = "rev_1_4_3" value = "<?php echo isset($init_rev_1_4_3) ? $init_rev_1_4_3 : ""; ?>" type="text"></td>
+            <td><input id="LIT34" name = "copydate_1_4_3" value = "<?php echo isset($init_copydate_1_4_3) ? $init_copydate_1_4_3 : ""; ?>" type="date"></td>
+            <td><input id="LIT35" name = "venue_1_4_3" value = "<?php echo isset($init_venue_1_4_3) ? $init_venue_1_4_3 : ""; ?>" type="text"></td>
+            <td><input id="LIT36" name = "org_1_4_3" value = "<?php echo isset($init_org_1_4_3) ? $init_org_1_4_3 : ""; ?>" type="text"></td>
             <td><input id="Lit_res3" readonly type="text"></td>
         </tr>
 

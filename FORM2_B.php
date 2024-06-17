@@ -188,47 +188,36 @@ while ($row = mysqli_fetch_array($result2_b)) {
     $init_npvsole_name_1 = $row['npvsole_name_1'];
     $init_npvsole_name_2 = $row['npvsole_name_2'];
     $init_npvsole_name_3 = $row['npvsole_name_3'];
-    $init_npvsole_name_4 = $row['npvsole_name_4'];
     $init_npvsole_type_1 = $row['npvsole_type_1'];
     $init_npvsole_type_2 = $row['npvsole_type_2'];
     $init_npvsole_type_3 = $row['npvsole_type_3'];
-    $init_npvsole_type_4 = $row['npvsole_type_4'];
     $init_npvsole_datecom_1 = $row['npvsole_datecom_1'];
     $init_npvsole_datecom_2 = $row['npvsole_datecom_2'];
     $init_npvsole_datecom_3 = $row['npvsole_datecom_3'];
-    $init_npvsole_datecom_4 = $row['npvsole_datecom_4'];
     $init_npvsole_datereg_1 = $row['npvsole_datereg_1'];
     $init_npvsole_datereg_2 = $row['npvsole_datereg_2'];
     $init_npvsole_datereg_3 = $row['npvsole_datereg_3'];
-    $init_npvsole_datereg_4 = $row['npvsole_datereg_4'];
     $init_npvsole_dateprop_1 = $row['npvsole_dateprop_1'];
     $init_npvsole_dateprop_2 = $row['npvsole_dateprop_2'];
     $init_npvsole_dateprop_3 = $row['npvsole_dateprop_3'];
-    $init_npvsole_dateprop_4 = $row['npvsole_dateprop_4'];
     $init_npvmul_name_1 = $row['npvmul_name_1'];
     $init_npvmul_name_2 = $row['npvmul_name_2'];
     $init_npvmul_name_3 = $row['npvmul_name_3'];
-    $init_npvmul_name_4 = $row['npvmul_name_4'];
     $init_npvmul_type_1 = $row['npvmul_type_1'];
     $init_npvmul_type_2 = $row['npvmul_type_2'];
     $init_npvmul_type_3 = $row['npvmul_type_3'];
-    $init_npvmul_type_4 = $row['npvmul_type_4'];
     $init_npvmul_datecom_1 = $row['npvmul_datecom_1'];
     $init_npvmul_datecom_2 = $row['npvmul_datecom_2'];
     $init_npvmul_datecom_3 = $row['npvmul_datecom_3'];
-    $init_npvmul_datecom_4 = $row['npvmul_datecom_4'];
     $init_npvmul_datereg_1 = $row['npvmul_datereg_1'];
     $init_npvmul_datereg_2 = $row['npvmul_datereg_2'];
     $init_npvmul_datereg_3 = $row['npvmul_datereg_3'];
-    $init_npvmul_datereg_4 = $row['npvmul_datereg_4'];
     $init_npvmul_dateprop_1 = $row['npvmul_dateprop_1'];
     $init_npvmul_dateprop_2 = $row['npvmul_dateprop_2'];
     $init_npvmul_dateprop_3 = $row['npvmul_dateprop_3'];
-    $init_npvmul_dateprop_4 = $row['npvmul_dateprop_4'];
     $init_npvmul_contrib_1 = $row['npvmul_contrib_1'];
     $init_npvmul_contrib_2 = $row['npvmul_contrib_2'];
     $init_npvmul_contrib_3 = $row['npvmul_contrib_3'];
-    $init_npvmul_contrib_4 = $row['npvmul_contrib_4'];
 }
 
 if (isset($_POST['submit_btn'])) {
@@ -485,57 +474,46 @@ if (isset($_POST['submit_btn'])) {
         $npvsole_name_1 = $_POST['npvsole_name_1'];
         $npvsole_name_2 = $_POST['npvsole_name_2'];
         $npvsole_name_3 = $_POST['npvsole_name_3'];
-        $npvsole_name_4 = $_POST['npvsole_name_4'];
 
         $npvsole_type_1 = $_POST['npvsole_type_1'];
         $npvsole_type_2 = $_POST['npvsole_type_2'];
         $npvsole_type_3 = $_POST['npvsole_type_3'];
-        $npvsole_type_4 = $_POST['npvsole_type_4'];
 
         $npvsole_datecom_1 = $_POST['npvsole_datecom_1'];
         $npvsole_datecom_2 = $_POST['npvsole_datecom_2'];
         $npvsole_datecom_3 = $_POST['npvsole_datecom_3'];
-        $npvsole_datecom_4 = $_POST['npvsole_datecom_4'];
 
         $npvsole_datereg_1 = $_POST['npvsole_datereg_1'];
         $npvsole_datereg_2 = $_POST['npvsole_datereg_2'];
         $npvsole_datereg_3 = $_POST['npvsole_datereg_3'];
-        $npvsole_datereg_4 = $_POST['npvsole_datereg_4'];
 
         $npvsole_dateprop_1 = $_POST['npvsole_dateprop_1'];
         $npvsole_dateprop_2 = $_POST['npvsole_dateprop_2'];
         $npvsole_dateprop_3 = $_POST['npvsole_dateprop_3'];
-        $npvsole_dateprop_4 = $_POST['npvsole_dateprop_4'];
 
         $npvmul_name_1 = $_POST['npvmul_name_1'];
         $npvmul_name_2 = $_POST['npvmul_name_2'];
         $npvmul_name_3 = $_POST['npvmul_name_3'];
-        $npvmul_name_4 = $_POST['npvmul_name_4'];
 
         $npvmul_type_1 = $_POST['npvmul_type_1'];
         $npvmul_type_2 = $_POST['npvmul_type_2'];
         $npvmul_type_3 = $_POST['npvmul_type_3'];
-        $npvmul_type_4 = $_POST['npvmul_type_4'];
 
         $npvmul_datecom_1 = $_POST['npvmul_datecom_1'];
         $npvmul_datecom_2 = $_POST['npvmul_datecom_2'];
         $npvmul_datecom_3 = $_POST['npvmul_datecom_3'];
-        $npvmul_datecom_4 = $_POST['npvmul_datecom_4'];
 
         $npvmul_datereg_1 = $_POST['npvmul_datereg_1'];
         $npvmul_datereg_2 = $_POST['npvmul_datereg_2'];
         $npvmul_datereg_3 = $_POST['npvmul_datereg_3'];
-        $npvmul_datereg_4 = $_POST['npvmul_datereg_4'];
 
         $npvmul_dateprop_1 = $_POST['npvmul_dateprop_1'];
         $npvmul_dateprop_2 = $_POST['npvmul_dateprop_2'];
         $npvmul_dateprop_3 = $_POST['npvmul_dateprop_3'];
-        $npvmul_dateprop_4 = $_POST['npvmul_dateprop_4'];
 
         $npvmul_contrib_1 = $_POST['npvmul_contrib_1'];
         $npvmul_contrib_2 = $_POST['npvmul_contrib_2'];
         $npvmul_contrib_3 = $_POST['npvmul_contrib_3'];
-        $npvmul_contrib_4 = $_POST['npvmul_contrib_4'];
 
         $conn->query("INSERT INTO form2_b (
             ipsole_name_1, ipsole_name_2, ipsole_name_3, ipsole_name_4,
@@ -581,16 +559,16 @@ if (isset($_POST['submit_btn'])) {
                uspsole_contrib_1, uspsole_contrib_2, uspsole_contrib_3, uspsole_contrib_4, 
                uspsole_specfeat_1, uspsole_specfeat_2, uspsole_specfeat_3, uspsole_specfeat_4, 
                uspsole_endusername_1, uspsole_endusername_2, uspsole_endusername_3, uspsole_endusername_4, 
-               npvsole_name_1, npvsole_name_2, npvsole_name_3, npvsole_name_4, npvsole_type_1, 
-               npvsole_type_2, npvsole_type_3, npvsole_type_4, npvsole_datecom_1, npvsole_datecom_2,
-              npvsole_datecom_3, npvsole_datecom_4, npvsole_datereg_1, npvsole_datereg_2, 
-                npvsole_datereg_3, npvsole_datereg_4, npvsole_dateprop_1, npvsole_dateprop_2, 
-                npvsole_dateprop_3, npvsole_dateprop_4, npvmul_name_1, npvmul_name_2, npvmul_name_3, 
-                npvmul_name_4, npvmul_type_1, npvmul_type_2, npvmul_type_3, npvmul_type_4,
-                npvmul_datecom_1, npvmul_datecom_2, npvmul_datecom_3, npvmul_datecom_4,
-                npvmul_datereg_1, npvmul_datereg_2, npvmul_datereg_3, npvmul_datereg_4, npvmul_dateprop_1, 
-                npvmul_dateprop_2, npvmul_dateprop_3, npvmul_dateprop_4, npvmul_contrib_1, npvmul_contrib_2, 
-                npvmul_contrib_3, npvmul_contrib_4,user_id)
+               npvsole_name_1, npvsole_name_2, npvsole_name_3, npvsole_type_1, 
+               npvsole_type_2, npvsole_type_3, npvsole_datecom_1, npvsole_datecom_2,
+              npvsole_datecom_3, npvsole_datereg_1, npvsole_datereg_2, 
+                npvsole_datereg_3, npvsole_dateprop_1, npvsole_dateprop_2, 
+                npvsole_dateprop_3, npvmul_name_1, npvmul_name_2, npvmul_name_3, 
+                npvmul_type_1, npvmul_type_2, npvmul_type_3, 
+                npvmul_datecom_1, npvmul_datecom_2, npvmul_datecom_3,
+                npvmul_datereg_1, npvmul_datereg_2, npvmul_datereg_3, npvmul_dateprop_1, 
+                npvmul_dateprop_2, npvmul_dateprop_3, npvmul_contrib_1, npvmul_contrib_2, 
+                npvmul_contrib_3, user_id)
         VALUES (
             '$ipsole_name_1', '$ipsole_name_2', '$ipsole_name_3', '$ipsole_name_4',
             '$ipsole_appdate_1', '$ipsole_appdate_2', '$ipsole_appdate_3', '$ipsole_appdate_4',
@@ -635,17 +613,17 @@ if (isset($_POST['submit_btn'])) {
             '$uspsole_contrib_1', '$uspsole_contrib_2', '$uspsole_contrib_3', '$uspsole_contrib_4',
             '$uspsole_specfeat_1', '$uspsole_specfeat_2', '$uspsole_specfeat_3', '$uspsole_specfeat_4',
             '$uspsole_endusername_1', '$uspsole_endusername_2', '$uspsole_endusername_3', '$uspsole_endusername_4',
-            '$npvsole_name_1', '$npvsole_name_2', '$npvsole_name_3', '$npvsole_name_4',
-            '$npvsole_type_1', '$npvsole_type_2', '$npvsole_type_3', '$npvsole_type_4',
-            '$npvsole_datecom_1', '$npvsole_datecom_2', '$npvsole_datecom_3', '$npvsole_datecom_4',
-            '$npvsole_datereg_1', '$npvsole_datereg_2', '$npvsole_datereg_3', '$npvsole_datereg_4',
-            '$npvsole_dateprop_1', '$npvsole_dateprop_2', '$npvsole_dateprop_3', '$npvsole_dateprop_4',
-            '$npvmul_name_1', '$npvmul_name_2', '$npvmul_name_3', '$npvmul_name_4',
-            '$npvmul_type_1', '$npvmul_type_2', '$npvmul_type_3', '$npvmul_type_4',
-            '$npvmul_datecom_1', '$npvmul_datecom_2', '$npvmul_datecom_3', '$npvmul_datecom_4',
-            '$npvmul_datereg_1', '$npvmul_datereg_2', '$npvmul_datereg_3', '$npvmul_datereg_4',
-            '$npvmul_dateprop_1', '$npvmul_dateprop_2', '$npvmul_dateprop_3', '$npvmul_dateprop_4',
-            '$npvmul_contrib_1', '$npvmul_contrib_2', '$npvmul_contrib_3', '$npvmul_contrib_4',
+            '$npvsole_name_1', '$npvsole_name_2', '$npvsole_name_3', 
+            '$npvsole_type_1', '$npvsole_type_2', '$npvsole_type_3',
+            '$npvsole_datecom_1', '$npvsole_datecom_2', '$npvsole_datecom_3',
+            '$npvsole_datereg_1', '$npvsole_datereg_2', '$npvsole_datereg_3', 
+            '$npvsole_dateprop_1', '$npvsole_dateprop_2', '$npvsole_dateprop_3',
+            '$npvmul_name_1', '$npvmul_name_2', '$npvmul_name_3', 
+            '$npvmul_type_1', '$npvmul_type_2', '$npvmul_type_3',
+            '$npvmul_datecom_1', '$npvmul_datecom_2', '$npvmul_datecom_3',
+            '$npvmul_datereg_1', '$npvmul_datereg_2', '$npvmul_datereg_3',
+            '$npvmul_dateprop_1', '$npvmul_dateprop_2', '$npvmul_dateprop_3', 
+            '$npvmul_contrib_1', '$npvmul_contrib_2', '$npvmul_contrib_3', 
             $id)
         ON DUPLICATE KEY UPDATE
 
@@ -775,7 +753,7 @@ if (isset($_POST['submit_btn'])) {
             nspsole_utildate_4 = VALUES(nspsole_utildate_4),
             nspsole_endusername_1 = VALUES(nspsole_endusername_1),
             nspsole_endusername_2 = VALUES(nspsole_endusername_2),
-            nspsole_endusername_3 = VALUES(nspsole_endusername_3)
+            nspsole_endusername_3 = VALUES(nspsole_endusername_3),
             nspsole_endusername_4 = VALUES(nspsole_endusername_4),
             nspmul_name_1 = VALUES(nspmul_name_1),
             nspmul_name_2 = VALUES(nspmul_name_2),
@@ -824,47 +802,36 @@ if (isset($_POST['submit_btn'])) {
             npvsole_name_1 = VALUES(npvsole_name_1),
             npvsole_name_2 = VALUES(npvsole_name_2),
             npvsole_name_3 = VALUES(npvsole_name_3),
-            npvsole_name_4 = VALUES(npvsole_name_4),
             npvsole_type_1 = VALUES(npvsole_type_1),
             npvsole_type_2 = VALUES(npvsole_type_2),
             npvsole_type_3 = VALUES(npvsole_type_3),
-            npvsole_type_4 = VALUES(npvsole_type_4),
             npvsole_datecom_1 = VALUES(npvsole_datecom_1),
             npvsole_datecom_2 = VALUES(npvsole_datecom_2),
             npvsole_datecom_3 = VALUES(npvsole_datecom_3),
-            npvsole_datecom_4 = VALUES(npvsole_datecom_4),
             npvsole_datereg_1 = VALUES(npvsole_datereg_1),
             npvsole_datereg_2 = VALUES(npvsole_datereg_2),
             npvsole_datereg_3 = VALUES(npvsole_datereg_3),
-            npvsole_datereg_4 = VALUES(npvsole_datereg_4),
             npvsole_dateprop_1 = VALUES(npvsole_dateprop_1),
             npvsole_dateprop_2 = VALUES(npvsole_dateprop_2),
             npvsole_dateprop_3 = VALUES(npvsole_dateprop_3),
-            npvsole_dateprop_4 = VALUES(npvsole_dateprop_4),
             npvmul_name_1 = VALUES(npvmul_name_1),
             npvmul_name_2 = VALUES(npvmul_name_2),
             npvmul_name_3 = VALUES(npvmul_name_3),
-            npvmul_name_4 = VALUES(npvmul_name_4),
             npvmul_type_1 = VALUES(npvmul_type_1),
             npvmul_type_2 = VALUES(npvmul_type_2),
             npvmul_type_3 = VALUES(npvmul_type_3),
-            npvmul_type_4 = VALUES(npvmul_type_4),
             npvmul_datecom_1 = VALUES(npvmul_datecom_1),
             npvmul_datecom_2 = VALUES(npvmul_datecom_2),
             npvmul_datecom_3 = VALUES(npvmul_datecom_3),
-            npvmul_datecom_4 = VALUES(npvmul_datecom_4),
             npvmul_datereg_1 = VALUES(npvmul_datereg_1),
             npvmul_datereg_2 = VALUES(npvmul_datereg_2),
             npvmul_datereg_3 = VALUES(npvmul_datereg_3),
-            npvmul_datereg_4 = VALUES(npvmul_datereg_4),
             npvmul_dateprop_1 = VALUES(npvmul_dateprop_1),
             npvmul_dateprop_2 = VALUES(npvmul_dateprop_2),
             npvmul_dateprop_3 = VALUES(npvmul_dateprop_3),
-            npvmul_dateprop_4 = VALUES(npvmul_dateprop_4),
             npvmul_contrib_1 = VALUES(npvmul_contrib_1),
             npvmul_contrib_2 = VALUES(npvmul_contrib_2),
-            npvmul_contrib_3 = VALUES(npvmul_contrib_3),
-            npvmul_contrib_4 = VALUES(npvmul_contrib_4);
+            npvmul_contrib_3 = VALUES(npvmul_contrib_3);
             "
         ) or die($conn->error);
         
@@ -1254,7 +1221,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input name = "umidsole_name_2" value = "<?php echo isset($init_umidsole_name_2) ? $init_umidsole_name_2 : ""; ?>" type="text"></td>
             <td><input name = "umidsole_appdate_2" value = "<?php echo isset($init_umidsole_appdate_2) ? $init_umidsole_name_2 : ""; ?>" type="date"></td>
             <td>
-            <select name="umidsole_appdate_2" id="UMID_SI__2">
+            <select name="umidsole_patapp_2" id="UMID_SI__2">
                     <option value = "<?php echo isset($init_umidsole_patapp_2) ? $init_umidsole_patapp_2 : "None"; ?>">
                         <?php echo isset($init_umidsole_patapp_2) ? $init_umidsole_patapp_2 : "Select Option"; ?>
                     </option>
@@ -1271,7 +1238,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input name = "umidsole_name_3" value = "<?php echo isset($init_umidsole_name_3) ? $init_umidsole_name_3 : ""; ?>" type="text"></td>
             <td><input name = "umidsole_appdate_3" value = "<?php echo isset($init_umidsole_appdate_3) ? $init_umidsole_appdate_3 : ""; ?>" type="date"></td>
             <td>
-            <select name="umidsole_appdate_3" id="UMID_SI__3">
+            <select name="umidsole_patapp_3" id="UMID_SI__3">
                     <option value = "<?php echo isset($init_umidsole_patapp_3) ? $init_umidsole_patapp_3 : "None"; ?>">
                         <?php echo isset($init_umidsole_patapp_3) ? $init_umidsole_patapp_3 : "Select Option"; ?>
                     </option>
@@ -1288,7 +1255,7 @@ if (isset($_POST['submit_btn'])) {
             <td><input name = "umidsole_name_4" value = "<?php echo isset($init_umidsole_name_4) ? $init_umidsole_name_4 : ""; ?>" type="text"></td>
             <td><input name = "umidsole_appdate_4" value = "<?php echo isset($init_umidsole_appdate_4) ? $init_umidsole_appdate_4 : ""; ?>" type="date"></td>
             <td>
-                <select name="umidsole_appdate_4" id="UMID_SI__4">
+                <select name="umidsole_patapp_4" id="UMID_SI__4">
                     <option value = "<?php echo isset($init_umidsole_patapp_4) ? $init_umidsole_patapp_4 : "None"; ?>">
                         <?php echo isset($init_umidsole_patapp_4) ? $init_umidsole_patapp_4 : "Select Option"; ?>
                     </option>
